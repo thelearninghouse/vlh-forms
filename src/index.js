@@ -94,9 +94,13 @@ if (typeof window !== 'undefined' && window.Vue && window.VeeValidate) {
 
 export default VlhForms;
 
-// export {
-//   FormSelect,
-//   FormField,
-//   FormName,
-//   FormZip
-// }
+export {
+  FormSelect,
+  FormField,
+  FormName,
+  FormFirstName,
+  FormLastName,
+  FormZip,
+  FormEmail,
+  FormPhone
+}
