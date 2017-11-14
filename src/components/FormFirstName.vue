@@ -3,7 +3,7 @@
   export default {
     name: 'form-first-name',
     extends: FormField,
-    data() {
+    data( ) {
       return {
         fieldId: 'firstName',
         fieldName: 'firstName',

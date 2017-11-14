@@ -86,10 +86,6 @@ const VlhForms = {
   }
 };
 
-// Use this to install in this environment as well
-// Vue.use(VeeValidate)
-// Vue.use(VlhForms)
-
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue && window.VeeValidate) {
   window.Vue.use(VeeValidate);
