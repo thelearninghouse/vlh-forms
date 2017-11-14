@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <h1>test</h1>
-    <form-select v-model="selectedDegreeLevel" :options="levels"></form-select>
-
-    <transition name="fade" appear>
-      <form-select v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    </transition>
+    <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+    <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+    <!-- <transition name="fade" appear>
+      <form-select name="degreeLevel" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+    </transition> -->
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>
@@ -21,10 +21,10 @@ import {programs, levels} from './programsSample.js'
 export default {
   data () {
     return {
-      selectedDegreeLevel: null,
+      selectedDegreeLevel: '',
       levels: levels,
       submit: {
-        program: null,
+        program: '',
         firstName: '',
         lastName: '',
         field1: '',
@@ -40,7 +40,7 @@ export default {
   },
   watch: {
     selectedDegreeLevel: function (val) {
-      this.submit.program = null
+      this.submit.program = ''
     }
   },
 
@@ -93,7 +93,7 @@ transition: opacity .5s
 opacity: 0
 }
 
-.form-field {
+.form-item {
   margin: 1em .5em;
 }
 </style>

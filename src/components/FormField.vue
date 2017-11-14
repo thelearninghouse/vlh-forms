@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="form-field">
+  <div class="form-item">
      <label v-text="fieldLabel" :for="fieldName"></label>
      <input
        v-validate="fieldValidation"
