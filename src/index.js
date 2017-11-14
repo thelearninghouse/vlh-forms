@@ -3,11 +3,14 @@
 
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
-
+import FormName from './components/FormName.vue'
+import FormFirstName from './components/FormFirstName.vue'
+import FormLastName from './components/FormLastName.vue'
+import FormZip from './components/FormZip.vue'
+import FormEmail from './components/FormEmail.vue'
+import FormPhone from './components/FormPhone.vue'
 
 function registerHelpers(vm) {
-  // console.log('inside helper:  ', vm);
-  // console.log('inside helper, PARENT :  ', );
   if (!vm.$parent && vm.$options) {
     console.log('NO PARENT');
     console.log(vm.$options);
@@ -30,7 +33,12 @@ const VlhForms = {
   install(Vue, options) {
     Vue.component('form-select', FormSelect);
     Vue.component('form-field', FormField);
-
+    Vue.component('form-name', FormName);
+    Vue.component('form-first-name', FormFirstName);
+    Vue.component('form-last-name', FormLastName);
+    Vue.component('form-phone', FormPhone);
+    Vue.component('form-email', FormEmail);
+    Vue.component('form-zip', FormZip);
 
   	Vue.mixin({
       // beforeCreate() {
@@ -64,7 +72,6 @@ const VlhForms = {
       }
     });
 
-
     Vue.prototype.$myAddedProperty = 'Example Property'
     Vue.prototype.$FindProgramsByLevel = function (programs, selectedLevel) {
       var vm = this
@@ -80,16 +87,20 @@ const VlhForms = {
 };
 
 // Use this to install in this environment as well
+// Vue.use(VeeValidate)
 // Vue.use(VlhForms)
 
 // Install by default if using the script tag
-if (typeof window !== 'undefined' && window.Vue) {
+if (typeof window !== 'undefined' && window.Vue && window.VeeValidate) {
+  window.Vue.use(VeeValidate);
   window.Vue.use(VlhForms)
 }
 
 export default VlhForms;
 
-export {
-  FormSelect,
-  FormField
-}
+// export {
+//   FormSelect,
+//   FormField,
+//   FormName,
+//   FormZip
+// }

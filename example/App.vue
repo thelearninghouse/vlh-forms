@@ -2,25 +2,36 @@
   <div id="app">
     <h1>test</h1>
     <form-select v-model="selectedDegreeLevel" :options="levels"></form-select>
-    <!-- <form-field></form-field> -->
-    <form-select v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+
+    <transition name="fade" appear>
+      <form-select v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+    </transition>
+    <form-first-name v-model="submit.firstName"></form-first-name>
+    <form-last-name v-model="submit.lastName"></form-last-name>
+    <form-zip v-model="submit.zip"></form-zip>
+    <form-phone v-model="submit.phone" validation="required"></form-phone>
+    <form-email v-model="submit.email" validation="required|email"></form-email>
   </div>
 </template>
 
 <script>
 
 import {programs, levels} from './programsSample.js'
-// import FormProgramSelect from '../src/FormProgramSelect.vue'
+
 export default {
-  components: {
-    // FormProgramSelect
-  },
-  data() {
+  data () {
     return {
       selectedDegreeLevel: null,
       levels: levels,
       submit: {
-        program: null
+        program: null,
+        firstName: '',
+        lastName: '',
+        field1: '',
+        field2: '',
+        zip: '',
+        email: '',
+        phone: ''
       },
       programs: programs,
       xverifyEmailURL: 'http://xverifyEmailURL/',
@@ -73,3 +84,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+opacity: 0
+}
+
+.form-field {
+  margin: 1em .5em;
+}
+</style>

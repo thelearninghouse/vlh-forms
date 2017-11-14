@@ -46,5 +46,9 @@
     "rollup-plugin-vue": "^2.5.2",
     "test-vue-app": "^1.0.0",
     "vue-test-utils": "^1.0.0-beta.2"
+  },
+  "dependencies": {
+    "vee-validate": "^2.0.0-rc.21",
+    "vue": "^2.5.3"
   }
 }
