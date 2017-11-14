@@ -1,4 +1,4 @@
-# form-program-select
+# VlhForms
 
 My splendid Vue component.
 
@@ -8,7 +8,7 @@ My splendid Vue component.
 yarn add form-program-select
 ```
 
-CDN: [UNPKG](https://unpkg.com/form-program-select/) | [jsDelivr](https://cdn.jsdelivr.net/npm/form-program-select/) (available as `window.FormProgramSelect`)
+CDN: [UNPKG](https://unpkg.com/vlh-forms/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vlh-forms/) (available as `window.VlhForms`)
 
 ## Usage
 
