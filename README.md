@@ -1,11 +1,11 @@
 # VlhForms
 
-My splendid Vue component.
+Plugin for Learning House Forms using Vue.js
 
 ## Install
 
 ```bash
-yarn add form-program-select
+yarn add vlh-forms
 ```
 
 CDN: [UNPKG](https://unpkg.com/vlh-forms/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vlh-forms/) (available as `window.VlhForms`)

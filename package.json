@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -11,7 +11,6 @@
     "dist"
   ],
   "scripts": {
-    "prepublishOnly": "npm test && npm run build",
     "test": "test-vue-app",
     "build": "bili",
     "dev": "poi",
