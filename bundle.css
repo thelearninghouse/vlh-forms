@@ -73,6 +73,7 @@
 
 
 
+
 label {
   display: block;
 }
@@ -80,3 +81,77 @@ label {
 
 
 /*# sourceMappingURL=FormField.vue.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.submit {
+  background: steelblue;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  font-size: 15px;
+}
+.requestinfo .legal-text {
+ font-size: 10px;
+ line-height: 1.2;
+ clear: both;
+ width: 90%;
+ margin: 1em auto !important;
+ color: white;
+ text-align: left;
+ font-weight: normal;
+}
+.single-grp_pages .legal-text {
+ width: 100%;
+}
+
