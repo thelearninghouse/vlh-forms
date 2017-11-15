@@ -11,11 +11,12 @@
     <form-zip v-model="submit.zip"></form-zip>
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
+    <form-submit-button text="New Text"></form-submit-button>
   </div>
 </template>
 
 <script>
-
+import axios from 'axios'
 import {programs, levels} from './programsSample.js'
 
 export default {
@@ -31,7 +32,8 @@ export default {
         field2: '',
         zip: '',
         email: '',
-        phone: ''
+        phone: '',
+        city: null
       },
       programs: programs,
       xverifyEmailURL: 'http://xverifyEmailURL/',
@@ -57,9 +59,37 @@ export default {
     this.domain = 'online.test.edu'
     console.log(this.$FindProgramsByLevel(this.programs, 'Master'));
     console.log(this.$myAddedProperty)
-
+    this.registerZipValidator()
   },
   methods: {
+    registerZipValidator () {
+      var vm = this
+      var isZip = (value) => {
+        return axios.get(`https://api.zippopotam.us/us/${value}`)
+          .then(function(response) {
+            let info = response.data.places[0]
+            vm.submit.city = info['place name']
+            vm.submit.state = info['state']
+            return {
+              valid: true
+            }
+          })
+          .catch(function(error) {
+            return {
+              valid: false,
+              data: {
+                message: `${value} is not valid zip.`
+              }
+            }
+          });
+      }
+      this.$validator.extend('validZip', {
+        validate: isZip,
+        getMessage: (field, params, data) => {
+          return data.message;
+        }
+      });
+    },
     getDegreeLevelObject: function () {
       var vm = this
       if (vm.selectedDegreeLevel) {

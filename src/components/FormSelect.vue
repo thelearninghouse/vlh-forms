@@ -22,6 +22,7 @@
 <script>
 
 export default {
+  name: 'form-select',
   props: {
     label: String,
     id: String,

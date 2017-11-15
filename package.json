@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -48,6 +48,7 @@
     "vue-test-utils": "^1.0.0-beta.2"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vee-validate": "^2.0.0-rc.21",
     "vue": "^2.5.3"
   }
