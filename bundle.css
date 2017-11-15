@@ -133,7 +133,8 @@ input[type="number"] {
 
 
 
-.submit {
+
+.submit[data-v-c1652504] {
   background: steelblue;
   cursor: pointer;
   border: none;
@@ -141,7 +142,7 @@ input[type="number"] {
   padding: .5em 1em;
   font-size: 15px;
 }
-.requestinfo .legal-text {
+.requestinfo .legal-text[data-v-c1652504] {
  font-size: 10px;
  line-height: 1.2;
  clear: both;
@@ -151,7 +152,7 @@ input[type="number"] {
  text-align: left;
  font-weight: normal;
 }
-.single-grp_pages .legal-text {
+.single-grp_pages .legal-text[data-v-c1652504] {
  width: 100%;
 }
 

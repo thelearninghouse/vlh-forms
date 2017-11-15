@@ -11,7 +11,7 @@
     <form-zip v-model="submit.zip"></form-zip>
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-submit-button text="New Text"></form-submit-button>
+    <form-submit-button text="Get Info"></form-submit-button>
   </div>
 </template>
 
