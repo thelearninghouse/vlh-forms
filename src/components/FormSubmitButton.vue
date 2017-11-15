@@ -14,11 +14,6 @@ export default {
       type: String,
       default: 'Request Info'
     }
-  },
-  data () {
-    return {
-      text: 'Request Info'
-    }
   }
 }
 </script>
