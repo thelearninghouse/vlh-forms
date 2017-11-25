@@ -151,3 +151,83 @@ input[type="number"] {
  width: 100%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.submit[data-v-6616ea22] {
+  background: steelblue;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  font-size: 15px;
+}
+.requestinfo .legal-text[data-v-6616ea22] {
+ font-size: 10px;
+ line-height: 1.2;
+ clear: both;
+ width: 90%;
+ margin: 1em auto !important;
+ color: white;
+ text-align: left;
+ font-weight: normal;
+}
+.single-grp_pages .legal-text[data-v-6616ea22] {
+ width: 100%;
+}
+

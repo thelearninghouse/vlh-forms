@@ -12,6 +12,8 @@
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button text="Get Info"></form-submit-button>
+    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
+    <form-legal-text school="WVSU University"></form-legal-text>
   </div>
 </template>
 
@@ -37,7 +39,10 @@ export default {
       },
       programs: programs,
       xverifyEmailURL: 'http://xverifyEmailURL/',
-      domain: ''
+      domain: '',
+      newLegalStyles: {
+        color: 'blue'
+      }
     }
   },
   watch: {
