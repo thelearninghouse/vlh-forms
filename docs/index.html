@@ -7,17 +7,25 @@
   <meta name="description" content="Forms Plugin for Learning House's new form system">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
 </head>
 <body>
   <div id="app"></div>
+  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
   <script>
     window.$docsify = {
       name: 'vlh-forms',
       repo: 'davidroyer/vlh-forms',
       loadSidebar: true,
-      autoHeader: true
+      autoHeader: true,
+      plugins: [
+        window.DocsifyCopyCodePlugin.init()
+      ]
     }
   </script>
+  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
+  <script src="//unpkg.com/vue"></script>
+  <!-- <script src="//unpkg.com/vue/dist/vue.min.js"></script> -->
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
