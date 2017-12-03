@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -20,9 +20,9 @@
     "testc": "poi build ./src/FormProgramSelect.vue --format cjs --filename.js MyComponent.js --no-sourceMap --no-html",
     "cjs": "poi build ./src/index.js --format cjs --filename.js FormsCJS.js --no-sourceMap --no-html",
     "umd": "poi build ./src/index.js --format umd --module-name Forms --filename.js FormsUMD.js --no-sourceMap --no-html",
-    "lib": "poi build ./src/index.js --format umd --module-name Forms --format cjs --filename.js FormsLib.js --no-sourceMap --no-html",
-    "lib:bili": "bili --input ./src/index.js --format cjs --format umd --module-name VlhForms --compress umd",
-    "prod": "bili --input ./src/index.js --format cjs --format umd --module-name VlhForms --compress umd",
+    "lib": "poi build ./src/index.js --format cjs --format umd --module-name Forms --filename.css testcss.css --no-sourceMap --no-html",
+    "lib:bili": "bili --input ./src/index.js --filename.css testcss.css --format cjs --format umd --module-name VlhForms --compress umd",
+    "prod": "bili --input ./src/index.js --format cjs --format umd --module-name VlhForms --compress umd --external axios --external 'vee-validate'",
     "deploy": "npm publish",
     "docs": "docsify serve ./docs"
   },

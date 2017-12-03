@@ -1,4 +1,6 @@
 <script>
+  import {Validator} from 'vee-validate'
+  import axios from 'axios'
   import FormField from './FormField.vue'
   export default {
     name: 'form-zip',
@@ -10,7 +12,40 @@
         fieldLabel: 'Zip',
         fieldValidation: 'required|validZip',
         fieldType: 'number',
-        fieldRole: 'input'
+        fieldRole: 'textbox'
+      }
+    },
+    mounted () {
+      this.registerZipValidator()
+    },
+    methods: {
+      registerZipValidator () {
+        var vm = this
+        var isZip = (value) => {
+          return axios.get(`https://api.zippopotam.us/us/${value}`)
+            .then(function(response) {
+              let info = response.data.places[0]
+              vm.submit.city = info['place name']
+              vm.submit.state = info['state']
+              return {
+                valid: true
+              }
+            })
+            .catch(function(error) {
+              return {
+                valid: false,
+                data: {
+                  message: `${value} is not valid zip.`
+                }
+              }
+            });
+        }
+        Validator.extend('validZip', {
+          validate: isZip,
+          getMessage: (field, params, data) => {
+            return data.message;
+          }
+        });
       }
     }
   }

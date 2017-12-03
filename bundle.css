@@ -100,6 +100,41 @@ label {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -107,8 +142,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-
 
 
 
@@ -150,10 +183,6 @@ input[type="number"] {
 .single-grp_pages .legal-text[data-v-c1652504] {
  width: 100%;
 }
-
-
-
-
 
 
 
@@ -264,40 +293,40 @@ input[type="number"] {
 
 
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active[data-v-0a994de0], .fade-leave-active[data-v-0a994de0] {
 transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter[data-v-0a994de0], .fade-leave-to[data-v-0a994de0] /* .fade-leave-active below version 2.1.8 */ {
 opacity: 0
 }
 
-.slide-enter-active, .slide-leave-active {
+.slide-enter-active[data-v-0a994de0], .slide-leave-active[data-v-0a994de0] {
 transition: all .3s ease;
 transform: translateX(40px);
 }
-.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.slide-enter[data-v-0a994de0], .slide-leave-to[data-v-0a994de0] /* .fade-leave-active below version 2.1.8 */ {
 /*opacity: 0*/
 transform: translateX(40px);
 }
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
-.slide-fade-enter-active {
+.slide-fade-enter-active[data-v-0a994de0] {
   transition: all .5s ease;
 /*position: absolute;*/
 }
-.slide-fade-leave-active {
+.slide-fade-leave-active[data-v-0a994de0] {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   position: absolute;
   transform: translateX(-40px);
 }
-.slide-fade-enter {
+.slide-fade-enter[data-v-0a994de0] {
   transform: translateX(300px);
   /*transition: all .9s ease;*/
   opacity: 0;
 }
 
-.slide-fade-leave-to
+.slide-fade-leave-to[data-v-0a994de0]
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(-300px);
   transition: all .9s ease;

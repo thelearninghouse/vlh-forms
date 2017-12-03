@@ -9,8 +9,15 @@
        :data-vv-as="fieldLabel"
        class="form-control"
        :role="fieldRole"
+       :aria-describedby="fieldId + '_help'"
        :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }">
-     <span v-show="errors.has(fieldName)" class="help hasError">{{ errors.first(fieldName) }}</span>
+     <span
+       :id="fieldId + '_help'"
+       v-show="errors.has(fieldName)"
+       class="help hasError"
+     >
+    {{ errors.first(fieldName) }}
+    </span>
    </div>
 </template>
 

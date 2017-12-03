@@ -1,8 +1,6 @@
 <template lang="html">
   <div class="elp_submit">
-    <!-- <button type="submit" class="submit" v-text="text"></button> -->
     <input type="submit" :value="text" />
-    <!-- <p class="legal-text">By requesting information, I am providing express consent for Concordia University St. Paul to contact me by email, phone and text, including my wireless phone number, regarding degree and enrollment information using automated technology. Standard message and data rates may apply to text messages. There is no obligation to enroll.</p> -->
   </div>
 </template>
 

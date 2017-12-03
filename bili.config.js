@@ -2,6 +2,7 @@ var path = require('path')
 // var resolve = require('resolve')
 // console.log(path.resolve(__dirname, './src'));
 module.exports = {
+  extractCSS: false,
   plugins: [
     require('rollup-plugin-vue')()
   ],

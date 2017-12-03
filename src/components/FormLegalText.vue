@@ -1,5 +1,5 @@
 <template>
-    <p class="legal-text" :style="legalStyles">By requesting information, I am providing express consent for {{school}} to contact me by email, phone and text, including my wireless phone number, regarding degree and enrollment information using automated technology. Standard message and data rates may apply to text messages. There is no obligation to enroll.</p>
+    <p class="legal-text" :style="legalStyles">By requesting information, I am providing express consent for {{schoolName}} to contact me by email, phone and text, including my wireless phone number, regarding degree and enrollment information using automated technology. Standard message and data rates may apply to text messages. There is no obligation to enroll.</p>
   </div>
 </template>
 
@@ -9,8 +9,7 @@ export default {
   props: {
     school: {
       type: String,
-      default: 'Fake University',
-      required: true
+      default: 'UPDATE ME IN WORDPRESS VIA FORM SETTINGS PAGE'
     },
     textColor: {
       type: String,
@@ -28,16 +27,13 @@ export default {
       type: Boolean,
       default: false
     }
-    // legalTextStyles: {
-    //   type: [String, Object],
-    //   default: function () {
-    //     return {
-    //       color: '#222',
-    //       fontSize: '12px',
-    //     }
-    //   }
-    // },
   },
+  computed: {
+    schoolName () {
+      return this.$parent.schoolDisplayName || this.school
+    }
+  },
+
   data () {
     return {
       defaultStyles: {
