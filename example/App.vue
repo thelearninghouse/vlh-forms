@@ -79,37 +79,37 @@ export default {
     this.domain = 'online.test.edu'
     console.log(this.$FindProgramsByLevel(this.programs, 'Master'));
     console.log(this.$myAddedProperty)
-    // this.registerZipValidator()
+    this.registerZipValidator()
   },
   methods: {
-    // registerZipValidator () {
-    //   var vm = this
-    //   var isZip = (value) => {
-    //     return axios.get(`https://api.zippopotam.us/us/${value}`)
-    //       .then(function(response) {
-    //         let info = response.data.places[0]
-    //         vm.submit.city = info['place name']
-    //         vm.submit.state = info['state']
-    //         return {
-    //           valid: true
-    //         }
-    //       })
-    //       .catch(function(error) {
-    //         return {
-    //           valid: false,
-    //           data: {
-    //             message: `${value} is not valid zip.`
-    //           }
-    //         }
-    //       });
-    //   }
-    //   this.$validator.extend('validZip', {
-    //     validate: isZip,
-    //     getMessage: (field, params, data) => {
-    //       return data.message;
-    //     }
-    //   });
-    // },
+    registerZipValidator () {
+      var vm = this
+      var isZip = (value) => {
+        return axios.get(`https://api.zippopotam.us/us/${value}`)
+          .then(function(response) {
+            let info = response.data.places[0]
+            vm.submit.city = info['place name']
+            vm.submit.state = info['state']
+            return {
+              valid: true
+            }
+          })
+          .catch(function(error) {
+            return {
+              valid: false,
+              data: {
+                message: `${value} is not valid zip.`
+              }
+            }
+          });
+      }
+      this.$validator.extend('validZip', {
+        validate: isZip,
+        getMessage: (field, params, data) => {
+          return data.message;
+        }
+      });
+    },
     getDegreeLevelObject: function () {
       var vm = this
       if (vm.selectedDegreeLevel) {
