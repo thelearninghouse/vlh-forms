@@ -183,35 +183,10 @@ export default {
 </script>
 
 <style>
-.fade-enter-active, .fade-leave-active {
-transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-opacity: 0
+#app {
+  max-width: 500px;
 }
 
-.slide-enter-active, .slide-leave-active {
-transition: all .3s ease;
-transform: translateX(40px);
-}
-.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-/*opacity: 0*/
-}
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    position: absolute;
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
 
 .list-complete-leave-active {
   position: absolute;
