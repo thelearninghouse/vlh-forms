@@ -11,6 +11,7 @@ import FormEmail from './components/FormEmail.vue'
 import FormPhone from './components/FormPhone.vue'
 import FormSubmitButton from './components/FormSubmitButton.vue'
 import FormLegalText from './components/FormLegalText.vue'
+import FormStep from './components/FormStep.vue'
 
 function registerHelpers(vm) {
   if (!vm.$parent && vm.$options) {
@@ -43,6 +44,7 @@ const VlhForms = {
     Vue.component('form-zip', FormZip);
     Vue.component('form-submit-button', FormSubmitButton);
     Vue.component(FormLegalText.name, FormLegalText);
+    Vue.component(FormStep.name, FormStep);
 
   	Vue.mixin({
       // beforeCreate() {
