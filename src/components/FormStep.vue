@@ -1,6 +1,7 @@
 <template lang="html">
   <transition name="slide-fade" appear mode="out-in">
-    <div class="step" v-if="currentStep == stepID" v-bind="$attrs">
+    <!-- <div class="step" v-if="currentStep == stepID" v-bind="$attrs"> -->
+    <div class="step" v-if="currentStep == stepID">
       <h4 v-text="'Step' + stepID"></h4>
       <h5>Current Step:  {{currentStep}}</h5>
       <slot>
