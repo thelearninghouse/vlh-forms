@@ -25,12 +25,12 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$parent);
+    console.log('TESTING SCOPED!');
   }
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .fade-enter-active, .fade-leave-active {
 transition: opacity .5s;
 }
