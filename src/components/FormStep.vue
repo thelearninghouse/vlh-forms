@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 .fade-enter-active, .fade-leave-active {
 transition: opacity .5s;
 }
