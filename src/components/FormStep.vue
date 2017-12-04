@@ -25,7 +25,7 @@ export default {
     }
   },
   mounted () {
-    console.log('TESTING SCOPED!');
+    console.log('Hoping css works!');
   }
 }
 </script>
