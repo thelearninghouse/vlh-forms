@@ -54,6 +54,7 @@ export default {
       fieldValidation: this.validation ? this.validation : 'required'
     }
   },
+  inject: ['$validator'],
   mounted () {
     this.selectedOption = this.value
   },

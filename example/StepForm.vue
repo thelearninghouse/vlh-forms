@@ -3,7 +3,7 @@
     <h1>Forms Test</h1>
     <h2>Using FormStep Component</h2>
 
-    <div class="stepsWrapper">
+    <!-- <div class="stepsWrapper">
       <form-step :stepID="1">
         <form-first-name v-model="submit.firstName"></form-first-name>
 
@@ -12,7 +12,6 @@
       </form-step>
 
       <form-step :stepID="2">
-        <!-- <form-first-name v-model="submit.firstName"></form-first-name> -->
         <form-last-name v-model="submit.lastName"></form-last-name>
       </form-step>
 
@@ -27,45 +26,12 @@
       <button v-if="currentStep < formStepsQuantity" @click="currentStep = currentStep + 1">Next</button>
       <form-submit-button v-if="currentStep == formStepsQuantity" text="Get Info"></form-submit-button>
       <form-legal-text school="WVSU University"></form-legal-text>
-    </div>
+    </div> -->
     <hr>
-    <div class="stepFormWrapper">
-<!--
-
-      <transition name="slide-fade" mode="out-in">
-        <div class="step step1" v-if="currentStep == 1">
-          <h4>Step 1</h4>
-          <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
-          <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-        </div>
-      </transition>
-
-      <transition name="slide-fade" mode="out-in">
-        <div class="step step2" v-if="currentStep == 2">
-          <h4>Step 2</h4>
-          <form-first-name v-model="submit.firstName"></form-first-name>
-          <form-last-name v-model="submit.lastName"></form-last-name>
-        </div>
-      </transition>
-      <transition name="slide-fade" mode="out-in">
-        <div class="step step3" v-if="currentStep == 3">
-          <h4>Step 3</h4>
-          <form-zip v-model="submit.zip"></form-zip>
-          <form-phone v-model="submit.phone" validation="required"></form-phone>
-          <form-email v-model="submit.email" validation="required|email"></form-email>
-        </div>
-      </transition> -->
-
-      <!-- <div class="stepFormControls">
-        <button v-if="currentStep > 1" @click="currentStep = currentStep - 1">Previous</button>
-        <button v-if="currentStep < formStepsQuantity" @click="currentStep = currentStep + 1">Next</button>
-        <form-submit-button v-if="currentStep == formStepsQuantity" text="Get Info"></form-submit-button>
-      </div> -->
-    </div>
 
 
 
-    <!-- <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+    <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
     <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
 
     <form-first-name v-model="submit.firstName"></form-first-name>
@@ -75,7 +41,9 @@
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
-    <form-legal-text school="WVSU University"></form-legal-text> -->
+    <form-legal-text school="WVSU University"></form-legal-text>
+
+
   </div>
 </template>
 

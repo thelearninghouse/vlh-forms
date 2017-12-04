@@ -19,6 +19,7 @@ export default {
       required: true
     }
   },
+  inject: ['$validator'],
   computed: {
     currentStep () {
       return this.$parent.currentStep

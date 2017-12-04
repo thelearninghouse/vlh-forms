@@ -21,11 +21,32 @@
       </form-step>
     </div>
     <div class="stepFormControls">
-      <button v-if="currentStep > 1" @click="currentStep = currentStep - 1">Previous</button>
-      <button v-if="currentStep < formStepsQuantity" @click="currentStep = currentStep + 1">Next</button>
-      <form-submit-button v-if="currentStep == formStepsQuantity" text="Get Info"></form-submit-button>
+      <button v-if="currentStep > 1"
+        @click.prevent="handlePreviousStep"
+        @key.enter.prevent="validateStep">
+        Previous
+      </button>
+      <button v-if="currentStep < totalSteps"
+        @click.prevent="validateStep"
+        @key.enter.prevent="validateStep">
+        Next
+      </button>
+      <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
       <form-legal-text></form-legal-text>
     </div>
+
+    <!-- <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+    <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+
+    <form-first-name v-model="submit.firstName"></form-first-name>
+    <form-last-name v-model="submit.lastName"></form-last-name>
+    <form-zip v-model="submit.zip"></form-zip>
+    <form-phone v-model="submit.phone" validation="required"></form-phone>
+    <form-email v-model="submit.email" validation="required|email"></form-email>
+    <form-submit-button text="Get Info"></form-submit-button>
+    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
+    <form-legal-text school="WVSU University"></form-legal-text> -->
+
   </div>
 </template>
 
@@ -40,7 +61,7 @@ export default {
       schoolDisplayName: 'School University Name Here',
       levels: levels,
       currentStep: 1,
-      formStepsQuantity: 3,
+      totalSteps: 3,
       submit: {
         program: '',
         firstName: '',
@@ -82,6 +103,24 @@ export default {
     this.registerZipValidator()
   },
   methods: {
+    validateStep() {
+      this.$validator.validateAll().then((result) => {
+        console.log('Missing fields or errors!');
+        if (result) {
+          this.currentStep = this.currentStep + 1
+          console.log('Next Step!');
+        }
+      });
+    },
+
+    handleNextStep () {
+      this.validateStep()
+    },
+
+    handlePreviousStep () {
+      this.currentStep = this.currentStep - 1
+    },
+
     registerZipValidator () {
       var vm = this
       var isZip = (value) => {
