@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -16,6 +16,7 @@
     "dev": "poi",
     "example": "poi",
     "build:example": "poi build",
+    "new": "poi build  ./src/index.js --component VlhForms --no-clear",
     "testb": "poi build ./src/index.js --dist outputtest --no-html --no-sourcemap",
     "testc": "poi build ./src/FormProgramSelect.vue --format cjs --filename.js MyComponent.js --no-sourceMap --no-html",
     "cjs": "poi build ./src/index.js --format cjs --filename.js FormsCJS.js --no-sourceMap --no-html",
@@ -32,11 +33,6 @@
     "email": "droyer01@gmail.com"
   },
   "license": "MIT",
-  "poi": {
-    "entry": "example/index.js",
-    "dist": "example/dist",
-    "homepage": "./"
-  },
   "bili": {
     "format": [
       "cjs",
@@ -45,7 +41,7 @@
   },
   "devDependencies": {
     "bili": "^0.18.2",
-    "poi": "^9.3.10",
+    "poi": "^9.5.5",
     "rollup-plugin-vue": "^2.5.2",
     "test-vue-app": "^1.0.0",
     "vue-test-utils": "^1.0.0-beta.2"
