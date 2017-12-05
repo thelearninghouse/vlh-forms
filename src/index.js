@@ -1,6 +1,8 @@
 // Use this to install in this environment as well
 // import Vue from 'vue'
+// Create a global Event Bus
 
+// import
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
 import FormName from './components/FormName.vue'
@@ -45,6 +47,19 @@ const VlhForms = {
     Vue.component('form-submit-button', FormSubmitButton);
     Vue.component(FormLegalText.name, FormLegalText);
     Vue.component(FormStep.name, FormStep);
+
+
+    var EventBus = new Vue()
+
+    // Add to Vue properties by exposing a getter for $bus
+    Object.defineProperties(Vue.prototype, {
+        $bus: {
+            get: function () {
+                return EventBus;
+            }
+        }
+    })
+
 
   	Vue.mixin({
       // beforeCreate() {

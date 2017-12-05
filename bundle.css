@@ -1,54 +1,344 @@
-<template lang="html">
-  <transition name="slide-fade" appear mode="out-in">
-    <div class="step" v-if="currentStep == stepID">
-      <h4 v-text="'Step' + stepID"></h4>
-      <h5>Current Step:  {{currentStep}}</h5>
-      <slot>
-        <p>This should not show up unless theres nothing inside component in parent</p>
-      </slot>
-    </div>
-  </transition>
-</template>
 
-<script>
 
-export default {
-  name: 'form-step',
-  props: {
-    stepID: {
-      type: Number,
-      required: true
-    }
-  },
-  inject: ['$validator'],
-  computed: {
-    currentStep () {
-      return this.$parent.currentStep
-    }
-  },
-  created () {
-  },
-  mounted () {
 
-    this.$bus.$on('step-updated', stepCount => {
-      this.$nextTick(function () {
-        let vm = this
 
-        if (stepCount == vm.stepID) {
-          let fieldsObject = this.fields
-          let firstField = Object.keys(this.fields)[0];
-          let value = fieldsObject[firstField]
 
-          this.$bus.$emit('set-focus', firstField)
-        }
 
-      })
-    });
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+  display: block;
 }
-</script>
 
-<style lang="css">
+
+
+/*# sourceMappingURL=FormField.vue.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.submit[data-v-c1652504] {
+  background: steelblue;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  font-size: 15px;
+}
+.requestinfo .legal-text[data-v-c1652504] {
+ font-size: 10px;
+ line-height: 1.2;
+ clear: both;
+ width: 90%;
+ margin: 1em auto !important;
+ color: white;
+ text-align: left;
+ font-weight: normal;
+}
+.single-grp_pages .legal-text[data-v-c1652504] {
+ width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.submit[data-v-6616ea22] {
+  background: steelblue;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  font-size: 15px;
+}
+.requestinfo .legal-text[data-v-6616ea22] {
+ font-size: 10px;
+ line-height: 1.2;
+ clear: both;
+ width: 90%;
+ margin: 1em auto !important;
+ color: white;
+ text-align: left;
+ font-weight: normal;
+}
+.single-grp_pages .legal-text[data-v-6616ea22] {
+ width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .step {
   position: relative;
 }
@@ -124,4 +414,4 @@ transform: translateX(40px);
   opacity: 0
 }
 
-</style>
+

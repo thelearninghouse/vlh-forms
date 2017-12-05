@@ -1,10 +1,13 @@
 <template lang="html">
   <div class="form-item">
+    <!-- <button @click="setFocus">Set Focus</button>
+           :ref="fieldName" -->
      <label v-text="fieldLabel" :for="fieldName"></label>
      <input
        v-validate="fieldValidation"
        @input="$emit('input', $event.target.value)"
        :id="fieldId" :name="fieldName" :type="fieldType"
+       :ref="fieldName"
        :placeholder="fieldPlaceholder" :value="value"
        :data-vv-as="fieldLabel"
        class="form-control"
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'form-field',
   props: {
@@ -49,6 +53,17 @@ export default {
       fieldRole: this.role ? this.role : false,
       fieldValidation: this.validation ? this.validation : 'required'
     }
+  },
+  mounted () {
+    // console.log(this.$refs);
+    let vm = this
+    let Refs = vm.$refs
+
+    this.$bus.$on('set-focus', fieldName => {
+      if (vm.$refs[fieldName]) {
+        this.$refs[fieldName].focus()
+      }
+    });
   },
   inject: ['$validator']
 }

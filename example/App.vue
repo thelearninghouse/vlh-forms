@@ -2,9 +2,12 @@
   <div id="app">
     <h1>Forms Test</h1>
     <h2>Using FormStep Component</h2>
-
+    <button @click="setFocus">Set Focus Test</button>
+    <button @click="setFocusFN">Set Focus - First Name</button>
+    <button @click="setFocusLN">Set Focus - Last Name</button>
     <div class="stepsWrapper">
       <form-step :stepID="1">
+        <form-zip v-model="submit.zip"></form-zip>
         <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
         <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
       </form-step>
@@ -15,7 +18,7 @@
       </form-step>
 
       <form-step :stepID="3">
-        <form-zip v-model="submit.zip"></form-zip>
+
         <form-phone v-model="submit.phone" validation="required"></form-phone>
         <form-email v-model="submit.email" validation="required|email"></form-email>
       </form-step>
@@ -27,8 +30,8 @@
         Previous
       </button>
       <button v-if="currentStep < totalSteps"
-        @click.prevent="validateStep"
-        @key.enter.prevent="validateStep">
+        @click.prevent="handleNextStep"
+        @key.enter.prevent="handleNextStep">
         Next
       </button>
       <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
@@ -53,6 +56,8 @@
 <script>
 import axios from 'axios'
 import {programs, levels} from './programsSample.js'
+
+const x = 'my param'
 
 export default {
   data () {
@@ -84,6 +89,9 @@ export default {
   watch: {
     selectedDegreeLevel: function (val) {
       this.submit.program = ''
+    },
+    currentStep (stepValue) {
+      this.$bus.$emit('step-updated', stepValue)
     }
   },
 
@@ -101,8 +109,22 @@ export default {
     console.log(this.$FindProgramsByLevel(this.programs, 'Master'));
     console.log(this.$myAddedProperty)
     this.registerZipValidator()
+    // this.$bus.$emit('test', 'Global bus working!')
   },
   methods: {
+    setFocus () {
+      this.$bus.$emit('set-focus', 'firstName')
+    },
+
+    setFocusFN() {
+      this.$bus.$emit('set-focus', 'firstName')
+      // this.$refs.formFirstName.$refs.firstName.focus()
+    },
+
+    setFocusLN() {
+      this.$bus.$emit('set-focus', 'lastName')
+      // this.$refs.formLastName.$refs.lastName.focus()
+    },
     validateStep() {
       this.$validator.validateAll().then((result) => {
         console.log('Missing fields or errors!');
@@ -115,6 +137,8 @@ export default {
 
     handleNextStep () {
       this.validateStep()
+      // this.currentStep = this.currentStep + 1
+
     },
 
     handlePreviousStep () {
@@ -179,7 +203,9 @@ export default {
   max-width: 500px;
 }
 
-
+.stepsWrapper {
+  position: relative;
+}
 .list-complete-leave-active {
   position: absolute;
 }
