@@ -24,26 +24,47 @@ export default {
   computed: {
     currentStep () {
       return this.$parent.currentStep
+    },
+    firstField () {
+      let currentStep = this.currentStep
+      // console.log('firstName ran: ', );
+      let fieldsObject = this.fields
+
+      // console.log(fieldsObject);
+      let firstField = Object.keys(this.fields)[0];
+      console.log('firstField: ', firstField);
+      let value = fieldsObject[firstField]
+      return firstField
+
+
     }
   },
   created () {
   },
-  mounted () {
+  watch: {
+    currentStep (val) {
+      console.log('FROM WATCH: ', val);
+    }
+  },
+  updated: function () {
     this.$nextTick(function () {
       let vm = this
       this.$bus.$on('step-updated', stepCount => {
-        if (stepCount == vm.stepID) {
-          let fieldsObject = this.fields
-          let firstField = Object.keys(this.fields)[0];
-          let value = fieldsObject[firstField]
 
-          this.$bus.$emit('set-focus', firstField)
-        }
+        // if (stepCount == vm.stepID) {
+        //   console.log(stepCount, vm.stepID);
+        //   let fieldsObject = vm.fields
+        //   console.log(fieldsObject);
+        //   let firstField = Object.keys(this.fields)[0];
+        //   let value = fieldsObject[firstField]
+        //
+        //   this.$bus.$emit('set-focus', firstField)
+        // }
       });
-
-
     })
-
+  },
+  mounted () {
+    this.$bus.$emit('set-focus', this.firstField)
   }
 }
 </script>
@@ -52,59 +73,4 @@ export default {
 .step {
   position: relative;
 }
-.fade-enter-active, .fade-leave-active {
-transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-opacity: 0;
-}
-
-.slide-enter-active, .slide-leave-active {
-transition: all .3s ease;
-transform: translateX(40px);
-}
-.slide-enter, .slide-leave-to  {
-transform: translateX(40px);
-}
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-/*.slide-fade-enter-active {
-  transition: all .5s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  position: absolute;
-  transform: translateX(-40px);
-}
-.slide-fade-enter {
-  transform: translateX(300px);
-
-  opacity: 0;
-}
-
-.slide-fade-leave-to
-{
-  transform: translateX(-300px);
-  transition: all .9s ease;
-  opacity: 0;
-}*/
-
-.slither-enter-active, .slither-leave-active {
-  transition: transform .5s;
-}
-.slither-enter {
-  transform: translateX(100px);
-  position: absolute;
-}
-.slither-leave-to {
-  transform: translateX(-100%);
-}
-
-.slither-enter-to, .slither-leave {
-  transform: translateX(0);
-}
-
-
-
 </style>

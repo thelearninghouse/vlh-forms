@@ -35,3 +35,7 @@
   transform: translateX(-50px);
   opacity: 0;
 }
+
+select.form-field:focus {
+  outline: 5px solid rgba(59, 153, 252, 0.65);
+}

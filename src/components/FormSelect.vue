@@ -8,6 +8,7 @@
       v-validate="fieldValidation"
       :id="fieldId"
       :name="fieldName"
+      :ref="fieldName"
       :data-vv-as="fieldLabel"
       :placeholder="fieldPlaceholder"
     >
@@ -55,10 +56,21 @@ export default {
     }
   },
   inject: ['$validator'],
+
   mounted () {
     this.selectedOption = this.value
+    this.focusListener()
   },
+
   methods: {
+    focusListener () {
+      this.$bus.$on('set-focus', fieldName => {
+        if (this.$refs[fieldName]) {
+          this.$refs[fieldName].focus()
+        }
+      });
+    },
+
     onChange(value) {
     	// if (value === '') {
       // 	value = null;
@@ -66,6 +78,7 @@ export default {
     	this.$emit('input', value);
     }
   },
+
   watch: {
     value: function (newValue) {
       this.selectedOption = newValue
