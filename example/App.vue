@@ -6,22 +6,25 @@
     <button @click="setFocusFN">Set Focus - First Name</button>
     <button @click="setFocusLN">Set Focus - Last Name</button>
     <div class="stepsWrapper">
-      <form-step :stepID="1">
-        <form-zip v-model="submit.zip"></form-zip>
-        <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
-        <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-      </form-step>
 
-      <form-step :stepID="2">
-        <form-first-name v-model="submit.firstName"></form-first-name>
-        <form-last-name v-model="submit.lastName"></form-last-name>
-      </form-step>
+      <transition name="slide-fade" mode="out-in" appear>
+        <form-step :stepID="1" v-if="currentStep == 1" key="1">
 
-      <form-step :stepID="3">
+          <form-zip v-model="submit.zip"></form-zip>
+          <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+          <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+        </form-step>
 
-        <form-phone v-model="submit.phone" validation="required"></form-phone>
-        <form-email v-model="submit.email" validation="required|email"></form-email>
-      </form-step>
+        <form-step :stepID="2" v-if="currentStep == 2" key="2">
+          <form-first-name v-model="submit.firstName"></form-first-name>
+          <form-last-name v-model="submit.lastName"></form-last-name>
+        </form-step>
+
+        <form-step :stepID="3" v-if="currentStep == 3" key="3">
+          <form-phone v-model="submit.phone" validation="required"></form-phone>
+          <form-email v-model="submit.email" validation="required|email"></form-email>
+        </form-step>
+      </transition>
     </div>
     <div class="stepFormControls">
       <button v-if="currentStep > 1"
@@ -136,8 +139,8 @@ export default {
     },
 
     handleNextStep () {
-      this.validateStep()
-      // this.currentStep = this.currentStep + 1
+      // this.validateStep()
+      this.currentStep = this.currentStep + 1
 
     },
 
@@ -199,6 +202,8 @@ export default {
 </script>
 
 <style>
+/*import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'
+import 'https://unpkg.com/purecss@1.0.0/build/pure-min.css'*/
 #app {
   max-width: 500px;
 }
@@ -223,4 +228,5 @@ export default {
     display: flex;
     flex-flow: row wrap;
 }
+
 </style>

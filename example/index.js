@@ -4,8 +4,8 @@ import VeeValidate from 'vee-validate';
 import Forms from '../src/index.js'
 // import Forms from '../dist/vlh-forms.js'
 // import '../dist/vlh-forms.css'
-// Register a global custom directive called v-focus
-
+// import './pure.min.css'
+// import url('https://unpkg.com/purecss@1.0.0/build/pure-min.css')
 Vue.use(VeeValidate)
 Vue.use(Forms)
 new Vue({

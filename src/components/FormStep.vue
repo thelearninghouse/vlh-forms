@@ -1,13 +1,13 @@
 <template lang="html">
-  <transition name="slide-fade" appear mode="out-in">
-    <div class="step" v-if="currentStep == stepID">
-      <h4 v-text="'Step' + stepID"></h4>
-      <h5>Current Step:  {{currentStep}}</h5>
-      <slot>
-        <p>This should not show up unless theres nothing inside component in parent</p>
-      </slot>
-    </div>
-  </transition>
+  <!-- <transition name="slide-fade" appear mode="out-in"> -->
+  <div class="step">
+    <h4 v-text="'Step' + stepID"></h4>
+    <h5>Current Step:  {{currentStep}}</h5>
+    <slot>
+      <p>This should not show up unless theres nothing inside component in parent</p>
+    </slot>
+  </div>
+  <!-- </transition> -->
 </template>
 
 <script>
@@ -29,11 +29,9 @@ export default {
   created () {
   },
   mounted () {
-
-    this.$bus.$on('step-updated', stepCount => {
-      this.$nextTick(function () {
-        let vm = this
-
+    this.$nextTick(function () {
+      let vm = this
+      this.$bus.$on('step-updated', stepCount => {
         if (stepCount == vm.stepID) {
           let fieldsObject = this.fields
           let firstField = Object.keys(this.fields)[0];
@@ -41,9 +39,11 @@ export default {
 
           this.$bus.$emit('set-focus', firstField)
         }
+      });
 
-      })
-    });
+
+    })
+
   }
 }
 </script>
@@ -63,16 +63,14 @@ opacity: 0;
 transition: all .3s ease;
 transform: translateX(40px);
 }
-.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-/*opacity: 0*/
+.slide-enter, .slide-leave-to  {
 transform: translateX(40px);
 }
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
-.slide-fade-enter-active {
+/*.slide-fade-enter-active {
   transition: all .5s ease;
-/*position: absolute;*/
 }
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
@@ -81,16 +79,16 @@ transform: translateX(40px);
 }
 .slide-fade-enter {
   transform: translateX(300px);
-  /*transition: all .9s ease;*/
+
   opacity: 0;
 }
 
 .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
+{
   transform: translateX(-300px);
   transition: all .9s ease;
   opacity: 0;
-}
+}*/
 
 .slither-enter-active, .slither-leave-active {
   transition: transform .5s;
@@ -107,21 +105,6 @@ transform: translateX(40px);
   transform: translateX(0);
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s;
 
-}
-.fade-enter-active {
-    position: absolute;
-}
-
-.fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-
-{
-  opacity: 0
-}
 
 </style>
