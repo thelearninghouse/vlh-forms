@@ -14,13 +14,16 @@
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
        :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }">
-     <span
-       :id="fieldId + '_help'"
-       v-show="errors.has(fieldName)"
-       class="help hasError"
-     >
-    {{ errors.first(fieldName) }}
-    </span>
+     <transition name="vertical-slide">
+       <span
+         :id="fieldName + '_help'"
+         v-show="errors.has(fieldName)"
+         class="help hasError"
+         :style="helpStyles"
+       >
+       {{ errors.first(fieldName) }}
+       </span>
+     </transition>
    </div>
 </template>
 
@@ -51,7 +54,11 @@ export default {
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
-      fieldValidation: this.validation ? this.validation : 'required'
+      fieldValidation: this.validation ? this.validation : 'required',
+      helpStyles: {
+        color: '#ca0000'
+      },
+
     }
   },
   mounted () {
@@ -70,4 +77,5 @@ export default {
 </script>
 
 <style lang="css">
+
 </style>

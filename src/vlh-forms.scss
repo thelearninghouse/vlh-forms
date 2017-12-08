@@ -39,3 +39,36 @@
 select.form-field:focus {
   outline: 5px solid rgba(59, 153, 252, 0.65);
 }
+
+
+/* Vertical slide tranistion for form errors */
+.vertical-slide-enter-active, .vertical-slide-leave-active {
+  transition: all .3s ease-in-out;
+}
+
+.vertical-slide-enter
+{
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.vertical-slide-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.form-item {
+  margin: 1em .5em 2em;
+  position: relative;
+  
+  label, input, select {
+    position: relative;
+    z-index: 2
+  }
+
+  .help {
+    position: absolute;
+    top: 105%;
+    display: block;
+  }
+}

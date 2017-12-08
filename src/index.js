@@ -14,7 +14,7 @@ import FormPhone from './components/FormPhone.vue'
 import FormSubmitButton from './components/FormSubmitButton.vue'
 import FormLegalText from './components/FormLegalText.vue'
 import FormStep from './components/FormStep.vue'
-import './vlh-forms.css'
+import './vlh-forms.scss'
 
 function registerHelpers(vm) {
   if (!vm.$parent && vm.$options) {

@@ -9,13 +9,23 @@
       :id="fieldId"
       :name="fieldName"
       :ref="fieldName"
+      :aria-describedby="fieldId + '_help'"
       :data-vv-as="fieldLabel"
       :placeholder="fieldPlaceholder"
     >
       <option key="initial" value="">Select</option>
       <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
     </select>
-    <span v-show="errors.has(fieldName)" class="help hasError">{{ errors.first(fieldName) }}</span>
+    <transition name="vertical-slide">
+      <span
+        :id="fieldName + '_help'"
+        v-show="errors.has(fieldName)"
+        class="help hasError"
+        :style="helpStyles"
+      >
+         {{ errors.first(fieldName) }}
+         </span>
+    </transition>
   </div>
 </template>
 
@@ -52,7 +62,10 @@ export default {
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
-      fieldValidation: this.validation ? this.validation : 'required'
+      fieldValidation: this.validation ? this.validation : 'required',
+      helpStyles: {
+        color: '#ca0000'
+      }
     }
   },
   inject: ['$validator'],

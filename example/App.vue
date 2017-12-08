@@ -11,7 +11,7 @@
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
             <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
             <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-                        <form-zip v-model="submit.zip"></form-zip>
+            <form-zip v-model="submit.zip"></form-zip>
           </form-step>
 
           <form-step :stepID="2" v-if="currentStep == 2" key="2">
@@ -49,8 +49,7 @@
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button text="Get Info"></form-submit-button>
-    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
-    <form-legal-text school="WVSU University"></form-legal-text> -->
+    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text> -->
 
   </div>
 </template>
@@ -137,10 +136,10 @@ export default {
     },
 
     handleNextStep () {
-      // this.validateStep()
+      this.validateStep()
       // let wasCurrentStep = this.currentStep
       // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.currentStep + 1})
-      this.currentStep = this.currentStep + 1
+      // this.currentStep = this.currentStep + 1
 
     },
 
@@ -213,9 +212,6 @@ import 'https://unpkg.com/purecss@1.0.0/build/pure-min.css'*/
 }
 .list-complete-leave-active {
   position: absolute;
-}
-.form-item {
-  margin: 1em .5em;
 }
 
 /* NOTE: StepForm */

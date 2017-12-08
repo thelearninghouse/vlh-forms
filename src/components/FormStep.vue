@@ -21,48 +21,16 @@ export default {
     }
   },
   inject: ['$validator'],
+  
   computed: {
     currentStep () {
       return this.$parent.currentStep
     },
     firstField () {
-      let currentStep = this.currentStep
-      // console.log('firstName ran: ', );
-      let fieldsObject = this.fields
-
-      // console.log(fieldsObject);
-      let firstField = Object.keys(this.fields)[0];
-      console.log('firstField: ', firstField);
-      let value = fieldsObject[firstField]
-      return firstField
-
-
+      return Object.keys(this.fields)[0];
     }
   },
-  created () {
-  },
-  watch: {
-    currentStep (val) {
-      console.log('FROM WATCH: ', val);
-    }
-  },
-  updated: function () {
-    this.$nextTick(function () {
-      let vm = this
-      this.$bus.$on('step-updated', stepCount => {
 
-        // if (stepCount == vm.stepID) {
-        //   console.log(stepCount, vm.stepID);
-        //   let fieldsObject = vm.fields
-        //   console.log(fieldsObject);
-        //   let firstField = Object.keys(this.fields)[0];
-        //   let value = fieldsObject[firstField]
-        //
-        //   this.$bus.$emit('set-focus', firstField)
-        // }
-      });
-    })
-  },
   mounted () {
     this.$bus.$emit('set-focus', this.firstField)
   }
