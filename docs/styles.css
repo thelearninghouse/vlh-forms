@@ -1,0 +1,8 @@
+body[data-page='examples.md'] article#main {
+    max-width: 1400px;
+}
+
+/* Fix for getting syntax highlighting in markdown files for examples with Vuep */
+.vuep + p {
+    display: none;
+}

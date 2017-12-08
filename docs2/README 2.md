@@ -2,7 +2,6 @@
 
 Plugin for Learning House Forms using Vue.js
 
-
 ## Install
 
 ```bash
