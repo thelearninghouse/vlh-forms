@@ -16,16 +16,17 @@
       <option key="initial" value="">Select</option>
       <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
     </select>
-    <transition name="vertical-slide">
-      <span
+
+    <transition name="fade">
+      <div
         :id="fieldName + '_help'"
-        v-show="errors.has(fieldName)"
+        v-if="showHelp"
         class="help hasError"
         :style="helpStyles"
-      >
-         {{ errors.first(fieldName) }}
-         </span>
+        v-text="errors.first(fieldName)">
+      </div>
     </transition>
+
   </div>
 </template>
 
@@ -55,6 +56,7 @@ export default {
   },
   data () {
     return {
+      hasFocus: false,
       selectedOption: '',
       fieldName: this.name ? this.name : 'formField',
       fieldType: this.type,
@@ -75,6 +77,13 @@ export default {
     this.focusListener()
   },
 
+  computed: {
+    showHelp () {
+      return this.errors.has(this.fieldName)
+      // return this.hasFocus || this.errors.has(this.fieldName)
+    }
+  },
+
   methods: {
     focusListener () {
       this.$bus.$on('set-focus', fieldName => {
@@ -85,9 +94,6 @@ export default {
     },
 
     onChange(value) {
-    	// if (value === '') {
-      // 	value = null;
-      // }
     	this.$emit('input', value);
     }
   },

@@ -11,7 +11,7 @@
         fieldId: 'zip',
         fieldName: 'zip',
         fieldLabel: 'Zip',
-        fieldValidation: 'required|validZip',
+        fieldValidation: this.validation ? this.validation : 'required|validZip',
         fieldType: 'number',
         fieldRole: 'textbox'
       }

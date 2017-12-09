@@ -1,29 +1,32 @@
 <template lang="html">
   <div class="form-item">
-    <!-- <button @click="setFocus">Set Focus</button>
-           :ref="fieldName" -->
+
      <label v-text="fieldLabel" :for="fieldName"></label>
      <input
        v-validate="fieldValidation"
-       @input="$emit('input', $event.target.value)"
+       @input="onInput($event.target.value)"
+       @blur="onBlur($event)"
+       @focus="setFocus"
        :id="fieldId" :name="fieldName" :type="fieldType"
        :ref="fieldName"
        :placeholder="fieldPlaceholder" :value="value"
        :data-vv-as="fieldLabel"
+       :data-vv-delay="500"
        class="form-control"
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
        :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }">
-     <transition name="vertical-slide">
-       <span
+
+     <transition name="fade">
+       <div
          :id="fieldName + '_help'"
-         v-show="errors.has(fieldName)"
+         v-if="showHelp"
          class="help hasError"
          :style="helpStyles"
-       >
-       {{ errors.first(fieldName) }}
-       </span>
+         v-text="errors.first(fieldName)">
+       </div>
      </transition>
+
    </div>
 </template>
 
@@ -48,6 +51,8 @@ export default {
   },
   data () {
     return {
+      isVisible: false,
+      hasFocus: false,
       fieldName: this.name ? this.name : 'formField',
       fieldType: this.type,
       fieldId: this.id ? this.id : this.fieldName,
@@ -61,6 +66,12 @@ export default {
 
     }
   },
+  computed: {
+    showHelp () {
+      return this.errors.has(this.fieldName)
+      // return this.hasFocus || this.errors.has(this.fieldName)
+    }
+  },
   mounted () {
     // console.log(this.$refs);
     let vm = this
@@ -71,6 +82,27 @@ export default {
         this.$refs[fieldName].focus()
       }
     });
+  },
+  methods: {
+    setFocus () {
+      console.log(`${this.fieldLabel} Field Has Focus`)
+      this.hasFocus = true
+    },
+
+    onInput (val) {
+      console.log('typing');
+      this.$emit('input', val)
+    },
+
+    onBlur (blurEvent) {
+      console.log('Lost focus');
+      this.hasFocus = false
+      // this.$emit('input', val)
+    },
+
+    toggleTransition () {
+
+    }
   },
   inject: ['$validator']
 }

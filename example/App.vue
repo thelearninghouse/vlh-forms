@@ -11,7 +11,7 @@
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
             <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
             <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-            <form-zip v-model="submit.zip"></form-zip>
+            <form-zip v-model="submit.zip" validation="required"></form-zip>
           </form-step>
 
           <form-step :stepID="2" v-if="currentStep == 2" key="2">
@@ -42,11 +42,11 @@
 
     <!-- <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
     <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-
+    <form-field name="testHelp" label="Test Help"></form-field>
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>
-    <form-phone v-model="submit.phone" validation="required"></form-phone>
+    <form-phone v-model="submit.phone" validation="required|phone"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text> -->
@@ -200,9 +200,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 /*import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'
 import 'https://unpkg.com/purecss@1.0.0/build/pure-min.css'*/
+@import './example.scss';
 #app {
   max-width: 500px;
 }
