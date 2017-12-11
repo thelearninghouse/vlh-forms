@@ -4,19 +4,22 @@
      <label v-text="fieldLabel" :for="fieldName"></label>
      <input
        v-validate="fieldValidation"
-       @input="onInput($event.target.value)"
-       @blur="onBlur($event)"
-       @focus="setFocus"
        :name="fieldName"
-       :id="fieldId" :type="fieldType"
+       :id="fieldId"
        :ref="fieldName"
-       :placeholder="fieldPlaceholder" :value="value"
+       :type="type"
+       :placeholder="fieldPlaceholder"
+       :value="value"
        :data-vv-as="fieldLabel"
        :data-vv-delay="400"
        class="form-control"
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
-       :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }">
+       :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }"
+       @input="onInput($event.target.value)"
+       @blur="onBlur($event)"
+       @focus="setFocus"
+      >
 
      <transition name="fade">
        <div
@@ -60,13 +63,11 @@ export default {
 
   data () {
     return {
-      isVisible: false,
       hasFocus: false,
       fieldName: this.name ? this.name : 'formField',
-      fieldType: this.type,
-      fieldPlaceholder: this.placeholder ? this.placeholder : '',
+      fieldPlaceholder: this.placeholder ? this.placeholder : false,
       fieldLabel: this.label ? this.label : '',
-      fieldRole: this.role ? this.role : '',
+      fieldRole: this.role ? this.role : false,
       helpStyles: {
         color: '#ca0000'
       }
@@ -93,7 +94,7 @@ export default {
       if (vm.$refs[fieldName]) {
         this.$refs[fieldName].focus()
       }
-    });
+    })
   },
 
   methods: {
@@ -110,17 +111,8 @@ export default {
     onBlur (blurEvent) {
       console.log('Lost focus');
       this.hasFocus = false
-      // this.$emit('input', val)
-    },
-
-    toggleTransition () {
-
     }
   },
   inject: ['$validator']
 }
 </script>
-
-<style lang="css">
-
-</style>

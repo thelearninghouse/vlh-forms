@@ -1,8 +1,4 @@
-// Use this to install in this environment as well
-// import Vue from 'vue'
-// Create a global Event Bus
 
-// import
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
 import FormFirstName from './components/FormFirstName.vue'
@@ -48,9 +44,8 @@ const VlhForms = {
     Vue.component(FormStep.name, FormStep);
 
 
-    var EventBus = new Vue()
-
     // Add to Vue properties by exposing a getter for $bus
+    var EventBus = new Vue()
     Object.defineProperties(Vue.prototype, {
         $bus: {
             get: function () {
@@ -61,19 +56,6 @@ const VlhForms = {
 
 
   	Vue.mixin({
-      // beforeCreate() {
-      //   let vm = this
-      //
-      //
-      //
-      //   }
-      //   // registerHelpers(this)
-      // },
-      created() {
-        // console.log('created Mixin: ', this.$options.computed);
-        // console.log(this);
-      },
-
       computed: {
         emailValidationURLTest: function () {
           if (this.xverifyEmailURL && this.domain) {
@@ -88,7 +70,7 @@ const VlhForms = {
             return this.getDegreeLevelObject()
           }
 
-        },
+        }
       }
     });
 

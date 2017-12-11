@@ -2,17 +2,16 @@
   <div id="app">
     <h1>Forms Test</h1>
 
-    <div class="stepsWrapper">
-      <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
+    <!-- <div class="stepsWrapper">
         <transition name="slide-fade" mode="out-in" appear>
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
-            <!-- <form-field optional name="testname" label="Test Required" v-model="submit.firstName"></form-field> 
-            <form-phone v-model="submit.phone" optional></form-phone> -->
+            <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field>
+            <form-field optional name="testname" label="Test Required" v-model="submit.firstName"></form-field>
             <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
 
             <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
 
-            <form-zip v-model="submit.zip"></form-zip>
+            <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
           </form-step>
 
           <form-step :stepID="2" v-if="currentStep == 2" key="2">
@@ -39,18 +38,18 @@
       </button>
       <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
       <form-legal-text></form-legal-text>
-    </div>
+    </div> -->
 
-    <!-- <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+    <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
     <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    <form-field name="testHelp" label="Test Help"></form-field>
+    <form-field v-model="testModel" optional name="testHelp" label="Test Help"></form-field>
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>
     <form-phone v-model="submit.phone" validation="required|phone"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button text="Get Info"></form-submit-button>
-    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text> -->
+    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
 
   </div>
 </template>
@@ -67,6 +66,7 @@ export default {
       selectedDegreeLevel: '',
       schoolDisplayName: 'School University Name Here',
       levels: levels,
+      testModel: 'some text',
       currentStep: 1,
       totalSteps: 3,
       submit: {

@@ -4,6 +4,9 @@
     name: 'form-email',
     extends: FormField,
     props: {
+      type: {
+        default: 'email'
+      },
       validation: {
         default: 'required|email|validEmail'
       }
@@ -11,7 +14,6 @@
     data () {
       return {
         fieldName: 'email',
-        fieldType: 'email',
         fieldLabel: 'Email'
       }
     }

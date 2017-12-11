@@ -13,7 +13,7 @@
       :data-vv-as="fieldLabel"
       :placeholder="fieldPlaceholder"
     >
-      <option key="initial" value="" v-text="defaultText">Select</option>
+      <option key="initial" value="" v-text="defaultText"></option>
       <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
     </select>
 
@@ -48,12 +48,7 @@ export default {
       type: String,
       default: 'Select'
     },
-    role: String,
     placeholder: String,
-    type: {
-      type: String,
-      default: 'text'
-    },
     validation: {
       type: [String, Object],
     },
@@ -67,9 +62,7 @@ export default {
       hasFocus: false,
       selectedOption: '',
       fieldName: this.name ? this.name : 'formSelect',
-      fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
-      fieldRole: this.role ? this.role : false,
       helpStyles: {
         color: '#ca0000'
       }

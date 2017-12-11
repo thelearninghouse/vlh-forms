@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -15,21 +15,14 @@
     "dev": "poi example/index.js",
     "build": "poi build  ./src/index.js --component VlhForms --no-clear",
     "build:example": "poi build example/index.js",
-    "prod": "bili --input ./src/index.js --format cjs --format umd --module-name VlhForms --compress umd",
-    "deploy": "npm publish",
-    "docs": "docsify serve ./docs"
+    "docs": "docsify serve ./docs",
+    "deploy": "npm publish"
   },
   "author": {
     "name": "David Royer",
     "email": "droyer01@gmail.com"
   },
   "license": "MIT",
-  "bili": {
-    "format": [
-      "cjs",
-      "umd"
-    ]
-  },
   "devDependencies": {
     "bili": "^0.18.2",
     "node-sass": "^4.7.2",
