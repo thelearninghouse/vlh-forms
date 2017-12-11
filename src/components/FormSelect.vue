@@ -1,6 +1,6 @@
 <template>
   <div class="form-item">
-    <label v-text="fieldLabel" :for="fieldName"></label>
+    <label :for="fieldName">{{fieldLabel}}</label>
     <select
       v-model="selectedOption"
       @change="onChange($event.target.value)"
@@ -66,7 +66,7 @@ export default {
       // fieldId: this.id ? this.id : this.fieldName,
       fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
-      fieldLabel: this.label ? this.label : '',
+      // fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
       fieldValidation: this.validation ? this.validation : 'required',
       helpStyles: {
@@ -82,9 +82,9 @@ export default {
   },
 
   computed: {
-    // fieldName () {
-    //   return this.name ? this.name : 'formSelect'
-    // },
+    fieldLabel () {
+      return this.label ? this.label : ''
+    },
 
     fieldId () {
       return this.id ? this.id : this.fieldName

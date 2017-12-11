@@ -11,7 +11,9 @@
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
             <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
             <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
-            <form-select name="program" label="Programs Available" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+
+            <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+
             <form-zip v-model="submit.zip"></form-zip>
           </form-step>
 
