@@ -12,7 +12,7 @@
        :ref="fieldName"
        :placeholder="fieldPlaceholder" :value="value"
        :data-vv-as="fieldLabel"
-       :data-vv-delay="500"
+       :data-vv-delay="400"
        class="form-control"
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
@@ -50,7 +50,11 @@ export default {
       default: 'text'
     },
     validation: {
-      type: [String, Object],
+      type: [String, Object]
+    },
+    optional: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -62,30 +66,23 @@ export default {
       fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
-      fieldRole: this.role ? this.role : false,
-      fieldValidation: this.validation ? this.validation : 'required',
+      fieldValidation: this.optional ? { rules: { required: false} } : this.validation || 'required',
+      fieldRole: this.role ? this.role : '',
       helpStyles: {
         color: '#ca0000'
-      },
-
+      }
     }
   },
   computed: {
-    // fieldName () {
-    //   return this.name ? this.name : 'formField'
-    // },
-    //
     fieldId () {
       return this.id ? this.id : this.fieldName
     },
 
     showHelp () {
       return this.errors.has(this.fieldName)
-      // return this.hasFocus || this.errors.has(this.fieldName)
     }
   },
   mounted () {
-    // console.log(this.$refs);
     let vm = this
     let Refs = vm.$refs
 
@@ -95,6 +92,7 @@ export default {
       }
     });
   },
+  
   methods: {
     setFocus () {
       console.log(`${this.fieldLabel} Field Has Focus`)

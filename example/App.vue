@@ -1,20 +1,18 @@
 <template>
   <div id="app">
     <h1>Forms Test</h1>
-    <h2>Using FormStep Component</h2>
-    <button @click="setFocus">Set Focus Test</button>
-    <button @click="setFocusFN">Set Focus - First Name</button>
-    <button @click="setFocusLN">Set Focus - Last Name</button>
+
     <div class="stepsWrapper">
       <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
         <transition name="slide-fade" mode="out-in" appear>
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
-            <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
+            <form-field optional name="testname" label="Test Required" v-model="submit.firstName"></form-field>
+            <!-- <form-phone v-model="submit.phone" optional></form-phone>
             <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
 
             <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
 
-            <form-zip v-model="submit.zip"></form-zip>
+            <form-zip v-model="submit.zip"></form-zip> -->
           </form-step>
 
           <form-step :stepID="2" v-if="currentStep == 2" key="2">

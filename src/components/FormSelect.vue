@@ -63,10 +63,8 @@ export default {
       hasFocus: false,
       selectedOption: '',
       fieldName: this.name ? this.name : 'formSelect',
-      // fieldId: this.id ? this.id : this.fieldName,
       fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
-      // fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
       fieldValidation: this.validation ? this.validation : 'required',
       helpStyles: {

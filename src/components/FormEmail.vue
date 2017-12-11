@@ -5,7 +5,6 @@
     extends: FormField,
     data () {
       return {
-        fieldId: 'email',
         fieldName: 'email',
         fieldType: 'email',
         fieldLabel: 'Email',

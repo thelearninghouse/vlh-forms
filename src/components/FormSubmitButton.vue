@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="elp_submit">
     <input type="submit" :value="text" />
   </div>

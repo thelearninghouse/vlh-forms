@@ -5,7 +5,6 @@
     extends: FormField,
     data() {
       return {
-        // fieldId: 'lastName',
         fieldName: 'lastName',
         fieldLabel: 'Last Name'
       }

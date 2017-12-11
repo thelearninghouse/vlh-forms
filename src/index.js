@@ -5,7 +5,6 @@
 // import
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
-import FormName from './components/FormName.vue'
 import FormFirstName from './components/FormFirstName.vue'
 import FormLastName from './components/FormLastName.vue'
 import FormZip from './components/FormZip.vue'
@@ -39,7 +38,6 @@ const VlhForms = {
   install(Vue, options) {
     Vue.component('form-select', FormSelect);
     Vue.component('form-field', FormField);
-    Vue.component('form-name', FormName);
     Vue.component('form-first-name', FormFirstName);
     Vue.component('form-last-name', FormLastName);
     Vue.component('form-phone', FormPhone);
@@ -119,7 +117,6 @@ export default VlhForms;
 export {
   FormSelect,
   FormField,
-  FormName,
   FormFirstName,
   FormLastName,
   FormZip,
