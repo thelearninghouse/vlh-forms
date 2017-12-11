@@ -13,7 +13,7 @@
       :data-vv-as="fieldLabel"
       :placeholder="fieldPlaceholder"
     >
-      <option key="initial" value="">Select</option>
+      <option key="initial" value="" v-text="defaultText">Select</option>
       <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
     </select>
 
@@ -43,6 +43,10 @@ export default {
     options: {
       type: Array,
       required: true
+    },
+    defaultText: {
+      type: String,
+      default: 'Select'
     },
     role: String,
     placeholder: String,
