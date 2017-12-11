@@ -56,6 +56,10 @@ export default {
     },
     validation: {
       type: [String, Object],
+    },
+    optional: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -66,7 +70,6 @@ export default {
       fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldRole: this.role ? this.role : false,
-      fieldValidation: this.validation ? this.validation : 'required',
       helpStyles: {
         color: '#ca0000'
       }
@@ -80,17 +83,20 @@ export default {
   },
 
   computed: {
-    fieldLabel () {
-      return this.label ? this.label : ''
-    },
-
     fieldId () {
       return this.id ? this.id : this.fieldName
     },
 
+    fieldValidation () {
+      return this.optional ? { rules: { required: false} } : this.validation || 'required'
+    },
+
+    fieldLabel () {
+      return this.label ? this.label : ''
+    },
+
     showHelp () {
       return this.errors.has(this.fieldName)
-      // return this.hasFocus || this.errors.has(this.fieldName)
     }
   },
 

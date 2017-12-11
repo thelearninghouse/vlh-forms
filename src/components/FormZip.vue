@@ -3,12 +3,15 @@
   export default {
     name: 'form-zip',
     extends: FormField,
+    props: {
+      validation: {
+        default: 'required|validZip'
+      }
+    },
     data () {
       return {
-        // fieldId: 'zip',
         fieldName: 'zip',
         fieldLabel: 'Zip',
-        fieldValidation: this.validation ? this.validation : 'required|validZip',
         fieldType: 'number',
         fieldRole: 'textbox'
       }

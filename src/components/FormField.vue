@@ -66,7 +66,6 @@ export default {
       fieldType: this.type,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
-      fieldValidation: this.optional ? { rules: { required: false} } : this.validation || 'required',
       fieldRole: this.role ? this.role : '',
       helpStyles: {
         color: '#ca0000'
@@ -76,6 +75,10 @@ export default {
   computed: {
     fieldId () {
       return this.id ? this.id : this.fieldName
+    },
+
+    fieldValidation () {
+      return this.optional ? { rules: { required: false} } : this.validation || 'required'
     },
 
     showHelp () {
@@ -92,7 +95,7 @@ export default {
       }
     });
   },
-  
+
   methods: {
     setFocus () {
       console.log(`${this.fieldLabel} Field Has Focus`)

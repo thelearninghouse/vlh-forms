@@ -3,12 +3,16 @@
   export default {
     name: 'form-email',
     extends: FormField,
+    props: {
+      validation: {
+        default: 'required|email|validEmail'
+      }
+    },
     data () {
       return {
         fieldName: 'email',
         fieldType: 'email',
-        fieldLabel: 'Email',
-        fieldValidation: this.validation ? this.validation : 'required|email|validEmail'
+        fieldLabel: 'Email'
       }
     }
   }
