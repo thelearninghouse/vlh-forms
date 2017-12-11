@@ -7,7 +7,8 @@
        @input="onInput($event.target.value)"
        @blur="onBlur($event)"
        @focus="setFocus"
-       :id="fieldId" :name="fieldName" :type="fieldType"
+       :name="fieldName"
+       :id="fieldId" :type="fieldType"
        :ref="fieldName"
        :placeholder="fieldPlaceholder" :value="value"
        :data-vv-as="fieldLabel"
@@ -19,7 +20,7 @@
 
      <transition name="fade">
        <div
-         :id="fieldName + '_help'"
+         :id="fieldId + '_help'"
          v-if="showHelp"
          class="help hasError"
          :style="helpStyles"
@@ -38,7 +39,10 @@ export default {
     label: String,
     id: String,
     name: String,
-    value: String,
+    value: {
+      type: String,
+      required: true
+    },
     role: String,
     placeholder: String,
     type: {
@@ -49,13 +53,13 @@ export default {
       type: [String, Object],
     }
   },
+
   data () {
     return {
       isVisible: false,
       hasFocus: false,
       fieldName: this.name ? this.name : 'formField',
       fieldType: this.type,
-      fieldId: this.id ? this.id : this.fieldName,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
@@ -67,6 +71,14 @@ export default {
     }
   },
   computed: {
+    // fieldName () {
+    //   return this.name ? this.name : 'formField'
+    // },
+    //
+    fieldId () {
+      return this.id ? this.id : this.fieldName
+    },
+
     showHelp () {
       return this.errors.has(this.fieldName)
       // return this.hasFocus || this.errors.has(this.fieldName)

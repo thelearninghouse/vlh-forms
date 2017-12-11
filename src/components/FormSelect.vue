@@ -58,9 +58,9 @@ export default {
     return {
       hasFocus: false,
       selectedOption: '',
-      fieldName: this.name ? this.name : 'formField',
+      fieldName: this.name ? this.name : 'formSelect',
+      // fieldId: this.id ? this.id : this.fieldName,
       fieldType: this.type,
-      fieldId: this.id ? this.id : this.fieldName,
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
@@ -78,6 +78,14 @@ export default {
   },
 
   computed: {
+    // fieldName () {
+    //   return this.name ? this.name : 'formSelect'
+    // },
+
+    fieldId () {
+      return this.id ? this.id : this.fieldName
+    },
+
     showHelp () {
       return this.errors.has(this.fieldName)
       // return this.hasFocus || this.errors.has(this.fieldName)

@@ -6,9 +6,10 @@
     <button @click="setFocusFN">Set Focus - First Name</button>
     <button @click="setFocusLN">Set Focus - Last Name</button>
     <div class="stepsWrapper">
-
+      <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
         <transition name="slide-fade" mode="out-in" appear>
           <form-step :stepID="1" v-if="currentStep == 1" key="1">
+            <!-- <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field> -->
             <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
             <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
             <form-zip v-model="submit.zip"></form-zip>

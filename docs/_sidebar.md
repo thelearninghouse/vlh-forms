@@ -2,6 +2,7 @@
 
 - [Home](/)
 - [Overview](overview.md)
+- [Components](components.md)
 - [Examples](examples.md)
 - [Guide](guide.md)
 - [Our Wordpress Plugin](tlh-forms-plugin.md)

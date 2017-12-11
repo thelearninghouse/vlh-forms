@@ -5,7 +5,7 @@
     extends: FormField,
     data () {
       return {
-        fieldId: 'zip',
+        // fieldId: 'zip',
         fieldName: 'zip',
         fieldLabel: 'Zip',
         fieldValidation: this.validation ? this.validation : 'required|validZip',

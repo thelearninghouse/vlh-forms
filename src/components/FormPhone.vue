@@ -5,7 +5,7 @@
     extends: FormField,
     data() {
       return {
-        fieldId: 'phone',
+        // fieldId: 'phone',
         fieldName: 'phone',
         fieldType: 'tel',
         fieldLabel: 'Phone Number',
