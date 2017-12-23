@@ -1,4 +1,4 @@
 module.exports = {
   // Always disable extracting css
-  // extractCSS: false
+  extractCSS: false
 }
