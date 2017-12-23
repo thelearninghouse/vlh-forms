@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -30,11 +30,13 @@
     "rollup-plugin-vue": "^2.5.2",
     "sass-loader": "^6.0.6",
     "test-vue-app": "^1.0.0",
+    "vue-router": "^3.0.1",
     "vue-test-utils": "^1.0.0-beta.2"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "vee-validate": "^2.0.0-rc.21",
-    "vue": "^2.5.3"
+    "vue": "^2.5.3",
+    "vue-smooth-height": "^1.1.11"
   }
 }

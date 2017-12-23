@@ -11,35 +11,16 @@ import FormLegalText from './components/FormLegalText.vue'
 import FormStep from './components/FormStep.vue'
 import './vlh-forms.scss'
 
-function registerHelpers(vm) {
-  if (!vm.$parent && vm.$options) {
-    console.log('NO PARENT');
-    console.log(vm.$options);
-  } else {
-
-  }
-  if (typeof vm.$parent === 'undefined' ) {
-    console.log('IN MAIN INSTANCE!');
-
-    vm.$options.computed['emailValidationURL'] = function() {
-      if (vm.xverifyEmailURL && vm.domain) {
-        return vm.xverifyEmailURL + vm.domain
-      }
-      return 'couldnt find them'
-    }
-  }
-}
-
 const VlhForms = {
   install(Vue, options) {
-    Vue.component('form-select', FormSelect);
-    Vue.component('form-field', FormField);
-    Vue.component('form-first-name', FormFirstName);
-    Vue.component('form-last-name', FormLastName);
-    Vue.component('form-phone', FormPhone);
-    Vue.component('form-email', FormEmail);
-    Vue.component('form-zip', FormZip);
-    Vue.component('form-submit-button', FormSubmitButton);
+    Vue.component(FormSelect.name, FormSelect);
+    Vue.component(FormField.name, FormField);
+    Vue.component(FormFirstName.name, FormFirstName);
+    Vue.component(FormLastName.name, FormLastName);
+    Vue.component(FormPhone.name, FormPhone);
+    Vue.component(FormEmail.name, FormEmail);
+    Vue.component(FormZip.name, FormZip);
+    Vue.component(FormSubmitButton.name, FormSubmitButton);
     Vue.component(FormLegalText.name, FormLegalText);
     Vue.component(FormStep.name, FormStep);
 
@@ -75,15 +56,17 @@ const VlhForms = {
     });
 
     Vue.prototype.$myAddedProperty = 'Example Property'
+
     Vue.prototype.$FindProgramsByLevel = function (programs, selectedLevel) {
       var vm = this
-      if (vm.programs) {
+      if (vm.selectedDegreeLevelObject) {
         return vm.programs.filter(function (program) {
-          return program.degree_level === selectedLevel
+          return vm.selectedDegreeLevelObject.degreeLevels.includes(program.degree_level)
         })
       } else {
         return null
       }
+
     }
   }
 };
@@ -104,5 +87,8 @@ export {
   FormZip,
   FormEmail,
   FormPhone,
-  FormSubmitButton
+  FormSubmitButton,
+  FormLegalText,
+  FormStep
+
 }

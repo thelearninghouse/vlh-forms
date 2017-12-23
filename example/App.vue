@@ -1,153 +1,39 @@
 <template>
   <div id="app">
-    <h1>Forms Test</h1>
 
-    <!-- <div class="stepsWrapper">
-        <transition name="slide-fade" mode="out-in" appear>
-          <form-step :stepID="1" v-if="currentStep == 1" key="1">
-            <form-field name="testname" label="Test Required" v-model="submit.firstName"></form-field>
-            <form-field optional name="testname" label="Test Required" v-model="submit.firstName"></form-field>
-            <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
-
-            <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-
-            <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
-          </form-step>
-
-          <form-step :stepID="2" v-if="currentStep == 2" key="2">
-            <form-first-name v-model="submit.firstName"></form-first-name>
-            <form-last-name v-model="submit.lastName"></form-last-name>
-          </form-step>
-
-          <form-step :stepID="3" v-if="currentStep == 3" key="3">
-            <form-phone v-model="submit.phone" validation="required"></form-phone>
-            <form-email v-model="submit.email" validation="required|email"></form-email>
-          </form-step>
-        </transition>
+    <div class="header">
+      <h1>Examples</h1>
+      <nav class="navigation">
+        <router-link to="/">Home</router-link>
+        <router-link to="/basic">Basic</router-link>
+        <router-link to="/degree-filtering">Degree Filtering</router-link>
+        <router-link to="/optional-field">Optional Form Field</router-link>
+        <router-link to="/step-form">Step Form</router-link>
+        <router-link to="/custom-select-text">Custom Select Text</router-link>
+      </nav>
     </div>
-    <div class="stepFormControls">
-      <button v-if="currentStep > 1"
-        @click.prevent="handlePreviousStep"
-        @key.enter="handlePreviousStep">
-        Previous
-      </button>
-      <button v-if="currentStep < totalSteps"
-        @click.stop.prevent="handleNextStep"
-        @key.enter="handleNextStep">
-        Next
-      </button>
-      <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
-      <form-legal-text></form-legal-text>
-    </div> -->
+    <transition name="slide-fade" mode="out-in" appear>
+      <h2 key="chooseExample" v-if="$route.path == '/'" class="currentExample">Choose an Example</h2>
+      <h2 v-else :key="$route.fullPath" class="currentExample">
+        {{$route.name}} Example
+      </h2>
+    </transition>
 
-    <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
-    <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    <form-field v-model="testModel" optional name="testHelp" label="Test Help"></form-field>
-    <form-first-name v-model="submit.firstName"></form-first-name>
-    <form-last-name v-model="submit.lastName"></form-last-name>
-    <form-zip v-model="submit.zip"></form-zip>
-    <form-phone v-model="submit.phone" validation="required|phone"></form-phone>
-    <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-submit-button text="Get Info"></form-submit-button>
-    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
+    <transition mode="out-in" name="slide-fade" appear>
+      <router-view :key="$route.fullPath"></router-view>
+    </transition>
 
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import {programs, levels} from './programsSample.js'
-
-const x = 'my param'
 
 export default {
-  data () {
-    return {
-      selectedDegreeLevel: '',
-      schoolDisplayName: 'School University Name Here',
-      levels: levels,
-      testModel: 'some text',
-      currentStep: 1,
-      totalSteps: 3,
-      submit: {
-        program: '',
-        firstName: '',
-        lastName: '',
-        field1: '',
-        field2: '',
-        zip: '',
-        email: '',
-        phone: '',
-        city: null
-      },
-      programs: programs,
-      xverifyEmailURL: 'http://xverifyEmailURL/',
-      domain: '',
-      newLegalStyles: {
-        color: 'blue'
-      }
-    }
-  },
-  watch: {
-    selectedDegreeLevel: function (val) {
-      this.submit.program = ''
-    },
-    currentStep (stepValue) {
-      this.$bus.$emit('step-updated', stepValue)
-    }
-  },
-
-  computed: {
-    selectedDegreeLevelObject: function () {
-      return this.getDegreeLevelObject()
-    },
-
-    programsForSelectedDegreeLevel: function () {
-      return this.getProgramsForDegreeLevel()
-    }
-  },
   mounted () {
-    this.domain = 'online.test.edu'
-    console.log(this.$FindProgramsByLevel(this.programs, 'Master'));
-    console.log(this.$myAddedProperty)
     this.registerZipValidator()
   },
   methods: {
-    setFocus () {
-      this.$bus.$emit('set-focus', 'firstName')
-    },
-
-    setFocusFN() {
-      this.$bus.$emit('set-focus', 'firstName')
-      // this.$refs.formFirstName.$refs.firstName.focus()
-    },
-
-    setFocusLN() {
-      this.$bus.$emit('set-focus', 'lastName')
-      // this.$refs.formLastName.$refs.lastName.focus()
-    },
-    validateStep() {
-      this.$validator.validateAll().then((result) => {
-        console.log('Missing fields or errors!');
-        if (result) {
-          this.currentStep = this.currentStep + 1
-          console.log('Next Step!');
-        }
-      });
-    },
-
-    handleNextStep () {
-      this.validateStep()
-      // let wasCurrentStep = this.currentStep
-      // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.currentStep + 1})
-      // this.currentStep = this.currentStep + 1
-
-    },
-
-    handlePreviousStep () {
-      this.currentStep = this.currentStep - 1
-    },
-
     registerZipValidator () {
       var vm = this
       var isZip = (value) => {
@@ -175,39 +61,13 @@ export default {
           return data.message;
         }
       });
-    },
-    getDegreeLevelObject: function () {
-      var vm = this
-      if (vm.selectedDegreeLevel) {
-        return vm.levels.find(function(level) {
-          return level.id == vm.selectedDegreeLevel
-        })
-      } else {
-        return null
-      }
-    },
-
-    getProgramsForDegreeLevel: function () {
-      var vm = this
-      if (vm.selectedDegreeLevelObject) {
-        return vm.programs.filter(function (program) {
-          return vm.selectedDegreeLevelObject.degreeLevels.includes(program.degree_level)
-        })
-      } else {
-        return null
-      }
     }
   }
 }
 </script>
 
 <style lang="scss">
-/*import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'
-import 'https://unpkg.com/purecss@1.0.0/build/pure-min.css'*/
 @import './example.scss';
-#app {
-  max-width: 500px;
-}
 
 .stepsWrapper {
   position: relative;
@@ -225,6 +85,66 @@ import 'https://unpkg.com/purecss@1.0.0/build/pure-min.css'*/
     flex-basis: 100%;
     display: flex;
     flex-flow: row wrap;
+}
+// .form-transtiion-group {
+//   // display: flex;
+// }
+// .form-item {
+//   // transition: all .52s;
+//   transition: all .4s;
+//   // display: inline-block;
+//   margin-right: 10px;
+//   width: 100%;
+//   top: 0;
+// }
+.test-transition-enter, .test-transition-leave-to
+/* .test-transition-leave-active below version 2.1.8 */ {
+  opacity: 0;
+
+  transform: translateY(-10px);
+  // transform: translateY(-10px);
+
+}
+.test-transition-leave-active {
+  position: absolute;
+  // transition: all .2s;
+
+}
+.testTranstitionWrapper {
+  position: relative;
+}
+.test-transition-move {
+  // transition: all 1s;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 1em;
+}
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  a {
+  padding: .5em 1.25em;
+  margin: .5em;
+  border-radius: 3px;
+  transition: all .35s ease;
+  color: #202020;
+  font-weight: 500;
+
+  &.router-link-exact-active.router-link-active {
+    background: #202020;
+    color: white;
+  }
+}
+
+
 }
 
 </style>
