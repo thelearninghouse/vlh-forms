@@ -26,7 +26,6 @@
          :id="fieldId + '_help'"
          v-if="showHelp"
          class="help hasError"
-         :style="helpStyles"
          v-text="errors.first(fieldName)">
        </div>
      </transition>
@@ -99,17 +98,14 @@ export default {
 
   methods: {
     setFocus () {
-      console.log(`${this.fieldLabel} Field Has Focus`)
       this.hasFocus = true
     },
 
     onInput (val) {
-      console.log('typing');
       this.$emit('input', val)
     },
 
     onBlur (blurEvent) {
-      console.log('Lost focus');
       this.hasFocus = false
     }
   },

@@ -22,7 +22,6 @@
         :id="fieldName + '_help'"
         v-if="showHelp"
         class="help hasError"
-        :style="helpStyles"
         v-text="errors.first(fieldName)">
       </div>
     </transition>
