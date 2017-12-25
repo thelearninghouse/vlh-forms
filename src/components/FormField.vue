@@ -4,6 +4,7 @@
      <label v-text="label" :for="name"></label>
      <input
        v-validate="fieldValidation"
+       class="form-control"
        :name="name"
        :id="fieldId"
        :ref="name"
@@ -11,11 +12,14 @@
        :placeholder="fieldPlaceholder"
        :value="value"
        :data-vv-as="label"
-       :data-vv-delay="400"
-       class="form-control"
+       :data-vv-name="name"
+       :data-vv-delay="300"
+       :class="{
+         input: true,
+         hasError: errors.has(name),
+         validField: fieldValidity }"
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
-       :class="{input: true, hasError: errors.has(name), 'validField': fields[name] && fields[name] && fields[name]['dirty'] && fields[name]['valid'] && fields[name]['validated'] ? true : false }"
        @input="onInput($event.target.value)"
        @blur="onBlur($event)"
        @focus="setFocus"
@@ -41,12 +45,12 @@ export default {
 
     label: {
       type: String,
-      required: true
+      default: 'Form Field'
     },
 
     name: {
       type: String,
-      required: true,
+      default: 'formField',
     },
 
     id: String,
@@ -95,10 +99,15 @@ export default {
       return this.optional ? { rules: { required: false} } : this.validation || 'required'
     },
 
+    fieldValidity () {
+      return this.fields[this.name] == undefined ? false : this.checkFieldValidity(this.fields[this.name])
+    },
+
     showHelp () {
       return this.errors.has(this.name)
     }
   },
+
   mounted () {
     let vm = this
     let Refs = vm.$refs
@@ -111,6 +120,10 @@ export default {
   },
 
   methods: {
+    checkFieldValidity (field) {
+      return field.dirty && field.valid && field.validated  ? true : false
+    },
+
     setFocus () {
       this.hasFocus = true
     },

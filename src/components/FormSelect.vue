@@ -5,10 +5,11 @@
       v-model="selectedOption"
       @change="onChange($event.target.value)"
       class="form-select"
+      :class="{select: true, hasError: errors.has(name), 'validField': fieldValidity }"
       v-validate="fieldValidation"
       :name="name"
       :ref="name"
-      :id="fieldId"      
+      :id="fieldId"
       :aria-describedby="fieldId + '_help'"
       :data-vv-as="label"
       :placeholder="fieldPlaceholder"
@@ -88,12 +89,20 @@ export default {
       return this.optional ? { rules: { required: false} } : this.validation || 'required'
     },
 
+    fieldValidity () {
+      return this.fields[this.name] == undefined ? false : this.checkFieldValidity(this.fields[this.name])
+    },
+
     showHelp () {
       return this.errors.has(this.name)
     }
   },
 
   methods: {
+    checkFieldValidity (field) {
+      return field.dirty && field.valid && field.validated  ? true : false
+    },
+        
     focusListener () {
       this.$bus.$on('set-focus', name => {
         if (this.$refs[name]) {
