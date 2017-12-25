@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="example basic darkHelpText">
+  <div id="tlh-form" class="example basic darkHelpText">
     <form-select name="program" label="Select a Program" v-model="submit.program" :options="programs"></form-select>
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
@@ -12,5 +12,25 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    created () {
+
+    },
+    mounted() {
+      this.$nextTick(function () {
+        this.addClass()
+        // console.log(this.$el.textContent) // => 'updated'
+      })
+    },
+    methods: {
+      addClass () {
+        let Form = document.getElementById('tlh-form')
+        console.log(Form);
+        if (Form) {
+          let colorClass = this.helpTextColor || 'mystyle'
+          Form.classList.add(colorClass);
+        }
+      }
+    }
+  }
 </script>

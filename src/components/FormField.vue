@@ -1,21 +1,21 @@
 <template lang="html">
   <div class="form-item">
 
-     <label v-text="fieldLabel" :for="fieldName"></label>
+     <label v-text="label" :for="name"></label>
      <input
        v-validate="fieldValidation"
-       :name="fieldName"
+       :name="name"
        :id="fieldId"
-       :ref="fieldName"
+       :ref="name"
        :type="type"
        :placeholder="fieldPlaceholder"
        :value="value"
-       :data-vv-as="fieldLabel"
+       :data-vv-as="label"
        :data-vv-delay="400"
        class="form-control"
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
-       :class="{input: true, hasError: errors.has(fieldName), 'validField': fields[fieldName] && fields[fieldName] && fields[fieldName]['dirty'] && fields[fieldName]['valid'] && fields[fieldName]['validated'] ? true : false }"
+       :class="{input: true, hasError: errors.has(name), 'validField': fields[name] && fields[name] && fields[name]['dirty'] && fields[name]['valid'] && fields[name]['validated'] ? true : false }"
        @input="onInput($event.target.value)"
        @blur="onBlur($event)"
        @focus="setFocus"
@@ -26,7 +26,7 @@
          :id="fieldId + '_help'"
          v-if="showHelp"
          class="help hasError"
-         v-text="errors.first(fieldName)">
+         v-text="errors.first(name)">
        </div>
      </transition>
 
@@ -38,34 +38,48 @@
 export default {
   name: 'form-field',
   props: {
-    label: String,
+
+    label: {
+      type: String,
+      required: true
+    },
+
+    name: {
+      type: String,
+      required: true,
+    },
+
     id: String,
-    name: String,
+
     value: {
       type: String,
       required: true
     },
+
     role: String,
+
     placeholder: String,
+
     type: {
       type: String,
       default: 'text'
     },
+
     validation: {
       type: [String, Object]
     },
+
     optional: {
       type: Boolean,
       default: false
     }
+
   },
 
   data () {
     return {
       hasFocus: false,
-      fieldName: this.name ? this.name : 'formField',
       fieldPlaceholder: this.placeholder ? this.placeholder : false,
-      fieldLabel: this.label ? this.label : '',
       fieldRole: this.role ? this.role : false,
       helpStyles: {
         color: '#ca0000'
@@ -74,7 +88,7 @@ export default {
   },
   computed: {
     fieldId () {
-      return this.id ? this.id : this.fieldName
+      return this.id ? this.id : this.name
     },
 
     fieldValidation () {
@@ -82,16 +96,16 @@ export default {
     },
 
     showHelp () {
-      return this.errors.has(this.fieldName)
+      return this.errors.has(this.name)
     }
   },
   mounted () {
     let vm = this
     let Refs = vm.$refs
 
-    this.$bus.$on('set-focus', fieldName => {
-      if (vm.$refs[fieldName]) {
-        this.$refs[fieldName].focus()
+    this.$bus.$on('set-focus', name => {
+      if (vm.$refs[name]) {
+        this.$refs[name].focus()
       }
     })
   },

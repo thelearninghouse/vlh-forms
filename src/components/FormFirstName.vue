@@ -3,10 +3,12 @@
   export default {
     name: 'form-first-name',
     extends: FormField,
-    data () {
-      return {
-        fieldName: 'firstName',
-        fieldLabel: 'First Name'
+    props: {
+      name: {
+        default: 'firstName'
+      },
+      label: {
+        default: 'First Name'
       }
     }
   }

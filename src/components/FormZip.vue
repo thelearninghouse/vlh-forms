@@ -4,21 +4,27 @@
     name: 'form-zip',
     extends: FormField,
     props: {
+
+      name: {
+        default: 'zip'
+      },
+
+      label: {
+        default: 'Zip'
+      },
+
       role: {
         default: 'textbox'
       },
+
       type: {
         default: 'number'
       },
+
       validation: {
         default: 'required|validZip'
       }
-    },
-    data () {
-      return {
-        fieldName: 'zip',
-        fieldLabel: 'Zip'
-      }
+
     }
   }
 </script>

@@ -28,16 +28,24 @@
 
 #### Full Example
 ```html
-<form id="tlh-form" @submit.prevent="validateForm">
-  <ul>
-    <form-program-select v-model="submit.program"></form-program-select>
-    <form-first-name v-model.lazy="submit.firstName"></form-first-name>
-    <form-last-name v-model.lazy="submit.lastName"></form-last-name>
-    <form-email v-model.lazy="submit.email"></form-email>
-    <form-zip v-model.lazy="submit.zip"></form-zip>
-  </ul>
-  <button class="button is-primary" type="submit">Submit</button>
+<form id="tlh-form" @submit.prevent="handleFormSubmission" class="requestinfo">
+  <form-select
+    name="program"
+    label="Select a Program"
+    v-model="submit.program"
+    :options="onlinePrograms"
+  >
+  </form-select>
+
+  <form-first-name v-model="submit.firstName"></form-first-name>
+  <form-last-name v-model="submit.lastName"></form-last-name>
+  <form-email v-model="submit.email"></form-email>
+  <form-phone v-model="submit.phone"></form-phone>
+  <form-zip v-model="submit.zip"></form-zip>
+  <form-submit-button text="Request Information"></form-submit-button>
+  <form-legal-text padding="20px"></form-legal-text>
 </form>
+
 ```
 
 ---

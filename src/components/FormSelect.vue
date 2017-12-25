@@ -1,16 +1,16 @@
 <template>
   <div class="form-item">
-    <label :for="fieldName">{{fieldLabel}}</label>
+    <label :for="name">{{label}}</label>
     <select
       v-model="selectedOption"
       @change="onChange($event.target.value)"
       class="form-select"
       v-validate="fieldValidation"
-      :id="fieldId"
-      :name="fieldName"
-      :ref="fieldName"
+      :name="name"
+      :ref="name"
+      :id="fieldId"      
       :aria-describedby="fieldId + '_help'"
-      :data-vv-as="fieldLabel"
+      :data-vv-as="label"
       :placeholder="fieldPlaceholder"
     >
       <option key="initial" value="" v-text="defaultText"></option>
@@ -19,10 +19,10 @@
 
     <transition name="fade">
       <div
-        :id="fieldName + '_help'"
+        :id="name + '_help'"
         v-if="showHelp"
         class="help hasError"
-        v-text="errors.first(fieldName)">
+        v-text="errors.first(name)">
       </div>
     </transition>
 
@@ -35,9 +35,15 @@
 export default {
   name: 'form-select',
   props: {
-    label: String,
+    label: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true,
+    },
     id: String,
-    name: String,
     value: '',
     options: {
       type: Array,
@@ -60,7 +66,6 @@ export default {
     return {
       hasFocus: false,
       selectedOption: '',
-      fieldName: this.name ? this.name : 'formSelect',
       fieldPlaceholder: this.placeholder ? this.placeholder : '',
       helpStyles: {
         color: '#ca0000'
@@ -76,27 +81,23 @@ export default {
 
   computed: {
     fieldId () {
-      return this.id ? this.id : this.fieldName
+      return this.id ? this.id : this.name
     },
 
     fieldValidation () {
       return this.optional ? { rules: { required: false} } : this.validation || 'required'
     },
 
-    fieldLabel () {
-      return this.label ? this.label : ''
-    },
-
     showHelp () {
-      return this.errors.has(this.fieldName)
+      return this.errors.has(this.name)
     }
   },
 
   methods: {
     focusListener () {
-      this.$bus.$on('set-focus', fieldName => {
-        if (this.$refs[fieldName]) {
-          this.$refs[fieldName].focus()
+      this.$bus.$on('set-focus', name => {
+        if (this.$refs[name]) {
+          this.$refs[name].focus()
         }
       });
     },

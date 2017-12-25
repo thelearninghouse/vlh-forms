@@ -4,17 +4,17 @@
     name: 'form-phone',
     extends: FormField,
     props: {
+      name: {
+        default: 'phone'
+      },
+      label: {
+        default: 'Phone Number'
+      },
       type: {
         default: 'tel'
       },
       validation: {
         default: 'required|validPhone'
-      }
-    },
-    data() {
-      return {
-        fieldName: 'phone',
-        fieldLabel: 'Phone Number',
       }
     }
   }
