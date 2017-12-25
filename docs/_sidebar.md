@@ -7,4 +7,4 @@
 - [Guide](guide.md)
 - [Our Wordpress Plugin](tlh-forms-plugin.md)
 - [Marketing Forms Repo](marketing-forms-repo.md)
-- [My Notes](notes.md)
+- [My Notes](my-notes.md)
