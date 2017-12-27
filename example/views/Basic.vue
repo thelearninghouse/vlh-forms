@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="tlh-form" class="example basic darkHelpText">
+  <div id="tlh-form" class="example basic">
     <form-select name="program" label="Select a Program" v-model="submit.program" :options="programs"></form-select>
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>

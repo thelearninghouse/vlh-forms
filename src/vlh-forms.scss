@@ -95,6 +95,12 @@ select.form-field:focus {
     &.hasError {
       color: #ca0000;
     }
+    .lightHelpText & {
+      color: #f9f9f9;
+    }
+    .darkHelpText & {
+      color: #222;
+    }
   }
   // TEMPORARY
   label {
@@ -102,10 +108,6 @@ select.form-field:focus {
   }
 }
 
-.lightHelpText .help {
-  color: #f9f9f9;
-}
-
-.darkHelpText .help {
-  color: #222;
-}
+// .lightHelpText .help {
+//   color: #f9f9f9;
+// }
