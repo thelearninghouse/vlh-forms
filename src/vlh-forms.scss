@@ -91,6 +91,10 @@ select.form-field:focus {
     top: 105%;
     display: block;
     transition: all 0.5s ease;
+    font-size: 14px;
+    &.hasError {
+      color: #ca0000;
+    }
   }
   // TEMPORARY
   label {
