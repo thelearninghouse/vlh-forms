@@ -93,13 +93,13 @@ select.form-field:focus {
     transition: all 0.5s ease;
     font-size: 14px;
     &.hasError {
-      color: #ca0000;
+      color: #ca0000 !important;
     }
     .lightHelpText & {
-      color: #f9f9f9;
+      color: #f9f9f9 !important;
     }
     .darkHelpText & {
-      color: #222;
+      color: #222 !important;
     }
   }
   // TEMPORARY
