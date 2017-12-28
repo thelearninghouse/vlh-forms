@@ -115,6 +115,7 @@ export default {
     },
 
     handleFocusOnEnter () {
+      console.log('handleFocus ran!');
       this.focusOnEnter ? this.$refs[this.name].focus() : ''
     },
 
