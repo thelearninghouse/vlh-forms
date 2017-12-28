@@ -61,6 +61,10 @@ export default {
     optional: {
       type: Boolean,
       default: false
+    },
+    focusOnEnter: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -78,6 +82,7 @@ export default {
   mounted () {
     this.selectedOption = this.value
     this.focusListener()
+    this.handleFocusOnEnter()
   },
 
   computed: {
@@ -102,17 +107,20 @@ export default {
     checkFieldValidity (field) {
       return field.dirty && field.valid && field.validated  ? true : false
     },
-        
+
     focusListener () {
       this.$bus.$on('set-focus', name => {
-        if (this.$refs[name]) {
-          this.$refs[name].focus()
-        }
-      });
+        this.$refs[name] ? this.$refs[name].focus() : ''
+      })
     },
 
-    onChange(value) {
-    	this.$emit('input', value);
+    handleFocusOnEnter () {
+      this.focusOnEnter ? this.$refs[this.name].focus() : ''
+    },
+
+    onChange(selectedValue) {
+    	this.$emit('input', selectedValue);
+      selectedValue !== '' ? this.$emit('option-selected') : ''
     }
   },
 

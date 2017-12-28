@@ -1,8 +1,11 @@
 <template>
   <div class="example degreeFiltering">
-    <form-select name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
-    <form-select name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    <form-field v-model="testModel" optional name="testHelp" label="Test Help"></form-field>
+    <form-select @option-selected="handleFocus" name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
+
+    <transition name="slide-fade">
+      <form-select focusOnEnter name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+    </transition>
+
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>
@@ -15,6 +18,11 @@
 
 <script>
 export default {
-  name: 'degree-filtering'
+  name: 'degree-filtering',
+  methods: {
+    handleFocus () {
+      console.log('SELECTED!!!')
+    }
+  }
 }
 </script>
