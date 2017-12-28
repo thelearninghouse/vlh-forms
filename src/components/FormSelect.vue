@@ -116,7 +116,9 @@ export default {
 
     handleFocusOnEnter () {
       console.log('handleFocus ran!');
-      this.focusOnEnter ? this.$refs[this.name].focus() : ''
+      if (this.focusOnEnter && this.selectedOption != '') {
+        this.$refs[this.name].focus()
+      }
     },
 
     onChange(selectedValue) {
