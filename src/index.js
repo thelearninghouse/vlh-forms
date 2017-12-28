@@ -1,4 +1,5 @@
-
+// import axios from 'axios'
+// import Vue from 'vue'
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
 import FormFirstName from './components/FormFirstName.vue'
@@ -77,6 +78,7 @@ if (typeof window !== 'undefined' && window.Vue && window.VeeValidate) {
   window.Vue.use(VlhForms)
 }
 
+// export axios;
 export default VlhForms;
 
 export {
