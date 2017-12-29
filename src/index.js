@@ -10,6 +10,7 @@ import FormPhone from './components/FormPhone.vue'
 import FormSubmitButton from './components/FormSubmitButton.vue'
 import FormLegalText from './components/FormLegalText.vue'
 import FormStep from './components/FormStep.vue'
+import FormStepper from './components/FormStepper.vue'
 import './vlh-forms.scss'
 
 const VlhForms = {
@@ -24,6 +25,7 @@ const VlhForms = {
     Vue.component(FormSubmitButton.name, FormSubmitButton);
     Vue.component(FormLegalText.name, FormLegalText);
     Vue.component(FormStep.name, FormStep);
+    Vue.component(FormStepper.name, FormStepper);
 
 
     // Add to Vue properties by exposing a getter for $bus

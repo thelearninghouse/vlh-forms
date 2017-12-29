@@ -6,6 +6,7 @@ import Basic from '../views/Basic.vue'
 import StepForm from '../views/StepForm.vue'
 import OptionalField from '../views/OptionalField.vue'
 import CustomSelectText from '../views/CustomSelectText.vue'
+import StepFormStepper from '../views/StepFormStepper.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,11 @@ export default new VueRouter({
       path: '/step-form',
       name: 'Step Form',
       component: StepForm
+    },
+    {
+      path: '/step-form-stepper',
+      name: 'Step Form - Stepper',
+      component: StepFormStepper
     },
     {
       path: '/degree-filtering',

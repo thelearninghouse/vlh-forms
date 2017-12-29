@@ -1,7 +1,7 @@
 <template lang="html">
   <!-- <transition name="slide-fade" appear mode="out-in"> -->
   <div class="step">
-    <h4>Step ID:</h4>
+    <h4 v-text="'Step' + stepID"></h4>
     <h5>Current Step:  {{currentStep}}</h5>
     <slot>
       <p>This should not show up unless theres nothing inside component in parent</p>
@@ -21,7 +21,7 @@ export default {
     }
   },
   inject: ['$validator'],
-
+  
   computed: {
     currentStep () {
       return this.$parent.currentStep
