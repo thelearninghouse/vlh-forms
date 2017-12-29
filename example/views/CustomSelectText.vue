@@ -10,8 +10,9 @@
 
     <form-select
       name="program"
+      v-show="selectedDegreeLevel"
       :label="selectedDegreeLevel + ' Programs'"
-      defaultText="Select a Program" v-if="selectedDegreeLevel"
+      defaultText="Select a Program"
       v-model="submit.program"
       :options="programsForSelectedDegreeLevel">
     </form-select>

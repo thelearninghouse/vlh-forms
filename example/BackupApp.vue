@@ -9,7 +9,7 @@
             <!-- <form-field optional name="testname" label="Test Required" v-model="submit.firstName"></form-field>
             <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
 
-            <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+            <form-select name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program"  v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
 
             <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip> -->
           </form-step>

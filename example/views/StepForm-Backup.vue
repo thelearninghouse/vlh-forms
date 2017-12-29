@@ -7,7 +7,7 @@
              <form-select name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
 
              <transition name="slide-fade">
-               <form-select focusOnEnter name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+               <form-select v-show="selectedDegreeLevel" focusOnEnter name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program"  v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
              </transition>
 
              <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>

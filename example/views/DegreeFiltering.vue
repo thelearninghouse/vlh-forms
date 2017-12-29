@@ -3,7 +3,7 @@
     <form-select @option-selected="$bus.$emit('set-focus', 'program')" name="degreeLevel" label="Select Degree Level" v-model="selectedDegreeLevel" :options="levels"></form-select>
 
     <transition name="slide-fade">
-      <form-select focusOnEnter name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+      <form-select v-show="selectedDegreeLevel" focusOnEnter name="program" label="Select a Program"  v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
     </transition>
 
     <form-first-name

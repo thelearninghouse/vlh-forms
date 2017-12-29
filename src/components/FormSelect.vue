@@ -110,11 +110,13 @@ export default {
     focusListener () {
       this.$bus.$on('set-focus', name => {
         this.$nextTick(function() {
-          console.log('inside nextTick for programselect');
-          console.log(this.$refs[name]);
-          this.$refs[name] ? this.$refs[name].focus() : ''
+          this.setFocus(name)
         })
       })
+    },
+
+    setFocus(name) {
+      this.$refs[name] ? this.$refs[name].focus() : ''
     },
 
     handleFocusOnEnter () {
