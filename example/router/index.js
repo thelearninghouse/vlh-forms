@@ -7,6 +7,7 @@ import StepForm from '../views/StepForm.vue'
 import OptionalField from '../views/OptionalField.vue'
 import CustomSelectText from '../views/CustomSelectText.vue'
 import StepFormStepper from '../views/StepFormStepper.vue'
+import StepFormProgress from '../views/StepFormProgress.vue'
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ export default new VueRouter({
       path: '/step-form',
       name: 'Step Form',
       component: StepForm
+    },
+    {
+      path: '/step-form-progress',
+      name: 'Step Form - Progress',
+      component: StepFormProgress
     },
     {
       path: '/step-form-stepper',

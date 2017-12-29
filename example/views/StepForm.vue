@@ -4,7 +4,12 @@
          <transition name="slide-fade" mode="out-in" appear>
            <form-step :stepID="1" v-if="currentStep == 1" key="1">
 
-             <form-select @option-selected="$bus.$emit('set-focus', 'program')" name="degreeLevel" label="Degree Level Options" v-model="selectedDegreeLevel" :options="levels" defaultText="Select Degree Level"></form-select>
+             <form-select
+               @option-selected="$bus.$emit('set-focus', 'program')"
+               key="1" name="degreeLevel" label="Select Degree Level"
+               v-model="selectedDegreeLevel" :options="levels">
+             </form-select>
+
 
              <transition name="slide-fade">
                <form-select v-show="selectedDegreeLevel" focusOnEnter name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program"  v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>

@@ -9,6 +9,7 @@
         <router-link to="/degree-filtering">Degree Filtering</router-link>
         <router-link to="/optional-field">Optional Form Field</router-link>
         <router-link to="/step-form">Step Form</router-link>
+        <router-link to="/step-form-progress">Step Form - Progress</router-link>
         <router-link to="/step-form-stepper">Step Form - Stepper</router-link>
         <router-link to="/custom-select-text">Custom Select Text</router-link>
       </nav>
