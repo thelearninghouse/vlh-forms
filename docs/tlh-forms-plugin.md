@@ -96,7 +96,6 @@ Creates an individual step for a Step Form
   v-if="currentStep == 2"
   :stepID="2"
   key="2">
->
 <!-- Other form compontents here -->
 </form-step>
 ```
