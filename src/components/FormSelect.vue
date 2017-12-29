@@ -81,10 +81,9 @@ export default {
 
   mounted () {
     this.selectedOption = this.value
+    // this.handleFocusOnEnter()
     this.focusListener()
-    this.handleFocusOnEnter()
   },
-
   computed: {
     fieldId () {
       return this.id ? this.id : this.name
@@ -110,7 +109,11 @@ export default {
 
     focusListener () {
       this.$bus.$on('set-focus', name => {
-        this.$refs[name] ? this.$refs[name].focus() : ''
+        this.$nextTick(function() {
+          console.log('inside nextTick for programselect');
+          console.log(this.$refs[name]);
+          this.$refs[name] ? this.$refs[name].focus() : ''
+        })
       })
     },
 
