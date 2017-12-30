@@ -1,52 +1,20 @@
 # Marketing Forms Repo
 
-## Overview
+## Built in options for rendering options for select-menus from marketing-forms repo
 
-- JSONP for xverify email/phone validation
-- Using VeeValidate plugin
+### `onlinePrograms`
 
-#### Xverify and zip validation default the default validation. Use the validation property to override this behavior
-( _Ex: international forms_ )
+### `selectedDegreeLevelObject`
 
-```html
-<form-email validation="required|email"></form-email>
-```
+### `campusPrograms`
 
----
-#### For overriding the default validation, you use the `validation` property
-```html
-<form-field validation="required"></form-field>
-```
+### `onlinePrograms`
 
----
-#### Adding a placeholder since none are included by default.
-```html
-<form-field placeholder="Some text here"></form-field>
-```
+### `programsForSelectedDegreeLevel`
 
----
+### `programsForSelectedModality`
 
-#### Full Example
-```html
-<form id="tlh-form" @submit.prevent="handleFormSubmission" class="requestinfo">
-  <form-select
-    name="program"
-    label="Select a Program"
-    v-model="submit.program"
-    :options="onlinePrograms"
-  >
-  </form-select>
-
-  <form-first-name v-model="submit.firstName"></form-first-name>
-  <form-last-name v-model="submit.lastName"></form-last-name>
-  <form-email v-model="submit.email"></form-email>
-  <form-phone v-model="submit.phone"></form-phone>
-  <form-zip v-model="submit.zip"></form-zip>
-  <form-submit-button text="Request Information"></form-submit-button>
-  <form-legal-text padding="20px"></form-legal-text>
-</form>
-
-```
+### `onlineProgramsForSelectedDegreeLevel`
 
 ---
 

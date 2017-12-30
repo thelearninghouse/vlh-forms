@@ -1,108 +1,129 @@
-# Examples
+# Form Examples
 
-## Code Examples
-
-### Basic Example
+## Basic Example
 ```html
-<form-select
-  name="program"
-  label="Select a Program"
-  v-model="submit.program"
-  :options="onlinePrograms">
-</form-select>
+<form id="tlh-form" @submit.prevent="handleFormSubmission">
+  <form-select
+    name="program"
+    label="Select a Program"
+    v-model="submit.program"
+    :options="onlinePrograms">
+  </form-select>
 
-<form-first-name v-model="submit.firstName"></form-first-name>
-<form-last-name v-model="submit.lastName"></form-last-name>
-<form-zip v-model="submit.zip"></form-zip>
-<form-phone v-model="submit.phone"></form-phone>
-<form-email v-model="submit.email"></form-email>
-<form-submit-button></form-submit-button>
-<form-legal-text></form-legal-text>
+  <form-first-name v-model="submit.firstName"></form-first-name>
+  <form-last-name v-model="submit.lastName"></form-last-name>
+  <form-zip v-model="submit.zip"></form-zip>
+  <form-phone v-model="submit.phone"></form-phone>
+  <form-email v-model="submit.email"></form-email>
+  <form-submit-button></form-submit-button>
+  <form-legal-text></form-legal-text>
+</form>
 ```
 
 ---
 
-### Filter By Degree Level
+## Filter By Degree Level
 
 ```html
-<form-select
-  name="degreeLevel"
-  label="Select Degree Level"
-  v-model="selectedDegreeLevel"
-  :options="levels">
-</form-select>
+<form id="tlh-form" @submit.prevent="handleFormSubmission">
+  <form-select
+    name="degreeLevel"
+    label="Select Degree Level"
+    v-model="selectedDegreeLevel"
+    :options="levels">
+  </form-select>
 
-<form-select
-  name="program"
-  label="Select a Program"
-  v-show="selectedDegreeLevel"
-  v-model="submit.program"
-  :options="programsForSelectedDegreeLevel">
-</form-select>
+  <form-select
+    name="program"
+    label="Select a Program"
+    v-show="selectedDegreeLevel"
+    v-model="submit.program"
+    :options="programsForSelectedDegreeLevel">
+  </form-select>
 
-<form-first-name
-  v-model="submit.firstName">
-</form-first-name>
-<form-last-name v-model="submit.lastName"></form-last-name>
-<form-zip v-model="submit.zip"></form-zip>
-<form-phone v-model="submit.phone"></form-phone>
-<form-email v-model="submit.email"></form-email>
-<form-submit-button text="Get Info"></form-submit-button>
-<form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
+  <form-first-name
+    v-model="submit.firstName">
+  </form-first-name>
+  <form-last-name v-model="submit.lastName"></form-last-name>
+  <form-zip v-model="submit.zip"></form-zip>
+  <form-phone v-model="submit.phone"></form-phone>
+  <form-email v-model="submit.email"></form-email>
+  <form-submit-button></form-submit-button>
+  <form-legal-text></form-legal-text>
+</form>
 ```
 
 ---
 
-### Step Forms
+## Step Form
 ```html
-<form-select
-  name="program"
-  label="Select a Program"
-  v-model="submit.program"
-  :options="onlinePrograms">
-</form-select>
+<form id="tlh-form" @submit.prevent="handleFormSubmission">
+  <transition name="slide-fade" mode="out-in">
 
-<form-first-name v-model="submit.firstName"></form-first-name>
-<form-last-name v-model="submit.lastName"></form-last-name>
-<form-zip v-model="submit.zip"></form-zip>
-<form-phone v-model="submit.phone"></form-phone>
-<form-email v-model="submit.email"></form-email>
-<form-submit-button></form-submit-button>
-<form-legal-text></form-legal-text>
+    <form-step :stepID="1" v-if="currentStep == 1" key="1">
+      <form-select
+        @option-selected="$bus.$emit('set-focus', 'program')"
+        key="1" name="degreeLevel" label="Select Degree Level"
+        v-model="selectedDegreeLevel" :options="levels">
+      </form-select>
+
+      <form-select
+        name="program"
+        v-show="selectedDegreeLevel"
+        label="Select a Program"
+        v-model="submit.program"
+        :options="programsForSelectedDegreeLevel">
+      </form-select>
+    </form-step>
+
+
+    <form-step :stepID="2" v-if="currentStep == 2" key="2">
+      <form-first-name v-model="submit.firstName"></form-first-name>
+      <form-last-name v-model="submit.lastName"></form-last-name>
+    </form-step>
+
+
+    <form-step :stepID="3" v-if="currentStep == 3" key="3">
+      <form-phone v-model="submit.phone"></form-phone>
+      <form-email v-model="submit.email"></form-email>
+      <form-zip v-model="submit.zip"></form-zip>
+    </form-step>
+
+  </transition>
+
+  <div class="stepFormControls">
+    <button v-if="currentStep > 1"
+      @click.prevent="handlePreviousStep"
+      @key.enter="handlePreviousStep">
+      Previous
+    </button>
+    <button v-if="currentStep < totalSteps"
+      @click.stop.prevent="handleNextStep"
+      @key.enter="handleNextStep">
+      Next
+    </button>
+  </div>
+  <form-submit-button v-if="currentStep == totalSteps"></form-submit-button>
+  <form-legal-text></form-legal-text>
+</form>
 ```
 
 ---
 
-### Single Program
+## Single Program
 
 ```html
 <!-- Set the ID for this program with TLHFormsWP in the settings -->
-<form-first-name v-model="submit.firstName"></form-first-name>
-<form-last-name v-model="submit.lastName"></form-last-name>
-<form-zip v-model="submit.zip"></form-zip>
-<form-phone v-model="submit.phone"></form-phone>
-<form-email v-model="submit.email"></form-email>
-<form-submit-button></form-submit-button>
-<form-legal-text></form-legal-text>
-```
 
----
-
-
-## Scenario Examples
-
-This is for easy understanding of scenarios such as customizing text, a label, ect.
-
----
-### For overriding the default validation, you use the `validation` property
-```html
-<form-field validation="required"></form-field>
-```
-
----
-### Adding a placeholder since none are included by default.
-```html
-<form-field placeholder="Some text here"></form-field>
+<form id="tlh-form" @submit.prevent="handleFormSubmission">
+  <form-first-name v-model="submit.firstName"></form-first-name>
+  <form-last-name v-model="submit.lastName"></form-last-name>
+  <form-zip v-model="submit.zip"></form-zip>
+  <form-phone v-model="submit.phone"></form-phone>
+  <form-email v-model="submit.email"></form-email>
+  <form-submit-button></form-submit-button>
+  <form-legal-text></form-legal-text>
+</form>
 ```
 
 ---

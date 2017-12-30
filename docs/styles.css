@@ -12,3 +12,9 @@ h4 + p {
     margin-left: 5px !important;
     margin-bottom: 30px !important;
 }
+
+
+/* NOTE: For Coy Theme */
+h3 code {
+    color: rgba(201, 44, 44, 0.85) !important;
+}

@@ -1,118 +1,92 @@
 # Overview of our Form System at The Learning House
 
-## Components
+## Introduction
 
+- All form items must have a `v-model` attribute
 
-### `form-first-name`
-Outputs the input for First Name
+- Several custom form components are available
 
+- Templates will be created and stored in the `marketing-forms` repo on github
+
+- Always have form submit handler in templates
 ```html
-<form-first-name
-  v-model="submit.firstName">
-</form-first-name>
+<form id="tlh-form" @submit.prevent="handleFormSubmission">
+  <!--  Form components here-->
+</form>  
 ```
+
+- Regular html syntax with normal inputs, labels, ect can be used in addition to the custom components
+
+  **_Note: This should be rare if at all_**
+
+<!-- - Most forms should be able to build using   -->
+
+- There are several customization options for the custom form field
+
+- By default, all fields are required. Override this by adding the `optional` attribute to any FormField
+
+  -- **_See this scenario for an example (LINK HERE)_**
+
 ---
 
-### `form-last-name`
-Outputs the input for First Name
+## Custom Form Components
 
-```html
-<form-last-name
-  v-model="submit.lastName">
-</form-last-name>
-```
+Since we are continually using the same types of forms across all sites, these reusable components are available to make the process easier and more maintainable longterm.
+
+> The `v-model` for these fields **must** set to specific properties for successful form submission.
+> See [Components](/components#components)  for what it should be for each component
+
+All input fields are extended from the `form-field` component. It sets up base functionality that is shared across all inputs. The other custom fields are extended from it by declaring the attributes specific to it.
+
+Below is the contents of the `FormFirstName.vue` file for the `form-first-name` field
+
+Example of Extending `form-field` component:
+
+  ```html
+  <script>
+    import FormField from './FormField.vue'
+
+    export default {
+      name: 'form-first-name',
+      extends: FormField,
+      props: {
+        name: {
+          default: 'firstName'
+        },
+        label: {
+          default: 'First Name'
+        }
+      }
+    }
+  </script>
+  ```
 ---
 
-### `form-zip`
-Outputs the input for zip
+### Ajax validations
 
-```html
-<form-zip
-  v-model="submit.zip">
-</form-zip>
-```
+- By default, the `form-zip` field uses Ajax validation to check for a valid US postal address
+
+- By default, the `form-email` and `form-phone` fields use the xverify services to check for a valid valid email and phone number
+
+  **_See example of overriding these ajax validations (LINK HERE)_**
+
 ---
 
-### `form-email`
-Outputs the input for email
+
+
+
+We are setting the default props which means adding a field for first name is as easy as:
+```html
+<form-first-name v-model=submit.firstName></form-first-name>
+```
+
+And customizing the first name field is as easy as:
 
 ```html
-<form-email
-  v-model="submit.email">
-</form-email>
+<form-first-name label="New Label" v-model=submit.firstName></form-first-name>
 ```
+
 ---
-
-### `form-phone`
-Outputs the input for phone
-
-```html
-<form-phone
-  v-model="submit.phone">
-</form-phone>
-```
----
-### `form-legal-text`
-
-Outputs the legal text and dynamically generates the name of the school via the setting in the TLHForms WP Plugin Admin
-
-A few style options are available as well
-
-```html
-<form-legal-text
-  fontSize="1.1em"
-  textColor="blue">
-</form-legal-text>
-```
----
-
-### `form-submit-button`
-
-Renders the submit button for the form
-
-```html
-<form-submit-button
-  text="Get Started">
-</form-submit-button>
-```
----
-
-### `form-step`
-
-Creates an individual step for a Step Form
-
-```html
-<form-step
-  v-if="currentStep == 1"
-  :stepID="1"
-  key="1">
-<!-- Other form compontents here -->
-</form-step>
-
-<form-step
-  v-if="currentStep == 2"
-  :stepID="2"
-  key="2">
-<!-- Other form compontents here -->
-</form-step>
-```
----
-
-## Built in options for rendering options for select-menus from marketing-forms repo
-
-### `onlinePrograms`
-
-### `selectedDegreeLevelObject`
-
-### `campusPrograms`
-
-### `onlinePrograms`
-
-### `programsForSelectedDegreeLevel`
-
-### `programsForSelectedModality`
-
-### `onlineProgramsForSelectedDegreeLevel`
 
 - Our marketing forms repo
 - Our custom Vue.js Plugin, **VlhForms**

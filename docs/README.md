@@ -2,6 +2,7 @@
 
 Plugin for Learning House Forms using Vue.js
 
+This is a Vue.js component library for the Learning House Marketing Forms.
 
 ## Install
 
