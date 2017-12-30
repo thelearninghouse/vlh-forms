@@ -6,9 +6,10 @@
       v-model="selectedDegreeLevel" :options="levels">
     </form-select>
 
-    <transition name="vertical-slide" mode="out-in">
+    <form-select key="program" name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
+    <!-- <transition name="vertical-slide" mode="out-in">
       <form-select key="program" name="program" label="Select a Program" v-show="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    </transition>
+    </transition> -->
 
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>

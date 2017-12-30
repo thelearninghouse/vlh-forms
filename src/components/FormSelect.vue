@@ -1,33 +1,35 @@
 <template>
-  <div class="form-item">
-    <label :for="name">{{label}}</label>
-    <select
-      v-model="selectedOption"
-      @change="onChange($event.target.value)"
-      class="form-select"
-      :class="{select: true, hasError: errors.has(name), 'validField': fieldValidity }"
-      v-validate="fieldValidation"
-      :name="name"
-      :ref="name"
-      :id="fieldId"
-      :aria-describedby="fieldId + '_help'"
-      :data-vv-as="label"
-      :placeholder="fieldPlaceholder"
-    >
-      <option key="initial" value="" v-text="defaultText"></option>
-      <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
-    </select>
+  <transition :name="transition">
+    <div class="form-item">
+      <label :for="name">{{label}}</label>
+      <select
+        v-model="selectedOption"
+        @change="onChange($event.target.value)"
+        class="form-select"
+        :class="{select: true, hasError: errors.has(name), 'validField': fieldValidity }"
+        v-validate="fieldValidation"
+        :name="name"
+        :ref="name"
+        :id="fieldId"
+        :aria-describedby="fieldId + '_help'"
+        :data-vv-as="label"
+        :placeholder="fieldPlaceholder"
+      >
+        <option key="initial" value="" v-text="defaultText"></option>
+        <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
+      </select>
 
-    <transition name="fade">
-      <div
-        :id="name + '_help'"
-        v-if="showHelp"
-        class="help hasError"
-        v-text="errors.first(name)">
-      </div>
-    </transition>
+      <transition name="fade">
+        <div
+          :id="name + '_help'"
+          v-if="showHelp"
+          class="help hasError"
+          v-text="errors.first(name)">
+        </div>
+      </transition>
 
-  </div>
+    </div>
+  </transition>
 </template>
 
 
@@ -65,6 +67,14 @@ export default {
     focusOnEnter: {
       type: Boolean,
       default: false
+    },
+    useTransition: {
+      type: Boolean,
+      default: false
+    },
+    transition: {
+      type: String,
+      default: 'none'
     }
   },
   data () {

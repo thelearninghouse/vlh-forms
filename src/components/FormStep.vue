@@ -1,33 +1,37 @@
 <template lang="html">
+  <!-- <transition name="slide-fade" mode="out-in" appear> -->
   <div class="step">
     <slot>
       <p>This should not show up unless theres nothing inside component in parent</p>
     </slot>
   </div>
+<!-- </transition> -->
 </template>
 
 <script>
 
 export default {
   name: 'form-step',
-  props: {
-    stepID: {
-      type: Number,
-      required: true
-    }
-  },
   inject: ['$validator'],
-
   computed: {
     currentStep () {
       return this.$parent.currentStep
     },
     firstField () {
       return Object.keys(this.fields)[0];
+    },
+    lastField () {
+      let fieldsInStep = Object.keys(this.fields)
+      return fieldsInStep[fieldsInStep.length - 1];
+    },
+    stepID () {
+      return this.$vnode.data.key
     }
   },
 
   mounted () {
+    let childrenFields = this.$children
+    let lastField = childrenFields[childrenFields.length - 1];
     if (this.stepID > 1) {
       this.$bus.$emit('set-focus', this.firstField)
     }

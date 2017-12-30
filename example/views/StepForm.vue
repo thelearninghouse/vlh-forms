@@ -1,36 +1,42 @@
 <template lang="html">
   <div class="example stepForm">
+
     <div class="stepsWrapper">
-         <transition name="slide-fade" mode="out-in" appear>
-           <form-step :stepID="1" v-if="currentStep == 1" key="1">
+      <transition name="slide-fade" mode="out-in" appear>
+        <form-step v-if="currentStep == 1" :key="1">
+         <form-select
+           name="degreeLevel"
+           v-model="selectedDegreeLevel"
+           label="Select Degree Level"
+           @option-selected="$bus.$emit('set-focus', 'program')"
+           :options="levels">
+         </form-select>
 
-             <form-select
-               @option-selected="$bus.$emit('set-focus', 'program')"
-               key="1" name="degreeLevel" label="Select Degree Level"
-               v-model="selectedDegreeLevel" :options="levels">
-             </form-select>
+        <form-select
+          name="program"
+          v-model="submit.program"
+          v-show="selectedDegreeLevel"
+          transition="vertical-slide"
+          :label="selectedDegreeLevel + ' Programs'"
+          defaultText="Select a Program"
+          :options="programsForSelectedDegreeLevel">
+        </form-select>
+        </form-step>
 
+        <form-step v-if="currentStep == 2" :key="2">
+         <form-first-name v-model="submit.firstName"></form-first-name>
+         <form-last-name v-model="submit.lastName"></form-last-name>
+        </form-step>
 
-             <transition name="slide-fade">
-               <form-select v-show="selectedDegreeLevel" focusOnEnter name="program" :label="selectedDegreeLevel + ' Programs'" defaultText="Select a Program"  v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-             </transition>
+        <form-step v-if="currentStep == 3" :key="3">
+         <form-phone v-model="submit.phone" validation="required"></form-phone>
+         <form-email v-model="submit.email" validation="required|email"></form-email>
+        <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
+        </form-step>
+      </transition>
+    </div>
 
-             <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
-           </form-step>
-
-           <form-step :stepID="2" v-if="currentStep == 2" key="2">
-             <form-first-name v-model="submit.firstName"></form-first-name>
-             <form-last-name v-model="submit.lastName"></form-last-name>
-           </form-step>
-
-           <form-step :stepID="3" v-if="currentStep == 3" key="3">
-             <form-phone v-model="submit.phone" validation="required"></form-phone>
-             <form-email v-model="submit.email" validation="required|email"></form-email>
-           </form-step>
-         </transition>
-     </div>
-
-     <div class="stepFormControls">
+    <div class="stepFormControls">
        <button v-if="currentStep > 1"
          @click.prevent="handlePreviousStep"
          @key.enter="handlePreviousStep">
@@ -44,9 +50,11 @@
        <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
        <form-legal-text></form-legal-text>
      </div>
+
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
