@@ -58,8 +58,8 @@
 ## Step Form
 ```html
 <form id="tlh-form" @submit.prevent="handleFormSubmission">
-  <transition name="slide-fade" mode="out-in">
 
+  <transition name="slide-fade" mode="out-in">
     <form-step :stepID="1" v-if="currentStep == 1" key="1">
       <form-select
         @option-selected="$bus.$emit('set-focus', 'program')"
@@ -88,7 +88,6 @@
       <form-email v-model="submit.email"></form-email>
       <form-zip v-model="submit.zip"></form-zip>
     </form-step>
-
   </transition>
 
   <div class="stepFormControls">

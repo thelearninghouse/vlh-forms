@@ -1,7 +1,29 @@
 # Components
 
-## `form-first-name`
-Outputs the input for First Name
+**All form components render the following:**
+```html
+<div class="form-item">
+// Label Here
+// Form Item Here (input, select, ect)
+</div>
+```
+
+## Base Field
+`form-field`
+All specific input fields are extended from this field. Outputs a field based on your selection.
+
+```html
+<form-field
+  name="customField"
+  v-model="customValue"
+  label="My Custom Field">
+</form-field>
+```
+---
+
+## First Name
+`form-first-name`
+<!-- Outputs the input for First Name -->
 
 ```html
 <form-first-name
@@ -10,8 +32,9 @@ Outputs the input for First Name
 ```
 ---
 
-## `form-last-name`
-Outputs the input for First Name
+## Last Name
+`form-last-name`
+<!-- Outputs the input for First Name -->
 
 ```html
 <form-last-name
@@ -20,8 +43,9 @@ Outputs the input for First Name
 ```
 ---
 
-## `form-zip`
-Outputs the input for zip
+## Zip
+`form-zip`
+<!-- Outputs the input for zip -->
 
 ```html
 <form-zip
@@ -30,8 +54,9 @@ Outputs the input for zip
 ```
 ---
 
-## `form-email`
-Outputs the input for email
+## Email
+`form-email`
+<!-- Outputs the input for email -->
 
 ```html
 <form-email
@@ -40,16 +65,32 @@ Outputs the input for email
 ```
 ---
 
-## `form-phone`
-Outputs the input for phone
+## Phone
+`form-phone`
+<!-- Outputs the input for phone -->
 
 ```html
 <form-phone
   v-model="submit.phone">
 </form-phone>
 ```
+
 ---
-## `form-legal-text`
+## Form Select
+`form-select`
+<!-- Outputs the input for phone -->
+
+```html
+<form-select
+  name="program"
+  v-model="submit.program"
+  :options="onlinePrograms">
+</form-select>
+```
+
+---
+## Legal Text
+`form-legal-text`
 
 Outputs the legal text and dynamically generates the name of the school via the setting in the TLHForms WP Plugin Admin
 
@@ -63,9 +104,8 @@ A few style options are available as well
 ```
 ---
 
-## `form-submit-button`
-
-Renders the submit button for the form
+## Submit Button
+`form-submit-button`
 
 ```html
 <form-submit-button
@@ -74,7 +114,8 @@ Renders the submit button for the form
 ```
 ---
 
-## `form-step`
+## Step For Step Form
+`form-step`
 
 Creates an individual step for a Step Form
 
