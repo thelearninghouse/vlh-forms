@@ -57,12 +57,12 @@
         // event.preventDefault();
         // Body.classList.remove("close");
         // Results.classList.remove('show')
-        // setTimeout(function(){
-        //   if (window.outerWidth < 650) {
-        //     Body.classList.remove("close");
-        //     Results.classList.remove('show')
-        //   }
-        // }, 700);
+        setTimeout(function(){
+          if (window.outerWidth < 650) {
+            Body.classList.remove("close");
+            // Results.classList.remove('show')
+          }
+        }, 700);
 
       })
     });
