@@ -53,12 +53,16 @@
       const Body = document.getElementsByTagName('body')[0]
 
       Results.addEventListener('click', function(event) {
-        setTimeout(function(){
-          if (window.outerWidth < 650) {
-            Body.classList.remove("close");
-            Results.classList.remove('show')
-          }
-        }, 700);
+        // console.log(event.target);
+        // event.preventDefault();
+        // Body.classList.remove("close");
+        // Results.classList.remove('show')
+        // setTimeout(function(){
+        //   if (window.outerWidth < 650) {
+        //     Body.classList.remove("close");
+        //     Results.classList.remove('show')
+        //   }
+        // }, 700);
 
       })
     });
