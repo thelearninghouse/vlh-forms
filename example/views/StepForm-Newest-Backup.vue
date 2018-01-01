@@ -6,7 +6,7 @@
         <form-step v-if="currentStep == 1" :key="1">
          <form-select
            name="degreeLevel"
-           optional v-model="selectedDegreeLevel"
+           v-model="selectedDegreeLevel"
            label="Select Degree Level"
            @option-selected="$bus.$emit('set-focus', 'program')"
            :options="levels">
@@ -14,7 +14,7 @@
 
           <form-select
             name="program"
-            optional v-model="submit.program"
+            v-model="submit.program"
             v-show="selectedDegreeLevel"
             transition="vertical-slide"
             :label="selectedDegreeLevel + ' Programs'"
@@ -24,32 +24,36 @@
         </form-step>
 
         <form-step v-if="currentStep == 2" :key="2">
-         <form-first-name optional v-model="submit.firstName"></form-first-name>
-         <form-last-name optional v-model="submit.lastName"></form-last-name>
+         <form-first-name v-model="submit.firstName"></form-first-name>
+         <form-last-name v-model="submit.lastName"></form-last-name>
         </form-step>
 
         <form-step v-if="currentStep == 3" :key="3">
-          <form-phone optional v-model="submit.phone" validation="required"></form-phone>
-          <form-email v-model="submit.email" validation="required|email"></form-email>
-          <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
+         <form-phone v-model="submit.phone" validation="required"></form-phone>
+         <form-email v-model="submit.email" validation="required|email"></form-email>
+        <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
         </form-step>
       </transition>
     </div>
 
-    <step-form-controls
-      :steps="totalSteps"
-      :active-step="currentStep"
-      @previous-step="handlePreviousStep"
-      @next-step="handleNextStep"
-      submitBtnText="Submit Now">
-    </step-form-controls>
-
+    <div class="stepFormControls">
+       <button v-if="currentStep > 1"
+         @click.prevent="handlePreviousStep"
+         @key.enter="handlePreviousStep">
+         Previous
+       </button>
+       <button v-if="currentStep < totalSteps"
+         @click.stop.prevent="handleNextStep"
+         @key.enter="handleNextStep">
+         Next
+       </button>
+       <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
+     </div>
     <form-legal-text></form-legal-text>
   </div>
 </template>
 
 <script>
 export default {
-
 }
 </script>

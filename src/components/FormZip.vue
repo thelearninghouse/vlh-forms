@@ -4,7 +4,6 @@
     name: 'form-zip',
     extends: FormField,
     props: {
-
       name: {
         default: 'zip'
       },
