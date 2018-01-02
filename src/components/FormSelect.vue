@@ -5,8 +5,8 @@
       <select
         v-model="selectedOption"
         @change="onChange($event.target.value)"
-        class="form-select"
-        :class="{select: true, hasError: errors.has(name), 'validField': fieldValidity }"
+        class="select"
+        :class="{hasError: errors.has(name), 'validField': fieldValidity }"
         v-validate="fieldValidation"
         :name="name"
         :ref="name"
@@ -31,7 +31,6 @@
     </div>
   </transition>
 </template>
-
 
 <script>
 
@@ -65,10 +64,6 @@ export default {
       default: false
     },
     focusOnEnter: {
-      type: Boolean,
-      default: false
-    },
-    useTransition: {
       type: Boolean,
       default: false
     },

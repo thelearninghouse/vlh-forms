@@ -8,7 +8,7 @@
 </div>
 ```
 
-## Base Field
+## Form Field
 `form-field`
 All specific input fields are extended from this field. Outputs a field based on your selection.
 
@@ -120,22 +120,34 @@ A few style options are available as well
 Creates an individual step for a Step Form
 
 ```html
-<form-step
-  v-if="currentStep == 1"
-  :stepID="1"
-  key="1">
-<!-- Other form compontents here -->
+<form-step v-if="currentStep == 1" :key="1">
+  <!-- Other form compontents here -->
 </form-step>
 
-<form-step
-  v-if="currentStep == 2"
-  :stepID="2"
-  key="2">
-<!-- Other form compontents here -->
+<form-step v-if="currentStep == 2" :key="2">
+  <!-- Other form compontents here -->
 </form-step>
 ```
+
 ---
 
+## Step Form Controls
+`step-form-controls`
+
+Outputs Previous, Next, and Submit button for step forms. Uses `form-submit-button` component for submit button
+
+```html
+<step-form-controls
+  :steps="totalSteps"
+  :active-step="currentStep"
+  @previous-step="handlePreviousStep"
+  @next-step="handleNextStep"
+  submitBtnText="Submit Now">
+</step-form-controls>
+```
+Custom text for submit is still available by using `submitBtnText`
+
+---
 ## FormField Options
 
 | Name        | Type           | Default        | Description                  |

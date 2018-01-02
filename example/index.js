@@ -67,6 +67,16 @@ Vue.mixin({
     // this.registerZipValidator()
   },
   methods: {
+    handleFormSubmission() {
+      this.$validator.validateAll().then((result) => {
+        if (!result) {
+          console.log('ERRORS');
+        } else {
+          console.log('form is good!');
+        }
+
+      })
+    },
     cleanUpProgramsArray() {
       this.checkForDisplayNames()
       this.alphabetizePrograms()
@@ -119,6 +129,14 @@ Vue.mixin({
         console.log('Missing fields or errors!');
         if (result) {
           this.currentStep = this.currentStep + 1
+          this.$bus.$emit('next-here')
+          // this.$bus.$on('next-here', () => {
+          //   console.log('next here ran!!!');
+          //   this.$nextTick(function() {
+          //     this.setFocus(this.firstField)
+          //   })
+          // })
+          // this.$bus.$emit('next-here')
           console.log('Next Step!');
         }
       });
@@ -134,6 +152,7 @@ Vue.mixin({
 
     handlePreviousStep () {
       this.currentStep = this.currentStep - 1
+      this.$bus.$emit('previous-here')
     },
 
     registerZipValidator () {

@@ -92,19 +92,14 @@
     </form-step>
   </transition>
 
-  <div class="stepFormControls">
-    <button v-if="currentStep > 1"
-      @click.prevent="handlePreviousStep"
-      @key.enter="handlePreviousStep">
-      Previous
-    </button>
-    <button v-if="currentStep < totalSteps"
-      @click.stop.prevent="handleNextStep"
-      @key.enter="handleNextStep">
-      Next
-    </button>
-  </div>
-  <form-submit-button v-if="currentStep == totalSteps"></form-submit-button>
+  <step-form-controls
+    :steps="totalSteps"
+    :active-step="currentStep"
+    @previous-step="handlePreviousStep"
+    @next-step="handleNextStep"
+    submitBtnText="Submit Now">
+  </step-form-controls>
+  
   <form-legal-text></form-legal-text>
 </form>
 ```

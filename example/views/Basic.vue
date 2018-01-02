@@ -1,24 +1,22 @@
 <template lang="html">
-  <div id="tlh-form" class="example basic">
+  <form id="tlh-form" class="example basic" @submit.prevent="handleFormSubmission">
     <form-select
       @option-selected="$bus.$emit('set-focus', 'program')"
       key="1" name="degreeLevel" label="Select Degree Level"
       v-model="selectedDegreeLevel" :options="levels">
     </form-select>
 
-    <form-select key="program" name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    <!-- <transition name="vertical-slide" mode="out-in">
-      <form-select key="program" name="program" label="Select a Program" v-show="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
-    </transition> -->
+    <form-select
+      transition="vertical-slide" name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel"></form-select>
 
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>
-    <form-phone v-model="submit.phone" validation="required|phone"></form-phone>
+    <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-submit-button text="Get Info"></form-submit-button>
+    <form-submit-button :disableOnErrors="false" text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -29,16 +27,13 @@
     mounted() {
       this.$nextTick(function () {
         this.addClass()
-        // console.log(this.$el.textContent) // => 'updated'
       })
     },
     methods: {
       addClass () {
         let Form = document.getElementById('tlh-form')
-        console.log(Form);
-        if (Form) {
-          let colorClass = this.helpTextColor || 'mystyle'
-          Form.classList.add(colorClass);
+        if (Form && this.helpTextColor ) {
+          Form.classList.add(this.helpTextColor);
         }
       }
     }

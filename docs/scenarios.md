@@ -12,7 +12,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Override the default validation for custom input types
 ```html
 <form-email validation="required|email"></form-email>
-<form-phone validation="required|phone"></form-phone>
+<form-phone validation="required"></form-phone>
 ```
 **Email, Phone and Zip components all use ajax validation by default**
 

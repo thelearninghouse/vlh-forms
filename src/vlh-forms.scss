@@ -92,12 +92,15 @@ select.form-field:focus {
     display: block;
     transition: all 0.5s ease;
     font-size: 14px;
+
     &.hasError {
       color: #ca0000 !important;
     }
+
     .lightHelpText & {
       color: #f9f9f9 !important;
     }
+
     .darkHelpText & {
       color: #222 !important;
     }
@@ -107,6 +110,13 @@ select.form-field:focus {
     text-transform: capitalize;
   }
 }
+
+input, select {
+  &.hasError {
+    border: 2px solid #ca0000;
+  }
+}
+
 
 // .lightHelpText .help {
 //   color: #f9f9f9;

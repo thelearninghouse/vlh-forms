@@ -30,8 +30,6 @@ export default {
   },
 
   mounted () {
-    let childrenFields = this.$children
-    let lastField = childrenFields[childrenFields.length - 1];
     if (this.stepID > 1) {
       this.$bus.$emit('set-focus', this.firstField)
     }

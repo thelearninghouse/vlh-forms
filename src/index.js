@@ -62,6 +62,30 @@ const VlhForms = {
 
     Vue.prototype.$myAddedProperty = 'Example Property'
 
+    // Vue.prototype.$validateStep() = function (programs, selectedLevel) {
+    //   this.$validator.validateAll().then((result) => {
+    //     console.log('Missing fields or errors!');
+    //     if (result) {
+    //       this.currentStep = this.currentStep + 1
+    //       console.log('Next Step!');
+    //     }
+    //   });
+    // },
+
+    Vue.prototype.$handleNextStep = function (programs, selectedLevel) {
+      this.$validator.validateAll().then((result) => {
+        console.log('Missing fields or errors!');
+        console.log(this);
+        if (result) {
+          console.log('FROM PROTOTYPE: Next Step!');
+          this.currentStep = this.currentStep + 1
+        } else {
+          console.log('FROM PROTOTYPE: ERRORS');
+        }
+      });
+
+    }
+
     Vue.prototype.$FindProgramsByLevel = function (programs, selectedLevel) {
       var vm = this
       if (vm.selectedDegreeLevelObject) {
@@ -73,6 +97,8 @@ const VlhForms = {
       }
 
     }
+
+    Vue.prototype.$currentStep = 1
   }
 };
 

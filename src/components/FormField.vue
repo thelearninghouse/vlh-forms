@@ -4,7 +4,7 @@
      <label v-text="label" :for="name"></label>
      <input
        v-validate="fieldValidation"
-       class="form-control"
+       class="input"
        :name="name"
        :id="fieldId"
        :ref="name"
@@ -15,7 +15,6 @@
        :data-vv-name="name"
        :data-vv-delay="300"
        :class="{
-         input: true,
          hasError: errors.has(name),
          validField: fieldValidity }"
        :role="fieldRole"

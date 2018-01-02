@@ -9,11 +9,53 @@
 - Templates will be created and stored in the `marketing-forms` repo on github
 
 - Always have form submit handler in templates
+
 ```html
 <form id="tlh-form" @submit.prevent="handleFormSubmission">
   <!--  Form components here-->
 </form>  
 ```
+
+- In regards to class, styling, all inputs and selects render as follows:
+
+```html
+// Input
+<div class="form-item">
+  <label></label>
+  <input class="input">
+</div>
+
+// Select
+<div class="form-item">
+  <label></label>
+  <select class="select"></select>
+</div>
+
+// Submit Button
+<div class="form-submit">
+  <input type="submit">
+</div>
+```
+
+- You can add an class to the `div` element wrapping inputs and selects by doing the following:
+
+```html
+// In Template
+<form-first-name class="extra-class" v-model="submit.firstName"></form-first-name>
+
+// Renders
+<div class="form-item extra-class"></div>
+```
+
+- By default, the submit button will be disabled if an errors exist. This feature can be removed by doing the following:
+
+```html
+<form-submit-button :disableOnErrors="false"></form-submit-button>
+```
+
+
+
+---
 
 - Regular html syntax with normal inputs, labels, ect can be used in addition to the custom components
 
