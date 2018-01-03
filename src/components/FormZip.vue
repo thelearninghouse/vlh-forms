@@ -20,6 +20,14 @@
         default: 'number'
       },
 
+      autocomplete: {
+        default: 'postal-code'
+      },
+
+      pattern: {
+        default: '[0-9]*'
+      },
+
       validation: {
         default: 'required|validZip'
       }

@@ -6,6 +6,8 @@
        v-validate="fieldValidation"
        class="input"
        :name="name"
+       :autocomplete="autocomplete"
+       :pattern="pattern"
        :id="fieldId"
        :ref="name"
        :type="type"
@@ -75,8 +77,15 @@ export default {
     optional: {
       type: Boolean,
       default: false
-    }
+    },
 
+    autocomplete: {
+      type: String,
+    },
+
+    pattern: {
+      type: String,
+    }
   },
 
   data () {
