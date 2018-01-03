@@ -13,7 +13,8 @@
   "scripts": {
     "test": "test-vue-app",
     "dev": "poi example/index.js",
-    "build": "poi build  ./src/index.js --component VlhForms --no-clear",
+    "build": "poi build ./src/index.js --component VlhForms --no-clear",
+    "library": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
     "docs": "docsify serve ./docs",
     "release": "npm publish"
