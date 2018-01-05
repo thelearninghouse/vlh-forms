@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <!-- <transition name="slide-fade" mode="out-in" appear> -->
   <div class="step">
     <slot>
@@ -31,7 +31,9 @@ export default {
 
   mounted () {
     if (this.stepID > 1) {
-      this.$bus.$emit('set-focus', this.firstField)
+      this.$nextTick(function () {
+        this.$bus.$emit('set-focus', this.firstField)
+      })
     }
   }
 }

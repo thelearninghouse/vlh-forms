@@ -3,7 +3,7 @@
     <div class="stepsWrapper">
       <div class="stepFormProgress">
         <template v-for="(step, index) in totalSteps">
-          <div class="stepProgress" key="index + 1" :class="{ currentStep: currentStep == index + 1, completedStep: currentStep > index + 1 }">Step {{index + 1}}
+          <div class="stepProgress" :key="index + 1" :class="{ currentStep: currentStep == index + 1, completedStep: currentStep > index + 1 }">Step {{index + 1}}
           </div>
         </template>
       </div>
