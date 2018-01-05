@@ -22,8 +22,7 @@
        :role="fieldRole"
        :aria-describedby="fieldId + '_help'"
        @input="onInput($event.target.value)"
-       @blur="onBlur($event)"
-       @focus="setFocus"
+       @keydown.enter.stop.prevent="handleKeydown($event)"
       >
 
      <transition name="fade">
@@ -146,6 +145,9 @@ export default {
 
     onBlur (blurEvent) {
       this.hasFocus = false
+    },
+    handleKeydown ($event) {
+      console.log('keydown event fired');
     }
   },
   inject: ['$validator']

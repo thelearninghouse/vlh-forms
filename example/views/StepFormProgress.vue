@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="example stepForm">
+  <form id="tlh-form" class="example" @submit.prevent="handleFormSubmission">
     <div class="stepsWrapper">
       <div class="stepFormProgress">
         <template v-for="(step, index) in totalSteps">
@@ -51,47 +51,23 @@
      </step-form-controls>
 
      <form-legal-text></form-legal-text>
-  </div>
+  </form>
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    this.$nextTick(function () {
+      this.addClass()
+    })
+  },
+  methods: {
+    addClass () {
+      let Form = document.getElementById('tlh-form')
+      if (Form && this.helpTextColor ) {
+        Form.classList.add(this.helpTextColor);
+      }
+    }
+  }
+}
 </script>
-
-<style lang="scss">
-  // .step {
-  //   min-height: 100px;
-  // }
-  // .stepFormProgress {
-  //   display: flex;
-  //   justify-content: space-around;
-  //   flex-flow: row wrap;
-  //   margin: 1em;
-  //   .stepProgress {
-  //     padding: .5em;
-  //     transition: .25s ease;
-  //     position: relative;
-  //     border-bottom: 3px solid transparent;
-  //
-  //     &.currentStep {
-  //       background-color: #565656;
-  //       color: white;
-  //       border-bottom: 3px solid #8d8d8d;
-  //     }
-  //
-  //     &.completedStep {
-  //
-  //       &:after {
-  //         content: "\2713";
-  //         font-size: 1.5em;
-  //         font-weight: 500;
-  //         position: absolute;
-  //         left: 100%;
-  //         bottom: 2px;
-  //         transition: .4s ease;
-  //       }
-  //     }
-  //
-  //   }
-  // }
-</style>

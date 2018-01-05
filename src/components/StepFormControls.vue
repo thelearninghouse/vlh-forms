@@ -1,14 +1,15 @@
 <template>
   <div class="stepFormControls">
      <button v-if="activeStep > 1"
-       @click.prevent="$emit('previous-step')"
-       @key.enter="$emit('previous-step')"
+       @click.stop.prevent="$emit('previous-step')"
+       @keydown.enter.stop.prevent="$emit('previous-step')"
        v-text="previousBtnText">
        Previous
      </button>
      <button v-if="activeStep < steps"
-       @click.stop.prevent="$emit('next-step')"
-       @key.enter.prevent="$emit('next-step')"
+       @click.stop.prevent="nextStep($event)"
+       @mousedown.stop.prevent="nextStepMD($event)"
+       @keydown.enter.stop.prevent="nextStep($event)"
        v-text="nextBtnText">
      </button>
      <form-submit-button v-if="activeStep == steps" :text="submitBtnText"></form-submit-button>
@@ -43,6 +44,20 @@ export default {
   computed: {
     currentStepFromParent () {
       return this.$parent.currentStep
+    }
+  },
+
+  methods: {
+    previousStep($event) {
+    },
+
+    nextStep () {
+      console.log('FROM NEW NEXT STEP METHOD');
+      this.$emit('next-step')
+    },
+    nextStepMD () {
+      console.log('MD: FROM NEW NEXT STEP METHOD');
+      this.$emit('next-step')
     }
   }
 }

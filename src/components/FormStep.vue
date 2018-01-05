@@ -40,38 +40,73 @@ export default {
 </script>
 
 <style lang="scss">
-.step {
-  position: relative;
-  min-height: 100px;
-}
-.stepFormProgress {
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-  margin: 1em 0;
-  .stepProgress {
-    padding: .5em;
-    transition: .25s ease;
+  .step {
     position: relative;
-    border-bottom: 3px solid transparent;
+    min-height: 100px;
+  }
+  .stepFormProgress {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 1em 0;
 
-    &.currentStep {
-      border-bottom: 2px solid #444;
-    }
+    .stepProgress {
+      padding: .5em;
+      transition: .25s ease;
+      position: relative;
+      border-bottom: 3px solid transparent;
 
-    &.completedStep {
+      &.currentStep {
+        border-bottom: 2px solid #444;
+      }
 
-      &:after {
-        content: "\2713";
-        font-size: 1.5em;
-        font-weight: 500;
-        position: absolute;
-        left: 100%;
-        bottom: 2px;
-        transition: .4s ease;
-        color: #444;
+      &.completedStep {
+
+        &:after {
+          content: "\2713";
+          font-size: 1.5em;
+          font-weight: 500;
+          position: absolute;
+          left: 100%;
+          bottom: 2px;
+          transition: .4s ease;
+          color: #444;
+        }
       }
     }
   }
-}
+
+  .light {
+    .stepFormProgress {
+      color: #f9f9f9 !important;
+
+      .stepProgress {
+
+        &.currentStep {
+          border-bottom: 2px solid #f9f9f9;
+        }
+        &.completedStep:after {
+          color: #f9f9f9;
+        }
+      }
+
+    }
+  }
+
+  .dark {
+    color: #222 !important;
+
+    .stepFormProgress {
+      color: #222 !important;
+
+      .stepProgress {
+
+        &.currentStep {
+          border-bottom: 2px solid #222;
+        }
+      }
+
+    }
+  }
 </style>

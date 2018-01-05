@@ -143,6 +143,7 @@ Vue.mixin({
     },
 
     handleNextStep () {
+      console.log('stopped');
       this.validateStep()
       // let wasCurrentStep = this.currentStep
       // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.currentStep + 1})
