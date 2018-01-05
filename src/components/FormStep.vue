@@ -46,7 +46,7 @@ export default {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-  margin: 1em;
+  margin: 1em 0;
   .stepProgress {
     padding: .5em;
     transition: .25s ease;

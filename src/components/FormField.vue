@@ -122,7 +122,11 @@ export default {
 
     this.$bus.$on('set-focus', name => {
       if (vm.$refs[name]) {
-        this.$refs[name].focus()
+        setTimeout(() => {
+          console.log('INSIDE TIMEOUT');
+          this.$refs[name].focus()
+        }, 500);
+
       }
     })
   },

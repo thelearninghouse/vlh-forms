@@ -113,11 +113,20 @@ export default {
     },
 
     focusListener () {
+      let vm = this
       this.$bus.$on('set-focus', name => {
-        this.$nextTick(function() {
-          this.setFocus(name)
-        })
+        if (vm.$refs[name]) {
+          setTimeout(() => {
+            console.log('INSIDE TIMEOUT');
+            this.$refs[name].focus()
+          }, 500);
+        }
       })
+      // this.$bus.$on('set-focus', name => {
+      //   this.$nextTick(function() {
+      //     this.setFocus(name)
+      //   })
+      // })
     },
 
     setFocus(name) {
