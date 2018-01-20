@@ -64,4 +64,45 @@ export default {
 </script>
 
 <style lang="scss">
+  .stepFormControls {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+
+    button {
+      background-color: #f9f9f9;
+      // padding: .25em .5em;
+      display: flex;
+      overflow: hidden;
+      margin: 0 5px 5px 5px;
+      padding: 4px 8px;
+      // font-size: .85em;
+      cursor: pointer;
+      user-select: none;
+      transition: all 150ms linear;
+      text-align: center;
+      white-space: nowrap;
+      text-decoration: none !important;
+      text-transform: none;
+      text-transform: capitalize;
+      border: 0 none;
+      border-radius: 2px;
+      // line-height: 1.3;
+
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+      appearance:         none;
+
+      justify-content: center;
+      align-items: center;
+      // flex-basis: 75px;
+    }
+    .previous-step {
+      margin-right: 1.5em;
+    }
+
+    .form-submit {
+      margin-left: auto;
+    }
+  }
 </style>
