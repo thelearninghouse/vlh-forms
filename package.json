@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.0.769",
+  "version": "0.0.770",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "davidroyer/vlh-forms",
@@ -17,7 +17,7 @@
     "library": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
     "docs": "docsify serve ./docs",
-    "release": "npm publish"
+    "release": "npm run build && npm publish"
   },
   "author": {
     "name": "David Royer",

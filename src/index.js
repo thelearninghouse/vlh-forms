@@ -12,6 +12,7 @@ import FormLegalText from './components/FormLegalText.vue'
 import FormStep from './components/FormStep.vue'
 import FormStepper from './components/FormStepper.vue'
 import StepFormControls from './components/StepFormControls.vue'
+import StepFormProgress from './components/StepFormProgress.vue'
 import './vlh-forms.scss'
 
 const VlhForms = {
@@ -28,6 +29,7 @@ const VlhForms = {
     Vue.component(FormStep.name, FormStep);
     Vue.component(FormStepper.name, FormStepper);
     Vue.component(StepFormControls.name, StepFormControls);
+    Vue.component(StepFormProgress.name, StepFormProgress);
 
 
     // Add to Vue properties by exposing a getter for $bus

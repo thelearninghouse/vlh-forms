@@ -1,12 +1,11 @@
 <template lang="html">
   <form id="tlh-form" class="example" @submit.prevent="handleFormSubmission">
+
     <div class="stepsWrapper">
-      <div class="stepFormProgress">
-        <template v-for="(step, index) in totalSteps">
-          <div class="stepProgress" :key="index + 1" :class="{ currentStep: currentStep == index + 1, completedStep: currentStep > index + 1 }">Step {{index + 1}}
-          </div>
-        </template>
-      </div>
+      <step-form-progress
+        :steps="totalSteps"
+        :active-step="currentStep">
+      </step-form-progress>
 
       <transition name="slide-fade" mode="out-in" appear>
         <form-step v-if="currentStep == 1" :key="1">
@@ -40,17 +39,17 @@
          <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
         </form-step>
       </transition>
-     </div>
+    </div>
 
-     <step-form-controls
-       :steps="totalSteps"
-       :active-step="currentStep"
-       @previous-step="handlePreviousStep"
-       @next-step="handleNextStep"
-       submitBtnText="Submit Now">
-     </step-form-controls>
+    <step-form-controls
+      :steps="totalSteps"
+      :active-step="currentStep"
+      @previous-step="handlePreviousStep"
+      @next-step="handleNextStep"
+      submitBtnText="Submit Now">
+    </step-form-controls>
 
-     <form-legal-text></form-legal-text>
+    <form-legal-text></form-legal-text>
   </form>
 </template>
 
