@@ -118,21 +118,23 @@ export default {
   mounted () {
     let vm = this
     let Refs = vm.$refs
-
-    this.$bus.$on('set-focus', name => {
-      if (vm.$refs[name]) {
-        setTimeout(() => {
-          console.log('INSIDE TIMEOUT');
-          this.$refs[name].focus()
-        }, 500);
-
-      }
-    })
+    this.focusListener()
   },
 
   methods: {
     checkFieldValidity (field) {
       return field.dirty && field.valid && field.validated  ? true : false
+    },
+
+    focusListener () {
+      this.$bus.$on('set-focus', name => {
+        if (this.$refs[name]) {
+          setTimeout(() => {
+            console.log('INSIDE TIMEOUT');
+            this.$refs[name].focus()
+          }, 800);
+        }
+      })
     },
 
     setFocus () {
