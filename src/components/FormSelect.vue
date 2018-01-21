@@ -86,7 +86,6 @@ export default {
 
   mounted () {
     this.selectedOption = this.value
-    // this.handleFocusOnEnter()
     this.focusListener()
   },
   computed: {
@@ -116,9 +115,8 @@ export default {
       this.$bus.$on('set-focus', name => {
         if (this.$refs[name]) {
           setTimeout(() => {
-            console.log('INSIDE TIMEOUT');
             this.$refs[name].focus()
-          }, 800);
+          }, 300);
         }
       })
     },
