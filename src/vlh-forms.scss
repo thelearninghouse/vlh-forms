@@ -94,10 +94,10 @@ select.form-field:focus {
     font-size: 14px;
 
     &.hasError {
-      color: #ca0000 !important;
+
     }
 
-    .default-color-theme & {}
+
 
   }
   // TEMPORARY
@@ -116,13 +116,24 @@ select {
 
 // Theme Styling
 form {
+  .default-color-theme & {
+    .help {
+      color: #ca0000 !important;
+    }
+
+  }
+
+  &.light-color-theme {
+    .help {
+      color: #222 !important;
+    }
+  }
+
   &.dark-color-theme {
     .help {
       color: #f9f9f9 !important;
     }
   }
 
-  &.light-color-theme {
-    color: #222 !important;
-  }
+
 }
