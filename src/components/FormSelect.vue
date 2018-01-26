@@ -146,7 +146,10 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+select {
+  cursor: pointer;
+}
 label {
   display: block;
 }

@@ -57,26 +57,7 @@
     }
   }
 
-  .light {
-    .stepFormProgress {
-      color: #f9f9f9 !important;
-
-      .stepProgress {
-
-        &.currentStep {
-          border-bottom: 2px solid #f9f9f9;
-        }
-        &.completedStep:after {
-          color: #f9f9f9;
-        }
-      }
-
-    }
-  }
-
-  .dark {
-    color: #222 !important;
-
+  .light-color-theme {
     .stepFormProgress {
       color: #222 !important;
 
@@ -84,6 +65,25 @@
 
         &.currentStep {
           border-bottom: 2px solid #222;
+        }
+        &.completedStep:after {
+          color: #222;
+        }
+      }
+
+    }
+  }
+
+  .dark-color-theme {
+    color: #f9f9f9 !important;
+
+    .stepFormProgress {
+      color: #f9f9f9 !important;
+
+      .stepProgress {
+
+        &.currentStep {
+          border-bottom: 2px solid #f9f9f9;
         }
       }
 

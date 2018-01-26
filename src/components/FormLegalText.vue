@@ -54,11 +54,11 @@ export default {
 <style lang="scss">
   .legal-text {
     color: inherit;
-    .light & {
+    .dark-color-theme & {
       color: #f9f9f9 !important;
     }
 
-    .dark & {
+    .light-color-theme & {
       color: #222 !important;
     }
   }

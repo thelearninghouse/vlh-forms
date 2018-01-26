@@ -97,13 +97,8 @@ select.form-field:focus {
       color: #ca0000 !important;
     }
 
-    .light & {
-      color: #f9f9f9 !important;
-    }
+    .default-color-theme & {}
 
-    .dark & {
-      color: #222 !important;
-    }
   }
   // TEMPORARY
   label {
@@ -111,13 +106,23 @@ select.form-field:focus {
   }
 }
 
-input, select {
+input,
+select {
   &.hasError {
     border: 2px solid #ca0000;
   }
 }
 
 
-// .lightHelpText .help {
-//   color: #f9f9f9;
-// }
+// Theme Styling
+form {
+  &.dark-color-theme {
+    .help {
+      color: #f9f9f9 !important;
+    }
+  }
+
+  &.light-color-theme {
+    color: #222 !important;
+  }
+}
