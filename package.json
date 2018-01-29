@@ -3,7 +3,7 @@
   "version": "0.0.777",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
-    "url": "davidroyer/vlh-forms",
+    "url": "thelearninghouse/vlh-forms",
     "type": "git"
   },
   "main": "dist/vlh-forms.js",
