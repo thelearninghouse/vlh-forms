@@ -116,7 +116,7 @@ select {
 
 // Theme Styling
 form {
-  &.default-color-theme & {
+  &.default-color-theme {
     .help {
       color: #ca0000 !important;
     }
