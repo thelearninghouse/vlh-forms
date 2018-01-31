@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="form-item">
      <label v-text="label" :for="name"></label>
      <input
