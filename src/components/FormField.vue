@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="form-item">
-
      <label v-text="label" :for="name"></label>
      <input
        v-validate="fieldValidation"
@@ -11,20 +10,18 @@
        :id="fieldId"
        :ref="name"
        :type="type"
-       :placeholder="fieldPlaceholder"
-       :value="value"
+       v-model="model"
+       v-bind="$attrs"
+       v-on="$listeners"
        :data-vv-as="label"
        :data-vv-name="name"
        :data-vv-delay="300"
+       :role="fieldRole"
+       :aria-describedby="fieldId + '_help'"
        :class="{
          hasError: errors.has(name),
          validField: fieldValidity }"
-       :role="fieldRole"
-       :aria-describedby="fieldId + '_help'"
-       @input="onInput($event.target.value)"
-       @keydown.enter.stop.prevent="handleKeydown($event)"
       >
-
      <transition name="fade">
        <div
          :id="fieldId + '_help'"
@@ -41,8 +38,8 @@
 
 export default {
   name: 'form-field',
+  inheritAttrs: false,
   props: {
-
     label: {
       type: String,
       default: 'Form Field'
@@ -61,8 +58,6 @@ export default {
     },
 
     role: String,
-
-    placeholder: String,
 
     type: {
       type: String,
@@ -89,15 +84,24 @@ export default {
 
   data () {
     return {
-      hasFocus: false,
-      fieldPlaceholder: this.placeholder ? this.placeholder : false,
-      fieldRole: this.role ? this.role : false,
-      helpStyles: {
-        color: '#ca0000'
-      }
+      fieldRole: this.role ? this.role : false
     }
   },
+
+  inject: ['$validator'],
+
   computed: {
+    model: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$nextTick(function() {
+          this.$emit('input', val)
+        })
+      }
+    },
+
     fieldId () {
       return this.id ? this.id : this.name
     },
@@ -115,9 +119,7 @@ export default {
     }
   },
 
-  mounted () {
-    let vm = this
-    let Refs = vm.$refs
+  created () {
     this.focusListener()
   },
 
@@ -134,23 +136,7 @@ export default {
           }, 300);
         }
       })
-    },
-
-    setFocus () {
-      this.hasFocus = true
-    },
-
-    onInput (val) {
-      this.$emit('input', val)
-    },
-
-    onBlur (blurEvent) {
-      this.hasFocus = false
-    },
-    handleKeydown ($event) {
-      console.log('keydown event fired');
     }
-  },
-  inject: ['$validator']
+  }
 }
 </script>

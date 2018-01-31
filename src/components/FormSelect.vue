@@ -3,8 +3,9 @@
     <div class="form-item">
       <label :for="name">{{label}}</label>
       <select
-        v-model="selectedOption"
-        @change="onChange($event.target.value)"
+        v-model="model"
+        v-bind="$attrs"
+        v-on="$listeners"
         class="select"
         :class="{hasError: errors.has(name), 'validField': fieldValidity }"
         v-validate="fieldValidation"
@@ -12,9 +13,7 @@
         :ref="name"
         :id="fieldId"
         :aria-describedby="fieldId + '_help'"
-        :data-vv-as="label"
-        :placeholder="fieldPlaceholder"
-      >
+        :data-vv-as="label">
         <option key="initial" value="" v-text="defaultText"></option>
         <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
       </select>
@@ -36,6 +35,7 @@
 
 export default {
   name: 'form-select',
+  inheritAttrs: false,
   props: {
     label: {
       type: String,
@@ -55,7 +55,6 @@ export default {
       type: String,
       default: 'Select'
     },
-    placeholder: String,
     validation: {
       type: [String, Object],
     },
@@ -74,21 +73,32 @@ export default {
   },
   data () {
     return {
-      hasFocus: false,
       selectedOption: '',
-      fieldPlaceholder: this.placeholder ? this.placeholder : '',
-      helpStyles: {
-        color: '#ca0000'
-      }
     }
   },
   inject: ['$validator'],
 
-  mounted () {
-    this.selectedOption = this.value
+  created () {
     this.focusListener()
   },
+
+  mounted () {
+    this.selectedOption = this.value
+  },
+
   computed: {
+    model: {
+      get() {
+        return this.selectedOption
+      },
+      set(val) {
+        this.$nextTick(function() {
+          this.$emit('input', val);
+          val !== '' ? this.$emit('option-selected') : ''
+        })
+      }
+    },
+
     fieldId () {
       return this.id ? this.id : this.name
     },
@@ -130,11 +140,6 @@ export default {
       if (this.focusOnEnter && this.selectedOption != '') {
         this.$refs[this.name].focus()
       }
-    },
-
-    onChange(selectedValue) {
-    	this.$emit('input', selectedValue);
-      selectedValue !== '' ? this.$emit('option-selected') : ''
     }
   },
 
