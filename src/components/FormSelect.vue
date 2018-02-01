@@ -6,6 +6,7 @@
         v-model="model"
         v-bind="$attrs"
         v-on="$listeners"
+        @keydown.enter.stop.prevent
         class="select"
         :class="{hasError: errors.has(name), 'validField': fieldValidity }"
         v-validate="fieldValidation"

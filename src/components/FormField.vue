@@ -13,6 +13,7 @@
        v-model="model"
        v-bind="$attrs"
        v-on="$listeners"
+       @keydown.enter.stop.prevent
        :data-vv-as="label"
        :data-vv-name="name"
        :data-vv-delay="300"
