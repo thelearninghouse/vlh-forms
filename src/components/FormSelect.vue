@@ -131,19 +131,6 @@ export default {
       if (this.focusOnEnter && this.selectedOption != '') {
         this.$refs[this.name].focus()
       }
-    },
-
-    beforeEnter: function(el) {
-      el.style.height = "0";
-    },
-    enter: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
-    },
-    beforeLeave: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
-    },
-    leave: function(el) {
-      el.style.height = "0";
     }
   },
 

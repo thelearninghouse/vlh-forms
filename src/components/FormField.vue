@@ -21,7 +21,7 @@
        :class="{
          hasError: errors.has(name),
          validField: fieldValidity }"
-      >  
+      >
       <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
    </div>
 </template>
@@ -129,19 +129,6 @@ export default {
           }, 300);
         }
       })
-    },
-
-    beforeEnter: function(el) {
-      el.style.height = "0";
-    },
-    enter: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
-    },
-    beforeLeave: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
-    },
-    leave: function(el) {
-      el.style.height = "0";
     }
   }
 }
