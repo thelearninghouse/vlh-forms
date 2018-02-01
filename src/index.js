@@ -2,6 +2,7 @@
 // import Vue from 'vue'
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
+import FormHelp from './components/FormHelp.vue'
 import FormFirstName from './components/FormFirstName.vue'
 import FormLastName from './components/FormLastName.vue'
 import FormZip from './components/FormZip.vue'
@@ -19,6 +20,7 @@ const VlhForms = {
   install(Vue, options) {
     Vue.component(FormSelect.name, FormSelect);
     Vue.component(FormField.name, FormField);
+    Vue.component(FormHelp.name, FormHelp);
     Vue.component(FormFirstName.name, FormFirstName);
     Vue.component(FormLastName.name, FormLastName);
     Vue.component(FormPhone.name, FormPhone);

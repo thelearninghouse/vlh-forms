@@ -1,3 +1,5 @@
+@import 'form-item.scss';
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s;
@@ -7,6 +9,38 @@
 .fade-leave-active {
   opacity: 0;
 }
+// .accordion-enter-active,
+// .accordion-leave-active {
+//   transition: opacity 0.25s;
+// }
+.accordion-enter,
+.accordion-leave-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.accordion-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+// .accordion-enter,
+// .accordion-leave-active {
+//   opacity: 0;
+//   transform: translateY(-50px);
+// }
+// .accordion-enter-active,
+// .accordion-leave-active {
+//   transition: all 0.3s ease-in-out;
+// }
+// .accordion-enter {
+//   transform: translateY(-50px);
+//   opacity: 0;
+// }
+//
+// .accordion-leave-to {
+//   transform: translateY(50px);
+//   opacity: 0;
+// }
 
 .slide-enter-active,
 .slide-leave-active {
@@ -60,59 +94,6 @@ select.form-field:focus {
   opacity: 0;
 }
 
-.form-item {
-  margin: 1em 0.5em 2em;
-  position: relative;
-
-  input,
-  label,
-  select {
-    position: relative;
-    z-index: 2;
-  }
-
-  input,
-  select {
-    position: relative;
-    height: 40px;
-    z-index: 2;
-    border: 1px gray solid;
-    padding: 0 15px;
-    width: 100%;
-
-    &:focus {
-      border-bottom: 2px solid #373737;
-    }
-    // background-color: rgb(248, 248, 248);
-  }
-
-  .help {
-    position: absolute;
-    top: 105%;
-    display: block;
-    transition: all 0.5s ease;
-    font-size: 14px;
-
-    &.hasError {
-
-    }
-
-
-
-  }
-  // TEMPORARY
-  label {
-    text-transform: capitalize;
-  }
-}
-
-input,
-select {
-  &.hasError {
-    border: 2px solid #ca0000;
-  }
-}
-
 
 // Theme Styling
 form {
@@ -120,7 +101,6 @@ form {
     .help {
       color: #ca0000 !important;
     }
-
   }
 
   &.light-color-theme {
@@ -134,6 +114,4 @@ form {
       color: #f9f9f9 !important;
     }
   }
-
-
 }

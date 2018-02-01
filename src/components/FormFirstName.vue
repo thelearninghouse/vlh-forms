@@ -9,7 +9,11 @@
       },
       label: {
         default: 'First Name'
+      },
+      autocomplete: {
+        default: 'given-name'
       }
     }
   }
 </script>
+given-name

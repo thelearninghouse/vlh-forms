@@ -15,6 +15,9 @@
       },
       validation: {
         default: 'required|validPhone'
+      },
+      autocomplete: {
+        default: 'tel'
       }
     }
   }

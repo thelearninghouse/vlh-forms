@@ -17,16 +17,7 @@
         <option key="initial" value="" v-text="defaultText"></option>
         <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
       </select>
-
-      <transition name="fade">
-        <div
-          :id="name + '_help'"
-          v-if="showHelp"
-          class="help hasError"
-          v-text="errors.first(name)">
-        </div>
-      </transition>
-
+      <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
     </div>
   </transition>
 </template>
@@ -140,6 +131,19 @@ export default {
       if (this.focusOnEnter && this.selectedOption != '') {
         this.$refs[this.name].focus()
       }
+    },
+
+    beforeEnter: function(el) {
+      el.style.height = "0";
+    },
+    enter: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    beforeLeave: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    leave: function(el) {
+      el.style.height = "0";
     }
   },
 

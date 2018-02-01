@@ -9,6 +9,9 @@
       },
       label: {
         default: 'Last Name'
+      },
+      autocomplete: {
+        default: 'family-name'
       }
     }
   }

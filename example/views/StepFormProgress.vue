@@ -7,7 +7,12 @@
         :active-step="currentStep">
       </step-form-progress>
 
-      <transition name="slide-fade" mode="out-in" appear>
+      <transition
+        name="slide-fade"
+        mode="out-in"
+        appear
+        @after-enter="transitionCompleted"
+        @after-appear="transitionAfterAppear">
         <form-step v-if="currentStep == 1" :key="1">
           <form-select
             name="degreeLevel"
@@ -66,6 +71,21 @@ export default {
       if (Form && this.helpTextColor ) {
         Form.classList.add(this.helpTextColor);
       }
+    },
+
+    setFocusWithJS () {
+      var FormItemDiv = document.querySelector(".form-item");
+      var El = FormItemDiv.querySelector("input, select, checkbox, textarea");
+      El.focus()
+    },
+
+    transitionCompleted (el) {
+      console.log('After Enter', el);
+      this.setFocusWithJS ()
+    },
+
+    transitionAfterAppear (el) {
+      console.log('After Appear', el);
     }
   }
 }

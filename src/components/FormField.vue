@@ -21,24 +21,17 @@
        :class="{
          hasError: errors.has(name),
          validField: fieldValidity }"
-      >
-     <transition name="fade">
-       <div
-         :id="fieldId + '_help'"
-         v-if="showHelp"
-         class="help hasError"
-         v-text="errors.first(name)">
-       </div>
-     </transition>
-
+      >  
+      <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
    </div>
 </template>
 
 <script>
-
+import FormHelp from './FormHelp'
 export default {
   name: 'form-field',
   inheritAttrs: false,
+  component: { FormHelp },
   props: {
     label: {
       type: String,
@@ -136,7 +129,24 @@ export default {
           }, 300);
         }
       })
+    },
+
+    beforeEnter: function(el) {
+      el.style.height = "0";
+    },
+    enter: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    beforeLeave: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    leave: function(el) {
+      el.style.height = "0";
     }
   }
 }
 </script>
+
+<style lang="scss">
+
+</style>

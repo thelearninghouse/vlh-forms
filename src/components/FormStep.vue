@@ -1,6 +1,8 @@
 <template>
   <!-- <transition name="slide-fade" mode="out-in" appear> -->
   <div class="step">
+    <!-- <input type="text" v-model="inputId">
+    <button @click.prevent="setFocus(inputId)">Set Focus</button> -->
     <slot>
       <p>This should not show up unless theres nothing inside component in parent</p>
     </slot>
@@ -13,6 +15,13 @@
 export default {
   name: 'form-step',
   inject: ['$validator'],
+
+  data () {
+    return {
+      inputId: ''
+    }
+  },
+
   computed: {
     currentStep () {
       return this.$parent.currentStep
@@ -30,10 +39,28 @@ export default {
   },
 
   mounted () {
+
     if (this.stepID > 1) {
-      this.$nextTick(function () {
-        this.$bus.$emit('set-focus', this.firstField)
+      console.log(this.stepID);
+      this.$nextTick(function() {
+        console.log('From FormStep Mounted');
       })
+
+      // this.$nextTick(function () {
+      //   this.$bus.$emit('set-focus', this.firstField)
+      // })
+    }
+  },
+
+  methods: {
+    setFocus(id) {
+      document.getElementById(id).focus();
+    },
+    setFocusWithJS () {
+      console.log('Running in new focus method');
+      var FormItemDiv = document.querySelector(".form-item");
+      var El = FormItemDiv.querySelector("input, select, checkbox, textarea");
+      El.focus()
     }
   }
 }
