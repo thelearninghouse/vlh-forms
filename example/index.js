@@ -67,16 +67,22 @@ Vue.mixin({
     // this.registerZipValidator()
   },
   methods: {
+    setFocusOnFirstFormError () {
+      var TlhForm = document.getElementById('tlh-form');
+      var FirstFormError = TlhForm.querySelector("input.hasError, select.hasError");
+      FirstFormError.focus()
+    },
+
     handleFormSubmission() {
       this.$validator.validateAll().then((result) => {
         if (!result) {
-          console.log('ERRORS');
+          this.setFocusOnFirstFormError()
         } else {
           console.log('form is good!');
         }
-
       })
     },
+
     cleanUpProgramsArray() {
       this.checkForDisplayNames()
       this.alphabetizePrograms()
@@ -129,15 +135,8 @@ Vue.mixin({
         console.log('Missing fields or errors!');
         if (result) {
           this.currentStep = this.currentStep + 1
-          this.$bus.$emit('next-here')
-          // this.$bus.$on('next-here', () => {
-          //   console.log('next here ran!!!');
-          //   this.$nextTick(function() {
-          //     this.setFocus(this.firstField)
-          //   })
-          // })
-          // this.$bus.$emit('next-here')
-          console.log('Next Step!');
+        } else {
+          this.setFocusOnFirstFormError();
         }
       });
     },

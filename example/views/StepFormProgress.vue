@@ -10,10 +10,8 @@
       <transition
         name="slide-fade"
         mode="out-in"
-        appear
-        @after-enter="transitionCompleted"
-        @after-appear="transitionAfterAppear">
-        <form-step v-if="currentStep == 1" :key="1">
+        appear>
+        <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
           <form-select
             name="degreeLevel"
             v-model="selectedDegreeLevel"
@@ -33,12 +31,12 @@
          </form-select>
         </form-step>
 
-        <form-step v-if="currentStep == 2" :key="2">
+        <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
           <form-first-name v-model="submit.firstName"></form-first-name>
           <form-last-name v-model="submit.lastName"></form-last-name>
         </form-step>
 
-        <form-step v-if="currentStep == 3" :key="3">
+        <form-step :active-step="currentStep" v-if="currentStep == 3" :key="3">
           <form-phone v-model="submit.phone" validation="required"></form-phone>
           <form-email v-model="submit.email" validation="required|email"></form-email>
          <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>

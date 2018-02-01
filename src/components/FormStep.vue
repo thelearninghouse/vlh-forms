@@ -16,6 +16,13 @@ export default {
   name: 'form-step',
   inject: ['$validator'],
 
+  props: {
+    activeStep: {
+      type: [Number, String],
+      required: true
+    }
+  },
+
   data () {
     return {
       inputId: ''
@@ -23,9 +30,6 @@ export default {
   },
 
   computed: {
-    currentStep () {
-      return this.$parent.currentStep
-    },
     firstField () {
       return Object.keys(this.fields)[0];
     },
@@ -39,28 +43,9 @@ export default {
   },
 
   mounted () {
-
-    if (this.stepID > 1) {
-      console.log(this.stepID);
-      this.$nextTick(function() {
-        console.log('From FormStep Mounted');
-      })
-
-      // this.$nextTick(function () {
-      //   this.$bus.$emit('set-focus', this.firstField)
-      // })
-    }
-  },
-
-  methods: {
-    setFocus(id) {
-      document.getElementById(id).focus();
-    },
-    setFocusWithJS () {
-      console.log('Running in new focus method');
-      var FormItemDiv = document.querySelector(".form-item");
-      var El = FormItemDiv.querySelector("input, select, checkbox, textarea");
-      El.focus()
+    if ( this.activeStep > 1 && this.activeStep == this.stepID ) {
+      console.log('emmitting focus');
+      this.$bus.$emit('set-focus', this.firstField)
     }
   }
 }
