@@ -69,7 +69,7 @@ Vue.mixin({
   methods: {
     setFocusOnFirstFormError () {
       var TlhForm = document.getElementById('tlh-form');
-      var FirstFormError = TlhForm.querySelector("input.hasError, select.hasError");
+      var FirstFormError = TlhForm.querySelector("input.invalid, select.invalid");
       FirstFormError.focus()
     },
 

@@ -22,20 +22,19 @@
       border-bottom: 2px solid #373737;
     }
 
-    &.hasError {
+    &.invalid {
       border: 2px solid #ca0000;
 
       &:focus {
         outline: none;
       }
     }
-    // background-color: rgb(248, 248, 248);
   }
 
   .help {
     font-size: 0.9em;
 
-    &.hasError {}
+    &.invalid {}
   }
   // TEMPORARY
   label {
@@ -45,9 +44,6 @@
   .input,
   .select {
     position: relative;
-    // height: 40px;
-    // line-height: 40px;
-    // padding: 0 40px 0 8px;
   }
 
   .help {
@@ -56,6 +52,19 @@
     &-inner {
       padding: 2px 4px;
       overflow-wrap: break-word;
+    }
+  }
+
+  select {
+    padding-right: 40px !important;
+    background-image: url("../images/select-arrow.png");
+    -webkit-appearance: none;
+    background-size: 40px;
+    background-position: 99.5%;
+    background-repeat: no-repeat;
+
+    &.invalid {
+      background-image: none;
     }
   }
 }

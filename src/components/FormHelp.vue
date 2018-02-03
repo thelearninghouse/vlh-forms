@@ -14,7 +14,6 @@ export default {
     'helpText',
     'visible'
   ],
-
   methods: {
     beforeEnter: function(el) {
       el.style.height = "0";

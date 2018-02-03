@@ -3,6 +3,7 @@
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
 import FormHelp from './components/FormHelp.vue'
+import FormHelpIcon from './components/FormHelpIcon.vue'
 import FormFirstName from './components/FormFirstName.vue'
 import FormLastName from './components/FormLastName.vue'
 import FormZip from './components/FormZip.vue'
@@ -14,13 +15,14 @@ import FormStep from './components/FormStep.vue'
 import FormStepper from './components/FormStepper.vue'
 import StepFormControls from './components/StepFormControls.vue'
 import StepFormProgress from './components/StepFormProgress.vue'
-import './vlh-forms.scss'
+import './assets/styles/vlh-forms.scss'
 
 const VlhForms = {
   install(Vue, options) {
     Vue.component(FormSelect.name, FormSelect);
     Vue.component(FormField.name, FormField);
     Vue.component(FormHelp.name, FormHelp);
+    Vue.component(FormHelpIcon.name, FormHelpIcon);
     Vue.component(FormFirstName.name, FormFirstName);
     Vue.component(FormLastName.name, FormLastName);
     Vue.component(FormPhone.name, FormPhone);
@@ -127,4 +129,6 @@ export {
   FormLegalText,
   FormStep,
   StepFormControls,
+  FormHelp,
+  FormHelpIcon
 }

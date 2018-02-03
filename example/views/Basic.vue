@@ -9,7 +9,7 @@
     <form-select
       transition="vertical-slide" name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel">
     </form-select>
-    <form-first-name @keyup='handleEvent' v-model="submit.firstName"></form-first-name>
+    <form-first-name optional v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip placeholder="Some" v-model="submit.zip"></form-zip>
     <form-phone v-model="submit.phone" validation="required"></form-phone>

@@ -1,51 +1,45 @@
 <template>
   <div class="form-item">
      <label v-text="label" :for="name"></label>
-     <input
-       v-validate="fieldValidation"
-       class="input"
-       :name="name"
-       :autocomplete="autocomplete"
-       :pattern="pattern"
-       :id="fieldId"
-       :ref="name"
-       :type="type"
-       v-model="model"
-       v-bind="$attrs"
-       v-on="$listeners"
-       @keydown.enter.stop.prevent
-       :data-vv-as="label"
-       :data-vv-name="name"
-       :data-vv-delay="300"
-       :role="fieldRole"
-       :aria-describedby="fieldId + '_help'"
-       :class="{
-         hasError: errors.has(name),
-         validField: fieldValidity }"
-      >
-      <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
+     <div class="form-field-wrapper">
+       <input
+         v-validate="fieldValidation"
+         class="input"
+         :name="name"
+         :autocomplete="autocomplete"
+         :pattern="pattern"
+         :id="fieldId"
+         :ref="name"
+         :type="type"
+         v-model.trim="model"
+         v-bind="$attrs"
+         v-on="$listeners"
+         @keydown.enter.stop.prevent
+         :data-vv-as="label"
+         :data-vv-name="name"
+         :data-vv-delay="300"
+         :role="fieldRole"
+         :aria-describedby="fieldId + '-help'"
+         :class="{
+           invalid: errors.has(name),
+           valid: fieldValidity }"
+        >
+        <form-help-icon
+          :id="fieldId + '-help-icon'"
+          :class="{invalid: errors.has(name), valid: fieldValidity }"
+          :icon="currentIcon">    
+        </form-help-icon>
+      </div>
+      <form-help :visible="showHelp" :id="fieldId + '-help'" :helpText="errors.first(name)"></form-help>
    </div>
 </template>
 
 <script>
-import FormHelp from './FormHelp'
+import { FormItemMixin } from '../helpers/FormItemMixin.js'
 export default {
   name: 'form-field',
-  inheritAttrs: false,
-  component: { FormHelp },
+  mixins: [FormItemMixin],
   props: {
-    label: {
-      type: String,
-      default: 'Form Field'
-    },
-
-    name: {
-      type: String,
-      default: 'formField',
-    },
-
-    id: String,
-
     value: {
       type: String,
       required: true
@@ -82,8 +76,6 @@ export default {
     }
   },
 
-  inject: ['$validator'],
-
   computed: {
     model: {
       get() {
@@ -94,47 +86,17 @@ export default {
           this.$emit('input', val)
         })
       }
-    },
-
-    fieldId () {
-      return this.id ? this.id : this.name
-    },
-
-    fieldValidation () {
-      return this.optional ? { rules: { required: false} } : this.validation || 'required'
-    },
-
-    fieldValidity () {
-      return this.fields[this.name] == undefined ? false : this.checkFieldValidity(this.fields[this.name])
-    },
-
-    showHelp () {
-      return this.errors.has(this.name)
     }
   },
 
   created () {
     this.focusListener()
-  },
-
-  methods: {
-    checkFieldValidity (field) {
-      return field.dirty && field.valid && field.validated  ? true : false
-    },
-
-    focusListener () {
-      this.$bus.$on('set-focus', name => {
-        if (this.$refs[name]) {
-          setTimeout(() => {
-            this.$refs[name].focus()
-          }, 300);
-        }
-      })
-    }
   }
 }
 </script>
 
 <style lang="scss">
-
+.form-field-wrapper {
+  position: relative;
+}
 </style>
