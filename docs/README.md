@@ -4,6 +4,10 @@ Plugin for Learning House Forms using Vue.js
 
 This is a Vue.js component library for the Learning House Marketing Forms.
 
+!> VlhForms is included in the package.json of the TlhFormsWP Plugin via using github url. When VlhForms gets updated, run `yarn upgrade vlh-forms` and it updated to latest version
+
+**It uses Poi.js for Development and Building into library**
+
 ## Install
 
 ```bash

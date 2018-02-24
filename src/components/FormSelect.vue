@@ -2,50 +2,38 @@
   <transition :name="transition">
     <div class="form-item">
       <label :for="name">{{label}}</label>
-      <select
-        v-model="selectedOption"
-        @change="onChange($event.target.value)"
-        class="select"
-        :class="{hasError: errors.has(name), 'validField': fieldValidity }"
-        v-validate="fieldValidation"
-        :name="name"
-        :ref="name"
-        :id="fieldId"
-        :aria-describedby="fieldId + '_help'"
-        :data-vv-as="label"
-        :placeholder="fieldPlaceholder"
-      >
-        <option key="initial" value="" v-text="defaultText"></option>
-        <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
-      </select>
+      <div class="form-field-wrapper">
+        <select
+          v-model="model"
+          v-bind="$attrs"
+          v-on="$listeners"
+          @keydown.enter.stop.prevent
+          class="select"
+          :class="{invalid: errors.has(name), valid: fieldValidity }"
+          v-validate="fieldValidation"
+          :name="name"
+          :ref="name"
+          :id="fieldId"
+          :aria-describedby="fieldId + '_help'"
+          :data-vv-as="label">
+          <option key="initial" value="" v-text="defaultText"></option>
+          <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
+        </select>
+        <form-help-icon :icon="currentIcon"></form-help-icon>
+      </div>
 
-      <transition name="fade">
-        <div
-          :id="name + '_help'"
-          v-if="showHelp"
-          class="help hasError"
-          v-text="errors.first(name)">
-        </div>
-      </transition>
-
+      <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
     </div>
   </transition>
 </template>
 
 <script>
+import { FormItemMixin } from '../helpers/FormItemMixin.js'
 
 export default {
   name: 'form-select',
+  mixins: [FormItemMixin],
   props: {
-    label: {
-      type: String,
-      required: true
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    id: String,
     value: '',
     options: {
       type: Array,
@@ -55,7 +43,6 @@ export default {
       type: String,
       default: 'Select'
     },
-    placeholder: String,
     validation: {
       type: [String, Object],
     },
@@ -74,66 +61,41 @@ export default {
   },
   data () {
     return {
-      hasFocus: false,
       selectedOption: '',
-      fieldPlaceholder: this.placeholder ? this.placeholder : '',
-      helpStyles: {
-        color: '#ca0000'
-      }
     }
   },
-  inject: ['$validator'],
+
+  created () {
+    this.focusListener()
+  },
 
   mounted () {
     this.selectedOption = this.value
-    // this.handleFocusOnEnter()
-    this.focusListener()
   },
+
   computed: {
-    fieldId () {
-      return this.id ? this.id : this.name
-    },
-
-    fieldValidation () {
-      return this.optional ? { rules: { required: false} } : this.validation || 'required'
-    },
-
-    fieldValidity () {
-      return this.fields[this.name] == undefined ? false : this.checkFieldValidity(this.fields[this.name])
-    },
-
-    showHelp () {
-      return this.errors.has(this.name)
+    model: {
+      get() {
+        return this.selectedOption
+      },
+      set(val) {
+        this.$nextTick(function() {
+          this.$emit('input', val);
+          val !== '' ? this.$emit('option-selected') : ''
+        })
+      }
     }
   },
 
   methods: {
-    checkFieldValidity (field) {
-      return field.dirty && field.valid && field.validated  ? true : false
-    },
-
-    focusListener () {
-      this.$bus.$on('set-focus', name => {
-        this.$nextTick(function() {
-          this.setFocus(name)
-        })
-      })
-    },
-
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : ''
     },
 
     handleFocusOnEnter () {
-      console.log('handleFocus ran!');
       if (this.focusOnEnter && this.selectedOption != '') {
         this.$refs[this.name].focus()
       }
-    },
-
-    onChange(selectedValue) {
-    	this.$emit('input', selectedValue);
-      selectedValue !== '' ? this.$emit('option-selected') : ''
     }
   },
 
@@ -145,8 +107,11 @@ export default {
 }
 </script>
 
-<style lang="css">
-label {
-  display: block;
-}
+<style lang="scss">
+  select {
+    cursor: pointer;
+  }
+  label {
+    display: block;
+  }
 </style>

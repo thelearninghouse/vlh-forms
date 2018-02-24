@@ -2,6 +2,8 @@
 // import Vue from 'vue'
 import FormSelect from './components/FormSelect.vue'
 import FormField from './components/FormField.vue'
+import FormHelp from './components/FormHelp.vue'
+import FormHelpIcon from './components/FormHelpIcon.vue'
 import FormFirstName from './components/FormFirstName.vue'
 import FormLastName from './components/FormLastName.vue'
 import FormZip from './components/FormZip.vue'
@@ -12,12 +14,15 @@ import FormLegalText from './components/FormLegalText.vue'
 import FormStep from './components/FormStep.vue'
 import FormStepper from './components/FormStepper.vue'
 import StepFormControls from './components/StepFormControls.vue'
-import './vlh-forms.scss'
+import StepFormProgress from './components/StepFormProgress.vue'
+import './assets/styles/vlh-forms.scss'
 
 const VlhForms = {
   install(Vue, options) {
     Vue.component(FormSelect.name, FormSelect);
     Vue.component(FormField.name, FormField);
+    Vue.component(FormHelp.name, FormHelp);
+    Vue.component(FormHelpIcon.name, FormHelpIcon);
     Vue.component(FormFirstName.name, FormFirstName);
     Vue.component(FormLastName.name, FormLastName);
     Vue.component(FormPhone.name, FormPhone);
@@ -28,6 +33,7 @@ const VlhForms = {
     Vue.component(FormStep.name, FormStep);
     Vue.component(FormStepper.name, FormStepper);
     Vue.component(StepFormControls.name, StepFormControls);
+    Vue.component(StepFormProgress.name, StepFormProgress);
 
 
     // Add to Vue properties by exposing a getter for $bus
@@ -123,4 +129,6 @@ export {
   FormLegalText,
   FormStep,
   StepFormControls,
+  FormHelp,
+  FormHelpIcon
 }

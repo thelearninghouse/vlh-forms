@@ -37,6 +37,8 @@
 </div>
 ```
 
+- There is also an icon that is displayed when a required field is invalid.
+
 - You can add an class to the `div` element wrapping inputs and selects by doing the following:
 
 ```html

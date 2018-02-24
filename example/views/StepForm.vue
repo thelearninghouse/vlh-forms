@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="example stepForm">
+  <form id="tlh-form" class="example basic" @submit.prevent="handleFormSubmission">
 
     <div class="stepsWrapper">
       <transition name="slide-fade" mode="out-in" appear>
@@ -45,7 +45,7 @@
     </step-form-controls>
 
     <form-legal-text></form-legal-text>
-  </div>
+  </form>
 </template>
 
 <script>

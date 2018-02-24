@@ -1,7 +1,7 @@
 import {programs, levels} from './programsSample.js'
 
 export const MockData = {
-  helpTextColor: '',
+  helpTextColor: 'dark',
   showMore: true,
   selectedDegreeLevel: '',
   formItemsTransition: 'vertical-slide',

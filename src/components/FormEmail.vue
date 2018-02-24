@@ -15,6 +15,9 @@
       },
       validation: {
         default: 'required|email|validEmail'
+      },
+      autocomplete: {
+        default: 'email'
       }
     }
   }
