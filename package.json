@@ -1,12 +1,7 @@
 {
   "name": "vlh-forms",
-<<<<<<< HEAD
-  "version": "0.0.767",
-  "description": "Vue.js component library/plugin for Learning House's new form system using Vue.js",
-=======
   "version": "0.2.0",
   "description": "Forms Plugin for Learning House's new form system",
->>>>>>> 66b7c6c7e732be7ec90b8f63d505fd7b1ffa5077
   "repository": {
     "url": "thelearninghouse/vlh-forms",
     "type": "git"
@@ -22,17 +17,12 @@
     "library": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
     "docs": "docsify serve ./docs",
-<<<<<<< HEAD
-    "release": "npm publish",
-    "tlh": "npm publish --access public"
-=======
     "release": "npm run build && npm publish",
     "prepublish": "npm run build"
->>>>>>> 66b7c6c7e732be7ec90b8f63d505fd7b1ffa5077
   },
   "author": {
-    "name": "The Learning House - David Royer",
-    "email": "droyer@learninghouse.com"
+    "name": "David Royer",
+    "email": "droyer01@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {
