@@ -59,17 +59,13 @@ export default {
     align-items: baseline;
 
     button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
       background-color: #f9f9f9;
       padding: .25em .5em;
-
       display: flex;
       overflow: hidden;
-
-      margin: 10px;
-      padding: 10px 12px;
-      font-size: .9em;
+      margin: 0 5px 5px 5px;
+      padding: 4px 8px;
+      font-size: .85em;
       cursor: pointer;
       user-select: none;
       transition: all 150ms linear;
@@ -79,7 +75,7 @@ export default {
       text-transform: none;
       text-transform: capitalize;
       border: 0 none;
-      border-radius: 4px;
+      border-radius: 2px;
       line-height: 1.3;
 
       -webkit-appearance: none;
@@ -88,8 +84,7 @@ export default {
 
       justify-content: center;
       align-items: center;
-      flex-basis: 75px;
-
+      // flex-basis: 75px;
     }
     .previous-step {
       margin-right: 1.5em;

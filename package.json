@@ -1,6 +1,6 @@
 {
-  "name": "@thelearninghouse/vlh-forms",
-  "version": "0.0.766",
+  "name": "vlh-forms",
+  "version": "0.0.767",
   "description": "Vue.js component library/plugin for Learning House's new form system using Vue.js",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
