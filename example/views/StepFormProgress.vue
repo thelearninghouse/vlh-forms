@@ -7,6 +7,18 @@
         :active-step="currentStep">
       </step-form-progress>
 
+      <step-form-progress :steps="totalSteps" :active-step="currentStep">
+        <div slot="step1">
+          <span>Step 1: Choose A Degree</span>
+        </div>
+        <div slot="step2">
+          <span>Step 2: Your Name</span>
+        </div>
+        <div slot="step3">
+          <span>Step 3: Contact Info</span>
+        </div>
+      </step-form-progress>
+
       <transition
         name="slide-fade"
         mode="out-in"

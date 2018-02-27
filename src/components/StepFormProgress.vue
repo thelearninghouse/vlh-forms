@@ -1,9 +1,16 @@
 <template>
   <div class="stepFormProgress">
-    <template v-for="(step, index) in steps">
-      <div class="stepProgress" :key="index + 1" :class="{ currentStep: activeStep == index + 1, completedStep: activeStep > index + 1 }">Step {{index + 1}}
-      </div>
-    </template>
+    <div
+      v-for="(step, index) in steps"
+      :key="index + 1"
+      class="stepProgress"
+      :class="{ currentStep: activeStep == index + 1, completedStep: activeStep > index + 1 }">
+
+      <slot :name="'step' + (index + 1)">
+        <span v-text="'Step ' + (index + 1)"></span>
+      </slot>
+
+    </div>
   </div>
 </template>
 
