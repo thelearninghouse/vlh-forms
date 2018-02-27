@@ -2,32 +2,48 @@
 
 Plugin for Learning House Forms using Vue.js
 
-## Install
+**[Documentation](https://thelearninghouse.github.io/vlh-forms)**
+
+This is a Vue.js component library for the Learning House Marketing Forms.
+
+> VlhForms is included in the package.json of the TlhFormsWP Plugin via using github url. When VlhForms gets updated, run `yarn upgrade vlh-forms` and it updated to latest version
+
+**It uses Poi.js for Development and Building into library**
+
+--------------------------------------------------------------------------------
+
+## Development
 
 ```bash
-yarn add vlh-forms
+yarn dev
 ```
 
-CDN: [UNPKG](https://unpkg.com/vlh-forms/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vlh-forms/) (available as `window.VlhForms`)
+--------------------------------------------------------------------------------
 
-## Usage
+## Production
 
-```vue
-<template>
-  <form-program-select></form-program-select>
-</template>
-
-<script>
-import FormProgramSelect from 'form-program-select'
-
-export default {
-  components: {
-    FormProgramSelect
-  }
-}
-</script>
+```bash
+yarn build
 ```
 
-## License
+--------------------------------------------------------------------------------
 
-MIT &copy; [David Royer](https://davidroyer.me)
+## Documentation
+
+[Docsify](https://docsify.js.org) is used for creating the documentation. To Run the Docs in development mode:
+
+### 1\. Install It Globally
+
+```bash
+yarn global add docsify-cli
+
+// Or with npm
+
+npm i docsify-cli -g
+```
+
+### 2\. Then From The Root Directory Of VlhForms:
+
+```bash
+yarn docs
+```

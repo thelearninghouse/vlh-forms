@@ -133,11 +133,11 @@ A few style options are available as well
 Creates an individual step for a Step Form
 
 ```html
-<form-step v-if="currentStep == 1" :key="1">
+<form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
   <!-- Other form compontents here -->
 </form-step>
 
-<form-step v-if="currentStep == 2" :key="2">
+<form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
   <!-- Other form compontents here -->
 </form-step>
 ```

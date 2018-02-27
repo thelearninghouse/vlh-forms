@@ -1,13 +1,9 @@
 <template>
-  <!-- <transition name="slide-fade" mode="out-in" appear> -->
   <div class="step">
-    <!-- <input type="text" v-model="inputId">
-    <button @click.prevent="setFocus(inputId)">Set Focus</button> -->
     <slot>
       <p>This should not show up unless theres nothing inside component in parent</p>
     </slot>
   </div>
-<!-- </transition> -->
 </template>
 
 <script>
