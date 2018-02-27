@@ -126,7 +126,7 @@ A few style options are available as well
 
 --------------------------------------------------------------------------------
 
-## Step For Step Form
+## Form Step
 
 `form-step`
 
@@ -168,7 +168,7 @@ Custom text for submit is still available by using `submitBtnText`
 
 `step-form-progress`
 
-Outputs progress for step forms
+Outputs progress for step forms. See [Custom Step Form Example](#) For Customization
 
 ```html
 <step-form-progress
