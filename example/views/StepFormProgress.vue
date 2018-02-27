@@ -3,11 +3,12 @@
 
     <div class="stepsWrapper">
       <step-form-progress
+        customProgress
         :steps="totalSteps"
         :active-step="currentStep">
       </step-form-progress>
 
-      <step-form-progress :steps="totalSteps" :active-step="currentStep">
+      <step-form-progress customProgress :steps="totalSteps" :active-step="currentStep">
         <div slot="step1">
           <span>Step 1: Choose A Degree</span>
         </div>

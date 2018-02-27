@@ -4,7 +4,10 @@
       v-for="(step, index) in steps"
       :key="index + 1"
       class="stepProgress"
-      :class="{ currentStep: activeStep == index + 1, completedStep: activeStep > index + 1 }">
+      :class="{
+        currentStep: activeStep == index + 1,
+        completedStep: activeStep > index + 1,
+        'default-style': customProgress !== true}">
 
       <slot :name="'step' + (index + 1)">
         <span v-text="'Step ' + (index + 1)"></span>
@@ -25,6 +28,10 @@
       activeStep: {
         type: [Number, String],
         required: true
+      },
+      customProgress: {
+        type: Boolean,
+        required: false
       }
     }
   }
@@ -44,11 +51,11 @@
       position: relative;
       border-bottom: 3px solid transparent;
 
-      &.currentStep {
+      &.default-style.currentStep {
         border-bottom: 2px solid #444;
       }
 
-      &.completedStep {
+      &.default-style.completedStep {
 
         &:after {
           content: "\2713";
