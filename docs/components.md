@@ -161,3 +161,18 @@ Outputs Previous, Next, and Submit button for step forms. Uses `form-submit-butt
 ```
 
 Custom text for submit is still available by using `submitBtnText`
+
+--------------------------------------------------------------------------------
+
+## Step Form Progress
+
+`step-form-progress`
+
+Outputs progress for step forms
+
+```html
+<step-form-progress
+  :steps="totalSteps"
+  :active-step="currentStep">
+</step-form-progress>
+```

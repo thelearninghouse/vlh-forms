@@ -3,17 +3,14 @@
 ## Introduction
 
 - All form items must have a `v-model` attribute
-
 - Several custom form components are available
-
 - Templates will be created and stored in the `marketing-forms` repo on github
-
 - Always have form submit handler in templates
 
 ```html
 <form id="tlh-form" @submit.prevent="handleFormSubmission">
   <!--  Form components here-->
-</form>  
+</form>
 ```
 
 - In regards to class, styling, all inputs and selects render as follows:
@@ -55,33 +52,27 @@
 <form-submit-button :disableOnErrors="false"></form-submit-button>
 ```
 
-
-
----
+--------------------------------------------------------------------------------
 
 - Regular html syntax with normal inputs, labels, ect can be used in addition to the custom components
 
   **_Note: This should be rare if at all_**
 
-<!-- - Most forms should be able to build using   -->
+<!-- - Most forms should be able to build using -->
 
-- There are several customization options for the custom form field
+ - There are several customization options for the custom form field
 
 - By default, all fields are required. Override this by adding the `optional` attribute to any FormField
 
   -- **_See this scenario for an example (LINK HERE)_**
 
----
-
-
+--------------------------------------------------------------------------------
 
 ## Custom Form Components
 
-
 Since we are continually using the same types of forms across all sites, these reusable components are available to make the process easier and more maintainable longterm.
 
-> The `v-model` for these fields **must** set to specific properties for successful form submission.
-> See [Components](/components#components)  for what it should be for each component
+> The `v-model` for these fields **must** set to specific properties for successful form submission. See [Components](/components#components) for what it should be for each component
 
 All input fields are extended from the `form-field` component. It sets up base functionality that is shared across all inputs. The other custom fields are extended from it by declaring the attributes specific to it.
 
@@ -89,7 +80,7 @@ Below is the contents of the `FormFirstName.vue` file for the `form-first-name` 
 
 Example of Extending `form-field` component:
 
-  ```html
+```html
   <script>
     import FormField from './FormField.vue'
 
@@ -106,8 +97,9 @@ Example of Extending `form-field` component:
       }
     }
   </script>
-  ```
----
+```
+
+--------------------------------------------------------------------------------
 
 ### Ajax validations
 
@@ -117,12 +109,10 @@ Example of Extending `form-field` component:
 
   **_See example of overriding these ajax validations (LINK HERE)_**
 
----
-
-
-
+--------------------------------------------------------------------------------
 
 We are setting the default props which means adding a field for first name is as easy as:
+
 ```html
 <form-first-name v-model=submit.firstName></form-first-name>
 ```
@@ -133,21 +123,20 @@ And customizing the first name field is as easy as:
 <form-first-name label="New Label" v-model=submit.firstName></form-first-name>
 ```
 
----
+--------------------------------------------------------------------------------
 
 - Our marketing forms repo
 - Our custom Vue.js Plugin, **VlhForms**
 - Our custom Wordpress plugin, **Tlh Forms Plugin**
 
-
-| Name        | Type   | Default        | Description                        |
-| ----------- | ------ | -------------- | ---------------------------------- |
-| id          | String | this.fieldName |                                    |
-| label       | String | -              | The text for the label             |
-| placeholder | String | -              | The placeholder text for the input |
-|             |        |                |                                    |
-|             |        |                |                                    |
-|             |        |                |                                    |
-|             |        |                |                                    |
-|             |        |                |                                    |
-|             |        |                |                                    |
+Name        | Type   | Default        | Description
+----------- | ------ | -------------- | ----------------------------------
+id          | String | this.fieldName |
+label       | String | -              | The text for the label
+placeholder | String | -              | The placeholder text for the input
+            |        |                |
+            |        |                |
+            |        |                |
+            |        |                |
+            |        |                |
+            |        |
