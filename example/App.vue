@@ -12,6 +12,7 @@
         <router-link to="/step-form-progress">Step Form - Progress</router-link>
         <router-link to="/step-form-stepper">Step Form - Stepper</router-link>
         <router-link to="/custom-select-text">Custom Select Text</router-link>
+        <router-link to="/submission">Submission Test</router-link>
       </nav>
     </div>
     <transition name="slide-fade" mode="out-in" appear>

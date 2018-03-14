@@ -1,6 +1,10 @@
 <template>
   <div class="form-submit">
-    <input class="submit" type="submit" :disabled="disableHandler" :value="text" />
+    <input
+      class="submit"
+      type="submit"
+      :disabled="disableHandler || formSubmissionActive"
+      :value="text"/>
   </div>
 </template>
 
@@ -18,6 +22,17 @@ export default {
       default: true,
     }
   },
+
+  data: () => ({
+    formSubmissionActive: false,
+  }),
+
+  created () {
+    this.$bus.$on('is-submitting', (submitState) => {
+      this.formSubmissionActive = submitState
+    })
+  },
+
   computed: {
     disableHandler () {
       if (this.disableOnErrors == false) {
@@ -26,14 +41,6 @@ export default {
         return this.errors.any()
       }
     }
-  },
-  methods: {
-    // handleDisable() {
-    //   if (this.dis) {
-    //
-    //   }
-    //
-    // }
   }
 }
 </script>

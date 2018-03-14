@@ -11,6 +11,7 @@ export const MockData = {
   testModel: 'some text',
   currentStep: 1,
   totalSteps: 3,
+  isSubmitting: false,
   submit: {
     program: '',
     firstName: '',

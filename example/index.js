@@ -2,13 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VeeValidate from 'vee-validate';
-import Forms from '../src/index.js'
+import VlhForms from '../src/index.js'
 import {MockData} from './MockData/index.js'
-// import Forms from '../dist/vlh-forms.js'
+// import VlhForms from '../dist/vlh-forms.js'
 // import '../dist/vlh-forms.css'
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 Vue.use(VeeValidate)
-Vue.use(Forms)
+Vue.use(VlhForms)
 
 Vue.mixin({
   data () {
@@ -67,6 +68,10 @@ Vue.mixin({
     // this.registerZipValidator()
   },
   methods: {
+    fakeFormSubmitRequest(ms) {
+      new Promise(resolve => setTimeout(resolve, ms));
+    },
+
     setFocusOnFirstFormError () {
       var TlhForm = document.getElementById('tlh-form');
       var FirstFormError = TlhForm.querySelector("input.invalid, select.invalid");
@@ -74,11 +79,27 @@ Vue.mixin({
     },
 
     handleFormSubmission() {
+      this.$bus.$emit('is-submitting', true)
+
+      this.isSubmitting = true;
+      console.log('form is good!');
+      delay(1000).then(() => {
+        this.isSubmitting = false
+        this.$bus.$emit('is-submitting', false)
+
+        console.log('Fake submission done');
+      })
+
       this.$validator.validateAll().then((result) => {
         if (!result) {
           this.setFocusOnFirstFormError()
         } else {
+          this.isSubmitting = true;
           console.log('form is good!');
+          delay(1000).then(() => {
+            this.isSubmitting = false
+            console.log('Fake submission done');
+          })
         }
       })
     },
