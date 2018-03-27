@@ -34,6 +34,10 @@ export default {
   name: 'form-select',
   mixins: [FormItemMixin],
   props: {
+    /**
+     * What the form-field is binding to
+		 * @model
+		 */
     value: '',
 
     /**
@@ -43,6 +47,10 @@ export default {
       type: Array,
       required: true
     },
+
+    /**
+     * Default text for select menu
+    */
     defaultText: {
       type: String,
       default: 'Select'
@@ -82,6 +90,7 @@ export default {
       get() {
         return this.selectedOption
       },
+
       set(val) {
         this.$nextTick(function() {
           this.$emit('input', val);
@@ -96,7 +105,6 @@ export default {
      * This isn't correct
      * @event focus
      * @type {Event}
-     * @param {String} name the description goes here for this method
      */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : ''
@@ -110,6 +118,11 @@ export default {
   },
 
   watch: {
+    /**
+     * When v-model is changed:
+     *   1. Set the selected option.
+     *   2. If it's invalid, validate again.
+     */
     value: function (newValue) {
       this.selectedOption = newValue
     }

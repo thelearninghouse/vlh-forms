@@ -18,8 +18,8 @@
     "build:example": "poi build example/index.js",
     "docs": "docsify serve ./docs",
     "release": "npm run build && npm publish",
-    "styleguide": "vue-styleguidist server",
-    "styleguide:build": "vue-styleguidist build"
+    "sg": "vue-styleguidist server",
+    "sg:build": "vue-styleguidist build"
   },
   "author": {
     "name": "David Royer",
