@@ -20,14 +20,11 @@
          :data-vv-delay="300"
          :role="fieldRole"
          :aria-describedby="fieldId + '-help'"
-         :class="{
-           invalid: errors.has(name),
-           valid: fieldValidity }"
         >
         <form-help-icon
           :id="fieldId + '-help-icon'"
           :class="{invalid: errors.has(name), valid: fieldValidity }"
-          :icon="currentIcon">    
+          :icon="currentIcon">
         </form-help-icon>
       </div>
       <form-help :visible="showHelp" :id="fieldId + '-help'" :helpText="errors.first(name)"></form-help>

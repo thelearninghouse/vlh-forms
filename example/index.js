@@ -8,7 +8,10 @@ import {MockData} from './MockData/index.js'
 // import '../dist/vlh-forms.css'
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-Vue.use(VeeValidate)
+const ValidationConfig = {
+  classes: true
+}
+Vue.use(VeeValidate, ValidationConfig);
 Vue.use(VlhForms)
 
 Vue.mixin({
@@ -73,12 +76,15 @@ Vue.mixin({
     },
 
     setFocusOnFirstFormError () {
-      var TlhForm = document.getElementById('tlh-form');
-      var FirstFormError = TlhForm.querySelector("input.invalid, select.invalid");
-      FirstFormError.focus()
+      this.$nextTick(function() {
+        var TlhForm = document.getElementById('tlh-form');
+        var FirstFormError = TlhForm.querySelector("input.invalid, select.invalid");
+        FirstFormError.focus()
+      })
     },
 
     handleFormSubmission() {
+      const vm = this
       this.$bus.$emit('is-submitting', true)
 
       this.isSubmitting = true;
