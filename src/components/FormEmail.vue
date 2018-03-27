@@ -22,3 +22,12 @@
     }
   }
 </script>
+
+<docs>
+
+  Always set to `submit.email`
+
+  ```html
+  <form-email v-model="submit.email"></form-email>
+  ```
+</docs>

@@ -138,3 +138,17 @@ export default {
     display: block;
   }
 </style>
+
+
+
+<docs>
+
+  ```html
+  <form-select
+    name="program"
+    label="Select a Program"
+    v-model="submit.program"
+    :options="programsForSelectedDegreeLevel">
+  </form-select>
+  ```
+</docs>

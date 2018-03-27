@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  mixins: ['src/mixins/FormItemMixin.js'],
-  showUsage: true,
-  // showC: true,
 	title: 'Vue Style Guide Example',
 	sections: [
 		{
@@ -33,11 +30,9 @@ module.exports = {
 				{
 					name: 'Main Form Fields',
 					components: () => [
-            './src/components/FormField.vue',
             './src/components/FormFirstName.vue',
             './src/components/FormLastName.vue',
-            './src/components/FormEmail.vue',
-						'./src/components/FormSelect.vue',
+						'./src/components/FormEmail.vue',
 					],
 				},
 				{
@@ -52,7 +47,7 @@ module.exports = {
 		},
 	],
 	// require: [path.join(__dirname, 'dist/styles.css')],
-	// defaultExample: true,
+	defaultExample: true,
 	webpackConfig: env => ({
 		module: {
       rules: [
@@ -72,8 +67,8 @@ module.exports = {
 			env === 'development'
 				? false
 				: {
-						maxAssetSize: 1285000, // bytes
-						maxEntrypointSize: 1285000, // bytes
+						maxAssetSize: 685000, // bytes
+						maxEntrypointSize: 685000, // bytes
 						hints: 'error',
 					},
 	}),

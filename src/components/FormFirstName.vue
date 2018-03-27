@@ -20,4 +20,10 @@
     }
   }
 </script>
-given-name
+
+<docs>
+
+  ```html
+  <form-first-name v-model="submit.firstName"></form-first-name>
+  ```
+</docs>

@@ -115,3 +115,9 @@ export default {
   position: relative;
 }
 </style>
+
+<docs>
+  ```html
+  <form-field label="Field 1" name="field1"></form-field>
+  ```
+</docs>

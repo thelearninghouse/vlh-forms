@@ -26,3 +26,10 @@
     }
   }
 </script>
+
+<docs>
+
+  ```html
+  <form-phone v-model="submit.phone"></form-phone>
+  ```
+</docs>
