@@ -7,7 +7,7 @@ import ErrorIcon from '../assets/images/icon-error.svg';
 import ValidIcon from '../assets/images/icon-valid.svg';
 
 export default {
-  name: 'FormHelpIcon',
+  name: 'form-help-icon',
   props: [
     'icon',
     'id'

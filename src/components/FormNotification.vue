@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'form-help',
+  name: 'form-notification',
   props: [
     'type',
     'showNotification'

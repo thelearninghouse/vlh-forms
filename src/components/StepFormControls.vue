@@ -8,7 +8,7 @@
      </button>
      <button v-if="activeStep < steps"
        @click.stop.prevent="nextStep($event)"
-       @mousedown.stop.prevent="nextStepMD($event)"
+       @mousedown.stop.prevent="nextStep($event)"
        @keydown.enter.stop.prevent="nextStep($event)"
        v-text="nextBtnText">
      </button>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import FormSubmitButton from './FormSubmitButton'
+import FormSubmitButton from './FormSubmitButton.vue'
 export default {
   name: 'step-form-controls',
   props: {
@@ -49,12 +49,13 @@ export default {
   methods: {
     previousStep($event) {
     },
+
+  /** Emits `next-step` to parent for StepForms's
+   * @event next-step
+   * @type {Event}
+   */
     nextStep () {
       console.log('FROM NEW NEXT STEP METHOD');
-      this.$emit('next-step')
-    },
-    nextStepMD () {
-      console.log('MD: FROM NEW NEXT STEP METHOD');
       this.$emit('next-step')
     }
   }

@@ -28,17 +28,29 @@
 </template>
 
 <script>
-import { FormItemMixin } from '../helpers/FormItemMixin.js'
+import FormItemMixin from '../mixins/FormItemMixin'
 
 export default {
   name: 'form-select',
   mixins: [FormItemMixin],
   props: {
+    /**
+     * What the form-field is binding to
+		 * @model
+		 */
     value: '',
+
+    /**
+     * Array of options for select menu
+     */
     options: {
       type: Array,
       required: true
     },
+
+    /**
+     * Default text for select menu
+    */
     defaultText: {
       type: String,
       default: 'Select'
@@ -78,6 +90,7 @@ export default {
       get() {
         return this.selectedOption
       },
+
       set(val) {
         this.$nextTick(function() {
           this.$emit('input', val);
@@ -88,6 +101,11 @@ export default {
   },
 
   methods: {
+    /**
+     * This isn't correct
+     * @event focus
+     * @type {Event}
+     */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : ''
     },
@@ -100,6 +118,11 @@ export default {
   },
 
   watch: {
+    /**
+     * When v-model is changed:
+     *   1. Set the selected option.
+     *   2. If it's invalid, validate again.
+     */
     value: function (newValue) {
       this.selectedOption = newValue
     }
@@ -115,3 +138,17 @@ export default {
     display: block;
   }
 </style>
+
+
+
+<docs>
+
+  ```html
+  <form-select
+    name="program"
+    label="Select a Program"
+    v-model="submit.program"
+    :options="programsForSelectedDegreeLevel">
+  </form-select>
+  ```
+</docs>

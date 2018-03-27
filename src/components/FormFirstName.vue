@@ -2,6 +2,10 @@
   import FormField from './FormField.vue'
   export default {
     name: 'form-first-name',
+    /**
+     * @extends FormField
+     *
+     */
     extends: FormField,
     props: {
       name: {
@@ -16,4 +20,10 @@
     }
   }
 </script>
-given-name
+
+<docs>
+
+  ```html
+  <form-first-name v-model="submit.firstName"></form-first-name>
+  ```
+</docs>

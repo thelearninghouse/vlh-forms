@@ -32,27 +32,45 @@
 </template>
 
 <script>
-import { FormItemMixin } from '../helpers/FormItemMixin.js'
+import FormItemMixin from '../mixins/FormItemMixin'
+/**
+ * The Base Field For Other Inputs
+ */
 export default {
   name: 'form-field',
   mixins: [FormItemMixin],
   props: {
+    /**
+     * What the form-field is binding to
+		 * @model
+		 */
     value: {
       type: String,
       required: true
     },
 
+    /**
+     * Role attribute (Could be used for accessibility)
+     */
     role: String,
-
+    /**
+     * Input type for the form input
+     */
     type: {
       type: String,
       default: 'text'
     },
 
+    /**
+     * Validation to use
+     */
     validation: {
       type: [String, Object]
     },
 
+    /**
+     * Whether or not the field is optional
+     */
     optional: {
       type: Boolean,
       default: false
@@ -97,3 +115,9 @@ export default {
   position: relative;
 }
 </style>
+
+<docs>
+  ```html
+  <form-field label="Field 1" name="field1"></form-field>
+  ```
+</docs>

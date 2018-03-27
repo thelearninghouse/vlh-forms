@@ -16,3 +16,10 @@
     }
   }
 </script>
+
+<docs>
+
+  ```html
+  <form-last-name v-model="submit.lastName"></form-last-name>
+  ```
+</docs>

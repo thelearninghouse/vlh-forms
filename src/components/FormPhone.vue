@@ -7,6 +7,10 @@
       name: {
         default: 'phone'
       },
+      /**
+       * Label for `form-phone`
+       * @type {Object}
+       */
       label: {
         default: 'Phone Number'
       },
@@ -22,3 +26,10 @@
     }
   }
 </script>
+
+<docs>
+
+  ```html
+  <form-phone v-model="submit.phone"></form-phone>
+  ```
+</docs>

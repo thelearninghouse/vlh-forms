@@ -6,6 +6,8 @@
   - [Overview](overview.md)
   - [Components](components.md)
 
+- Components [StyleGuide Output](/StyleGuide/index.html)
+
 - Examples
 
   - [Form Examples](examples.md)
