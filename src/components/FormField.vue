@@ -33,16 +33,25 @@
 
 <script>
 import FormItemMixin from '../mixins/FormItemMixin'
-
+/**
+ * The Base Field For Other Inputs
+ */
 export default {
   name: 'form-field',
   mixins: [FormItemMixin],
   props: {
+    /**
+     * What the form-field is binding to
+		 * @model
+		 */
     value: {
       type: String,
       required: true
     },
 
+    /**
+     * Role attribute (Could be used for accessibility)
+     */
     role: String,
     /**
      * Input type for the form input

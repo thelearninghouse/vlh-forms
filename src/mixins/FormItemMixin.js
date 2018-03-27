@@ -9,7 +9,7 @@ export default {
   inject: ['$validator'],
   props: {
     /**
-     * Label
+     * Label for form item
      */
     label: {
       type: String,
@@ -22,6 +22,10 @@ export default {
       type: String,
       required: true,
     },
+
+    /**
+     * id attribute
+     */
     id: String,
   },
 

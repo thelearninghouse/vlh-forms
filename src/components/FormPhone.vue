@@ -7,6 +7,10 @@
       name: {
         default: 'phone'
       },
+      /**
+       * Label for `form-phone`
+       * @type {Object}
+       */
       label: {
         default: 'Phone Number'
       },
