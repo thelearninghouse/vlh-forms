@@ -2,6 +2,10 @@
   import FormField from './FormField.vue'
   export default {
     name: 'form-first-name',
+    /**
+     * @extends FormField
+     *
+     */
     extends: FormField,
     props: {
       name: {

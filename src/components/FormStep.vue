@@ -9,6 +9,10 @@
 <script>
 
 export default {
+/**
+ * @name form-step A single step within a stepform
+ * @type {String}
+ */
   name: 'form-step',
   inject: ['$validator'],
 

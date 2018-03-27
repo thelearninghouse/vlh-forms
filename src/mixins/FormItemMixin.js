@@ -1,14 +1,23 @@
-import FormHelp from '../components/FormHelp'
-import FormHelpIcon from '../components/FormHelpIcon'
+/**
+ * @mixin
+ */
+import FormHelp from './../components/FormHelp.vue'
+import FormHelpIcon from './../components/FormHelpIcon.vue'
 
-export const FormItemMixin = {
+export default {
   inheritAttrs: false,
   inject: ['$validator'],
   props: {
+    /**
+     * Label
+     */
     label: {
       type: String,
       required: true
     },
+    /**
+     * Name attribute
+     */
     name: {
       type: String,
       required: true,
@@ -55,10 +64,18 @@ export const FormItemMixin = {
   },
 
   methods: {
+    /**
+     * Checks the validaty for the field
+     * @param {field}
+     */
     checkFieldValidity (field) {
       return field.dirty && field.valid && field.validated  ? true : false
     },
-
+    /**
+     * Listens for `set-focus` event and when called,
+     * sets focus on appropriate
+     * @return {Event} [description]
+     */
     focusListener () {
       this.$bus.$on('set-focus', name => {
         if (this.$refs[name]) {

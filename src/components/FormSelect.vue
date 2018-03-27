@@ -28,13 +28,17 @@
 </template>
 
 <script>
-import { FormItemMixin } from '../helpers/FormItemMixin.js'
+import FormItemMixin from '../mixins/FormItemMixin'
 
 export default {
   name: 'form-select',
   mixins: [FormItemMixin],
   props: {
     value: '',
+
+    /**
+     * Array of options for select menu
+     */
     options: {
       type: Array,
       required: true
@@ -88,6 +92,12 @@ export default {
   },
 
   methods: {
+    /**
+     * This isn't correct
+     * @event focus
+     * @type {Event}
+     * @param {String} name the description goes here for this method
+     */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : ''
     },

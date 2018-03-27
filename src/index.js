@@ -110,7 +110,10 @@ const VlhForms = {
 
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue && window.VeeValidate) {
-  window.Vue.use(VeeValidate);
+  var ValidationConfig = {
+    classes: true
+  };
+  window.Vue.use(VeeValidate, ValidationConfig);
   window.Vue.use(VlhForms)
 }
 

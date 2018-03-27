@@ -16,6 +16,7 @@
 <script>
 
 export default {
+  name: 'form-program-select',
   props: {
     value: null,
     options: {

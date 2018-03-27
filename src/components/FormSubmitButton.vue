@@ -10,8 +10,8 @@
 
 <script>
 export default {
-  inject: ['$validator'],
   name: 'form-submit-button',
+  inject: ['$validator'],
   props: {
     text: {
       type: String,
