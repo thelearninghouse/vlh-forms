@@ -6,12 +6,20 @@
 import ErrorIcon from '../assets/images/icon-error.svg';
 import ValidIcon from '../assets/images/icon-valid.svg';
 
+/**
+ * Icon
+ *
+ */
 export default {
   name: 'form-help-icon',
-  props: [
-    'icon',
-    'id'
-  ],
+  props: {
+    id: {
+      type: String
+    },
+    icon: {
+      type: [String, Object, Function, Array]
+    }
+  },
   components: { ValidIcon, ErrorIcon },
 }
 </script>

@@ -1,10 +1,14 @@
 const path = require('path');
+const { theme, styles } = require('./docs-sg/styles')
 
 module.exports = {
-  mixins: ['src/mixins/FormItemMixin.js'],
+  mixins: ['./docs-sg/styleguide.helper.js'],
   showUsage: true,
   // showC: true,
-	title: 'Vue Style Guide Example',
+  theme,
+  styles,
+	title: 'VlhForms Guide',
+  template: './docs-sg/template.html',
 	sections: [
 		{
 			name: 'Documentation',

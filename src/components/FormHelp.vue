@@ -1,5 +1,5 @@
 <template>
-  <transition name="accordion" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:before-leave="beforeLeave" v-on:leave="leave">
+  <transition name="accordion" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
     <div :id="id" class="help hasError" v-show="visible">
       <div class="help-inner" v-text="helpText"></div>
     </div>
@@ -7,13 +7,23 @@
 </template>
 
 <script>
+/**
+ * The form component for showing error messages
+ *
+ */
 export default {
   name: 'form-help',
-  props: [
-    'id',
-    'helpText',
-    'visible'
-  ],
+  props: {
+    id: {
+      type: String
+    },
+    helpText: {
+      type: String
+    },
+    visible: {
+      type: Boolean
+    },
+  },
   methods: {
     beforeEnter: function(el) {
       el.style.height = "0";

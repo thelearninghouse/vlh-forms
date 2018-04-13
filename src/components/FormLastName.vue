@@ -1,5 +1,10 @@
 <script>
   import FormField from './FormField.vue'
+
+  /**
+   * The form component for phone numbers
+   *
+   */
   export default {
     name: 'form-last-name',
     extends: FormField,

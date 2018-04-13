@@ -9,7 +9,6 @@
       },
       /**
        * Label for `form-phone`
-       * @type {Object}
        */
       label: {
         default: 'Phone Number'

@@ -10,11 +10,11 @@
 <script>
 export default {
   name: 'form-notification',
-  props: [
-    'type',
-    'showNotification'
-  ],
-  methods: {
+  props: {
+    showNotification: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>

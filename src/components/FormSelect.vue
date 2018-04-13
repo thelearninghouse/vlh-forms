@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transition">
+  <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
     <div class="form-item">
       <label :for="name">{{label}}</label>
       <div class="form-field-wrapper">
@@ -101,6 +101,19 @@ export default {
   },
 
   methods: {
+    beforeEnter: function(el) {
+      console.log('rannnn!!!');
+      el.style.height = "0";
+    },
+    enter: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    beforeLeave: function(el) {
+      el.style.height = el.scrollHeight + 20 + "px";
+    },
+    leave: function(el) {
+      el.style.height = "0";
+    },
     /**
      * This isn't correct
      * @event focus
