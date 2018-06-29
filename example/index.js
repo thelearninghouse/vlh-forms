@@ -1,50 +1,52 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import VeeValidate from 'vee-validate';
-import VlhForms from '../src/index.js'
-import {MockData} from './MockData/index.js'
-// import VlhForms from '../dist/vlh-forms.js'
-// import '../dist/vlh-forms.css'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import VeeValidate from "vee-validate";
+// import VlhForms from '../src/index.js'
+import { MockData } from "./MockData/index.js";
+// import { FormEmail } from "../dist/vlh-forms.js";
+import VlhForms from "../dist/vlh-forms.js";
+// import "../dist/vlh-forms.css";
+// console.log(FormEmail);
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const ValidationConfig = {
   classes: true
-}
+};
 Vue.use(VeeValidate, ValidationConfig);
-Vue.use(VlhForms)
+Vue.use(VlhForms);
 
 Vue.mixin({
-  data () {
-    return { ...MockData }
+  data() {
+    return { ...MockData };
   },
   watch: {
-    selectedDegreeLevel: function (val) {
-      this.submit.program = ''
+    selectedDegreeLevel: function(val) {
+      this.submit.program = "";
     },
-    currentStep (stepValue) {
-      this.$bus.$emit('step-updated', stepValue)
+    currentStep(stepValue) {
+      this.$bus.$emit("step-updated", stepValue);
     }
   },
 
   computed: {
-    selectedDegreeLevelObject () {
-      return this.getDegreeLevelObject()
+    selectedDegreeLevelObject() {
+      return this.getDegreeLevelObject();
     },
 
-    programList () {
+    programList() {
       var _this = this;
 
-      var programs = this.programs.map(function (program) {
-        if(program.display_name === null) {
+      var programs = this.programs.map(function(program) {
+        if (program.display_name === null) {
           program.display_name = program.name;
         }
         return program;
-      })
+      });
       // return programs.sort(function (a, b) {
       //   return a < b ? -1 : 1;
       // });
-      return programs.sort(function (a,b) {
+      return programs.sort(function(a, b) {
         var nameA = a.display_name.toUpperCase(); // ignore upper and lowercase
         var nameB = b.display_name.toUpperCase(); // ignore upper and lowercase
         if (nameA < nameB) {
@@ -58,16 +60,16 @@ Vue.mixin({
       });
     },
 
-    programsForSelectedDegreeLevel: function () {
-      return this.getProgramsForDegreeLevel()
+    programsForSelectedDegreeLevel: function() {
+      return this.getProgramsForDegreeLevel();
     },
-    programOptions () {
-      return this.$FindProgramsByLevel()
+    programOptions() {
+      return this.$FindProgramsByLevel();
     }
   },
-  mounted () {
-    this.cleanUpProgramsArray()
-    this.domain = 'online.test.edu'
+  mounted() {
+    this.cleanUpProgramsArray();
+    this.domain = "online.test.edu";
     // this.registerZipValidator()
   },
   methods: {
@@ -75,62 +77,64 @@ Vue.mixin({
       new Promise(resolve => setTimeout(resolve, ms));
     },
 
-    setFocusOnFirstFormError () {
+    setFocusOnFirstFormError() {
       this.$nextTick(function() {
-        var TlhForm = document.getElementById('tlh-form');
-        var FirstFormError = TlhForm.querySelector("input.invalid, select.invalid");
-        FirstFormError.focus()
-      })
+        var TlhForm = document.getElementById("tlh-form");
+        var FirstFormError = TlhForm.querySelector(
+          "input.invalid, select.invalid"
+        );
+        FirstFormError.focus();
+      });
     },
 
     handleFormSubmission() {
-      const vm = this
-      this.$bus.$emit('is-submitting', true)
+      const vm = this;
+      this.$bus.$emit("is-submitting", true);
 
       this.isSubmitting = true;
-      console.log('form is good!');
+      console.log("form is good!");
       delay(1000).then(() => {
-        this.isSubmitting = false
-        this.$bus.$emit('is-submitting', false)
+        this.isSubmitting = false;
+        this.$bus.$emit("is-submitting", false);
 
-        console.log('Fake submission done');
-      })
+        console.log("Fake submission done");
+      });
 
-      this.$validator.validateAll().then((result) => {
+      this.$validator.validateAll().then(result => {
         if (!result) {
-          this.setFocusOnFirstFormError()
+          this.setFocusOnFirstFormError();
         } else {
           this.isSubmitting = true;
-          console.log('form is good!');
+          console.log("form is good!");
           delay(1000).then(() => {
-            this.isSubmitting = false
-            console.log('Fake submission done');
-          })
+            this.isSubmitting = false;
+            console.log("Fake submission done");
+          });
         }
-      })
+      });
     },
 
     cleanUpProgramsArray() {
-      this.checkForDisplayNames()
-      this.alphabetizePrograms()
+      this.checkForDisplayNames();
+      this.alphabetizePrograms();
     },
 
-    checkForDisplayNames () {
-      var vm = this
+    checkForDisplayNames() {
+      var vm = this;
       if (vm.programs) {
-        vm.programs.map(function (program) {
-          if(program.display_name !== null) {
-            program.name = program.display_name
+        vm.programs.map(function(program) {
+          if (program.display_name !== null) {
+            program.name = program.display_name;
           }
-        })
+        });
       }
     },
 
-    alphabetizePrograms () {
-      this.programs.sort(this.compareProgramNames)
+    alphabetizePrograms() {
+      this.programs.sort(this.compareProgramNames);
     },
 
-    compareProgramNames (programA, programB) {
+    compareProgramNames(programA, programB) {
       // Use toUpperCase() to ignore character casing
       const programNameA = programA.name.toUpperCase();
       const programNameB = programB.name.toUpperCase();
@@ -144,55 +148,55 @@ Vue.mixin({
       return comparison;
     },
 
-    setFocus () {
-      this.$bus.$emit('set-focus', 'firstName')
+    setFocus() {
+      this.$bus.$emit("set-focus", "firstName");
     },
 
     setFocusFN() {
-      this.$bus.$emit('set-focus', 'firstName')
+      this.$bus.$emit("set-focus", "firstName");
       // this.$refs.formFirstName.$refs.firstName.focus()
     },
 
     setFocusLN() {
-      this.$bus.$emit('set-focus', 'lastName')
+      this.$bus.$emit("set-focus", "lastName");
       // this.$refs.formLastName.$refs.lastName.focus()
     },
     validateStep() {
-      this.$validator.validateAll().then((result) => {
-        console.log('Missing fields or errors!');
+      this.$validator.validateAll().then(result => {
+        console.log("Missing fields or errors!");
         if (result) {
-          this.currentStep = this.currentStep + 1
+          this.currentStep = this.currentStep + 1;
         } else {
           this.setFocusOnFirstFormError();
         }
       });
     },
 
-    handleNextStep () {
-      console.log('stopped');
-      this.validateStep()
+    handleNextStep() {
+      console.log("stopped");
+      this.validateStep();
       // let wasCurrentStep = this.currentStep
       // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.currentStep + 1})
       // this.currentStep = this.currentStep + 1
-
     },
 
-    handlePreviousStep () {
-      this.currentStep = this.currentStep - 1
-      this.$bus.$emit('previous-here')
+    handlePreviousStep() {
+      this.currentStep = this.currentStep - 1;
+      this.$bus.$emit("previous-here");
     },
 
-    registerZipValidator () {
-      var vm = this
-      var isZip = (value) => {
-        return axios.get(`https://api.zippopotam.us/us/${value}`)
+    registerZipValidator() {
+      var vm = this;
+      var isZip = value => {
+        return axios
+          .get(`https://api.zippopotam.us/us/${value}`)
           .then(function(response) {
-            let info = response.data.places[0]
-            vm.submit.city = info['place name']
-            vm.submit.state = info['state']
+            let info = response.data.places[0];
+            vm.submit.city = info["place name"];
+            vm.submit.state = info["state"];
             return {
               valid: true
-            }
+            };
           })
           .catch(function(error) {
             return {
@@ -200,46 +204,47 @@ Vue.mixin({
               data: {
                 message: `${value} is not valid zip.`
               }
-            }
+            };
           });
-      }
-      this.$validator.extend('validZip', {
+      };
+      this.$validator.extend("validZip", {
         validate: isZip,
         getMessage: (field, params, data) => {
           return data.message;
         }
       });
     },
-    getDegreeLevelObject: function () {
-      var vm = this
+    getDegreeLevelObject: function() {
+      var vm = this;
       if (vm.selectedDegreeLevel) {
         return vm.levels.find(function(level) {
-          return level.id == vm.selectedDegreeLevel
-        })
+          return level.id == vm.selectedDegreeLevel;
+        });
       } else {
-        return null
+        return null;
       }
     },
 
-    getProgramsForDegreeLevel: function () {
-      var vm = this
+    getProgramsForDegreeLevel: function() {
+      var vm = this;
       if (vm.selectedDegreeLevelObject) {
-        return vm.programs.filter(function (program) {
-          return vm.selectedDegreeLevelObject.degreeLevels.includes(program.degree_level)
-        })
+        return vm.programs.filter(function(program) {
+          return vm.selectedDegreeLevelObject.degreeLevels.includes(
+            program.degree_level
+          );
+        });
       } else {
-        return []
+        return [];
       }
     }
   }
 });
 
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
