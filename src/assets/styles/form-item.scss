@@ -1,5 +1,5 @@
 .form-item {
-  margin: 1em auto;
+  margin: 0.5em auto;
   position: relative;
 
   input,
@@ -36,7 +36,8 @@
   .help {
     font-size: 0.9em;
 
-    &.invalid {}
+    &.invalid {
+    }
   }
   // TEMPORARY
   label {

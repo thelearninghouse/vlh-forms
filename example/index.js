@@ -2,12 +2,13 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import VeeValidate from "vee-validate";
-// import VlhForms from '../src/index.js'
+
 import { MockData } from "./MockData/index.js";
-// import { FormEmail } from "../dist/vlh-forms.js";
-import VlhForms from "../dist/vlh-forms.js";
+
+import VlhForms from "../src/index.js";
+// import VlhForms from "../dist/vlh-forms.js";
 // import "../dist/vlh-forms.css";
-// console.log(FormEmail);
+
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const ValidationConfig = {

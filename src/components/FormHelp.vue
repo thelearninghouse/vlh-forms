@@ -12,7 +12,7 @@
  *
  */
 export default {
-  name: 'form-help',
+  name: "form-help",
   props: {
     id: {
       type: String
@@ -22,23 +22,25 @@ export default {
     },
     visible: {
       type: Boolean
-    },
+    }
   },
   methods: {
     beforeEnter: function(el) {
       el.style.height = "0";
     },
     enter: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
+      this.$nextTick(() => {
+        el.style.height = el.scrollHeight + "px";
+      });
     },
     beforeLeave: function(el) {
-      el.style.height = el.scrollHeight + 20 + "px";
+      el.style.height = el.scrollHeight + "px";
     },
     leave: function(el) {
       el.style.height = "0";
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

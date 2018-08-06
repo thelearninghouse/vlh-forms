@@ -1,5 +1,21 @@
-@import 'form-item.scss';
+@import "form-item.scss";
 
+.flex-rw {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .form-item {
+    flex: 1 1 100%;
+
+    &.flex-half {
+      flex: 0 1 49%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -10,10 +26,12 @@
 .fade-leave-active {
   opacity: 0;
 }
-// .accordion-enter-active,
-// .accordion-leave-active {
-//   transition: opacity 0.25s;
-// }
+
+.accordion-enter-active,
+.accordion-leave-active {
+  // transition: all 0.65s ease-out;
+}
+
 .accordion-enter,
 .accordion-leave-active {
   opacity: 0;
@@ -21,27 +39,8 @@
 }
 
 .accordion-leave-to {
-  transform: translateX(20px);
   opacity: 0;
 }
-// .accordion-enter,
-// .accordion-leave-active {
-//   opacity: 0;
-//   transform: translateY(-50px);
-// }
-// .accordion-enter-active,
-// .accordion-leave-active {
-//   transition: all 0.3s ease-in-out;
-// }
-// .accordion-enter {
-//   transform: translateY(-50px);
-//   opacity: 0;
-// }
-//
-// .accordion-leave-to {
-//   transform: translateY(50px);
-//   opacity: 0;
-// }
 
 .slide-enter-active,
 .slide-leave-active {
@@ -94,7 +93,6 @@ select.form-field:focus {
   transform: translateY(-10px);
   opacity: 0;
 }
-
 
 // Theme Styling
 form {

@@ -32,18 +32,18 @@
 </template>
 
 <script>
-import FormItemMixin from '../mixins/FormItemMixin'
+import FormItemMixin from "../mixins/FormItemMixin";
 /**
  * The Base Field For Other Inputs
  */
 export default {
-  name: 'form-field',
+  name: "form-field",
   mixins: [FormItemMixin],
   props: {
     /**
      * What the form-field is binding to
-		 * @model
-		 */
+     * @model
+     */
     value: {
       type: String,
       required: true
@@ -58,7 +58,7 @@ export default {
      */
     type: {
       type: String,
-      default: 'text'
+      default: "text"
     },
 
     /**
@@ -77,37 +77,37 @@ export default {
     },
 
     autocomplete: {
-      type: String,
+      type: String
     },
 
     pattern: {
-      type: String,
+      type: String
     }
   },
 
-  data () {
+  data() {
     return {
       fieldRole: this.role ? this.role : false
-    }
+    };
   },
 
   computed: {
     model: {
       get() {
-        return this.value
+        return this.value;
       },
       set(val) {
         this.$nextTick(function() {
-          this.$emit('input', val)
-        })
+          this.$emit("input", val);
+        });
       }
     }
   },
 
-  created () {
-    this.focusListener()
+  created() {
+    this.focusListener();
   }
-}
+};
 </script>
 
 <style lang="scss">
