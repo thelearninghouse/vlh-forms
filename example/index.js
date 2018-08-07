@@ -6,6 +6,7 @@ import VeeValidate from "vee-validate";
 import { MockData } from "./MockData/index.js";
 
 import VlhForms from "../src/index.js";
+
 // import VlhForms from "../dist/vlh-forms.js";
 // import "../dist/vlh-forms.css";
 
@@ -16,7 +17,7 @@ const ValidationConfig = {
 };
 Vue.use(VeeValidate, ValidationConfig);
 Vue.use(VlhForms);
-
+console.log(VlhForms);
 Vue.mixin({
   data() {
     return { ...MockData };
@@ -88,29 +89,33 @@ Vue.mixin({
       });
     },
 
+    clearFormOnSubmission() {
+      for (let key in this.submit) {
+        this.submit[key] = "";
+      }
+    },
+
     handleFormSubmission() {
       const vm = this;
-      this.$bus.$emit("is-submitting", true);
-
-      this.isSubmitting = true;
-      console.log("form is good!");
-      delay(1000).then(() => {
-        this.isSubmitting = false;
-        this.$bus.$emit("is-submitting", false);
-
-        console.log("Fake submission done");
-      });
 
       this.$validator.validateAll().then(result => {
         if (!result) {
           this.setFocusOnFirstFormError();
         } else {
           this.isSubmitting = true;
-          console.log("form is good!");
-          delay(1000).then(() => {
-            this.isSubmitting = false;
-            console.log("Fake submission done");
-          });
+          this.$bus.$emit("is-submitting", true);
+          delay(2000)
+            .then(() => {
+              this.isSubmitting = false;
+              this.$bus.$emit("is-submitting", false);
+              this.$bus.$emit("is-submitted", true);
+              this.clearFormOnSubmission();
+            })
+            .then(() => {
+              delay(2500).then(() => {
+                this.$bus.$emit("is-submitted", false);
+              });
+            });
         }
       });
     },

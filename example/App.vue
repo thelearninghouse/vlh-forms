@@ -30,24 +30,25 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  mounted () {
-    this.registerZipValidator()
+  mounted() {
+    this.registerZipValidator();
   },
   methods: {
-    registerZipValidator () {
-      var vm = this
-      var isZip = (value) => {
-        return axios.get(`https://api.zippopotam.us/us/${value}`)
+    registerZipValidator() {
+      var vm = this;
+      var isZip = value => {
+        return axios
+          .get(`https://api.zippopotam.us/us/${value}`)
           .then(function(response) {
-            let info = response.data.places[0]
-            vm.submit.city = info['place name']
-            vm.submit.state = info['state']
+            let info = response.data.places[0];
+            vm.submit.city = info["place name"];
+            vm.submit.state = info["state"];
             return {
               valid: true
-            }
+            };
           })
           .catch(function(error) {
             return {
@@ -55,10 +56,10 @@ export default {
               data: {
                 message: `${value} is not valid zip.`
               }
-            }
+            };
           });
-      }
-      this.$validator.extend('validZip', {
+      };
+      this.$validator.extend("validZip", {
         validate: isZip,
         getMessage: (field, params, data) => {
           return data.message;
@@ -66,11 +67,11 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import './example.scss';
+@import "./example.scss";
 
 .stepsWrapper {
   position: relative;
@@ -81,13 +82,13 @@ export default {
 
 /* NOTE: StepForm */
 .stepFormWrapper {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 .stepFormControls {
-    flex-basis: 100%;
-    display: flex;
-    flex-flow: row wrap;
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: row wrap;
 }
 // .form-transtiion-group {
 //   // display: flex;
@@ -106,12 +107,10 @@ export default {
 
   transform: translateY(-10px);
   // transform: translateY(-10px);
-
 }
 .test-transition-leave-active {
   position: absolute;
   // transition: all .2s;
-
 }
 .testTranstitionWrapper {
   position: relative;
@@ -134,20 +133,17 @@ export default {
   justify-content: center;
 
   a {
-  padding: .5em 1.25em;
-  margin: .5em;
-  border-radius: 3px;
-  transition: all .35s ease;
-  color: #202020;
-  font-weight: 500;
+    padding: 0.5em 1.25em;
+    margin: 0.5em;
+    border-radius: 3px;
+    transition: all 0.35s ease;
+    color: #202020;
+    font-weight: 500;
 
-  &.router-link-exact-active.router-link-active {
-    background: #202020;
-    color: white;
+    &.router-link-exact-active.router-link-active {
+      background: #202020;
+      color: white;
+    }
   }
 }
-
-
-}
-
 </style>

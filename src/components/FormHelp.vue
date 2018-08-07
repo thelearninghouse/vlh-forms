@@ -1,9 +1,9 @@
 <template>
-  <transition name="accordion" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+  <transition-accordion>
     <div :id="id" class="help hasError" v-show="visible">
       <div class="help-inner" v-text="helpText"></div>
     </div>
-  </transition>
+  </transition-accordion>
 </template>
 
 <script>
@@ -22,22 +22,6 @@ export default {
     },
     visible: {
       type: Boolean
-    }
-  },
-  methods: {
-    beforeEnter: function(el) {
-      el.style.height = "0";
-    },
-    enter: function(el) {
-      this.$nextTick(() => {
-        el.style.height = el.scrollHeight + "px";
-      });
-    },
-    beforeLeave: function(el) {
-      el.style.height = el.scrollHeight + "px";
-    },
-    leave: function(el) {
-      el.style.height = "0";
     }
   }
 };

@@ -2,6 +2,7 @@
   <form id="tlh-form" class="example basic" @submit.prevent="handleFormSubmission">
 
     <div class="stepsWrapper">
+      <!-- <transition name="slide-fade" mode="out-in" appear> -->
       <transition name="slide-fade" mode="out-in" appear>
         <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
          <form-select
@@ -49,7 +50,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>

@@ -28,17 +28,17 @@
 </template>
 
 <script>
-import FormItemMixin from '../mixins/FormItemMixin'
+import FormItemMixin from "../mixins/FormItemMixin";
 
 export default {
-  name: 'form-select',
+  name: "form-select",
   mixins: [FormItemMixin],
   props: {
     /**
      * What the form-field is binding to
-		 * @model
-		 */
-    value: '',
+     * @model
+     */
+    value: "",
 
     /**
      * Array of options for select menu
@@ -50,13 +50,13 @@ export default {
 
     /**
      * Default text for select menu
-    */
+     */
     defaultText: {
       type: String,
-      default: 'Select'
+      default: "Select"
     },
     validation: {
-      type: [String, Object],
+      type: [String, Object]
     },
     optional: {
       type: Boolean,
@@ -68,41 +68,41 @@ export default {
     },
     transition: {
       type: String,
-      default: 'none'
+      default: "none"
     }
   },
-  data () {
+  data() {
     return {
-      selectedOption: '',
-    }
+      selectedOption: ""
+    };
   },
 
-  created () {
-    this.focusListener()
+  created() {
+    this.focusListener();
   },
 
-  mounted () {
-    this.selectedOption = this.value
+  mounted() {
+    this.selectedOption = this.value;
   },
 
   computed: {
     model: {
       get() {
-        return this.selectedOption
+        return this.selectedOption;
       },
 
       set(val) {
         this.$nextTick(function() {
-          this.$emit('input', val);
-          val !== '' ? this.$emit('option-selected') : ''
-        })
+          this.$emit("input", val);
+          val !== "" ? this.$emit("option-selected") : "";
+        });
       }
     }
   },
 
   methods: {
     beforeEnter: function(el) {
-      console.log('rannnn!!!');
+      console.log("rannnn!!!");
       el.style.height = "0";
     },
     enter: function(el) {
@@ -120,12 +120,12 @@ export default {
      * @type {Event}
      */
     setFocus(name) {
-      this.$refs[name] ? this.$refs[name].focus() : ''
+      this.$refs[name] ? this.$refs[name].focus() : "";
     },
 
-    handleFocusOnEnter () {
-      if (this.focusOnEnter && this.selectedOption != '') {
-        this.$refs[this.name].focus()
+    handleFocusOnEnter() {
+      if (this.focusOnEnter && this.selectedOption != "") {
+        this.$refs[this.name].focus();
       }
     }
   },
@@ -136,20 +136,20 @@ export default {
      *   1. Set the selected option.
      *   2. If it's invalid, validate again.
      */
-    value: function (newValue) {
-      this.selectedOption = newValue
+    value: function(newValue) {
+      this.selectedOption = newValue;
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-  select {
-    cursor: pointer;
-  }
-  label {
-    display: block;
-  }
+select {
+  cursor: pointer;
+}
+label {
+  display: block;
+}
 </style>
 
 

@@ -1,6 +1,6 @@
 <template lang="html">
   <form id="tlh-form" class="example basic flex-rw" @submit.prevent="handleFormSubmission">
-    {{isSubmitting}}
+
     <form-select
       @option-selected="$bus.$emit('set-focus', 'program')"
       key="1" name="degreeLevel" label="Select Degree Level"
@@ -14,7 +14,7 @@
     <form-last-name v-model="submit.lastName" class='flex-half'></form-last-name>
     <!-- <form-zip placeholder="Some" v-model="submit.zip"></form-zip> -->
     <form-phone v-model="submit.phone" validation="required"></form-phone>
-    <form-email v-model="submit.email" validation="optional|email"></form-email>
+    <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button :disableOnErrors="true" text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
   </form>
