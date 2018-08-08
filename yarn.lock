@@ -8835,6 +8835,12 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+vue-button-spinner@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vue-button-spinner/-/vue-button-spinner-2.2.0.tgz#59286f1879347265167f323650fbc3fca526a929"
+  dependencies:
+    vue "^2.5.2"
+
 vue-docgen-api@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.4.tgz#3d0ce5801078c5f69421ee41416173723ebf37ce"
@@ -8894,6 +8900,10 @@ vue-loader@^14.2.2:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^4.0.1"
     vue-template-es2015-compiler "^1.6.0"
+
+vue-promise-btn@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-promise-btn/-/vue-promise-btn-1.1.0.tgz#9b00a1a8aeaebc3a7f213b08de73b5e6bb393a8e"
 
 vue-router@^3.0.1:
   version "3.0.1"
@@ -9039,6 +9049,10 @@ vue-webpack-loaders@^1.0.5:
 vue@^2.3.3, vue@^2.4.2, vue@^2.4.4, vue@latest:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+
+vue@^2.5.2:
+  version "2.5.17"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
 vuex@^3.0.0:
   version "3.0.1"

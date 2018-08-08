@@ -1,5 +1,6 @@
 <template lang="html">
-  <form id="tlh-form" class="example basic" @submit.prevent="handleFormSubmission">
+  <!-- <form id="tlh-form" class="example submission" @submit.prevent="returnSubmissionPromise"> -->
+  <form id="tlh-form" class="example submission" @submit.prevent="handleFormSubmission">
     {{isSubmitting}}
 
     <form-first-name v-model="submit.firstName"></form-first-name>
@@ -7,6 +8,7 @@
     <form-submit-button text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
   </form>
+
 </template>
 
 <script>
@@ -18,6 +20,9 @@ export default {
     });
   },
   methods: {
+    asyncAction() {
+      return new Promise((res, rej) => setTimeout(res, 2000));
+    },
     addClass() {
       let Form = document.getElementById("tlh-form");
       if (Form && this.helpTextColor) {

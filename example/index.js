@@ -93,6 +93,9 @@ Vue.mixin({
       for (let key in this.submit) {
         this.submit[key] = "";
       }
+      this.$nextTick(() => {
+        this.$validator.reset();
+      });
     },
 
     handleFormSubmission() {
@@ -101,14 +104,15 @@ Vue.mixin({
       this.$validator.validateAll().then(result => {
         if (!result) {
           this.setFocusOnFirstFormError();
+          return;
         } else {
           this.isSubmitting = true;
           this.$bus.$emit("is-submitting", true);
           delay(2000)
             .then(() => {
+              this.$bus.$emit("is-submitted", true);
               this.isSubmitting = false;
               this.$bus.$emit("is-submitting", false);
-              this.$bus.$emit("is-submitted", true);
               this.clearFormOnSubmission();
             })
             .then(() => {

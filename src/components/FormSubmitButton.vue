@@ -1,22 +1,19 @@
 <template>
 <div class="form-submit">
 
-  <button :class="['submit', {'active-submission': formSubmissionActive}]" type="submit" :disabled="disableHandler || formSubmissionActive">
-    <span v-text="text" class="submit-text"></span>
-    <transition mode="out-in" name="fade" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-      <spinner class="submit-spinner" v-if="formSubmissionActive" :status="formSubmissionActive" :color="spinner.color" :size="spinner.size" :depth="spinner.depth" :rotation="spinner.rotation" :speed="spinner.speed"></spinner>
-      <check-icon v-if="formSubmitted" class="submit-success"></check-icon>
-    </transition>
-  </button>
-
-
+  <vue-button-spinner
+    type="submit"
+    :is-loading="formSubmissionActive"
+    :disabled="disableHandler || formSubmissionActive"
+    :status="status">
+    <span>Submit</span>
+  </vue-button-spinner>
 </div>
 </template>
 
 <script>
-import Spinner from "./Spinner";
-import FormSuccess from "../assets/images/form-success.svg";
-import CheckIcon from "../assets/images/check-icon.svg";
+import VueButtonSpinner from "vue-button-spinner";
+console.log(VueButtonSpinner);
 
 export default {
   name: "form-submit-button",
@@ -32,21 +29,12 @@ export default {
     }
   },
   components: {
-    Spinner,
-    CheckIcon,
-    FormSuccess
+    VueButtonSpinner
   },
   data: () => ({
     formSubmissionActive: false,
     formSubmitted: false,
-    spinner: {
-      size: 25,
-      status: true,
-      color: "#333",
-      depth: 3,
-      rotation: true,
-      speed: 0.8
-    }
+    status: ""
   }),
 
   created() {
@@ -61,24 +49,15 @@ export default {
 
   computed: {
     disableHandler() {
-      if (this.disableOnErrors == false) {
-        return false;
-      } else {
-        return this.errors.any();
-      }
+      if (this.disableOnErrors === false) return false;
+      else return this.errors.any();
     }
   },
 
-  methods: {
-    beforeEnter: function(el) {},
-    enter: function(el) {
-      // el.style.height = el.scrollWidth + 20 + "px";
-    },
-    beforeLeave: function(el) {
-      // el.style.height = el.scrollWidth + 20 + "px";
-    },
-    leave: function(el) {
-      // el.style.width = "0";
+  watch: {
+    formSubmitted: function(submissionStatus) {
+      if (submissionStatus === true) this.status = true;
+      else this.status = "";
     }
   }
 };
@@ -104,6 +83,17 @@ export default {
     transform: scale(0.7);
     margin-left: 10px;
     margin-right: -10px;
+  }
+}
+</style>
+
+<style lang="scss">
+.form-submit {
+  .vue-btn {
+    .spinner {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>
