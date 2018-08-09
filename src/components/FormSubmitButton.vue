@@ -1,20 +1,19 @@
 <template>
 <div class="form-submit">
-
-  <vue-button-spinner
+  <v-button-spinner
     type="submit"
+    class="submit"
+    :color="color"
+    :text-color="textColor"
     :is-loading="formSubmissionActive"
     :disabled="disableHandler || formSubmissionActive"
     :status="status">
     <span>Submit</span>
-  </vue-button-spinner>
+  </v-button-spinner>
 </div>
 </template>
 
 <script>
-import VueButtonSpinner from "vue-button-spinner";
-console.log(VueButtonSpinner);
-
 export default {
   name: "form-submit-button",
   inject: ["$validator"],
@@ -26,10 +25,15 @@ export default {
     disableOnErrors: {
       type: Boolean,
       default: true
+    },
+    color: {
+      type: String,
+      default: null
+    },
+    textColor: {
+      type: String,
+      default: "#222"
     }
-  },
-  components: {
-    VueButtonSpinner
   },
   data: () => ({
     formSubmissionActive: false,
@@ -73,27 +77,6 @@ export default {
   transition: all 0.25s ease-out;
   &:disabled {
     cursor: not-allowed;
-  }
-  &-spinner {
-    transition: all 0.25s ease-out;
-    width: inherit;
-    margin-left: 10px;
-  }
-  &-success {
-    transform: scale(0.7);
-    margin-left: 10px;
-    margin-right: -10px;
-  }
-}
-</style>
-
-<style lang="scss">
-.form-submit {
-  .vue-btn {
-    .spinner {
-      width: 20px;
-      height: 20px;
-    }
   }
 }
 </style>

@@ -5,8 +5,8 @@
 
     <form-first-name v-model="submit.firstName"></form-first-name>
 
-    <form-submit-button text="Get Info"></form-submit-button>
-    <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
+    <form-submit-button color="darkgrey" text-color="darkblue" text="Get Info"></form-submit-button>
+    <form-legal-text school="Alvernia University" font-size="1.1em" text-color="blue"></form-legal-text>
   </form>
 
 </template>

@@ -20,7 +20,9 @@ Vue.use(VlhForms);
 console.log(VlhForms);
 Vue.mixin({
   data() {
-    return { ...MockData };
+    return {
+      ...MockData
+    };
   },
   watch: {
     selectedDegreeLevel: function(val) {
@@ -75,7 +77,12 @@ Vue.mixin({
     // this.registerZipValidator()
   },
   methods: {
-    fakeFormSubmitRequest(ms) {
+    delay(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
+      });
+    },
+    delayB(ms) {
       new Promise(resolve => setTimeout(resolve, ms));
     },
 
@@ -108,16 +115,17 @@ Vue.mixin({
         } else {
           this.isSubmitting = true;
           this.$bus.$emit("is-submitting", true);
-          delay(2000)
+          this.delay(2000)
             .then(() => {
               this.$bus.$emit("is-submitted", true);
-              this.isSubmitting = false;
+              this.isSubmitted = true;
               this.$bus.$emit("is-submitting", false);
+              this.isSubmitting = false;
               this.clearFormOnSubmission();
             })
             .then(() => {
-              delay(2500).then(() => {
-                this.$bus.$emit("is-submitted", false);
+              this.delay(1500).then(() => {
+                // this.$bus.$emit("is-submitted", false);
               });
             });
         }
