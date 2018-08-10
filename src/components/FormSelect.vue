@@ -1,7 +1,6 @@
 <template>
   <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
     <div class="form-item">
-      <button @click.prevent="updateSelectedProgramId(qualifierProgram.campusId)">Update Program</button>
       <label :for="name">{{label}}</label>
       <div class="form-field-wrapper">
         <select
