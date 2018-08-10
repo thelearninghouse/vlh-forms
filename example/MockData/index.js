@@ -1,6 +1,26 @@
 import { programs, levels } from "./programsSample.js";
 
 export const MockData = {
+  showQualifier: false,
+  qualifierAnswer: "",
+  qualifierProgram: {
+    campusId: "111",
+    onlineId: "7cf6c854-ec67-42d7-81eb-4556bc539800"
+  },
+  // qualifierProgram: {
+  //   campusId: "258665c9-56ae-4b30-a95b-e451e4cf7bfc",
+  //   onlineId: "ac025a94-e2cc-45fa-a8da-0dcba966ddb4"
+  // },
+  qualifierOptions: [
+    {
+      id: "yes",
+      name: "Yes"
+    },
+    {
+      id: "no",
+      name: "No"
+    }
+  ],  
   helpTextColor: "dark",
   showMore: true,
   selectedDegreeLevel: "",

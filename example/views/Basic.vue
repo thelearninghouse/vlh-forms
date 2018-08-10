@@ -1,20 +1,15 @@
 <template lang="html">
   <form id="tlh-form" class="example basic flex-rw" @submit.prevent="handleFormSubmission">
-
-    <form-select
-      @option-selected="$bus.$emit('set-focus', 'program')"
-      key="1" name="degreeLevel" label="Select Degree Level"
-      v-model="selectedDegreeLevel" :options="levels">
+    <form-select name="program" label="Select a Program" v-model="submit.program" :options="programs">
     </form-select>
-
     <form-select
-      transition="vertical-slide" name="program" label="Select a Program" v-if="selectedDegreeLevel" v-model="submit.program" :options="programsForSelectedDegreeLevel">
+      v-if="showQualifier"
+      name="qualifier"
+      label="Do you currently have your RN License?"
+      v-model="qualifierAnswer"
+      :options="qualifierOptions"
+    >
     </form-select>
-    <form-first-name v-model="submit.firstName" class='flex-half'></form-first-name>
-    <form-last-name v-model="submit.lastName" class='flex-half'></form-last-name>
-    <!-- <form-zip placeholder="Some" v-model="submit.zip"></form-zip> -->
-    <form-phone v-model="submit.phone" validation="required"></form-phone>
-    <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-submit-button :disableOnErrors="true" text="Get Info"></form-submit-button>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
   </form>

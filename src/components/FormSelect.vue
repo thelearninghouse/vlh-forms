@@ -1,6 +1,7 @@
 <template>
   <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
     <div class="form-item">
+      <button @click.prevent="updateSelectedProgramId(qualifierProgram.campusId)">Update Program</button>
       <label :for="name">{{label}}</label>
       <div class="form-field-wrapper">
         <select
@@ -17,7 +18,7 @@
           :aria-describedby="fieldId + '_help'"
           :data-vv-as="label">
           <option key="initial" value="" v-text="defaultText"></option>
-          <option :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
+          <option :id="option.id" :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
         </select>
         <form-help-icon :icon="currentIcon"></form-help-icon>
       </div>
@@ -78,6 +79,10 @@ export default {
   },
 
   created() {
+    this.$bus.$on("qualifier-updated", newIdValue => {
+      console.log('on:qualifier-updated ran');
+      this.updateSelectedProgramId(newIdValue)
+    });
     this.focusListener();
   },
 
@@ -101,6 +106,20 @@ export default {
   },
 
   methods: {
+    updateSelectedProgramId(newIdValue) {
+      console.log('newIdValue', newIdValue);
+      let index = this.options.findIndex(this.findQualifierProgramIndex)
+      console.log('index', index);
+      if (index > -1) {
+      this.options[`${index}`].id = newIdValue
+      this.selectedOption = newIdValue
+      this.$emit("input", newIdValue);
+      }
+    },
+
+    findQualifierProgramIndex(option) {
+      return option.id === this.selectedOption
+    },    
     beforeEnter: function(el) {
       console.log("rannnn!!!");
       el.style.height = "0";
