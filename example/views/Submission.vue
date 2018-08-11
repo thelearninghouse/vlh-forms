@@ -1,11 +1,11 @@
 <template lang="html">
-  <!-- <form id="tlh-form" class="example submission" @submit.prevent="returnSubmissionPromise"> -->
   <form id="tlh-form" class="example submission" @submit.prevent="handleFormSubmission">
     {{isSubmitting}}
-
+    <button :disabled="errors.any()">Disable Test</button>
     <form-first-name v-model="submit.firstName"></form-first-name>
 
-    <form-submit-button color="darkgrey" text-color="darkblue" text="Get Info"></form-submit-button>
+    <form-submit-button color="darkgrey" text-color="blue" text="Get Info"></form-submit-button>
+    <!-- <form-submit-button :animation="false" color="darkgrey" text-color="blue" text="Get Info"></form-submit-button> -->
     <form-legal-text school="Alvernia University" font-size="1.1em" text-color="blue"></form-legal-text>
   </form>
 
@@ -36,3 +36,11 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+button {
+  background: gray;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+</style>

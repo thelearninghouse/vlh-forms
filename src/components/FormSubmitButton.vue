@@ -1,12 +1,13 @@
 <template>
 <div class="form-submit">
   <v-button-spinner
+    :animation="animation"
     type="submit"
     class="submit"
     :color="color"
     :text-color="textColor"
     :is-loading="formSubmissionActive"
-    :disabled="disableHandler || formSubmissionActive"
+    :disabled="isDisabled || formSubmissionActive"
     :status="status">
     <span>Submit</span>
   </v-button-spinner>
@@ -18,6 +19,10 @@ export default {
   name: "form-submit-button",
   inject: ["$validator"],
   props: {
+    animation: {
+      type: Boolean,
+      default: true
+    },
     text: {
       type: String,
       default: "Request Info"
@@ -32,7 +37,7 @@ export default {
     },
     textColor: {
       type: String,
-      default: "#222"
+      default: null
     }
   },
   data: () => ({
@@ -52,9 +57,9 @@ export default {
   },
 
   computed: {
-    disableHandler() {
+    isDisabled() {
       if (this.disableOnErrors === false) return false;
-      else return this.errors.any();
+      else return this.errors.any() ? true : false;
     }
   },
 

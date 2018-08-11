@@ -1,15 +1,15 @@
 <template>
-    <button class="v-button" :class="getBackgroundClass" :style="getButtonStyles">
-      <transition name="fade" mode="out-in">
-        <div class="v-button-spinner" :class="getSpinnerClass" :style="{borderTopColor: textColor}"></div>
+  <button class="v-button" :class="getBackgroundClass" :style="getButtonStyles">
+    <template v-if="animation">
+      <transition name="fade" mode="out-in" appear>
+        <div v-if="loading" key="loading" class="v-button-spinner spinner" :style="{borderTopColor: textColor}"></div>
+        <success-icon v-if="isSuccess" key="success"  :style="{fill: textColor, marginRight: '16px'}" class="v-button-success-icon"></success-icon>
       </transition>
-      <transition name="fade">
-        <success-icon v-if="isSuccess" :style="{fill: textColor}" class="v-button-success-icon"></success-icon>
-      </transition>
-      <div class="v-button-text" :style="{color: textColor}" v-if="showSlot">
-        <slot></slot>
-      </div>
-    </button>
+    </template>
+    <div class="v-button-text" :style="{color: textColor}">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -18,9 +18,14 @@ import SuccessIcon from "../assets/images/checked.svg";
 export default {
   name: "VButtonSpinner",
   props: {
+    // disabled: Boolean,
     isLoading: {
       type: Boolean,
       default: false
+    },
+    animation: {
+      type: Boolean,
+      default: true
     },
     status: {
       type: String | Boolean,
@@ -29,7 +34,9 @@ export default {
     color: String,
     textColor: String
   },
-  components: { SuccessIcon },
+  components: {
+    SuccessIcon
+  },
   computed: {
     getSpinnerClass() {
       return {
@@ -74,12 +81,14 @@ export default {
 
 <style lang="scss" scoped>
 .fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
+.fade-leave-active,
+.fade-leave-to {
+  transition: all 0.5s ease;
 }
 
 .fade-enter,
-.fade-leave-active {
+.fade-leave-active,
+.fade-leave-to {
   opacity: 0;
   will-change: opacity;
 }
@@ -112,10 +121,7 @@ export default {
   -ms-flex-pack: start;
   justify-content: flex-start;
   line-height: 1.5;
-  padding-bottom: calc(0.375em - 1px);
-  padding-left: calc(0.625em - 1px);
-  padding-right: calc(0.625em - 1px);
-  padding-top: calc(0.375em - 1px);
+  padding: calc(0.375em - 1px) calc(0.625em - 1px);
   position: relative;
   vertical-align: top;
   -webkit-touch-callout: none;
@@ -137,20 +143,20 @@ export default {
   transition: 0.3s all ease;
 
   &-success-icon {
-    width: 1em;
-    height: 1em;
+    width: 22px;
+    height: 22px;
     // fill: white;
   }
 }
 
 button.v-button-loader-error:not(.is-loading) {
-  width: 48px;
+  // width: 48px;
   background-color: #f44336;
   color: #fff;
 }
 
 button.v-button-loader-success:not(.is-loading) {
-  width: 48px;
+  // width: 48px;
   color: #fff;
 }
 
@@ -158,14 +164,12 @@ button.v-button:disabled {
   cursor: not-allowed;
 }
 
-/**
-          Spinner Icon
-      **/
+/**  Spinner Icon **/
 
 .spinner {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+  margin-right: 16px;
   opacity: 1;
   filter: alpha(opacity=100);
   animation: rotation 0.7s infinite linear;
@@ -176,44 +180,8 @@ button.v-button:disabled {
 }
 
 /**
-          Check Icon
-      **/
-//
-// .check {
-//   display: inline-block;
-//   width: 23px;
-//   height: 24px;
-//   border-radius: 50%;
-//   transform: rotate(45deg);
-//   color: white;
-//   will-change: transform;
-//   background-color: white;
-//   background: none;
-// }
-//
-// .check:before {
-//   content: "";
-//   position: absolute;
-//   width: 3px;
-//   background-color: inherit;
-//   top: 4px;
-//   height: 13px;
-//   left: 11px;
-// }
-//
-// .check:after {
-//   content: "";
-//   position: absolute;
-//   height: 3px;
-//   background-color: inherit;
-//   width: 4px;
-//   left: 7px;
-//   top: 14px;
-// }
-
-/**
-          Cross Icon
-      **/
+Cross Icon
+**/
 
 .cross {
   display: inline-block;
@@ -222,8 +190,8 @@ button.v-button:disabled {
   position: relative;
 }
 
-.cross:before,
-.cross:after {
+.cross:after,
+.cross:before {
   position: absolute;
   left: 8px;
   content: " ";
@@ -240,5 +208,11 @@ button.v-button:disabled {
 .cross:after {
   transform: rotate(-45deg);
   will-change: transform;
+}
+
+.v-button {
+  padding: 1em 0.5em;
+  height: initial;
+  width: 100%;
 }
 </style>

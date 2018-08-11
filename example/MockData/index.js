@@ -20,7 +20,7 @@ export const MockData = {
       id: "no",
       name: "No"
     }
-  ],  
+  ],
   helpTextColor: "dark",
   showMore: true,
   selectedDegreeLevel: "",
@@ -30,6 +30,7 @@ export const MockData = {
   levels: levels,
   testModel: "some text",
   currentStep: 1,
+  twoTotalSteps: 2,
   totalSteps: 3,
   isSubmitting: false,
   isSubmitted: false,

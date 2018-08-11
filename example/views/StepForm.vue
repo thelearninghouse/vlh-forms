@@ -5,22 +5,14 @@
       <!-- <transition name="slide-fade" mode="out-in" appear> -->
       <transition name="slide-fade" mode="out-in" appear>
         <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
-         <form-select
-           name="degreeLevel"
-           v-model="selectedDegreeLevel"
-           label="Select Degree Level"
-           @option-selected="$bus.$emit('set-focus', 'program')"
-           :options="levels">
-         </form-select>
 
           <form-select
             name="program"
             v-model="submit.program"
-            v-show="selectedDegreeLevel"
             transition="vertical-slide"
-            :label="selectedDegreeLevel + ' Programs'"
+            label="Select A Program"
             defaultText="Select a Program"
-            :options="programsForSelectedDegreeLevel">
+            :options="programs">
           </form-select>
         </form-step>
 
@@ -29,22 +21,23 @@
          <form-last-name v-model="submit.lastName"></form-last-name>
         </form-step>
 
-        <form-step :active-step="currentStep" v-if="currentStep == 3" :key="3">
+        <!-- <form-step :active-step="currentStep" v-if="currentStep == 3" :key="3">
           <form-phone v-model="submit.phone" validation="required"></form-phone>
           <form-email v-model="submit.email" validation="required|email"></form-email>
           <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
-        </form-step>
+        </form-step> -->
       </transition>
     </div>
 
     <step-form-controls
-      :steps="totalSteps"
+      :steps="twoTotalSteps"
       :active-step="currentStep"
       @previous-step="handlePreviousStep"
       @next-step="handleNextStep"
-      submitBtnText="Submit Now">
-    </step-form-controls>
+    >
+      <!-- <form-submit-button :form-errors="errors" slot="submit" text="Testing Request"></form-submit-button> -->
 
+    </step-form-controls>
     <form-legal-text></form-legal-text>
   </form>
 </template>

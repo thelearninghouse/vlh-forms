@@ -35,16 +35,19 @@ Vue.mixin({
     qualifierAnswer(newAnswer, oldAnswer) {
       if (newAnswer === "no") {
         // console.log("Here is where the program ID needs to be set");
-        this.$bus.$emit('qualifier-updated', this.qualifierProgram.campusId)
+        this.$bus.$emit("qualifier-updated", this.qualifierProgram.campusId);
       } else if (newAnswer === "yes") {
-        this.$bus.$emit('qualifier-updated', this.qualifierProgram.onlineId)
+        this.$bus.$emit("qualifier-updated", this.qualifierProgram.onlineId);
       }
     },
     "submit.program": function(newValue, oldValue) {
-      if (newValue === this.qualifierProgram.onlineId || newValue === this.qualifierProgram.campusId) {
+      if (
+        newValue === this.qualifierProgram.onlineId ||
+        newValue === this.qualifierProgram.campusId
+      ) {
         this.showQualifier = true;
       } else {
-        this.showQualifier = false
+        this.showQualifier = false;
       }
     }
   },
@@ -125,6 +128,10 @@ Vue.mixin({
       const vm = this;
 
       this.$validator.validateAll().then(result => {
+        console.log(
+          "errors.any from handleFormSubmission: ",
+          this.errors.any()
+        );
         if (!result) {
           this.setFocusOnFirstFormError();
           return;
