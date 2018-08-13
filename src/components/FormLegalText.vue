@@ -1,6 +1,5 @@
 <template>
     <p class="legal-text" :style="legalStyles">By requesting information, I am providing express consent for {{schoolName}} to contact me by email, phone and text, including my wireless phone number, regarding degree and enrollment information using automated technology. Standard message and data rates may apply to text messages. There is no obligation to enroll.</p>
-  </div>
 </template>
 
 <script>

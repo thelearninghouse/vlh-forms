@@ -37,10 +37,5 @@ export default {
 };
 </script>
 <style lang="scss">
-button {
-  background: gray;
-  &:disabled {
-    cursor: not-allowed;
-  }
-}
+
 </style>

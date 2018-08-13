@@ -30,12 +30,12 @@
     </div>
 
     <step-form-controls
-      :steps="twoTotalSteps"
+      :steps="totalSteps"
       :active-step="currentStep"
       @previous-step="handlePreviousStep"
       @next-step="handleNextStep"
     >
-      <!-- <form-submit-button :form-errors="errors" slot="submit" text="Testing Request"></form-submit-button> -->
+      <form-submit-button v-if="currentStep == totalSteps" color="#222" text-color="white" text="Request Info"></form-submit-button>
 
     </step-form-controls>
     <form-legal-text></form-legal-text>
@@ -45,3 +45,13 @@
 <script>
 export default {};
 </script>
+
+<style lang="scss">
+button.submit {
+  background-color: gray;
+  min-width: 300px;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+</style>

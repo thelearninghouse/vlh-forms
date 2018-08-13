@@ -31,7 +31,7 @@ export const MockData = {
   testModel: "some text",
   currentStep: 1,
   twoTotalSteps: 2,
-  totalSteps: 3,
+  totalSteps: 2,
   isSubmitting: false,
   isSubmitted: false,
   submit: {

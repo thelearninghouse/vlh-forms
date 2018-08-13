@@ -16,7 +16,7 @@
        @keydown.enter.stop.prevent="nextStep($event)"
        v-text="nextBtnText">
      </button>
-     <form-submit-button v-if="activeStep == steps" :text="submitBtnText"></form-submit-button>
+     <slot/>
    </div>
 </template>
 

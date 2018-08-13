@@ -129,7 +129,7 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: white;
+  // background-color: white;
   border: 1px solid #dbdbdb;
   color: #363636;
   cursor: pointer;

@@ -48,3 +48,10 @@ body {
 //   border: 2px solid red;
 //   // cursor: not-allowed;
 // }
+
+button {
+  background: gray;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
