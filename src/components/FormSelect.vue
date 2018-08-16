@@ -15,7 +15,7 @@
           :ref="name"
           :id="fieldId"
           :aria-describedby="fieldId + '_help'"
-          :data-vv-as="label">
+          :data-vv-as="validationName ? validationName : label">
           <option key="initial" value="" v-text="defaultText"></option>
           <option :id="option.id" :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
         </select>
@@ -58,6 +58,9 @@ export default {
     validation: {
       type: [String, Object]
     },
+    validationName: {
+      type: String
+    },
     optional: {
       type: Boolean,
       default: false
@@ -79,8 +82,8 @@ export default {
 
   created() {
     this.$bus.$on("qualifier-updated", newIdValue => {
-      console.log('on:qualifier-updated ran');
-      this.updateSelectedProgramId(newIdValue)
+      console.log("on:qualifier-updated ran");
+      this.updateSelectedProgramId(newIdValue);
     });
     this.focusListener();
   },
@@ -106,19 +109,19 @@ export default {
 
   methods: {
     updateSelectedProgramId(newIdValue) {
-      console.log('newIdValue', newIdValue);
-      let index = this.options.findIndex(this.findQualifierProgramIndex)
-      console.log('index', index);
+      console.log("newIdValue", newIdValue);
+      let index = this.options.findIndex(this.findQualifierProgramIndex);
+      console.log("index", index);
       if (index > -1) {
-      this.options[`${index}`].id = newIdValue
-      this.selectedOption = newIdValue
-      this.$emit("input", newIdValue);
+        this.options[`${index}`].id = newIdValue;
+        this.selectedOption = newIdValue;
+        this.$emit("input", newIdValue);
       }
     },
 
     findQualifierProgramIndex(option) {
-      return option.id === this.selectedOption
-    },    
+      return option.id === this.selectedOption;
+    },
     beforeEnter: function(el) {
       console.log("rannnn!!!");
       el.style.height = "0";

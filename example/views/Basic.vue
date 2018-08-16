@@ -6,6 +6,7 @@
       v-if="showQualifier"
       name="qualifier"
       label="Do you currently have your RN License?"
+      validationName="License Question"
       v-model="qualifierAnswer"
       :options="qualifierOptions"
     >
