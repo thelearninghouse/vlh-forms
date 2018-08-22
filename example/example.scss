@@ -55,3 +55,14 @@ button {
     cursor: not-allowed;
   }
 }
+
+#tlh-form {
+  .form-submit {
+    &-spinner {
+      border-top-color: white;
+    }
+    &-success-icon {
+      fill: white;
+    }
+  }
+}

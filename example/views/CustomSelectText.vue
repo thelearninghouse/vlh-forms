@@ -23,7 +23,7 @@
     <form-zip v-model="submit.zip"></form-zip>
     <form-phone v-model="submit.phone" validation="required|phone"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-submit-button text="Get Info"></form-submit-button>
+    <form-submit text="Get Info"></form-submit>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
   </div>
 </template>

@@ -47,7 +47,7 @@
          @key.enter="handleNextStep">
          Next
        </button>
-       <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
+       <form-submit v-if="currentStep == totalSteps" text="Get Info"></form-submit>
      </div>
     <form-legal-text></form-legal-text>
   </div>

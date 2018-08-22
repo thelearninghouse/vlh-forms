@@ -35,7 +35,7 @@
       @previous-step="handlePreviousStep"
       @next-step="handleNextStep"
     >
-      <form-submit-button v-if="currentStep == totalSteps" color="#222" text-color="white" text="Request Info"></form-submit-button>
+      <form-submit v-if="currentStep == totalSteps" color="#222" text-color="white" text="Request Info"></form-submit>
 
     </step-form-controls>
     <form-legal-text></form-legal-text>

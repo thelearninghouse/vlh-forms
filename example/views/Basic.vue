@@ -11,7 +11,7 @@
       :options="qualifierOptions"
     >
     </form-select>
-    <form-submit-button :disableOnErrors="true" text="Get Info"></form-submit-button>
+    <form-submit :disableOnErrors="true" text="Get New"></form-submit>
     <form-legal-text school="Alvernia University" fontSize="1.1em" textColor="blue"></form-legal-text>
   </form>
 </template>

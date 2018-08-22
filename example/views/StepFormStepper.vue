@@ -26,7 +26,7 @@
         @key.enter="handleNextStep">
         Next
       </button>
-      <form-submit-button v-if="currentStep == totalSteps" text="Get Info"></form-submit-button>
+      <form-submit v-if="currentStep == totalSteps" text="Get Info"></form-submit>
       <form-legal-text></form-legal-text>
     </div>
   </div>
@@ -34,23 +34,23 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       steps: [
         {
           id: 1,
-          title: 'Step 1'
+          title: "Step 1"
         },
         {
           id: 2,
-          title: 'Step 2'
+          title: "Step 2"
         },
         {
           id: 3,
-          title: 'Step 3'
+          title: "Step 3"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

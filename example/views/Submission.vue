@@ -4,8 +4,8 @@
     <button :disabled="errors.any()">Disable Test</button>
     <form-first-name v-model="submit.firstName"></form-first-name>
 
-    <form-submit-button color="darkgrey" text-color="blue" text="Get Info"></form-submit-button>
-    <!-- <form-submit-button :animation="false" color="darkgrey" text-color="blue" text="Get Info"></form-submit-button> -->
+    <form-submit color="darkgrey" text-color="blue" text="Get Info"></form-submit>
+    <!-- <form-submit :animation="false" color="darkgrey" text-color="blue" text="Get Info"></form-submit> -->
     <form-legal-text school="Alvernia University" font-size="1.1em" text-color="blue"></form-legal-text>
   </form>
 
