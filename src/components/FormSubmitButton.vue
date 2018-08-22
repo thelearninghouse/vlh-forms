@@ -170,12 +170,7 @@ export default {
 button.form-submit-button-loader-error:not(.is-loading) {
   // width: 48px;
   background-color: #f44336;
-  color: #fff;
-}
-
-button.form-submit-button-loader-success:not(.is-loading) {
-  // width: 48px;
-  color: #fff;
+  // color: #fff;
 }
 
 button.form-submit-button:disabled {
