@@ -171,8 +171,9 @@ button.form-submit-button-loader-error:not(.is-loading) {
   background-color: #f44336;
 }
 
-button.form-submit-button:disabled {
+.form-submit-button:disabled {
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 /**  Spinner Icon **/

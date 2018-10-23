@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
@@ -11,8 +11,7 @@
   "scripts": {
     "test": "test-vue-app",
     "dev": "poi example/index.js",
-    "build": "poi build ./src/index.js --component VlhForms --no-clear",
-    "library": "poi build ./src/index.js --library VlhForms --no-clear",
+    "build": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
     "docs": "docsify serve ./docs",
     "release": "npm run build && npm publish",
@@ -41,8 +40,5 @@
     "vue-svg-loader": "^0.5.0",
     "vue-template-compiler": "latest",
     "vue-test-utils": "^1.0.0-beta.2"
-  },
-  "dependencies": {
-    "vue-button-spinner": "^2.2.0"
   }
 }
