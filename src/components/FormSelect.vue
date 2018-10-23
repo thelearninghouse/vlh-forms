@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+  <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave" @leave="leave">
     <div class="form-item">
       <label :for="name">{{label}}</label>
       <div class="form-field-wrapper">
@@ -128,6 +128,9 @@ export default {
     },
     enter: function(el) {
       el.style.height = el.scrollHeight + "px";
+    },
+    afterEnter: function(el) {
+      el.style.height = 'auto'
     },
     beforeLeave: function(el) {
       el.style.height = el.scrollHeight + "px";
