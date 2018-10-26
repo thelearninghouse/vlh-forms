@@ -1,8 +1,9 @@
 <template lang="html">
-  <form id="tlh-form" class="example basic flex-rw" @submit.prevent="handleFormSubmission">
-    <form-select name="program" label="Select a Program" v-model="submit.program" :options="programs">
+  <form ref="form1" id="tlh-form" class="example basic flex-rw" @submit.prevent="handleFormSubmission">
+    <form-select ref="firstField" name="program" label="Select a Program" v-model="submit.program" :options="programs">
     </form-select>
     <form-select
+      
       v-if="showQualifier"
       name="qualifier"
       label="Do you currently have your RN License?"
@@ -20,6 +21,7 @@
 export default {
   created() {},
   mounted() {
+    console.log(this.$refs)    
     this.$nextTick(function() {
       this.addClass();
     });

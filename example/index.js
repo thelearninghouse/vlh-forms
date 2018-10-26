@@ -93,6 +93,7 @@ Vue.mixin({
   mounted() {
     this.cleanUpProgramsArray();
     this.domain = "online.test.edu";
+    
     // this.registerZipValidator()
   },
   methods: {

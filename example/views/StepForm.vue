@@ -3,10 +3,11 @@
 
     <div class="stepsWrapper">
       <!-- <transition name="slide-fade" mode="out-in" appear> -->
-      <transition name="slide-fade" mode="out-in" appear>
-        <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
+      <transition name="slide-fade" mode="out-in" appear @after-enter="afterEnter">
+        <form-step ref="step1" :active-step="currentStep" v-if="currentStep == 1" :key="1">
 
           <form-select
+            ref="firstField"
             name="program"
             v-model="submit.program"
             transition="vertical-slide"
@@ -17,7 +18,7 @@
         </form-step>
 
         <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
-         <form-first-name v-model="submit.firstName"></form-first-name>
+         <form-first-name ref="firstField" v-model="submit.firstName"></form-first-name>
          <form-last-name v-model="submit.lastName"></form-last-name>
         </form-step>
 
@@ -43,7 +44,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+  },
+
+  methods: {
+    afterEnter(el) {
+      console.log('el: ', el)
+      this.$refs.firstField.setFocus()
+      
+      // this.$nextTick(() => {
+      //   this.$refs.firstField.setFocus()
+      // })
+    }
+  }
+};
 </script>
 
 <style lang="scss">

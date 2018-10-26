@@ -44,7 +44,6 @@ export default {
 
   mounted () {
     if ( this.activeStep > 1 && this.activeStep == this.stepID ) {
-      console.log('emmitting focus');
       this.$bus.$emit('set-focus', this.firstField)
     }
   }

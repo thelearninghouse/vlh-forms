@@ -123,7 +123,6 @@ export default {
       return option.id === this.selectedOption;
     },
     beforeEnter: function(el) {
-      console.log("rannnn!!!");
       el.style.height = "0";
     },
     enter: function(el) {

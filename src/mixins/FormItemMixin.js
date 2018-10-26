@@ -88,6 +88,14 @@ export default {
           }, 300);
         }
       })
-    }
+    },
+
+    focus: function () {
+      this.$refs[name].focus()
+    },
+
+    // setFocus(name) {
+    //   this.$refs[name] ? this.$refs[name].focus() : "";
+    // },    
   }
 }
