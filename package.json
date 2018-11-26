@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.5.0",
+  "version": "0.6.1",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
@@ -11,7 +11,6 @@
     "dist"
   ],
   "scripts": {
-    "test": "test-vue-app",
     "dev": "poi example/index.js",
     "build": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
@@ -19,7 +18,7 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "sh deploy-docs.sh",
     "vdocs": "node vdocs.run.js",    
-    "release": "npm run build && npm publish",
+    "release": "npm run build && npm publish"
   },
   "author": {
     "name": "David Royer",
