@@ -1,10 +1,12 @@
 <script>
   import FormField from './FormField.vue'
 
-  /**
-   * The form component for first names
-   *
-   */
+/**
+ * The form component for first names
+ * ```html
+ * <form-first-name v-model="submit.firstName"/>
+ * ```
+ */
   export default {
     name: 'form-first-name',
     extends: FormField,

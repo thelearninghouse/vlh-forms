@@ -7,13 +7,23 @@
 </template>
 
 <script>
-
-export default {
-/**
- * @name form-step A single step within a stepform
- * @type {String}
+      
+       
+       
+      
+  /**
+ * Used in step-forms. 
+ *
+ * ```html
+ * <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
+ *  <form-first-name v-model="submit.firstName"/>
+ *  <form-last-name v-model="submit.lastName"/>
+ * </form-step>
+ * ```
  */
+export default {
   name: 'form-step',
+  
   inject: ['$validator'],
 
   props: {

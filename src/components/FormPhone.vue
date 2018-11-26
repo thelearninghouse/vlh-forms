@@ -1,5 +1,13 @@
 <script>
   import FormField from './FormField.vue'
+
+  /**
+ * The form component for emails
+ *
+ * ```html
+ * <form-phone v-model="submit.phone"/>
+ * ```
+ */
   export default {
     name: 'form-phone',
     extends: FormField,

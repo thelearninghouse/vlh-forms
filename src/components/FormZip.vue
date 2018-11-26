@@ -1,5 +1,13 @@
 <script>
   import FormField from './FormField.vue'
+
+  /**
+ * The zip component
+ *
+ * ```html
+ * <form-zip v-model="submit.zip"/>
+ * ```
+ */
   export default {
     name: 'form-zip',
     extends: FormField,

@@ -1,6 +1,10 @@
 
 # form-field
-The Base Field For Other Inputs
+The base component for all inputs
+
+```html
+<form-field id="text" v-model="submit.formField" label="Form Field Example"/>
+```
 
 ## Props
 
