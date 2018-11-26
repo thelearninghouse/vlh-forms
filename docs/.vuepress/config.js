@@ -1,16 +1,21 @@
-// .vuepress/config.js
 const componentsNav = require('./components-nav.json')
 
 module.exports = {
-    title: 'VueDocs',
-    description: 'Working on a docs system to be used for Vue libraries and plugins',    
+    base: '/vlh-forms/',
+    title: 'VlhForms',
+    description: 'Vue.js component library designed for specific integration with The Learning House Forms System',    
     themeConfig: {
+      repo: "thelearninghouse/vlh-forms",
+      repoLabel: "Github Repo",
+      editLinks: true,
+      docsDir: "docs",    
       nav: [
         { text: 'Home', link: '/' },
         { text: 'Guide', link: '/guide/' },
         { text: 'Components', link: '/components/' },
-        { text: 'External', link: 'https://google.com' },
+        { text: 'Examples', link: '/examples/' }
       ],
+      // sidebar: 'auto'      
       sidebar: [
         '/',
         '/guide/',
@@ -21,7 +26,17 @@ module.exports = {
         },  
         '/examples/'    
       ]      
-    }
+    },
+      /**
+       * Allows the use of using aliases in markdown
+       */
+      configureWebpack: {
+        resolve: {
+          alias: {
+            '@images': './../images'
+          }
+        }
+      }         
   }
 
 // module.exports = {

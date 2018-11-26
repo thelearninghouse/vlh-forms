@@ -17,9 +17,9 @@
 
   id attribute
 
-- `value` ***Undefined***
+- `v-model` ***String***
 
-  
+  What the form-field is binding to
 
 - `options` ***Array***
 
@@ -57,16 +57,5 @@
 
   This isn't correct      
 
-
-
-## Methods
-
-- `checkFieldValidity`
-
-        
-,
-- `focusListener`
-
-        
 
 

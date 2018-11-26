@@ -1,0 +1,1 @@
+{"description":"Icon","methods":[],"displayName":"form-help-icon","props":{"id":{"type":{"name":"string"},"required":"","tags":{},"comment":"","description":""},"icon":{"type":{"name":"string|object|func|array"},"required":"","tags":{},"comment":"","description":""}},"comment":"/**\n * Icon\n *\n */","tags":{},"events":{},"slots":{}}

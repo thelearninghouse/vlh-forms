@@ -1,10 +1,6 @@
 
 # form-field
-The base component for all inputs
-
-```html
-<form-field id="text" v-model="submit.formField" label="Form Field Example"/>
-```
+The Base Field For Other Inputs
 
 ## Props
 
@@ -53,16 +49,5 @@ The base component for all inputs
 
 
 
-
-
-## Methods
-
-- `checkFieldValidity`
-
-        
-,
-- `focusListener`
-
-        
 
 

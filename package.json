@@ -15,10 +15,11 @@
     "dev": "poi example/index.js",
     "build": "poi build ./src/index.js --library VlhForms --no-clear",
     "build:example": "poi build example/index.js",
-    "docs": "docsify serve ./docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "sh deploy-docs.sh",
+    "vdocs": "node vdocs.run.js",    
     "release": "npm run build && npm publish",
-    "sg": "vue-styleguidist server",
-    "sg:build": "vue-styleguidist build"
   },
   "author": {
     "name": "David Royer",
