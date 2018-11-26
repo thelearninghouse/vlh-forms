@@ -38,8 +38,10 @@ export default {
      * What the form-field is binding to
      * @model
      */
-    value: "",
-
+    value: {
+      type: String,
+      default: ""
+    },
     /**
      * Array of options for select menu
      */

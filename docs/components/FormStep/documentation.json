@@ -1,0 +1,1 @@
+{"description":"","methods":[],"displayName":"form-step","props":{"activeStep":{"type":{"name":"number|string"},"required":true,"tags":{},"comment":"","description":""}},"comment":"","tags":{},"events":{},"slots":{"default":{"description":""}}}

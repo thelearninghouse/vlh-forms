@@ -1,0 +1,1 @@
+{"description":"","methods":[],"displayName":"form-notification","props":{"showNotification":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"","description":""}},"comment":"","tags":{},"events":{},"slots":{"content":{"description":""}}}

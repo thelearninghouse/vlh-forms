@@ -1,0 +1,23 @@
+body[data-page='examples.md'] article#main {
+    /* max-width: 1400px; */
+}
+
+/* Fix for getting syntax highlighting in markdown files for examples with Vuep */
+.vuep + p {
+    display: none;
+}
+
+/* h2 + p {
+  margin-top: -15px !important;
+  margin-left: 7px !important;
+  margin-bottom: 30px !important;
+} */
+
+h2 + p code {
+  display: none;
+}
+
+/* NOTE: For Coy Theme */
+h3 code {
+    color: rgba(201, 44, 44, 0.85) !important;
+}
