@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     schoolName() {
-      return this.$parent.schoolDisplayName || this.school;
+      return this.$root.schoolDisplayName || this.school;
     }
   },
 
