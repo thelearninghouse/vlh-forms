@@ -4546,12 +4546,12 @@ module.exports = function (IS_INCLUDES) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormLegalText.vue?vue&type=template&id=6cc7d5a5&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormLegalText.vue?vue&type=template&id=cc149fa6&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('p',{staticClass:"legal-text",style:(_vm.legalStyles)},[_vm._v("\n  By requesting information, I am providing express consent for\n  "+_vm._s(_vm.schoolName)+" to contact me by email, phone and text, including my\n  wireless phone number, regarding degree and enrollment information using\n  automated technology. Standard message and data rates may apply to text\n  messages. There is no obligation to enroll.\n")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormLegalText.vue?vue&type=template&id=6cc7d5a5&
+// CONCATENATED MODULE: ./src/components/FormLegalText.vue?vue&type=template&id=cc149fa6&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormLegalText.vue?vue&type=script&lang=js&
 //
@@ -4599,7 +4599,7 @@ var staticRenderFns = []
   },
   computed: {
     schoolName: function schoolName() {
-      return this.$parent.schoolDisplayName || this.school;
+      return this.$root.schoolDisplayName || this.school;
     }
   },
   data: function data() {
@@ -5347,12 +5347,12 @@ module.exports = function (it) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormControls.vue?vue&type=template&id=cb0343d0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormControls.vue?vue&type=template&id=5fe7a46c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormControls"},[(_vm.activeStep > 1)?_c('button',{staticClass:"previous-button",domProps:{"textContent":_vm._s(_vm.previousBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');}}},[_vm._v("\n    Previous\n  ")]):_vm._e(),(_vm.activeStep < _vm.steps)?_c('button',{staticClass:"next-button",domProps:{"textContent":_vm._s(_vm.nextBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.nextStep($event);},"mousedown":function($event){$event.stopPropagation();$event.preventDefault();_vm.nextStep($event);},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.nextStep($event);}}}):_vm._e(),(_vm.usingBuiltInFormSubmit)?_c('form-submit',{attrs:{"color":"#222","text-color":"white","text":_vm.submitBtnText}}):_vm._e(),_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/StepFormControls.vue?vue&type=template&id=cb0343d0&
+// CONCATENATED MODULE: ./src/components/StepFormControls.vue?vue&type=template&id=5fe7a46c&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -5390,7 +5390,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
 //
 
 /**
- * Consists the flow for a step-form.
+ * Controls the flow for a step-form.
  * It consist of 2 regular HTML button elements for controlling previous and next steps
  * as well as the custom `form-submit` component
  */
@@ -5404,6 +5404,10 @@ var es6_number_constructor = __webpack_require__("c5f6");
       type: [Number, String],
       required: true
     },
+
+    /**
+     * The current step of the form
+     */
     activeStep: {
       type: [Number, String],
       required: true
