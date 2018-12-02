@@ -1,7 +1,15 @@
 <template>
-  <transition :name="transition" appear @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave" @leave="leave">
+  <transition
+    :name="transition"
+    appear
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @before-leave="beforeLeave"
+    @leave="leave"
+  >
     <div class="form-item">
-      <label :for="name">{{label}}</label>
+      <label :for="name">{{ label }}</label>
       <div class="form-field-wrapper">
         <select
           v-model="model"
@@ -9,20 +17,31 @@
           v-on="$listeners"
           @keydown.enter.stop.prevent
           class="select"
-          :class="{invalid: errors.has(name), valid: fieldValidity }"
+          :class="{ invalid: errors.has(name), valid: fieldValidity }"
           v-validate="fieldValidation"
           :name="name"
           :ref="name"
           :id="fieldId"
           :aria-describedby="fieldId + '_help'"
-          :data-vv-as="validationName ? validationName : label">
+          :data-vv-as="validationName ? validationName : label"
+        >
           <option key="initial" value="" v-text="defaultText"></option>
-          <option :id="option.id" :key="option.id" v-for="option in options" :value="option.id">{{ option.name }}</option>
+          <option
+            :id="option.id"
+            :key="option.id"
+            v-for="option in options"
+            :value="option.id"
+            >{{ option.name }}</option
+          >
         </select>
         <form-help-icon :icon="currentIcon"></form-help-icon>
       </div>
 
-      <form-help :visible="showHelp" :id="fieldId + '_help'" :helpText="errors.first(name)"></form-help>
+      <form-help
+        :visible="showHelp"
+        :id="fieldId + '_help'"
+        :helpText="errors.first(name)"
+      ></form-help>
     </div>
   </transition>
 </template>
@@ -46,10 +65,8 @@ export default {
      * What the form-field is binding to
      * @model
      */
-    value: {
-      type: String,
-      default: ""
-    },
+    value: "", // eslint-disable-line
+
     /**
      * Array of options for select menu
      */
@@ -139,7 +156,7 @@ export default {
       el.style.height = el.scrollHeight + "px";
     },
     afterEnter: function(el) {
-      el.style.height = 'auto'
+      el.style.height = "auto";
     },
     beforeLeave: function(el) {
       el.style.height = el.scrollHeight + "px";
@@ -184,17 +201,3 @@ label {
   display: block;
 }
 </style>
-
-
-
-<docs>
-
-  ```html
-  <form-select
-    name="program"
-    label="Select a Program"
-    v-model="submit.program"
-    :options="programsForSelectedDegreeLevel">
-  </form-select>
-  ```
-</docs>

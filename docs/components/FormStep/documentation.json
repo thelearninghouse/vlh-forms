@@ -1,1 +1,24 @@
-{"description":"Used in step-forms. \n\n```html\n<form-step :active-step=\"currentStep\" v-if=\"currentStep == 1\" :key=\"1\">\n <form-first-name v-model=\"submit.firstName\"/>\n <form-last-name v-model=\"submit.lastName\"/>\n</form-step>\n```","methods":[],"displayName":"form-step","props":{"activeStep":{"type":{"name":"number|string"},"required":true,"tags":{},"comment":"","description":""}},"comment":"/**\n* Used in step-forms. \n*\n* ```html\n* <form-step :active-step=\"currentStep\" v-if=\"currentStep == 1\" :key=\"1\">\n*  <form-first-name v-model=\"submit.firstName\"/>\n*  <form-last-name v-model=\"submit.lastName\"/>\n* </form-step>\n* ```\n*/","tags":{},"events":{},"slots":{"default":{"description":""}}}
+{
+    "description": "Used in step-forms.\n\n```html\n<form-step :active-step=\"currentStep\" v-if=\"currentStep == 1\" :key=\"1\">\n <form-first-name v-model=\"submit.firstName\"/>\n <form-last-name v-model=\"submit.lastName\"/>\n</form-step>\n```",
+    "methods": [],
+    "displayName": "form-step",
+    "props": {
+        "activeStep": {
+            "type": {
+                "name": "number|string"
+            },
+            "required": true,
+            "tags": {},
+            "comment": "",
+            "description": ""
+        }
+    },
+    "comment": "/**\n * Used in step-forms.\n *\n * ```html\n * <form-step :active-step=\"currentStep\" v-if=\"currentStep == 1\" :key=\"1\">\n *  <form-first-name v-model=\"submit.firstName\"/>\n *  <form-last-name v-model=\"submit.lastName\"/>\n * </form-step>\n * ```\n */",
+    "tags": {},
+    "events": {},
+    "slots": {
+        "default": {
+            "description": ""
+        }
+    }
+}

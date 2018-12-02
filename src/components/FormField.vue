@@ -1,34 +1,39 @@
 <template>
   <div class="form-item">
-     <label v-text="label" :for="name"></label>
-     <div class="form-field-wrapper">
-       <input
-         v-validate="fieldValidation"
-         class="input"
-         :name="name"
-         :autocomplete="autocomplete"
-         :pattern="pattern"
-         :id="fieldId"
-         :ref="name"
-         :type="type"
-         v-model.trim="model"
-         v-bind="$attrs"
-         v-on="$listeners"
-         @keydown.enter.stop.prevent
-         :data-vv-as="label"
-         :data-vv-name="name"
-         :data-vv-delay="300"
-         :role="fieldRole"
-         :aria-describedby="fieldId + '-help'"
-        >
-        <form-help-icon
-          :id="fieldId + '-help-icon'"
-          :class="{invalid: errors.has(name), valid: fieldValidity }"
-          :icon="currentIcon">
-        </form-help-icon>
-      </div>
-      <form-help :visible="showHelp" :id="fieldId + '-help'" :helpText="errors.first(name)"></form-help>
-   </div>
+    <label v-text="label" :for="name"></label>
+    <div class="form-field-wrapper">
+      <input
+        v-validate="fieldValidation"
+        class="input"
+        :name="name"
+        :autocomplete="autocomplete"
+        :pattern="pattern"
+        :id="fieldId"
+        :ref="name"
+        :type="type"
+        v-model.trim="model"
+        v-bind="$attrs"
+        v-on="$listeners"
+        @keydown.enter.stop.prevent
+        :data-vv-as="label"
+        :data-vv-name="name"
+        :data-vv-delay="300"
+        :role="fieldRole"
+        :aria-describedby="fieldId + '-help'"
+      />
+      <form-help-icon
+        :id="fieldId + '-help-icon'"
+        :class="{ invalid: errors.has(name), valid: fieldValidity }"
+        :icon="currentIcon"
+      >
+      </form-help-icon>
+    </div>
+    <form-help
+      :visible="showHelp"
+      :id="fieldId + '-help'"
+      :helpText="errors.first(name)"
+    ></form-help>
+  </div>
 </template>
 
 <script>
@@ -121,9 +126,3 @@ export default {
   position: relative;
 }
 </style>
-
-<docs>
-  ```html
-  <form-field label="Field 1" name="field1"></form-field>
-  ```
-</docs>

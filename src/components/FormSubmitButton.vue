@@ -1,12 +1,26 @@
 <template>
-  <button class="form-submit-button" :class="getBackgroundClass" :style="getButtonStyles">
+  <button
+    class="form-submit-button"
+    :class="getBackgroundClass"
+    :style="getButtonStyles"
+  >
     <template v-if="animation">
       <transition name="fade" mode="out-in" appear>
-        <div v-if="loading" key="loading" class="form-submit-spinner spinner" :style="{borderTopColor: textColor}"></div>
-        <success-icon v-if="isSuccess" key="success"  :style="{fill: textColor, marginRight: '16px'}" class="form-submit-success-icon"></success-icon>
+        <div
+          v-if="loading"
+          key="loading"
+          class="form-submit-spinner spinner"
+          :style="{ borderTopColor: textColor }"
+        ></div>
+        <success-icon
+          v-if="isSuccess"
+          key="success"
+          :style="{ fill: textColor, marginRight: '16px' }"
+          class="form-submit-success-icon"
+        ></success-icon>
       </transition>
     </template>
-    <div class="form-submit-button-text" :style="{color: textColor}">
+    <div class="form-submit-button-text" :style="{ color: textColor }">
       <slot></slot>
     </div>
   </button>

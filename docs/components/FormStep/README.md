@@ -1,6 +1,6 @@
 
 # form-step
-Used in step-forms. 
+Used in step-forms.
 
 ```html
 <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">

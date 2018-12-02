@@ -22,9 +22,9 @@ such as degree levels or programs
 
   id attribute
 
-- `v-model` ***String***
+- `value` ***Undefined***
 
-  What the form-field is binding to
+  
 
 - `options` ***Array***
 

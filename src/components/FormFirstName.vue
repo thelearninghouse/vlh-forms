@@ -1,5 +1,5 @@
 <script>
-  import FormField from './FormField.vue'
+import FormField from "./FormField.vue";
 
 /**
  * The form component for first names
@@ -7,26 +7,19 @@
  * <form-first-name v-model="submit.firstName"/>
  * ```
  */
-  export default {
-    name: 'form-first-name',
-    extends: FormField,
-    props: {
-      name: {
-        default: 'firstName'
-      },
-      label: {
-        default: 'First Name'
-      },
-      autocomplete: {
-        default: 'given-name'
-      }
+export default {
+  name: "form-first-name",
+  extends: FormField,
+  props: {
+    name: {
+      default: "firstName"
+    },
+    label: {
+      default: "First Name"
+    },
+    autocomplete: {
+      default: "given-name"
     }
   }
+};
 </script>
-
-<docs>
-
-  ```html
-  <form-first-name v-model="submit.firstName"></form-first-name>
-  ```
-</docs>

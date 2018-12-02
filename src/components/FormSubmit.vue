@@ -1,17 +1,18 @@
 <template>
-<div class="form-submit">
-  <form-submit-button
-    :animation="animation"
-    type="submit"
-    class="submit"
-    :color="color"
-    :text-color="textColor"
-    :is-loading="formSubmissionActive"
-    :disabled="isDisabled || formSubmissionActive"
-    :status="status">
-    <span v-text="text"></span>
-  </form-submit-button>
-</div>
+  <div class="form-submit">
+    <form-submit-button
+      :animation="animation"
+      type="submit"
+      class="submit"
+      :color="color"
+      :text-color="textColor"
+      :is-loading="formSubmissionActive"
+      :disabled="isDisabled || formSubmissionActive"
+      :status="status"
+    >
+      <span v-text="text"></span>
+    </form-submit-button>
+  </div>
 </template>
 
 <script>

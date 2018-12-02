@@ -33,11 +33,6 @@ export default {
     FormHelpIcon,
     FormHelp
   },
-  data () {
-    return {
-
-    }
-  },
 
   computed: {
     fieldId () {

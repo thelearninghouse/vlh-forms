@@ -43,7 +43,7 @@ title: Guide
 
 ```html
 // In Template
-<form-first-name class="extra-class" v-model="submit.firstName"></form-first-name>
+<form-first-name class="extra-class" v-model="submit.firstName"/>
 
 // Renders
 <div class="form-item extra-class"></div>
@@ -117,13 +117,13 @@ Example of Extending `form-field` component:
 We are setting the default props which means adding a field for first name is as easy as:
 
 ```html
-<form-first-name v-model=submit.firstName></form-first-name>
+<form-first-name v-model=submit.firstName/>
 ```
 
 And customizing the first name field is as easy as:
 
 ```html
-<form-first-name label="New Label" v-model=submit.firstName></form-first-name>
+<form-first-name label="New Label" v-model=submit.firstName/>
 ```
 
 --------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Override the default validation
 
 ```html
-<form-field validation="required"></form-field>
+<form-field validation="required"/>
 ```
 
 --------------------------------------------------------------------------------
@@ -173,7 +173,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Make a field optional
 
 ```html
-<form-field optional></form-field>
+<form-field optional/>
 ```
 
 --------------------------------------------------------------------------------
@@ -181,7 +181,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Use a placeholder
 
 ```html
-<form-field placeholder="Some text here"></form-field>
+<form-field placeholder="Some text here"/>
 ```
 
 --------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Custom Label
 
 ```html
-<form-field label="Your Custom Label"></form-field>
+<form-field label="Your Custom Label"/>
 ```
 
 --------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ This is for easy understanding of scenarios such as customizing text, a label, e
 ## Use Normal HTML
 
 ```html
-<form-first-name v-model="submit.firstName"></form-first-name>
+<form-first-name v-model="submit.firstName"/>
 
 <div class="regular-div">
   <h3>Everything Works</h3>

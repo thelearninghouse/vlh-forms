@@ -2,6 +2,8 @@
 
 ## Basic Example
 
+<example/>
+
 ```html
 <form id="tlh-form" @submit.prevent="handleFormSubmission">
   <form-select
