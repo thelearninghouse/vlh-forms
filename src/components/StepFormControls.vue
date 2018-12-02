@@ -29,7 +29,7 @@
 
 <script>
 /**
- * Consists the flow for a step-form.
+ * Controls the flow for a step-form.
  * It consist of 2 regular HTML button elements for controlling previous and next steps
  * as well as the custom `form-submit` component
  */
@@ -43,6 +43,11 @@ export default {
       type: [Number, String],
       required: true
     },
+
+    /**
+     * The current step of the form
+     */
+
     activeStep: {
       type: [Number, String],
       required: true
