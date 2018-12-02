@@ -20,7 +20,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "sh deploy-docs.sh",
-    "vdocs": "node vdocs.run.js",
+    "docs:helper": "node vdocs.run.js",
     "release": "git push --follow-tags"
   },
   "dependencies": {
