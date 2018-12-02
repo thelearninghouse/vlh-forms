@@ -1,11 +1,11 @@
 {
   "name": "vlh-forms",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
     "type": "git"
-  },  
+  },
   "private": false,
   "author": {
     "name": "David Royer",
