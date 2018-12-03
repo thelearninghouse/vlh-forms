@@ -1,5 +1,5 @@
 
-# form-select
+# FormSelect
 The select menu element used for displaying a list of options
 such as degree levels or programs
 
@@ -40,7 +40,8 @@ such as degree levels or programs
 
 - `validationName` ***String***
 
-  
+  A custom name used when referencing a form field in error messages.
+The field's label is used by default but this will be used instead if set
 
 - `optional` ***Boolean***
 
