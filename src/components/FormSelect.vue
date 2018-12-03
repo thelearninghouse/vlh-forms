@@ -85,6 +85,11 @@ export default {
     validation: {
       type: [String, Object]
     },
+
+    /**
+     * A custom name used when referencing a form field in error messages.
+     * The field's label is used by default but this will be used instead if set
+     */
     validationName: {
       type: String
     },
