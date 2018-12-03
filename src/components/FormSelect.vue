@@ -113,6 +113,10 @@ export default {
   },
 
   created() {
+    /**
+     * Listens for the `qualifer-updated` event which is being emitted right now if form's template
+     * in the marketing-forms repo.
+     */
     this.$bus.$on("qualifier-updated", newIdValue => {
       console.log("on:qualifier-updated ran");
       this.updateSelectedProgramId(newIdValue);
@@ -147,6 +151,10 @@ export default {
   },
 
   methods: {
+    /**
+     * This is trigged when the qualifer has been updated (See the created hook above).
+     * It sets the id of the program selected in the first select based on their answer to the qualifier answer
+     */
     updateSelectedProgramId(newIdValue) {
       console.log("newIdValue", newIdValue);
       let index = this.options.findIndex(this.findQualifierProgramIndex);
