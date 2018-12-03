@@ -77,9 +77,41 @@ export default {
   mounted() {
     this.cleanUpProgramsArray();
     this.registerZipValidator();
+    // this.registerEmailValidator();
   },
 
   methods: {
+    // registerEmailValidator() {
+    //   const isValidEmail = value =>
+    //     new Promise(resolve => {
+    //       JSONP.get(
+    //         this.emailValidationURL,
+    //         {
+    //           email: this.submit.email
+    //         },
+    //         responseData => {
+    //           if (responseData.email.error == 0) {
+    //             return resolve({
+    //               valid: true,
+    //               data: {
+    //                 message: "This field is now valid."
+    //               }
+    //             });
+    //           }
+    //           return resolve({
+    //             valid: false,
+    //             data: {
+    //               message: "This is not a valid email"
+    //             }
+    //           });
+    //         }
+    //       );
+    //     });
+    //   this.$validator.extend("validEmail", {
+    //     validate: isValidEmail,
+    //     getMessage: (field, params, data) => data.message
+    //   });
+    // },
     registerZipValidator() {
       var vm = this;
       var isZip = value => {
@@ -240,35 +272,6 @@ export default {
       this.$bus.$emit("previous-here");
     },
 
-    registerZipValidator() {
-      var vm = this;
-      var isZip = value => {
-        return axios
-          .get(`https://api.zippopotam.us/us/${value}`)
-          .then(function(response) {
-            let info = response.data.places[0];
-            vm.submit.city = info["place name"];
-            vm.submit.state = info["state"];
-            return {
-              valid: true
-            };
-          })
-          .catch(function(error) {
-            return {
-              valid: false,
-              data: {
-                message: `${value} is not valid zip.`
-              }
-            };
-          });
-      };
-      this.$validator.extend("validZip", {
-        validate: isZip,
-        getMessage: (field, params, data) => {
-          return data.message;
-        }
-      });
-    },
     getDegreeLevelObject: function() {
       var vm = this;
       if (vm.selectedDegreeLevel) {

@@ -1,6 +1,7 @@
 import VeeValidate from 'vee-validate'
-import VlhForms from '../../src/lib.js'
-// import VlhForms from '../../dist/vlh-forms2.comm.js'
+import VlhForms from '@src/lib.js'
+// // import marketingFormsMixin from '@utils/marketingFormsMixin.js'
+
 export default ({
     Vue, // the version of Vue being used in the VuePress app
     options, // the options for the root Vue instance
@@ -13,13 +14,13 @@ export default ({
       Vue.use(VeeValidate, ValidationConfig);
       Vue.use(VlhForms);
 
-      Vue.mixin({
-        data: () => ({
-            submit: {
-              firstName: '',
-              lastName: '',
-              email: ''
-            }
-          })          
-      })
+      // Vue.mixin({
+      //   data: () => ({
+      //       submit: {
+      //         firstName: '',
+      //         lastName: '',
+      //         email: ''
+      //       }
+      //     })          
+      // })
   }

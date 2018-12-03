@@ -1,15 +1,10 @@
 const componentsNav = require('./components-nav.json')
+const path = require('path')
 
 module.exports = {
   base: '/vlh-forms/',
   title: 'VlhForms',
   description: 'Vue.js component library designed for specific integration with The Learning House Forms System',
-  // plugins: [
-  //   ['@vuepress/register-components', {
-  //     componentsDir: ['./docs/.vuepress/components' ]
-  //   }]
-  // ],
-  
   themeConfig: {
     repo: "thelearninghouse/vlh-forms",
     repoLabel: "Github Repo",
@@ -44,19 +39,24 @@ module.exports = {
       '/examples/'
     ]
   },
+
   /**
-   * Allows the use of using aliases in markdown
+   * Allows the use of using aliases in files for easier importing
    */
   configureWebpack: {
     resolve: {
       alias: {
-        '@root': './../../',
-        '@src': './../../src',
-        '@images': './../images',
-        '@mockData': './../../mockData'
+        '@root': path.resolve(__dirname, "../../"),
+        '@src': path.resolve(__dirname, "../../src"),
+        '@utils':  path.resolve(__dirname, "../../utils"),
+        '@images': './../images'
       }
     }
   },
+
+  /**
+   * Prevents errors from using VlhForms library
+   */
   chainWebpack: config => {
     config.module.rules.delete('svg')
     config.module
