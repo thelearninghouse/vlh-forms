@@ -191,12 +191,6 @@ export default {
      */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : "";
-    },
-
-    handleFocusOnEnter() {
-      if (this.focusOnEnter && this.selectedOption != "") {
-        this.$refs[this.name].focus();
-      }
     }
   },
 
