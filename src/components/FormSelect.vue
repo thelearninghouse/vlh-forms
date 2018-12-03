@@ -160,14 +160,16 @@ export default {
       let index = this.options.findIndex(this.findQualifierProgramIndex);
       console.log("index", index);
       if (index > -1) {
+        console.log("Inside index > 1");
         this.options[`${index}`].id = newIdValue;
-        this.selectedOption = newIdValue;
+        // this.selectedOption = newIdValue;
         this.$emit("input", newIdValue);
       }
     },
 
     findQualifierProgramIndex(option) {
-      return option.id === this.selectedOption;
+      console.log("Inside findQualifierProgramIndex");
+      return option.id === this.value;
     },
     beforeEnter: function(el) {
       el.style.height = "0";
