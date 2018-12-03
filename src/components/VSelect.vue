@@ -125,20 +125,20 @@ export default {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
-    },
-
-    model: {
-      get() {
-        return this.selectedOption;
-      },
-
-      set(val) {
-        this.$nextTick(function() {
-          this.$emit("input", val);
-          val !== "" ? this.$emit("option-selected") : "";
-        });
-      }
     }
+
+    // model: {
+    //   get() {
+    //     return this.selectedOption;
+    //   },
+
+    //   set(val) {
+    //     this.$nextTick(function() {
+    //       this.$emit("input", val);
+    //       val !== "" ? this.$emit("option-selected") : "";
+    //     });
+    //   }
+    // }
   },
 
   methods: {
@@ -149,7 +149,7 @@ export default {
       if (index > -1) {
         this.options[`${index}`].id = newIdValue;
         this.selectedOption = newIdValue;
-        this.$emit("input", newIdValue);
+        // this.$emit("input", newIdValue);
       }
     },
 
@@ -193,9 +193,9 @@ export default {
      *   1. Set the selected option.
      *   2. If it's invalid, validate again.
      */
-    value: function(newValue) {
-      this.selectedOption = newValue;
-    }
+    // value: function(newValue) {
+    //   this.selectedOption = newValue;
+    // }
   }
 };
 </script>

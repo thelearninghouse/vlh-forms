@@ -12,17 +12,15 @@
       :options="levels"
     ></form-select>
 
-    <transition name="slide-fade">
-      <form-select
-        v-show="selectedDegreeLevel"
-        focusOnEnter
-        name="program"
-        label="Select a Program"
-        v-model="submit.program"
-        :options="programsForSelectedDegreeLevel"
-      ></form-select>
-    </transition>
-
+    <form-select
+      v-show="selectedDegreeLevel"
+      transition="vertical-slide"
+      focusOnEnter
+      name="program"
+      label="Select a Program"
+      v-model="submit.program"
+      :options="programsForSelectedDegreeLevel"
+    ></form-select>
     <form-first-name v-model="submit.firstName"> </form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
     <form-zip v-model="submit.zip"></form-zip>

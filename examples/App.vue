@@ -13,6 +13,10 @@
         <router-link to="/submission">Submission Test</router-link>
       </nav>
     </div>
+
+    <div class="holder" style="text-align: center;">
+      <div class="result">{{ submit.program }}</div>
+    </div>
     <transition name="slide-fade" mode="out-in" appear>
       <h2 key="chooseExample" v-if="$route.path == '/'" class="currentExample">
         Choose an Example
@@ -21,7 +25,6 @@
         {{ $route.name }} Example
       </h2>
     </transition>
-
     <transition mode="out-in" name="slide-fade" appear>
       <router-view :key="$route.fullPath"></router-view>
     </transition>
@@ -143,6 +146,13 @@ export default {
       background: #202020;
       color: white;
     }
+  }
+}
+
+.holder {
+  position: relative;
+  .result {
+    position: absolute;
   }
 }
 </style>

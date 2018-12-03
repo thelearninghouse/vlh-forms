@@ -2,13 +2,21 @@
   <button class="v-button" :class="getBackgroundClass" :style="getButtonStyles">
     <template v-if="animation">
       <transition name="fade" mode="out-in" appear>
-        <div v-if="loading" key="loading" class="v-button-spinner spinner" :style="{borderTopColor: textColor}"></div>
-        <success-icon v-if="isSuccess" key="success"  :style="{fill: textColor, marginRight: '16px'}" class="v-button-success-icon"></success-icon>
+        <div
+          v-if="loading"
+          key="loading"
+          class="v-button-spinner spinner"
+          :style="{ borderTopColor: textColor }"
+        ></div>
+        <success-icon
+          v-if="isSuccess"
+          key="success"
+          :style="{ fill: textColor, marginRight: '16px' }"
+          class="v-button-success-icon"
+        ></success-icon>
       </transition>
     </template>
-    <div class="v-button-text" :style="{color: textColor}">
-      <slot></slot>
-    </div>
+    <div class="v-button-text" :style="{ color: textColor }"><slot></slot></div>
   </button>
 </template>
 
@@ -28,7 +36,7 @@ export default {
       default: true
     },
     status: {
-      type: String | Boolean,
+      type: [String, Boolean],
       default: ""
     },
     color: String,

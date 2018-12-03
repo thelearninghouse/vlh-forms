@@ -15,12 +15,14 @@
     "dev": "yarn serve",
     "serve": "vue-cli-service serve ./examples --open",
     "build": "vue-cli-service build --target lib --name vlh-forms --entry ./src/lib.js",
+    "build:helper": "node scripts/lib-renamer.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "sh deploy-docs.sh",
-    "docs:helper": "node vdocs.run.js",
+    "docs:helper": "node scripts/vdocs.run.js",
+    "postbuild": "yarn build:helper",
     "release": "git push --follow-tags"
   },
   "dependencies": {
@@ -41,6 +43,7 @@
     "babel-jest": "^23.6.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "fs-extra": "^7.0.1",
     "lint-staged": "^7.2.2",
     "lodash": "^4.17.11",
     "node-sass": "^4.9.0",

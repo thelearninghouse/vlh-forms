@@ -13,7 +13,7 @@
 
   
 
-- `status` ***String***
+- `status` ***String|boolean***
 
   
 
