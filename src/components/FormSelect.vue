@@ -12,7 +12,7 @@
       <label :for="name">{{ label }}</label>
       <div class="form-field-wrapper">
         <select
-          :value="model"
+          v-model="model"
           v-bind="$attrs"
           v-on="$listeners"
           @keydown.enter.stop.prevent
@@ -58,7 +58,7 @@ import FormItemMixin from "../mixins/FormItemMixin";
  * ```
  */
 export default {
-  name: "form-select",
+  name: "FormSelect",
   mixins: [FormItemMixin],
   props: {
     /**
@@ -85,11 +85,6 @@ export default {
     validation: {
       type: [String, Object]
     },
-
-    /**
-     * A custom name used when referencing a form field in error messages.
-     * The field's label is used by default but this will be used instead if set
-     */
     validationName: {
       type: String
     },
@@ -113,10 +108,6 @@ export default {
   },
 
   created() {
-    /**
-     * Listens for the `qualifer-updated` event which is being emitted right now if form's template
-     * in the marketing-forms repo.
-     */
     this.$bus.$on("qualifier-updated", newIdValue => {
       console.log("on:qualifier-updated ran");
       this.updateSelectedProgramId(newIdValue);
@@ -129,13 +120,6 @@ export default {
   },
 
   computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-        input: event => this.$emit("input", event.target.value)
-      };
-    },
-
     model: {
       get() {
         return this.selectedOption;
@@ -151,10 +135,6 @@ export default {
   },
 
   methods: {
-    /**
-     * This is trigged when the qualifer has been updated (See the created hook above).
-     * It sets the id of the program selected in the first select based on their answer to the qualifier answer
-     */
     updateSelectedProgramId(newIdValue) {
       console.log("newIdValue", newIdValue);
       let index = this.options.findIndex(this.findQualifierProgramIndex);
@@ -165,9 +145,9 @@ export default {
         this.$emit("input", newIdValue);
       }
     },
+
     findQualifierProgramIndex(option) {
-      console.log("Inside findQualifierProgramIndex");
-      return option.id === this.value;
+      return option.id === this.selectedOption;
     },
     beforeEnter: function(el) {
       el.style.height = "0";
@@ -191,6 +171,12 @@ export default {
      */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : "";
+    },
+
+    handleFocusOnEnter() {
+      if (this.focusOnEnter && this.selectedOption != "") {
+        this.$refs[this.name].focus();
+      }
     }
   },
 

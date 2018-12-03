@@ -2045,12 +2045,12 @@ module.exports = deburr;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelect.vue?vue&type=template&id=8092a3d0&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":_vm.transition,"appear":""},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.name}},[_vm._v(_vm._s(_vm.label))]),_c('div',{staticClass:"form-field-wrapper"},[_c('select',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.fieldValidation),expression:"fieldValidation"}],ref:_vm.name,staticClass:"select",class:{ invalid: _vm.errors.has(_vm.name), valid: _vm.fieldValidity },attrs:{"name":_vm.name,"id":_vm.fieldId,"aria-describedby":_vm.fieldId + '_help',"data-vv-as":_vm.validationName ? _vm.validationName : _vm.label},domProps:{"value":_vm.model},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();}}},'select',_vm.$attrs,false),_vm.$listeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option){return _c('option',{key:option.id,attrs:{"id":option.id},domProps:{"value":option.id}},[_vm._v(_vm._s(option.name))])})],2),_c('form-help-icon',{attrs:{"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"visible":_vm.showHelp,"id":_vm.fieldId + '_help',"helpText":_vm.errors.first(_vm.name)}})],1)])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"a39544c8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelect.vue?vue&type=template&id=66e3e79e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":_vm.transition,"appear":""},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.name}},[_vm._v(_vm._s(_vm.label))]),_c('div',{staticClass:"form-field-wrapper"},[_c('select',_vm._g(_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.model),expression:"model"},{name:"validate",rawName:"v-validate",value:(_vm.fieldValidation),expression:"fieldValidation"}],ref:_vm.name,staticClass:"select",class:{ invalid: _vm.errors.has(_vm.name), valid: _vm.fieldValidity },attrs:{"name":_vm.name,"id":_vm.fieldId,"aria-describedby":_vm.fieldId + '_help',"data-vv-as":_vm.validationName ? _vm.validationName : _vm.label},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();},"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.model=$event.target.multiple ? $$selectedVal : $$selectedVal[0]}}},'select',_vm.$attrs,false),_vm.$listeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option){return _c('option',{key:option.id,attrs:{"id":option.id},domProps:{"value":option.id}},[_vm._v(_vm._s(option.name))])})],2),_c('form-help-icon',{attrs:{"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"visible":_vm.showHelp,"id":_vm.fieldId + '_help',"helpText":_vm.errors.first(_vm.name)}})],1)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormSelect.vue?vue&type=template&id=8092a3d0&
+// CONCATENATED MODULE: ./src/components/FormSelect.vue?vue&type=template&id=66e3e79e&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
@@ -2058,46 +2058,10 @@ var es6_function_name = __webpack_require__("7f7f");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
 var es6_array_find_index = __webpack_require__("20d6");
 
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
-}
 // EXTERNAL MODULE: ./src/mixins/FormItemMixin.js
 var FormItemMixin = __webpack_require__("6528");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelect.vue?vue&type=script&lang=js&
-
 
 
 //
@@ -2159,7 +2123,7 @@ var FormItemMixin = __webpack_require__("6528");
  */
 
 /* harmony default export */ var FormSelectvue_type_script_lang_js_ = ({
-  name: "form-select",
+  name: "FormSelect",
   mixins: [FormItemMixin["a" /* default */]],
   props: {
     /**
@@ -2187,11 +2151,6 @@ var FormItemMixin = __webpack_require__("6528");
     validation: {
       type: [String, Object]
     },
-
-    /**
-     * A custom name used when referencing a form field in error messages.
-     * The field's label is used by default but this will be used instead if set
-     */
     validationName: {
       type: String
     },
@@ -2216,10 +2175,6 @@ var FormItemMixin = __webpack_require__("6528");
   created: function created() {
     var _this = this;
 
-    /**
-     * Listens for the `qualifer-updated` event which is being emitted right now if form's template
-     * in the marketing-forms repo.
-     */
     this.$bus.$on("qualifier-updated", function (newIdValue) {
       console.log("on:qualifier-updated ran");
 
@@ -2231,15 +2186,6 @@ var FormItemMixin = __webpack_require__("6528");
     this.selectedOption = this.value;
   },
   computed: {
-    listeners: function listeners() {
-      var _this2 = this;
-
-      return _objectSpread({}, this.$listeners, {
-        input: function input(event) {
-          return _this2.$emit("input", event.target.value);
-        }
-      });
-    },
     model: {
       get: function get() {
         return this.selectedOption;
@@ -2253,10 +2199,6 @@ var FormItemMixin = __webpack_require__("6528");
     }
   },
   methods: {
-    /**
-     * This is trigged when the qualifer has been updated (See the created hook above).
-     * It sets the id of the program selected in the first select based on their answer to the qualifier answer
-     */
     updateSelectedProgramId: function updateSelectedProgramId(newIdValue) {
       console.log("newIdValue", newIdValue);
       var index = this.options.findIndex(this.findQualifierProgramIndex);
@@ -2269,8 +2211,7 @@ var FormItemMixin = __webpack_require__("6528");
       }
     },
     findQualifierProgramIndex: function findQualifierProgramIndex(option) {
-      console.log("Inside findQualifierProgramIndex");
-      return option.id === this.value;
+      return option.id === this.selectedOption;
     },
     beforeEnter: function beforeEnter(el) {
       el.style.height = "0";
@@ -2295,6 +2236,11 @@ var FormItemMixin = __webpack_require__("6528");
      */
     setFocus: function setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : "";
+    },
+    handleFocusOnEnter: function handleFocusOnEnter() {
+      if (this.focusOnEnter && this.selectedOption != "") {
+        this.$refs[this.name].focus();
+      }
     }
   },
   watch: {
