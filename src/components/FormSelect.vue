@@ -85,6 +85,12 @@ export default {
     validation: {
       type: [String, Object]
     },
+
+    /**
+     * A custom name used when referencing a form field in error messages.
+     * The field's label is used by default but this will be used instead if set
+     */
+
     validationName: {
       type: String
     },
@@ -128,17 +134,20 @@ export default {
       set(val) {
         this.$nextTick(function() {
           this.$emit("input", val);
-          val !== "" ? this.$emit("option-selected") : "";
+          val !== "" ? this.$emit("option-selected", val) : "";
         });
       }
     }
   },
 
   methods: {
+    /**
+     * This is trigged when the qualifer has been updated (See the created hook above).
+     * It sets the id of the program selected in the first select based on their answer to the qualifier answer
+     */
+
     updateSelectedProgramId(newIdValue) {
-      console.log("newIdValue", newIdValue);
       let index = this.options.findIndex(this.findQualifierProgramIndex);
-      console.log("index", index);
       if (index > -1) {
         this.options[`${index}`].id = newIdValue;
         this.selectedOption = newIdValue;
@@ -171,12 +180,6 @@ export default {
      */
     setFocus(name) {
       this.$refs[name] ? this.$refs[name].focus() : "";
-    },
-
-    handleFocusOnEnter() {
-      if (this.focusOnEnter && this.selectedOption != "") {
-        this.$refs[this.name].focus();
-      }
     }
   },
 
