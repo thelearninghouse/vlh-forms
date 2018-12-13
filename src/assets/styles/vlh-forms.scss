@@ -186,10 +186,3 @@ form {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
-
-* {
-  will-change: height;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
