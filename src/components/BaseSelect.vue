@@ -3,6 +3,7 @@
     <label :for="id" v-text="label"></label>
     <select
       :id="id"
+      :ref="id"
       :name="$attrs.name || id"
       :value="value"
       v-bind="$attrs"
@@ -80,7 +81,12 @@ export default {
   methods: {
     handleUpdatedQualifier(newIdValue) {
       let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
-      if (programIndex > -1) this.qualifierUpdate(programIndex, newIdValue);
+      if (programIndex > -1) {
+        console.log("element: ", this.$refs[name]);
+        if (this.$refs["program"]) {
+          this.qualifierUpdate(programIndex, newIdValue);
+        }
+      }
     },
 
     qualifierUpdate(programIndex, newIdValue) {
