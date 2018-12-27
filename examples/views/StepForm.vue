@@ -19,15 +19,21 @@
           :key="1"
         >
           <form-select
-            ref="firstField"
-            name="program"
-            v-model="submit.program"
-            transition="vertical-slide"
-            label="Select A Program"
-            defaultText="Select a Program"
-            :options="programs"
-          >
-          </form-select>
+            name="degreeLevel"
+            label="Select Degree Level"
+            v-model="selectedDegreeLevel"
+            :options="levels"
+          />
+
+          <transition-dynamic-field>
+            <form-select
+              v-if="selectedDegreeLevel"
+              name="program"
+              label="Select a Program"
+              v-model="submit.program"
+              :options="programsForSelectedDegreeLevel"
+            />
+          </transition-dynamic-field>
         </form-step>
 
         <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
@@ -56,7 +62,7 @@ export default {
   methods: {
     afterEnter(el) {
       console.log("el: ", el);
-      this.$refs.firstField.setFocus();
+      // this.$refs.firstField.setFocus();
 
       // this.$nextTick(() => {
       //   this.$refs.firstField.setFocus()

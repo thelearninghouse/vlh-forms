@@ -24,21 +24,20 @@
             name="degreeLevel"
             v-model="selectedDegreeLevel"
             label="Select Degree Level"
-            @option-selected="$bus.$emit('set-focus', 'program');"
             :options="levels"
           >
           </form-select>
 
-          <form-select
-            name="program"
-            v-model="submit.program"
-            v-show="selectedDegreeLevel"
-            transition="vertical-slide"
-            :label="selectedDegreeLevel + ' Programs'"
-            defaultText="Select a Program"
-            :options="programsForSelectedDegreeLevel"
-          >
-          </form-select>
+          <transition-dynamic-field>
+            <form-select
+              name="program"
+              v-model="submit.program"
+              v-show="selectedDegreeLevel"
+              :label="selectedDegreeLevel + ' Programs'"
+              defaultText="Select a Program"
+              :options="programsForSelectedDegreeLevel"
+            />
+          </transition-dynamic-field>
         </form-step>
 
         <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">

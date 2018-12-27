@@ -5,6 +5,8 @@
     @enter="enter"
     @before-leave="beforeLeave"
     @leave="leave"
+    appear
+    mode="out-in"
   >
     <slot></slot>
   </transition>

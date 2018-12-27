@@ -4,29 +4,55 @@
     class="example degreeFiltering"
     @submit.prevent="handleFormSubmission"
   >
-    <form-select
-      @option-selected="$bus.$emit('set-focus', 'program');"
-      name="degreeLevel"
+    <BaseSelect
+      id="program1"
+      :options="programs"
+      label="Select a Program 1"
+      v-model="submit.program"
+    />
+
+    <BaseSelect
+      id="program2"
+      :options="programs"
+      label="Select a Program 2"
+      v-model="submit.program"
+    />
+
+    <BaseSelect
+      id="degreeLevel"
       label="Select Degree Level"
       v-model="selectedDegreeLevel"
       :options="levels"
-    ></form-select>
+    />
 
-    <form-select
-      v-show="selectedDegreeLevel"
-      transition="vertical-slide"
-      focusOnEnter
-      name="program"
-      label="Select a Program"
-      v-model="submit.program"
-      :options="programsForSelectedDegreeLevel"
-    ></form-select>
-    <form-first-name v-model="submit.firstName"> </form-first-name>
-    <form-last-name v-model="submit.lastName"></form-last-name>
-    <form-zip v-model="submit.zip"></form-zip>
-    <form-phone v-model="submit.phone" validation="required"></form-phone>
-    <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-submit text="Get Info"></form-submit>
+    <transition-dynamic-field>
+      <BaseSelect
+        v-if="selectedDegreeLevel"
+        id="program"
+        label="Select a Program"
+        v-model="submit.program"
+        :options="programsForSelectedDegreeLevel"
+      />
+    </transition-dynamic-field>
+
+    <!--
+      <transition name="slide" appear>
+        <form-select
+          v-show="selectedDegreeLevel"
+          name="program"
+          label="Select a Program"
+          v-model="submit.program"
+          :options="programsForSelectedDegreeLevel"
+        ></form-select>
+      </transition>
+    -->
+
+    <form-first-name v-model="submit.firstName" />
+    <form-last-name v-model="submit.lastName" />
+    <form-zip v-model="submit.zip" />
+    <form-phone v-model="submit.phone" validation="required" />
+    <form-email v-model="submit.email" validation="required|email" />
+    <form-submit text="Get Info" />
     <form-legal-text
       school="Alvernia University"
       fontSize="1.1em"
