@@ -23,13 +23,24 @@
       <BaseInput id="firstName1" v-model="submit.firstName" label="First Name" />
     -->
     <FirstNameInput v-model="submit.firstName" />
-    <form-first-name v-model="submit.firstName"></form-first-name>
-    <form-last-name v-model="submit.lastName"></form-last-name>
+    <form-first-name v-model="submit.firstName" />
+    <form-last-name v-model="submit.lastName" />
     <EmailInput v-model="submit.email" validation="required|email" />
+    <ZipInput
+      validation-name="New Name"
+      v-model="submit.zip"
+      placeholder="Your Zip"
+    />
+
+    <EmailInput
+      placeholder="Your Email"
+      v-model="submit.email"
+      validation="required|email"
+    />
 
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
-    <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
+    <!-- <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip> -->
     <form-submit :disableOnErrors="true" text="Get New"></form-submit>
     <form-legal-text
       school="Alvernia University"

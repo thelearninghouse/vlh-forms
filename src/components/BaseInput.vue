@@ -3,14 +3,14 @@
     <label :for="id" v-text="label"></label>
     <input
       :id="id"
-      :type="type"
-      :name="id"
+      :name="$attrs.name || id"
       :value="value"
+      :type="type"
       v-bind="$attrs"
       v-on="inputListeners"
-      v-validate="validation"
-      :data-vv-as="label"
+      v-validate="inputValidation"
       :data-vv-name="id"
+      :data-vv-as="inputValidationName"
       :aria-describedby="helpTextId"
       :autocomplete="autocomplete"
       :pattern="pattern"
@@ -32,17 +32,15 @@ export default {
       type: String,
       required: true
     },
+
     value: [String, Number],
+
     type: {
       type: String,
       default: "text"
     },
-    label: String,
 
-    validation: {
-      type: String,
-      default: "required"
-    },
+    label: String,
 
     optional: {
       type: Boolean,
@@ -53,7 +51,19 @@ export default {
       type: String
     },
 
+    role: {
+      type: String
+    },
+
     pattern: {
+      type: String
+    },
+
+    validation: {
+      type: String
+    },
+
+    validationName: {
       type: String
     }
   },
@@ -68,6 +78,16 @@ export default {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
+    },
+
+    inputValidation() {
+      return this.optional
+        ? { rules: { required: false } }
+        : this.validation || "required";
+    },
+
+    inputValidationName() {
+      return this.validationName || this.label;
     }
   }
 };

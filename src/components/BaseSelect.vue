@@ -2,10 +2,11 @@
   <div class="form-item">
     <label :for="id" v-text="label"></label>
     <select
-      :name="id"
+      :id="id"
+      :name="$attrs.name || id"
       :value="value"
       v-bind="$attrs"
-      v-on="inputListeners"
+      v-on="selectListeners"
       v-validate="validation"
       :data-vv-as="label"
       :data-vv-name="id"
@@ -60,7 +61,7 @@ export default {
       return `${this.id}_help`;
     },
 
-    inputListeners() {
+    selectListeners() {
       return {
         ...this.$listeners,
         change: event => this.$emit("input", event.target.value)
