@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <template lang="html">
   <form
     ref="form1"
@@ -11,13 +12,23 @@
       label="Select a Program 1"
       v-model="submit.program"
     />
+    <button
+      @click.prevent="emitQualifier('7cf6c854-ec67-42d7-81eb-4556bc539800');"
+    >
+      Emit Real Online Value
+    </button>
 
-    <BaseSelect
-      id="program2"
-      :options="programs"
-      label="Select a Program 2"
-      v-model="submit.program"
-    />
+    <button @click.prevent="emitQualifier('987654321');">
+      Emit Mock Campus Value
+    </button>
+    <!--
+      <BaseSelect
+        id="program2"
+        :options="programs"
+        label="Select a Program 2"
+        v-model="submit.program"
+      />
+    -->
 
     <!--
       <BaseInput id="firstName1" v-model="submit.firstName" label="First Name" />
@@ -60,6 +71,16 @@ export default {
     });
   },
   methods: {
+    emitQualifier(newValue) {
+      // alert("hi");
+      console.log(this.$bus);
+      this.$bus.$emit("qualifier-updated", newValue);
+    },
+
+    handleQualifierSelection(newValue) {
+      console.log("WORKED!!! ", newValue);
+    },
+
     handleFocus($event) {
       console.log("Focus Event: ", $event);
     },

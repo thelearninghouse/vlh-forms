@@ -38,7 +38,14 @@ export default {
   mounted() {
     this.registerZipValidator();
   },
+
   methods: {
+    // emitQualifier(newValue) {
+    //   alert("hi");
+    //   console.log(this.$bus);
+    //   this.$bus.$emit("qualifier-updated", newValue);
+    // },
+
     registerZipValidator() {
       var vm = this;
       var isZip = value => {

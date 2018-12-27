@@ -14,9 +14,10 @@
     >
       <option key="initial" value="" v-text="defaultText"></option>
       <option
-        v-for="option in options"
+        v-for="(option, index) in options"
+        :selected="option.id === value"
         :value="option.id"
-        :key="option.id"
+        :key="index"
         :id="option.id"
         >{{ option.name }}
       </option>
@@ -66,6 +67,29 @@ export default {
         ...this.$listeners,
         change: event => this.$emit("input", event.target.value)
       };
+    }
+  },
+
+  created() {
+    this.$bus.$on("qualifier-updated", newIdValue => {
+      console.log("From BaseSelect - on:qualifier-updated ran");
+      this.handleUpdatedQualifier(newIdValue);
+    });
+  },
+
+  methods: {
+    handleUpdatedQualifier(newIdValue) {
+      let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
+      if (programIndex > -1) this.qualifierUpdate(programIndex, newIdValue);
+    },
+
+    qualifierUpdate(programIndex, newIdValue) {
+      this.$set(this.options[programIndex], "id", newIdValue);
+      this.$emit("input", newIdValue);
+    },
+
+    findQualifierProgramIndex(option) {
+      return option.id === this.value;
     }
   }
 };
