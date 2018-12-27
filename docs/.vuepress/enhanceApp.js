@@ -14,13 +14,13 @@ export default ({
       Vue.use(VeeValidate, ValidationConfig);
       Vue.use(VlhForms);
 
-      // Vue.mixin({
-      //   data: () => ({
-      //       submit: {
-      //         firstName: '',
-      //         lastName: '',
-      //         email: ''
-      //       }
-      //     })          
-      // })
+      Vue.mixin({
+        data: () => ({
+            submit: {
+              firstName: '',
+              lastName: '',
+              email: ''
+            }
+          })          
+      })
   }

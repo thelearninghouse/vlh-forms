@@ -40,6 +40,7 @@ module.exports = {
     ]
   },
 
+
   /**
    * Allows the use of using aliases in files for easier importing
    */
@@ -48,7 +49,7 @@ module.exports = {
       alias: {
         '@root': path.resolve(__dirname, "../../"),
         '@src': path.resolve(__dirname, "../../src"),
-        '@utils':  path.resolve(__dirname, "../../utils"),
+        '@utils': path.resolve(__dirname, "../../utils"),
         '@images': './../images'
       }
     }
@@ -61,9 +62,11 @@ module.exports = {
     config.module.rules.delete('svg')
     config.module
       .rule('svg')
-        .test(/\.svg$/)
-        .use('vue-svg-loader')
-          .loader('vue-svg-loader')
-          .end()    
-  }  
+      .test(/\.svg$/)
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
+      .end()
+  }
+
+
 }

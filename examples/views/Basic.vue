@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-<template lang="html">
+<template>
   <form
     ref="form1"
     id="tlh-form"
