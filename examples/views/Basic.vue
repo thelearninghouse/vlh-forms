@@ -37,17 +37,6 @@
     <form-first-name v-model="submit.firstName" />
     <form-last-name v-model="submit.lastName" />
     <EmailInput v-model="submit.email" validation="required|email" />
-    <ZipInput
-      validation-name="New Name"
-      v-model="submit.zip"
-      placeholder="Your Zip"
-    />
-
-    <EmailInput
-      placeholder="Your Email"
-      v-model="submit.email"
-      validation="required|email"
-    />
 
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
