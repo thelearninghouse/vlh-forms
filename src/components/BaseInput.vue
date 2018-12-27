@@ -1,7 +1,9 @@
 <template>
   <div class="form-item">
     <label :for="id" v-text="label"></label>
-    <select
+    <input
+      :id="id"
+      :type="type"
       :name="id"
       :value="value"
       v-bind="$attrs"
@@ -10,17 +12,9 @@
       :data-vv-as="label"
       :data-vv-name="id"
       :aria-describedby="helpTextId"
-    >
-      <option key="initial" value="" v-text="defaultText"></option>
-      <option
-        v-for="option in options"
-        :value="option.id"
-        :key="option.id"
-        :id="option.id"
-        >{{ option.name }}
-      </option>
-    </select>
-
+      :autocomplete="autocomplete"
+      :pattern="pattern"
+    />
     <form-help
       :id="helpTextId"
       :visible="errors.has(id)"
@@ -39,19 +33,28 @@ export default {
       required: true
     },
     value: [String, Number],
-    label: String,
-    defaultText: {
+    type: {
       type: String,
-      default: "Select"
+      default: "text"
     },
-    options: {
-      type: Array,
-      required: true
-    },
+    label: String,
 
     validation: {
       type: String,
       default: "required"
+    },
+
+    optional: {
+      type: Boolean,
+      default: false
+    },
+
+    autocomplete: {
+      type: String
+    },
+
+    pattern: {
+      type: String
     }
   },
 
@@ -63,7 +66,7 @@ export default {
     inputListeners() {
       return {
         ...this.$listeners,
-        change: event => this.$emit("input", event.target.value)
+        input: event => this.$emit("input", event.target.value)
       };
     }
   }

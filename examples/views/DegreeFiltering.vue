@@ -5,20 +5,6 @@
     @submit.prevent="handleFormSubmission"
   >
     <BaseSelect
-      id="program1"
-      :options="programs"
-      label="Select a Program 1"
-      v-model="submit.program"
-    />
-
-    <BaseSelect
-      id="program2"
-      :options="programs"
-      label="Select a Program 2"
-      v-model="submit.program"
-    />
-
-    <BaseSelect
       id="degreeLevel"
       label="Select Degree Level"
       v-model="selectedDegreeLevel"

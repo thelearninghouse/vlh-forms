@@ -19,8 +19,14 @@
       v-model="submit.program"
     />
 
+    <!--
+      <BaseInput id="firstName1" v-model="submit.firstName" label="First Name" />
+    -->
+    <FirstNameInput v-model="submit.firstName" />
     <form-first-name v-model="submit.firstName"></form-first-name>
     <form-last-name v-model="submit.lastName"></form-last-name>
+    <EmailInput v-model="submit.email" validation="required|email" />
+
     <form-phone v-model="submit.phone" validation="required"></form-phone>
     <form-email v-model="submit.email" validation="required|email"></form-email>
     <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
