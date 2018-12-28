@@ -77,8 +77,8 @@ export default {
     selectClasses () {
       return {
         select: true,
+        valid: this.fieldValidity,
         invalid: this.errors.has(this.id),
-        valid: this.fieldValidity
       }
     },
 

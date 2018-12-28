@@ -88,8 +88,8 @@ export default {
     inputClasses () {
       return {
         input: true,
+        valid: this.fieldValidity,
         invalid: this.errors.has(this.id),
-        valid: this.fieldValidity
       }
     },
 
