@@ -252,7 +252,7 @@ export default {
       this.$validator.validateAll().then(result => {
         console.log("Missing fields or errors!");
         if (result) {
-          this.currentStep = this.currentStep + 1;
+          this.$root.currentStep = this.$root.currentStep + 1;
         } else {
           this.setFocusOnFirstFormError();
         }
@@ -262,13 +262,13 @@ export default {
     handleNextStep() {
       console.log("stopped");
       this.validateStep();
-      // let wasCurrentStep = this.currentStep
-      // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.currentStep + 1})
-      // this.currentStep = this.currentStep + 1
+      // let wasCurrentStep = this.$root.currentStep
+      // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.$root.currentStep + 1})
+      // this.$root.currentStep = this.$root.currentStep + 1
     },
 
     handlePreviousStep() {
-      this.currentStep = this.currentStep - 1;
+      this.$root.currentStep = this.$root.currentStep - 1;
       this.$bus.$emit("previous-here");
     },
 

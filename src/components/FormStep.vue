@@ -1,10 +1,6 @@
 <template>
   <div class="step">
-    <slot>
-      <p>
-        This should not show up unless theres nothing inside component in parent
-      </p>
-    </slot>
+    <slot />
   </div>
 </template>
 
@@ -27,7 +23,7 @@ export default {
   props: {
     activeStep: {
       type: [Number, String],
-      required: true
+      required: false
     }
   },
 
@@ -51,7 +47,7 @@ export default {
   },
 
   mounted() {
-    if (this.activeStep > 1 && this.activeStep == this.stepID) {
+    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepID) {
       this.$bus.$emit("set-focus", this.firstField);
     }
   }

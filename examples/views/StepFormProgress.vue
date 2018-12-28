@@ -4,14 +4,14 @@
       <step-form-progress
         customProgress
         :steps="totalSteps"
-        :active-step="currentStep"
+        :active-step="$root.currentStep"
       >
       </step-form-progress>
 
       <step-form-progress
         customProgress
         :steps="totalSteps"
-        :active-step="currentStep"
+        :active-step="$root.currentStep"
       >
         <div slot="step1"><span>Step 1: Choose A Degree</span></div>
         <div slot="step2"><span>Step 2: Your Name</span></div>
@@ -19,7 +19,7 @@
       </step-form-progress>
 
       <transition name="slide-fade" mode="out-in" appear>
-        <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
+        <form-step v-if="$root.currentStep == 1" :key="1">
           
           <BaseSelect
             id="degreeLevel"
@@ -40,12 +40,12 @@
           </FormFieldTransition>          
         </form-step>
 
-        <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
+        <form-step v-if="$root.currentStep == 2" :key="2">
           <form-first-name v-model="submit.firstName"></form-first-name>
           <form-last-name v-model="submit.lastName"></form-last-name>
         </form-step>
 
-        <form-step :active-step="currentStep" v-if="currentStep == 3" :key="3">
+        <form-step v-if="$root.currentStep == 3" :key="3">
           <form-phone v-model="submit.phone" validation="required"></form-phone>
           <form-email
             v-model="submit.email"
@@ -57,14 +57,10 @@
     </div>
 
     <step-form-controls
-      :steps="totalSteps"
-      :active-step="currentStep"
       @previous-step="handlePreviousStep"
       @next-step="handleNextStep"
       submitBtnText="Submit Now"
-    >
-    </step-form-controls>
-
+    />
     <form-legal-text></form-legal-text>
   </form>
 </template>

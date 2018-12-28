@@ -12,12 +12,7 @@
         appear
         @after-enter="afterEnter"
       >
-        <form-step
-          ref="step1"
-          :active-step="currentStep"
-          v-if="currentStep == 1"
-          :key="1"
-        >
+        <form-step v-if="$root.currentStep == 1" :key="1" >
           <form-select
             name="degreeLevel"
             label="Select Degree Level"
@@ -36,7 +31,7 @@
           </transition-dynamic-field>
         </form-step>
 
-        <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
+        <form-step v-if="$root.currentStep == 2" :key="2">
           <form-first-name ref="firstField" v-model="submit.firstName" />
           <form-last-name v-model="submit.lastName" />
         </form-step>

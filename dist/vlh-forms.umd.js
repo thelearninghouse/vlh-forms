@@ -973,12 +973,12 @@ var update = add("180b5cd7", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=6c77827b&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"step"},[_vm._t("default",[_c('p',[_vm._v("\n      This should not show up unless theres nothing inside component in parent\n    ")])])],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=75513b12&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"step"},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=6c77827b&
+// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=75513b12&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -1003,10 +1003,6 @@ var es6_number_constructor = __webpack_require__("c5f6");
 //
 //
 //
-//
-//
-//
-//
 
 /**
  * Used in step-forms.
@@ -1024,7 +1020,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
   props: {
     activeStep: {
       type: [Number, String],
-      required: true
+      required: false
     }
   },
   data: function data() {
@@ -1045,7 +1041,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
     }
   },
   mounted: function mounted() {
-    if (this.activeStep > 1 && this.activeStep == this.stepID) {
+    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepID) {
       this.$bus.$emit("set-focus", this.firstField);
     }
   }
