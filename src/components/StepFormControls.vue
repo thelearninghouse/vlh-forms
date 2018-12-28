@@ -2,7 +2,7 @@
   <div class="stepFormControls">
     <button
       class="previous-button"
-      v-if="activeStep > 1"
+      v-if="currentFormStep > 1"
       @click.stop.prevent="$emit('previous-step');"
       @keydown.enter.stop.prevent="$emit('previous-step');"
       v-text="previousBtnText"
@@ -11,7 +11,7 @@
     </button>
     <button
       class="next-button"
-      v-if="activeStep < steps"
+      v-if="currentFormStep < totalFormSteps"
       @click.stop.prevent="nextStep($event);"
       @mousedown.stop.prevent="nextStep($event);"
       @keydown.enter.stop.prevent="nextStep($event);"
@@ -41,7 +41,7 @@ export default {
      */
     steps: {
       type: [Number, String],
-      required: true
+      required: false
     },
 
     /**
@@ -50,7 +50,7 @@ export default {
 
     activeStep: {
       type: [Number, String],
-      required: true
+      required: false
     },
 
     /**
@@ -78,12 +78,18 @@ export default {
   },
   computed: {
     /**
-     * Uses parent components `currentStep` property to know where we are in the in the step-form
+     * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    currentStepFromParent() {
-      return this.$parent.currentStep;
+    currentFormStep() {
+      return this.$root.currentStep;
     },
 
+    /**
+     * Uses root `currentStep` property to know where we are in the in the step-form
+     */
+    totalFormSteps() {
+      return this.$root.totalSteps;
+    },
     /**
      * Determines if the includes `form-submit` component should be used.
      */

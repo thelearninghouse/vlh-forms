@@ -44,13 +44,10 @@
     </div>
 
     <step-form-controls
-      :steps="totalSteps"
-      :active-step="currentStep"
       @previous-step="handlePreviousStep"
       @next-step="handleNextStep"
       submitBtnText="BtnText From Prop"
-    >
-    </step-form-controls>
+    />
     <form-legal-text />
   </form>
 </template>
