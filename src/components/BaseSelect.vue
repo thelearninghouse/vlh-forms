@@ -12,9 +12,9 @@
       :name="selectName"
       :class="selectClasses"
       v-on="selectListeners"
-      v-validate="validation"
       :data-vv-name="id"
-      :data-vv-as="label"
+      :data-vv-as="selectValidationName"
+      v-validate="selectValidation"
       :aria-describedby="helpTextId"
     >
       <option
@@ -87,7 +87,17 @@ export default {
         ...this.$listeners,
         change: event => this.$emit("input", event.target.value)
       };
-    }
+    },
+
+    selectValidation () {
+      return this.optional
+        ? { rules: { required: false } }
+        : this.validation || "required";
+    },
+
+    selectValidationName () {
+      return this.validationName || this.label;
+    }    
   },
 
   created () {
