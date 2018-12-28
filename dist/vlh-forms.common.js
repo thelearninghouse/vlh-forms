@@ -964,12 +964,12 @@ var update = add("180b5cd7", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=75513b12&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=88c0ed4c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"step"},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=75513b12&
+// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=88c0ed4c&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -1014,11 +1014,6 @@ var es6_number_constructor = __webpack_require__("c5f6");
       required: false
     }
   },
-  data: function data() {
-    return {
-      inputId: ""
-    };
-  },
   computed: {
     firstField: function firstField() {
       return Object.keys(this.fields)[0];
@@ -1027,12 +1022,18 @@ var es6_number_constructor = __webpack_require__("c5f6");
       var fieldsInStep = Object.keys(this.fields);
       return fieldsInStep[fieldsInStep.length - 1];
     },
-    stepID: function stepID() {
+    stepId: function stepId() {
       return this.$vnode.data.key;
+    },
+    currentFormStep: function currentFormStep() {
+      return this.$root.currentStep;
+    },
+    isActive: function isActive() {
+      return this.$root.currentStep == this.stepId;
     }
   },
   mounted: function mounted() {
-    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepID) {
+    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepId) {
       this.$bus.$emit("set-focus", this.firstField);
     }
   }
@@ -4535,12 +4536,12 @@ component.options.__file = "FormNotification.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=9d7fa1b4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=1d9679ec&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=9d7fa1b4&
+// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=1d9679ec&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
 var objectSpread = __webpack_require__("be94");
@@ -4604,12 +4605,19 @@ var BaseMixin = __webpack_require__("f37c");
       type: String,
       required: true
     },
+    label: String,
     value: [String, Number],
+    validationName: {
+      type: String
+    },
+    validation: {
+      type: String,
+      default: "required"
+    },
     type: {
       type: String,
       default: "text"
     },
-    label: String,
     optional: {
       type: Boolean,
       default: false
@@ -4621,12 +4629,6 @@ var BaseMixin = __webpack_require__("f37c");
       type: String
     },
     pattern: {
-      type: String
-    },
-    validation: {
-      type: String
-    },
-    validationName: {
       type: String
     }
   },
@@ -5928,12 +5930,12 @@ module.exports = createCaseFirst;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSelect.vue?vue&type=template&id=73d9a550&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('select',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.selectValidation),expression:"selectValidation"}],ref:_vm.id,class:_vm.selectClasses,attrs:{"id":_vm.id,"name":_vm.selectName,"data-vv-name":_vm.id,"data-vv-as":_vm.selectValidationName,"aria-describedby":_vm.helpTextId},domProps:{"value":_vm.value}},'select',_vm.$attrs,false),_vm.selectListeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option,index){return _c('option',{key:index,attrs:{"id":option.id},domProps:{"selected":option.id === _vm.value,"value":option.id}},[_vm._v(_vm._s(option.name)+"\n    ")])})],2),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSelect.vue?vue&type=template&id=678730f4&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('select',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.selectValidation),expression:"selectValidation"}],ref:_vm.id,class:_vm.selectClasses,attrs:{"id":_vm.id,"name":_vm.selectName,"data-vv-name":_vm.id,"data-vv-as":_vm.selectValidationName,"aria-describedby":_vm.helpTextId},domProps:{"value":_vm.value}},'select',_vm.$attrs,false),_vm.selectListeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option,index){return _c('option',{key:index,attrs:{"id":option.id},domProps:{"selected":option.id === _vm.value,"value":option.id}},[_vm._v(_vm._s(option.name)+"\n      ")])})],2)]),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseSelect.vue?vue&type=template&id=73d9a550&
+// CONCATENATED MODULE: ./src/components/BaseSelect.vue?vue&type=template&id=678730f4&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
 var es6_array_find_index = __webpack_require__("20d6");
@@ -5996,7 +5998,6 @@ var BaseMixin = __webpack_require__("f37c");
 //
 //
 //
-//
 
 /* harmony default export */ var BaseSelectvue_type_script_lang_js_ = ({
   mixins: [BaseMixin["a" /* default */]],
@@ -6011,6 +6012,13 @@ var BaseMixin = __webpack_require__("f37c");
     },
     value: [String, Number],
     label: String,
+    validationName: {
+      type: String
+    },
+    validation: {
+      type: String,
+      default: "required"
+    },
     defaultText: {
       type: String,
       default: "Select"
@@ -6018,10 +6026,6 @@ var BaseMixin = __webpack_require__("f37c");
     options: {
       type: Array,
       required: true
-    },
-    validation: {
-      type: String,
-      default: "required"
     }
   },
   computed: {
@@ -6523,7 +6527,7 @@ exports = module.exports = __webpack_require__("2350")(false);
 
 
 // module
-exports.push([module.i, ".form-item{margin:.5em auto;position:relative}.form-item input,.form-item label,.form-item select{position:relative;z-index:2}.form-item input,.form-item select{position:relative;min-height:45px;z-index:2;border:1px solid grey;padding:0 15px;width:100%;margin-top:0!important;margin-bottom:0!important;box-sizing:border-box}.form-item input:focus,.form-item select:focus{border-bottom:2px solid #373737}.form-item input.invalid,.form-item select.invalid{border:2px solid #ca0000}.form-item input.invalid:focus,.form-item select.invalid:focus{outline:none}.form-item .help{font-size:.9em}.form-item label{text-transform:capitalize}.form-item .input,.form-item .select{position:relative}.form-item .help{overflow:hidden}.form-item .help-inner{overflow-wrap:break-word}.form-item select{padding:.6em .8em .5em .8em;min-height:45px;padding-right:40px!important;background-image:url(" + escape(__webpack_require__("8aca")) + ");-webkit-appearance:none;background-size:40px;background-position:99.5%;background-repeat:no-repeat}.form-item select.invalid{background-image:none}.flex-rw{display:flex;flex-flow:row wrap;justify-content:space-between}.flex-rw .form-item{flex:1 1 100%}.flex-rw .form-item.flex-half{flex:0 1 49%}.fade-enter-active,.fade-leave-active{transition:opacity .25s}.fade-enter,.fade-leave-to{opacity:0;transform:translateX(10px)}.slide-enter-active,.slide-leave-active{transition:all .5s ease}.slide-enter-active,.slide-leave-active{transform:translateX(50px)}.slide-enter,.slide-leave-active{opacity:0}.slide-fade-enter-active,.slide-fade-leave-active{transition:all .3s ease-in-out}.slide-fade-enter{transform:translateX(50px);opacity:0}.slide-fade-leave-to{transform:translateX(-50px);opacity:0}select.form-field:focus{outline:5px solid rgba(59,153,252,.65)}.vertical-slide-enter-active,.vertical-slide-leave-active{transition:all .3s ease-in-out}.vertical-slide-enter,.vertical-slide-leave-to{transform:translateY(-10px);opacity:0}form.default-color-theme .help{color:#ca0000!important}form.light-color-theme .help{color:#222!important}form.dark-color-theme .help{color:#f9f9f9!important}.form-warning{width:20px}.transition-step-enter-active,.transition-step-leave-active{transition:all .5s ease}.transition-step-enter-active,.transition-step-leave-active{transform:translateX(50px)}.transition-step-enter,.transition-step-leave-active{opacity:0}.transition-step-fade-enter-active,.transition-step-fade-leave-active{transition:all .3s ease-in-out}.transition-step-fade-enter{transform:translateX(50px);opacity:0}.transition-step-fade-leave-to{transform:translateX(-50px);opacity:0}.expand-enter-active,.expand-leave-active{transition:all .3s ease-in-out;overflow:hidden}", ""]);
+exports.push([module.i, ".form-item{margin:.5em auto;position:relative}.form-item input,.form-item label,.form-item select{position:relative;z-index:2}.form-item input,.form-item select{position:relative;min-height:45px;z-index:2;border:1px solid grey;padding:0 15px;width:100%;margin-top:0!important;margin-bottom:0!important;box-sizing:border-box}.form-item input:focus,.form-item select:focus{border-bottom:2px solid #373737}.form-item input.invalid,.form-item select.invalid{border:2px solid #ca0000}.form-item input.invalid:focus,.form-item select.invalid:focus{outline:none}.form-item .help{font-size:.9em}.form-item label{text-transform:capitalize}.form-item .input,.form-item .select{position:relative}.form-item .help{overflow:hidden}.form-item .help-inner{overflow-wrap:break-word}.form-item select{padding:.6em .8em .5em .8em;min-height:45px;padding-right:40px!important;background-image:url(" + escape(__webpack_require__("8aca")) + ");-webkit-appearance:none;background-size:40px;background-position:99.5%;background-repeat:no-repeat}.flex-rw{display:flex;flex-flow:row wrap;justify-content:space-between}.flex-rw .form-item{flex:1 1 100%}.flex-rw .form-item.flex-half{flex:0 1 49%}.fade-enter-active,.fade-leave-active{transition:opacity .25s}.fade-enter,.fade-leave-to{opacity:0;transform:translateX(10px)}.slide-enter-active,.slide-leave-active{transition:all .5s ease}.slide-enter-active,.slide-leave-active{transform:translateX(50px)}.slide-enter,.slide-leave-active{opacity:0}.slide-fade-enter-active,.slide-fade-leave-active{transition:all .3s ease-in-out}.slide-fade-enter{transform:translateX(50px);opacity:0}.slide-fade-leave-to{transform:translateX(-50px);opacity:0}select.form-field:focus{outline:5px solid rgba(59,153,252,.65)}.vertical-slide-enter-active,.vertical-slide-leave-active{transition:all .3s ease-in-out}.vertical-slide-enter,.vertical-slide-leave-to{transform:translateY(-10px);opacity:0}form.default-color-theme .help{color:#ca0000!important}form.light-color-theme .help{color:#222!important}form.dark-color-theme .help{color:#f9f9f9!important}.form-warning{width:20px}.transition-step-enter-active,.transition-step-leave-active{transition:all .5s ease}.transition-step-enter-active,.transition-step-leave-active{transform:translateX(50px)}.transition-step-enter,.transition-step-leave-active{opacity:0}.transition-step-fade-enter-active,.transition-step-fade-leave-active{transition:all .3s ease-in-out}.transition-step-fade-enter{transform:translateX(50px);opacity:0}.transition-step-fade-leave-to{transform:translateX(-50px);opacity:0}.expand-enter-active,.expand-leave-active{transition:all .3s ease-in-out;overflow:hidden}", ""]);
 
 // exports
 

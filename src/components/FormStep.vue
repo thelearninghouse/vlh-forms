@@ -27,27 +27,31 @@ export default {
     }
   },
 
-  data() {
-    return {
-      inputId: ""
-    };
-  },
-
   computed: {
     firstField() {
       return Object.keys(this.fields)[0];
     },
+    
     lastField() {
       let fieldsInStep = Object.keys(this.fields);
       return fieldsInStep[fieldsInStep.length - 1];
     },
-    stepID() {
+
+    stepId() {
       return this.$vnode.data.key;
+    },
+
+    currentFormStep() {
+      return this.$root.currentStep
+    },
+
+    isActive() {
+      return this.$root.currentStep == this.stepId
     }
   },
 
   mounted() {
-    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepID) {
+    if (this.$root.currentStep > 1 && this.$root.currentStep == this.stepId) {
       this.$bus.$emit("set-focus", this.firstField);
     }
   }

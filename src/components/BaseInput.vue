@@ -44,15 +44,24 @@ export default {
       type: String,
       required: true
     },
+    
+    label: String,
 
     value: [String, Number],
+
+    validationName: {
+      type: String
+    },
+
+    validation: {
+      type: String,
+      default: "required"
+    },
 
     type: {
       type: String,
       default: "text"
     },
-
-    label: String,
 
     optional: {
       type: Boolean,
@@ -68,14 +77,6 @@ export default {
     },
 
     pattern: {
-      type: String
-    },
-
-    validation: {
-      type: String
-    },
-
-    validationName: {
       type: String
     }
   },

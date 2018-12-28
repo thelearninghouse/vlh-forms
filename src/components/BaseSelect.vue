@@ -1,36 +1,35 @@
 <template>
   <div class="form-item">
-    <label
-      :for="id"
-      v-text="label"
-    ></label>
-    <select
-      :id="id"
-      :ref="id"
-      :value="value"
-      v-bind="$attrs"
-      :name="selectName"
-      :class="selectClasses"
-      v-on="selectListeners"
-      :data-vv-name="id"
-      :data-vv-as="selectValidationName"
-      v-validate="selectValidation"
-      :aria-describedby="helpTextId"
-    >
-      <option
-        key="initial"
-        value=""
-        v-text="defaultText"
-      ></option>
-      <option
-        v-for="(option, index) in options"
-        :selected="option.id === value"
-        :value="option.id"
-        :key="index"
-        :id="option.id"
-      >{{ option.name }}
-      </option>
-    </select>
+    <label :for="id" v-text="label"></label>
+    <div class="form-field-wrapper">
+      <select
+        :id="id"
+        :ref="id"
+        :value="value"
+        v-bind="$attrs"
+        :name="selectName"
+        :class="selectClasses"
+        v-on="selectListeners"
+        :data-vv-name="id"
+        :data-vv-as="selectValidationName"
+        v-validate="selectValidation"
+        :aria-describedby="helpTextId"
+      >
+        <option
+          key="initial"
+          value=""
+          v-text="defaultText"
+        ></option>
+        <option
+          v-for="(option, index) in options"
+          :selected="option.id === value"
+          :value="option.id"
+          :key="index"
+          :id="option.id"
+        >{{ option.name }}
+        </option>
+      </select>
+    </div>
 
     <form-help
       :id="helpTextId"
@@ -52,20 +51,28 @@ export default {
       type: String,
       required: true
     },
+    
     value: [String, Number],
+    
     label: String,
-    defaultText: {
-      type: String,
-      default: "Select"
-    },
-    options: {
-      type: Array,
-      required: true
+
+    validationName: {
+      type: String
     },
 
     validation: {
       type: String,
       default: "required"
+    },
+    
+    defaultText: {
+      type: String,
+      default: "Select"
+    },
+
+    options: {
+      type: Array,
+      required: true
     }
   },
 
@@ -97,7 +104,7 @@ export default {
 
     selectValidationName () {
       return this.validationName || this.label;
-    }    
+    }
   },
 
   created () {
