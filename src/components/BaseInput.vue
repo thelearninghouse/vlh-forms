@@ -1,20 +1,29 @@
 <template>
   <div class="form-item">
     <label :for="id" v-text="label"></label>
-    <input
-      :id="id"
-      :name="$attrs.name || id"
-      :value="value"
-      :type="type"
-      v-bind="$attrs"
-      v-on="inputListeners"
-      v-validate="inputValidation"
-      :data-vv-name="id"
-      :data-vv-as="inputValidationName"
-      :aria-describedby="helpTextId"
-      :autocomplete="autocomplete"
-      :pattern="pattern"
-    />
+    <div class="form-field-wrapper">
+      <input
+        :id="id"
+        :ref="id"
+        :value="value"
+        :type="type"
+        v-bind="$attrs"
+        :name="inputName"
+        :class="inputClasses"
+        v-on="inputListeners"
+        v-validate="inputValidation"
+        :data-vv-name="id"
+        :data-vv-as="inputValidationName"
+        :aria-describedby="helpTextId"
+        :autocomplete="autocomplete"
+        :pattern="pattern"
+      />
+      <form-help-icon
+        :id="helpIconId"
+        :class="{ invalid: errors.has(id), valid: fieldValidity }"
+        :icon="currentIcon"
+      />
+    </div>
     <form-help
       :id="helpTextId"
       :visible="errors.has(id)"
@@ -24,7 +33,10 @@
 </template>
 
 <script>
+import BaseMixin from '@/mixins/BaseMixin'
+
 export default {
+  mixins: [BaseMixin],
   inheritAttrs: false,
   inject: { $validator: "$validator" },
   props: {
@@ -69,24 +81,32 @@ export default {
   },
 
   computed: {
-    helpTextId() {
-      return `${this.id}_help`;
+    inputName () {
+      return this.$attrs.name || this.id
     },
 
-    inputListeners() {
+    inputClasses () {
+      return {
+        input: true,
+        invalid: this.errors.has(this.id),
+        valid: this.fieldValidity
+      }
+    },
+
+    inputListeners () {
       return {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
     },
 
-    inputValidation() {
+    inputValidation () {
       return this.optional
         ? { rules: { required: false } }
         : this.validation || "required";
     },
 
-    inputValidationName() {
+    inputValidationName () {
       return this.validationName || this.label;
     }
   }
@@ -94,6 +114,9 @@ export default {
 </script>
 
 <style lang="scss">
+.form-field-wrapper {
+  position: relative;
+}
 .form-item {
   select {
     cursor: pointer;

@@ -11,15 +11,17 @@
       :options="levels"
     />
 
-    <transition-dynamic-field>
+    
+    <FormFieldTransition>
       <BaseSelect
-        v-if="selectedDegreeLevel"
+      class="EXTRA"
+        v-show="selectedDegreeLevel"
         id="program"
         label="Select a Program"
         v-model="submit.program"
         :options="programsForSelectedDegreeLevel"
       />
-    </transition-dynamic-field>
+    </FormFieldTransition>
 
     <!--
       <transition name="slide" appear>
@@ -36,8 +38,14 @@
     <form-first-name v-model="submit.firstName" />
     <form-last-name v-model="submit.lastName" />
     <form-zip v-model="submit.zip" />
-    <form-phone v-model="submit.phone" validation="required" />
-    <form-email v-model="submit.email" validation="required|email" />
+    <form-phone
+      v-model="submit.phone"
+      validation="required"
+    />
+    <form-email
+      v-model="submit.email"
+      validation="required|email"
+    />
     <form-submit text="Get Info" />
     <form-legal-text
       school="Alvernia University"
@@ -51,7 +59,7 @@
 export default {
   name: "degree-filtering",
   methods: {
-    handleFocus() {
+    handleFocus () {
       console.log("SELECTED!!!");
     }
   }

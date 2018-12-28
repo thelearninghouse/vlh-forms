@@ -20,24 +20,24 @@
 
       <transition name="slide-fade" mode="out-in" appear>
         <form-step :active-step="currentStep" v-if="currentStep == 1" :key="1">
-          <form-select
-            name="degreeLevel"
+          
+          <BaseSelect
+            id="degreeLevel"
             v-model="selectedDegreeLevel"
             label="Select Degree Level"
             :options="levels"
-          >
-          </form-select>
-
-          <transition-dynamic-field>
-            <form-select
-              name="program"
-              v-model="submit.program"
-              v-show="selectedDegreeLevel"
-              :label="selectedDegreeLevel + ' Programs'"
-              defaultText="Select a Program"
-              :options="programsForSelectedDegreeLevel"
+          />
+          
+          <FormFieldTransition>
+            <BaseSelect
+                id="program"
+                v-model="submit.program"
+                v-show="selectedDegreeLevel"
+                :label="selectedDegreeLevel + ' Programs'"
+                defaultText="Select a Program"
+                :options="programsForSelectedDegreeLevel"
             />
-          </transition-dynamic-field>
+          </FormFieldTransition>          
         </form-step>
 
         <form-step :active-step="currentStep" v-if="currentStep == 2" :key="2">
@@ -71,31 +71,31 @@
 
 <script>
 export default {
-  mounted() {
-    this.$nextTick(function() {
+  mounted () {
+    this.$nextTick(function () {
       this.addClass();
     });
   },
   methods: {
-    addClass() {
+    addClass () {
       let Form = document.getElementById("tlh-form");
       if (Form && this.helpTextColor) {
         Form.classList.add(this.helpTextColor);
       }
     },
 
-    setFocusWithJS() {
+    setFocusWithJS () {
       var FormItemDiv = document.querySelector(".form-item");
       var El = FormItemDiv.querySelector("input, select, checkbox, textarea");
       El.focus();
     },
 
-    transitionCompleted(el) {
+    transitionCompleted (el) {
       console.log("After Enter", el);
       this.setFocusWithJS();
     },
 
-    transitionAfterAppear(el) {
+    transitionAfterAppear (el) {
       console.log("After Appear", el);
     }
   }

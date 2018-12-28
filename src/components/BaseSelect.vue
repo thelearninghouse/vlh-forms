@@ -1,26 +1,34 @@
 <template>
   <div class="form-item">
-    <label :for="id" v-text="label"></label>
+    <label
+      :for="id"
+      v-text="label"
+    ></label>
     <select
       :id="id"
       :ref="id"
-      :name="$attrs.name || id"
       :value="value"
       v-bind="$attrs"
+      :name="selectName"
+      :class="selectClasses"
       v-on="selectListeners"
       v-validate="validation"
-      :data-vv-as="label"
       :data-vv-name="id"
+      :data-vv-as="label"
       :aria-describedby="helpTextId"
     >
-      <option key="initial" value="" v-text="defaultText"></option>
+      <option
+        key="initial"
+        value=""
+        v-text="defaultText"
+      ></option>
       <option
         v-for="(option, index) in options"
         :selected="option.id === value"
         :value="option.id"
         :key="index"
         :id="option.id"
-        >{{ option.name }}
+      >{{ option.name }}
       </option>
     </select>
 
@@ -33,7 +41,10 @@
 </template>
 
 <script>
+import BaseMixin from '@/mixins/BaseMixin'
+
 export default {
+  mixins: [BaseMixin],
   inheritAttrs: false,
   inject: { $validator: "$validator" },
   props: {
@@ -59,11 +70,19 @@ export default {
   },
 
   computed: {
-    helpTextId() {
-      return `${this.id}_help`;
+    selectName () {
+      return this.$attrs.name || this.id
     },
 
-    selectListeners() {
+    selectClasses () {
+      return {
+        select: true,
+        invalid: this.errors.has(this.id),
+        valid: this.fieldValidity
+      }
+    },
+
+    selectListeners () {
       return {
         ...this.$listeners,
         change: event => this.$emit("input", event.target.value)
@@ -71,7 +90,7 @@ export default {
     }
   },
 
-  created() {
+  created () {
     this.$bus.$on("qualifier-updated", newIdValue => {
       console.log("From BaseSelect - on:qualifier-updated ran");
       this.handleUpdatedQualifier(newIdValue);
@@ -79,7 +98,7 @@ export default {
   },
 
   methods: {
-    handleUpdatedQualifier(newIdValue) {
+    handleUpdatedQualifier (newIdValue) {
       let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
       if (programIndex > -1) {
         console.log("element: ", this.$refs[this.id]);
@@ -89,12 +108,12 @@ export default {
       }
     },
 
-    qualifierUpdate(programIndex, newIdValue) {
+    qualifierUpdate (programIndex, newIdValue) {
       this.$set(this.options[programIndex], "id", newIdValue);
       this.$emit("input", newIdValue);
     },
 
-    findQualifierProgramIndex(option) {
+    findQualifierProgramIndex (option) {
       return option.id === this.value;
     }
   }

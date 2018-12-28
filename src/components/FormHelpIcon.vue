@@ -36,7 +36,7 @@ export default {
 
 .valid {
   & + .form-help-icon {
-    display: none;
+    // display: none;
   }
 }
 </style>
