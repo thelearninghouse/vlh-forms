@@ -11,10 +11,11 @@ export default {
   extends: BaseInput,
   props: {
     id: {
-      default: "firstName"
+      default: "lastName"
     },
+
     label: {
-      default: "First Name"
+      default: "Last Name"
     },
     autocomplete: {
       default: "family-name"

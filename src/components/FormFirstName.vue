@@ -13,6 +13,7 @@ export default {
     id: {
       default: "firstName"
     },
+
     label: {
       default: "First Name"
     },
