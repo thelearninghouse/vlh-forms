@@ -23,11 +23,11 @@ export default {
   props: {
     steps: {
       type: [Number, String],
-      required: true
+      required: false
     },
     activeStep: {
       type: [Number, String],
-      required: true
+      required: false
     },
     customProgress: {
       type: Boolean,
@@ -50,7 +50,7 @@ export default {
       return this.$root.totalSteps;
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
