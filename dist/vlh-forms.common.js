@@ -1372,7 +1372,7 @@ var update = add("d4b4598a", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormProgress.vue?vue&type=template&id=11396ba4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormProgress.vue?vue&type=template&id=d77a5352&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormProgress"},_vm._l((_vm.totalFormSteps),function(step,index){return _c('div',{key:index + 1,staticClass:"stepProgress",class:{
       currentStep: _vm.currentFormStep == index + 1,
       completedStep: _vm.currentFormStep > index + 1,
@@ -1380,7 +1380,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/StepFormProgress.vue?vue&type=template&id=11396ba4&
+// CONCATENATED MODULE: ./src/components/StepFormProgress.vue?vue&type=template&id=d77a5352&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -1411,11 +1411,11 @@ var es6_number_constructor = __webpack_require__("c5f6");
   props: {
     steps: {
       type: [Number, String],
-      required: true
+      required: false
     },
     activeStep: {
       type: [Number, String],
-      required: true
+      required: false
     },
     customProgress: {
       type: Boolean,
