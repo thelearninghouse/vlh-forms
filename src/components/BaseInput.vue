@@ -28,7 +28,7 @@
       :id="helpTextId"
       :visible="errors.has(id)"
       :helpText="errors.first(id)"
-    ></form-help>
+    />
   </div>
 </template>
 

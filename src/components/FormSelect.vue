@@ -1,7 +1,6 @@
 <template>
   <transition
-    :name="transition"
-    appear
+    name="dynamic-field"
     @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter"

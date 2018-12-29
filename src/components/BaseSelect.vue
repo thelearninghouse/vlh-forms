@@ -1,49 +1,61 @@
 <template>
-  <div class="form-item">
-    <label :for="id" v-text="label"></label>
-    <div class="form-field-wrapper">
-      <select
-        :id="id"
-        :ref="id"
-        :value="value"
-        v-bind="$attrs"
-        :name="selectName"
-        :class="selectClasses"
-        v-on="selectListeners"
-        :data-vv-name="id"
-        :data-vv-as="selectValidationName"
-        v-validate="selectValidation"
-        :aria-describedby="helpTextId"
-      >
-        <option
-          key="initial"
-          value=""
-          v-text="defaultText"
-        ></option>
-        <option
-          v-for="(option, index) in options"
-          :selected="option.id === value"
-          :value="option.id"
-          :key="index"
-          :id="option.id"
-        >{{ option.name }}
-        </option>
-      </select>
-    </div>
+  <transition
+    name="dynamic-field"
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @before-leave="beforeLeave"
+    @leave="leave"
+  >
+    <div class="form-item">
+      <label :for="id" v-text="label"></label>
+      <div class="form-field-wrapper">
+        <select
+          :id="id"
+          :ref="id"
+          :value="value"
+          v-bind="$attrs"
+          :name="selectName"
+          :class="selectClasses"
+          v-on="selectListeners"
+          :data-vv-name="id"
+          :data-vv-as="selectValidationName"
+          v-validate="selectValidation"
+          :aria-describedby="helpTextId"
+          @keydown.enter.prevent
+        >
+          <option
+            key="initial"
+            value=""
+            v-text="defaultText"
+          ></option>
+          <option
+            v-for="(option, index) in options"
+            :selected="option.id === value"
+            :value="option.id"
+            :key="index"
+            :id="option.id"
+          >{{ option.name }}
+          </option>
+        </select>
+      </div>
 
-    <form-help
-      :id="helpTextId"
-      :visible="errors.has(id)"
-      :helpText="errors.first(id)"
-    ></form-help>
-  </div>
+      <form-help
+        :id="helpTextId"
+        :visible="errors.has(id)"
+        :helpText="errors.first(id)"
+      />
+    </div>
+  </transition>
+
 </template>
 
 <script>
 import BaseMixin from '@/mixins/BaseMixin'
+import DynamicFieldTransitionMixin from '@/mixins/DynamicFieldTransitionMixin'
 
 export default {
-  mixins: [BaseMixin],
+  mixins: [BaseMixin, DynamicFieldTransitionMixin],
   inheritAttrs: false,
   inject: { $validator: "$validator" },
   props: {
@@ -51,9 +63,9 @@ export default {
       type: String,
       required: true
     },
-    
+
     value: [String, Number],
-    
+
     label: String,
 
     validationName: {
@@ -64,7 +76,7 @@ export default {
       type: String,
       default: "required"
     },
-    
+
     defaultText: {
       type: String,
       default: "Select"

@@ -12,28 +12,13 @@
     />
 
     
-    <FormFieldTransition>
       <BaseSelect
-      class="EXTRA"
         v-show="selectedDegreeLevel"
         id="program"
         label="Select a Program"
         v-model="submit.program"
         :options="programsForSelectedDegreeLevel"
       />
-    </FormFieldTransition>
-
-    <!--
-      <transition name="slide" appear>
-        <form-select
-          v-show="selectedDegreeLevel"
-          name="program"
-          label="Select a Program"
-          v-model="submit.program"
-          :options="programsForSelectedDegreeLevel"
-        ></form-select>
-      </transition>
-    -->
 
     <form-first-name v-model="submit.firstName" />
     <form-last-name v-model="submit.lastName" />
