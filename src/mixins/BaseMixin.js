@@ -26,7 +26,7 @@ export default {
      */
     id: {
       type: String,
-      required: true
+      required: false
     },
 
     value: [String, Number],
@@ -39,7 +39,6 @@ export default {
       type: String,
       default: "required"
     }
-
   },
 
   computed: {
@@ -47,15 +46,14 @@ export default {
       return `${this.id}-help-icon`;
     },
 
-
     helpTextId() {
       return `${this.id}_help`;
     },
 
     fieldValidity() {
-      return this.fields[this.id] == undefined ?
-        false :
-        this.checkFieldValidity(this.fields[this.id]);
+      return this.fields[this.id] == undefined
+        ? false
+        : this.checkFieldValidity(this.fields[this.id]);
     },
 
     currentIcon() {
