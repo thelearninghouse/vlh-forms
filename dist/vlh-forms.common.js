@@ -120,10 +120,10 @@ var BaseInput = __webpack_require__("b3b3");
   extends: BaseInput["default"],
   props: {
     id: {
-      default: "firstName"
+      default: "lastName"
     },
     label: {
-      default: "First Name"
+      default: "Last Name"
     },
     autocomplete: {
       default: "family-name"
