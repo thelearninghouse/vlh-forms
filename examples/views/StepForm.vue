@@ -14,21 +14,19 @@
       >
         <form-step v-if="$root.currentStep == 1" :key="1" >
           <form-select
-            name="degreeLevel"
+            id="degreeLevel"
             label="Select Degree Level"
             v-model="selectedDegreeLevel"
             :options="levels"
           />
 
-          <transition-dynamic-field>
             <form-select
               v-if="selectedDegreeLevel"
-              name="program"
+              id="program"
               label="Select a Program"
               v-model="submit.program"
               :options="programsForSelectedDegreeLevel"
             />
-          </transition-dynamic-field>
         </form-step>
 
         <form-step v-if="$root.currentStep == 2" :key="2">

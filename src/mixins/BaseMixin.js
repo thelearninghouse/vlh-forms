@@ -5,44 +5,41 @@ import FormHelp from "@/components/FormHelp.vue";
 import FormHelpIcon from "@/components/FormHelpIcon.vue";
 
 export default {
-  // inheritAttrs: false,
-  // inject: ["$validator"],
+  inheritAttrs: false,
+  inject: ["$validator"],
 
   components: {
     FormHelp,
     FormHelpIcon
   },
-  // props: {
-  //   /**
-  //    * Label for form item
-  //    */
-  //   label: {
-  //     type: String,
-  //     required: true
-  //   },
+  props: {
+    /**
+     * Label for form item
+     */
+    label: {
+      type: String,
+      required: true
+    },
 
-  //   /**
-  //    * ID attribute
-  //    */
-  //   id: {
-  //     type: String,
-  //     required: true
-  //   },
+    /**
+     * ID attribute
+     */
+    id: {
+      type: String,
+      required: true
+    },
 
-  //   value: [String, Number],
+    value: [String, Number],
 
-  //   validation: {
-  //     type: String
-  //   },
+    validationName: {
+      type: String
+    },
 
-  //   validationName: {
-  //     type: String
-  //   }
-  // },
+    validation: {
+      type: String,
+      default: "required"
+    }
 
-  components: {
-    FormHelpIcon,
-    FormHelp
   },
 
   computed: {

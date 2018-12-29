@@ -9,7 +9,7 @@
     </form-select>
 
     <form-select
-      name="program"
+      id="program"
       v-show="selectedDegreeLevel"
       :label="selectedDegreeLevel + ' Programs'"
       defaultText="Select a Program"

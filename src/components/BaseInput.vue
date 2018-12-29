@@ -37,27 +37,7 @@ import BaseMixin from '@/mixins/BaseMixin'
 
 export default {
   mixins: [BaseMixin],
-  inheritAttrs: false,
-  inject: { $validator: "$validator" },
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    
-    label: String,
-
-    value: [String, Number],
-
-    validationName: {
-      type: String
-    },
-
-    validation: {
-      type: String,
-      default: "required"
-    },
-
     type: {
       type: String,
       default: "text"

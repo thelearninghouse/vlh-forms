@@ -21,15 +21,13 @@
       <transition name="slide-fade" mode="out-in" appear>
         <form-step v-if="$root.currentStep == 1" :key="1">
           
-          <BaseSelect
+          <form-select
             id="degreeLevel"
             v-model="selectedDegreeLevel"
             label="Select Degree Level"
             :options="levels"
           />
-          
-          <FormFieldTransition>
-            <BaseSelect
+            <form-select
                 id="program"
                 v-model="submit.program"
                 v-show="selectedDegreeLevel"
@@ -37,7 +35,7 @@
                 defaultText="Select a Program"
                 :options="programsForSelectedDegreeLevel"
             />
-          </FormFieldTransition>          
+        
         </form-step>
 
         <form-step v-if="$root.currentStep == 2" :key="2">

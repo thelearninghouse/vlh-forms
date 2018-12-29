@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import VeeValidate from "vee-validate";
-
+import axios from "axios";
 import { MockData } from "./MockData/index.js";
 
 import VlhForms from "../src/lib";
@@ -26,6 +26,7 @@ Vue.mixin({
     selectedDegreeLevel: function(val) {
       this.submit.program = "";
     },
+
     currentStep(stepValue) {
       this.$bus.$emit("step-updated", stepValue);
     },
@@ -282,7 +283,6 @@ Vue.mixin({
 
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
 new Vue({
   el: "#app",
   router,

@@ -1,5 +1,5 @@
 <script>
-import FormField from "./FormField.vue";
+import BaseInput from "./BaseInput";
 
 /**
  * The zip component
@@ -9,10 +9,9 @@ import FormField from "./FormField.vue";
  * ```
  */
 export default {
-  name: "form-zip",
-  extends: FormField,
+  extends: BaseInput,
   props: {
-    name: {
+    id: {
       default: "zip"
     },
 
@@ -42,14 +41,3 @@ export default {
   }
 };
 </script>
-
-<style media="screen">
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-</style>

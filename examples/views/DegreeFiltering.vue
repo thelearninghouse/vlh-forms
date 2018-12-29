@@ -4,15 +4,14 @@
     class="example degreeFiltering"
     @submit.prevent="handleFormSubmission"
   >
-    <BaseSelect
+    <form-select
       id="degreeLevel"
       label="Select Degree Level"
       v-model="selectedDegreeLevel"
       :options="levels"
     />
-
     
-      <BaseSelect
+      <form-select
         v-show="selectedDegreeLevel"
         id="program"
         label="Select a Program"

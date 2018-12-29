@@ -51,32 +51,13 @@
 </template>
 
 <script>
-import BaseMixin from '@/mixins/BaseMixin'
-import DynamicFieldTransitionMixin from '@/mixins/DynamicFieldTransitionMixin'
+import BaseMixin from "@/mixins/BaseMixin";
+import DynamicFieldTransitionMixin from "@/mixins/DynamicFieldTransitionMixin";
 
 export default {
   mixins: [BaseMixin, DynamicFieldTransitionMixin],
-  inheritAttrs: false,
-  inject: { $validator: "$validator" },
+
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-
-    value: [String, Number],
-
-    label: String,
-
-    validationName: {
-      type: String
-    },
-
-    validation: {
-      type: String,
-      default: "required"
-    },
-
     defaultText: {
       type: String,
       default: "Select"
@@ -89,37 +70,37 @@ export default {
   },
 
   computed: {
-    selectName () {
-      return this.$attrs.name || this.id
+    selectName() {
+      return this.$attrs.name || this.id;
     },
 
-    selectClasses () {
+    selectClasses() {
       return {
         select: true,
         valid: this.fieldValidity,
-        invalid: this.errors.has(this.id),
-      }
+        invalid: this.errors.has(this.id)
+      };
     },
 
-    selectListeners () {
+    selectListeners() {
       return {
         ...this.$listeners,
         change: event => this.$emit("input", event.target.value)
       };
     },
 
-    selectValidation () {
+    selectValidation() {
       return this.optional
         ? { rules: { required: false } }
         : this.validation || "required";
     },
 
-    selectValidationName () {
+    selectValidationName() {
       return this.validationName || this.label;
     }
   },
 
-  created () {
+  created() {
     this.$bus.$on("qualifier-updated", newIdValue => {
       console.log("From BaseSelect - on:qualifier-updated ran");
       this.handleUpdatedQualifier(newIdValue);
@@ -127,7 +108,7 @@ export default {
   },
 
   methods: {
-    handleUpdatedQualifier (newIdValue) {
+    handleUpdatedQualifier(newIdValue) {
       let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
       if (programIndex > -1) {
         console.log("element: ", this.$refs[this.id]);
@@ -137,12 +118,12 @@ export default {
       }
     },
 
-    qualifierUpdate (programIndex, newIdValue) {
+    qualifierUpdate(programIndex, newIdValue) {
       this.$set(this.options[programIndex], "id", newIdValue);
       this.$emit("input", newIdValue);
     },
 
-    findQualifierProgramIndex (option) {
+    findQualifierProgramIndex(option) {
       return option.id === this.value;
     }
   }
@@ -157,5 +138,20 @@ export default {
   label {
     display: block;
   }
+}
+
+.dynamic-field-enter-active,
+.dynamic-field-leave-active {
+  transition: all 250ms ease-out;
+  overflow: hidden;
+}
+</style>
+
+<style scoped>
+* {
+  will-change: height, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 </style>

@@ -1,5 +1,5 @@
 <script>
-import FormField from "./FormField.vue";
+import BaseInput from "./BaseInput";
 
 /**
  * The form component for last names
@@ -8,14 +8,13 @@ import FormField from "./FormField.vue";
  * ```
  */
 export default {
-  name: "form-last-name",
-  extends: FormField,
+  extends: BaseInput,
   props: {
-    name: {
-      default: "lastName"
+    id: {
+      default: "firstName"
     },
     label: {
-      default: "Last Name"
+      default: "First Name"
     },
     autocomplete: {
       default: "family-name"

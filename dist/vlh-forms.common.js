@@ -87,21 +87,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "001f":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("011c");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("5260ae79", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "0068":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -119,8 +104,8 @@ var update = add("5260ae79", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/components/FormField.vue + 4 modules
-var FormField = __webpack_require__("c1ee");
+// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
+var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormLastName.vue?vue&type=script&lang=js&
 
@@ -132,14 +117,13 @@ var FormField = __webpack_require__("c1ee");
  */
 
 /* harmony default export */ var FormLastNamevue_type_script_lang_js_ = ({
-  name: "form-last-name",
-  extends: FormField["default"],
+  extends: BaseInput["default"],
   props: {
-    name: {
-      default: "lastName"
+    id: {
+      default: "firstName"
     },
     label: {
-      default: "Last Name"
+      default: "First Name"
     },
     autocomplete: {
       default: "family-name"
@@ -228,21 +212,6 @@ module.exports = getRawTag;
 
 /***/ }),
 
-/***/ "011c":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.fade-enter-active[data-v-7cc4a104],.fade-leave-active[data-v-7cc4a104],.fade-leave-to[data-v-7cc4a104]{transition:all .5s ease\n}\n.fade-enter[data-v-7cc4a104],.fade-leave-active[data-v-7cc4a104],.fade-leave-to[data-v-7cc4a104]{opacity:0;will-change:opacity\n}\n@keyframes rotation-data-v-7cc4a104{\n0%{transform:rotate(0deg)\n}\nto{transform:rotate(359deg)\n}\n}\n.v-button[data-v-7cc4a104]{-moz-appearance:none;-webkit-appearance:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:3px;-webkit-box-shadow:none;box-shadow:none;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;font-size:1rem;height:2.25em;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;line-height:1.5;padding:calc(.375em - 1px) calc(.625em - 1px);position:relative;vertical-align:top;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #dbdbdb;color:#363636;cursor:pointer;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:.75em;padding-right:.75em;text-align:center;white-space:nowrap;transition:all .3s ease\n}\n.v-button-success-icon[data-v-7cc4a104]{width:22px;height:22px\n}\nbutton.v-button-loader-error[data-v-7cc4a104]:not(.is-loading){background-color:#f44336;color:#fff\n}\nbutton.v-button-loader-success[data-v-7cc4a104]:not(.is-loading){color:#fff\n}\nbutton.v-button[data-v-7cc4a104]:disabled{cursor:not-allowed\n}\n.spinner[data-v-7cc4a104]{width:22px;height:22px;margin-right:16px;opacity:1;filter:alpha(opacity=100);animation:rotation-data-v-7cc4a104 .7s linear infinite;border:4px solid rgba(0,0,0,.2);border-radius:100%;transition:all .3s ease\n}\n.cross[data-v-7cc4a104]{display:inline-block;width:17px;height:16px;position:relative\n}\n.cross[data-v-7cc4a104]:after,.cross[data-v-7cc4a104]:before{position:absolute;left:8px;content:\" \";height:16px;width:2px;background-color:#fff\n}\n.cross[data-v-7cc4a104]:before{transform:rotate(45deg);will-change:transform\n}\n.cross[data-v-7cc4a104]:after{transform:rotate(-45deg);will-change:transform\n}\n.v-button[data-v-7cc4a104]{padding:1em .5em;height:auto;width:100%\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "01f9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -320,23 +289,6 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 /***/ }),
 
-/***/ "0226":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-      /* harmony default export */ __webpack_exports__["a"] = ({
-        functional: true,
-        render: 
-      function render(_h, _vm) {
-        var _c=_vm._c;return _c('svg',{class:[_vm.data.class, _vm.data.staticClass],style:([_vm.data.style, _vm.data.staticStyle]),attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 26 26"}},[_c('path',{attrs:{"d":"M.3 14c-.2-.2-.3-.5-.3-.7s.1-.5.3-.7l1.4-1.4c.4-.4 1-.4 1.4 0l.1.1 5.5 5.9c.2.2.5.2.7 0L22.8 3.3h.1c.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4l-16 16.6c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.5 14.3.3 14z"}})])
-      }
-    
-      });
-    
-
-/***/ }),
-
 /***/ "0307":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -345,17 +297,6 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "0a08":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_1_id_85685a0e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("c227");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_1_id_85685a0e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_1_id_85685a0e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_1_id_85685a0e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -520,21 +461,6 @@ module.exports = isObjectLike;
 
 /***/ }),
 
-/***/ "140a":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.form-field-wrapper{position:relative\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "1495":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -552,66 +478,6 @@ module.exports = __webpack_require__("9e1e") ? Object.defineProperties : functio
   return O;
 };
 
-
-/***/ }),
-
-/***/ "16b1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
-var BaseInput = __webpack_require__("b3b3");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/EmailInput.vue?vue&type=script&lang=js&
-
-/* harmony default export */ var EmailInputvue_type_script_lang_js_ = ({
-  extends: BaseInput["default"],
-  props: {
-    id: {
-      default: "email"
-    },
-    label: {
-      default: "Email"
-    },
-    type: {
-      default: "email"
-    },
-    validation: {
-      default: "required|email|validEmail"
-    },
-    autocomplete: {
-      default: "email"
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/EmailInput.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_EmailInputvue_type_script_lang_js_ = (EmailInputvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/EmailInput.vue
-var render, staticRenderFns
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_EmailInputvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "EmailInput.vue"
-/* harmony default export */ var EmailInput = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -657,17 +523,6 @@ exports.push([module.i, "\n*[data-v-0cddb03c]{will-change:height,transform;trans
 
 // exports
 
-
-/***/ }),
-
-/***/ "1d18":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VButtonSpinner_vue_vue_type_style_index_0_id_7cc4a104_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("001f");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VButtonSpinner_vue_vue_type_style_index_0_id_7cc4a104_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VButtonSpinner_vue_vue_type_style_index_0_id_7cc4a104_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VButtonSpinner_vue_vue_type_style_index_0_id_7cc4a104_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -1277,21 +1132,6 @@ module.exports = false;
 
 /***/ }),
 
-/***/ "2d71":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("3362");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("2050ff9d", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "2d95":
 /***/ (function(module, exports) {
 
@@ -1332,21 +1172,6 @@ module.exports = __webpack_require__("9e1e") ? function (object, key, value) {
   object[key] = value;
   return object;
 };
-
-
-/***/ }),
-
-/***/ "3362":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\ninput[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0\n}\ninput[type=number]{-moz-appearance:textfield\n}", ""]);
-
-// exports
 
 
 /***/ }),
@@ -1505,21 +1330,6 @@ exports.push([module.i, "\n.stepFormProgress{display:flex;justify-content:space-
 
 /***/ }),
 
-/***/ "3af7":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dynamic-field-enter-active,.dynamic-field-leave-active{transition:all .25s ease-out;overflow:hidden\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "41a0":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1562,15 +1372,15 @@ var update = add("d4b4598a", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormProgress.vue?vue&type=template&id=1fc8a55a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormProgress"},_vm._l((_vm.steps),function(step,index){return _c('div',{key:index + 1,staticClass:"stepProgress",class:{
-      currentStep: _vm.activeStep == index + 1,
-      completedStep: _vm.activeStep > index + 1,
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormProgress.vue?vue&type=template&id=11396ba4&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormProgress"},_vm._l((_vm.totalFormSteps),function(step,index){return _c('div',{key:index + 1,staticClass:"stepProgress",class:{
+      currentStep: _vm.currentFormStep == index + 1,
+      completedStep: _vm.currentFormStep > index + 1,
       'default-style': _vm.customProgress !== true}},[_vm._t('step' + (index + 1),[_c('span',{domProps:{"textContent":_vm._s('Step ' + (index + 1))}})])],2)}))}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/StepFormProgress.vue?vue&type=template&id=1fc8a55a&
+// CONCATENATED MODULE: ./src/components/StepFormProgress.vue?vue&type=template&id=11396ba4&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -1596,8 +1406,8 @@ var es6_number_constructor = __webpack_require__("c5f6");
 //
 //
 //
+//
 /* harmony default export */ var StepFormProgressvue_type_script_lang_js_ = ({
-  name: 'step-form-progress',
   props: {
     steps: {
       type: [Number, String],
@@ -1610,6 +1420,21 @@ var es6_number_constructor = __webpack_require__("c5f6");
     customProgress: {
       type: Boolean,
       required: false
+    }
+  },
+  computed: {
+    /**
+     * Uses root `currentStep` property to know where we are in the in the step-form
+     */
+    currentFormStep: function currentFormStep() {
+      return this.$root.currentStep;
+    },
+
+    /**
+     * Uses root `currentStep` property to know where we are in the in the step-form
+     */
+    totalFormSteps: function totalFormSteps() {
+      return this.$root.totalSteps;
     }
   }
 });
@@ -1687,141 +1512,6 @@ module.exports = function (bitmap, value) {
   };
 };
 
-
-/***/ }),
-
-/***/ "4650":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VButtonSpinner.vue?vue&type=template&id=7cc4a104&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"v-button",class:_vm.getBackgroundClass,style:(_vm.getButtonStyles)},[(_vm.animation)?[_c('transition',{attrs:{"name":"fade","mode":"out-in","appear":""}},[(_vm.loading)?_c('div',{key:"loading",staticClass:"v-button-spinner spinner",style:({ borderTopColor: _vm.textColor })}):_vm._e(),(_vm.isSuccess)?_c('success-icon',{key:"success",staticClass:"v-button-success-icon",style:({ fill: _vm.textColor, marginRight: '16px' })}):_vm._e()],1)]:_vm._e(),_c('div',{staticClass:"v-button-text",style:({ color: _vm.textColor })},[_vm._t("default")],2)],2)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VButtonSpinner.vue?vue&type=template&id=7cc4a104&scoped=true&
-
-// EXTERNAL MODULE: ./src/assets/images/checked.svg
-var checked = __webpack_require__("0226");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VButtonSpinner.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var VButtonSpinnervue_type_script_lang_js_ = ({
-  name: "VButtonSpinner",
-  props: {
-    // disabled: Boolean,
-    isLoading: {
-      type: Boolean,
-      default: false
-    },
-    animation: {
-      type: Boolean,
-      default: true
-    },
-    status: {
-      type: [String, Boolean],
-      default: ""
-    },
-    color: String,
-    textColor: String
-  },
-  components: {
-    SuccessIcon: checked["a" /* default */]
-  },
-  computed: {
-    getSpinnerClass: function getSpinnerClass() {
-      return {
-        spinner: this.loading,
-        check: !this.emptyStatus && this.isSuccess && !this.loading,
-        cross: !this.emptyStatus && !this.isSuccess && !this.loading
-      };
-    },
-    getBackgroundClass: function getBackgroundClass() {
-      return {
-        "v-button-loader-error": !this.emptyStatus && !this.isSuccess,
-        "v-button-loader-success": this.isSuccess,
-        "is-loading": this.loading
-      };
-    },
-    getButtonStyles: function getButtonStyles() {
-      return {
-        backgroundColor: this.color,
-        color: this.textColor
-      };
-    },
-    getIconColor: function getIconColor() {
-      return {
-        borderTopColor: this.textColor
-      };
-    },
-    loading: function loading() {
-      return this.isLoading;
-    },
-    isSuccess: function isSuccess() {
-      return this.status === "success" || this.status === true;
-    },
-    emptyStatus: function emptyStatus() {
-      return this.status === "";
-    },
-    showSlot: function showSlot() {
-      return this.loading || !this.loading && this.emptyStatus;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/VButtonSpinner.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VButtonSpinnervue_type_script_lang_js_ = (VButtonSpinnervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VButtonSpinner.vue?vue&type=style&index=0&id=7cc4a104&lang=scss&scoped=true&
-var VButtonSpinnervue_type_style_index_0_id_7cc4a104_lang_scss_scoped_true_ = __webpack_require__("1d18");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/VButtonSpinner.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_VButtonSpinnervue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  "7cc4a104",
-  null
-  
-)
-
-component.options.__file = "VButtonSpinner.vue"
-/* harmony default export */ var VButtonSpinner = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -2088,32 +1778,6 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ "4b5b":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("b10b");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("52fc7b8e", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
-/***/ "4bf1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("4b5b");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormSelect_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "4bf8":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2184,227 +1848,21 @@ module.exports = deburr;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelect.vue?vue&type=template&id=0c6f0c2a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"dynamic-field"},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.name}},[_vm._v(_vm._s(_vm.label))]),_c('div',{staticClass:"form-field-wrapper"},[_c('select',_vm._g(_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.model),expression:"model"},{name:"validate",rawName:"v-validate",value:(_vm.fieldValidation),expression:"fieldValidation"}],ref:_vm.name,staticClass:"select",class:{ invalid: _vm.errors.has(_vm.name), valid: _vm.fieldValidity },attrs:{"name":_vm.name,"id":_vm.fieldId,"aria-describedby":_vm.fieldId + '_help',"data-vv-as":_vm.validationName ? _vm.validationName : _vm.label},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();},"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.model=$event.target.multiple ? $$selectedVal : $$selectedVal[0]}}},'select',_vm.$attrs,false),_vm.$listeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option){return _c('option',{key:option.id,attrs:{"id":option.id},domProps:{"value":option.id}},[_vm._v(_vm._s(option.name))])})],2),_c('form-help-icon',{attrs:{"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"visible":_vm.showHelp,"id":_vm.fieldId + '_help',"helpText":_vm.errors.first(_vm.name)}})],1)])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/FormSelect.vue?vue&type=template&id=0c6f0c2a&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
-var es6_array_find_index = __webpack_require__("20d6");
-
-// EXTERNAL MODULE: ./src/mixins/FormItemMixin.js
-var FormItemMixin = __webpack_require__("6528");
+// EXTERNAL MODULE: ./src/components/BaseSelect.vue + 5 modules
+var BaseSelect = __webpack_require__("d291");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelect.vue?vue&type=script&lang=js&
 
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/**
- * The select menu element used for displaying a list of options
- * such as degree levels or programs
- *
- * ```html
- * <form-select name="program" label="Select a Program" v-model="submit.program" :options="programs"/>
- * ```
- */
-
 /* harmony default export */ var FormSelectvue_type_script_lang_js_ = ({
-  name: "FormSelect",
-  mixins: [FormItemMixin["a" /* default */]],
-  props: {
-    /**
-     * What the form-field is binding to
-     * @model
-     */
-    value: "",
-    // eslint-disable-line
-
-    /**
-     * Array of options for select menu
-     */
-    options: {
-      type: Array,
-      required: true
-    },
-
-    /**
-     * Default text for select menu
-     */
-    defaultText: {
-      type: String,
-      default: "Select"
-    },
-    validation: {
-      type: [String, Object]
-    },
-
-    /**
-     * A custom name used when referencing a form field in error messages.
-     * The field's label is used by default but this will be used instead if set
-     */
-    validationName: {
-      type: String
-    },
-    optional: {
-      type: Boolean,
-      default: false
-    },
-    focusOnEnter: {
-      type: Boolean,
-      default: false
-    },
-    transition: {
-      type: String,
-      default: "none"
-    }
-  },
-  data: function data() {
-    return {
-      selectedOption: ""
-    };
-  },
-  created: function created() {
-    var _this = this;
-
-    this.$bus.$on("qualifier-updated", function (newIdValue) {
-      console.log("on:qualifier-updated ran");
-
-      _this.updateSelectedProgramId(newIdValue);
-    });
-    this.focusListener();
-  },
-  mounted: function mounted() {
-    this.selectedOption = this.value;
-  },
-  computed: {
-    model: {
-      get: function get() {
-        return this.selectedOption;
-      },
-      set: function set(val) {
-        this.$nextTick(function () {
-          this.$emit("input", val);
-          val !== "" ? this.$emit("option-selected", val) : "";
-        });
-      }
-    }
-  },
-  methods: {
-    /**
-     * This is trigged when the qualifer has been updated (See the created hook above).
-     * It sets the id of the program selected in the first select based on their answer to the qualifier answer
-     */
-    updateSelectedProgramId: function updateSelectedProgramId(newIdValue) {
-      var index = this.options.findIndex(this.findQualifierProgramIndex);
-
-      if (index > -1) {
-        this.options["".concat(index)].id = newIdValue;
-        this.selectedOption = newIdValue;
-        this.$emit("input", newIdValue);
-      }
-    },
-    findQualifierProgramIndex: function findQualifierProgramIndex(option) {
-      return option.id === this.selectedOption;
-    },
-    beforeEnter: function beforeEnter(el) {
-      el.style.height = "0";
-    },
-    enter: function enter(el) {
-      el.style.height = el.scrollHeight + "px";
-    },
-    afterEnter: function afterEnter(el) {
-      el.style.height = "auto";
-    },
-    beforeLeave: function beforeLeave(el) {
-      el.style.height = el.scrollHeight + "px";
-    },
-    leave: function leave(el) {
-      el.style.height = "0";
-    },
-
-    /**
-     * This isn't correct
-     * @event focus
-     * @type {Event}
-     */
-    setFocus: function setFocus(name) {
-      this.$refs[name] ? this.$refs[name].focus() : "";
-    }
-  },
-  watch: {
-    /**
-     * When v-model is changed:
-     *   1. Set the selected option.
-     *   2. If it's invalid, validate again.
-     */
-    value: function value(newValue) {
-      this.selectedOption = newValue;
-    }
-  }
+  extends: BaseSelect["default"]
 });
 // CONCATENATED MODULE: ./src/components/FormSelect.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_FormSelectvue_type_script_lang_js_ = (FormSelectvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormSelect.vue?vue&type=style&index=0&lang=scss&
-var FormSelectvue_type_style_index_0_lang_scss_ = __webpack_require__("4bf1");
-
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
 // CONCATENATED MODULE: ./src/components/FormSelect.vue
-
-
+var render, staticRenderFns
 
 
 
@@ -2443,32 +1901,6 @@ component.options.__file = "FormSelect.vue"
 
 exports.f = {}.propertyIsEnumerable;
 
-
-/***/ }),
-
-/***/ "5314":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ae5c");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "53e1":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("140a");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("69215762", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2626,21 +2058,6 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ "5efd":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n*[data-v-85685a0e]{will-change:height,transform;transform:translateZ(0);backface-visibility:hidden;perspective:1000px\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "5f00":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2703,112 +2120,6 @@ var update = add("0f0d1db5", content, true, {"sourceMap":false,"shadowMode":fals
 
 /***/ }),
 
-/***/ "6528":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("7f7f");
-/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cc8c");
-/* harmony import */ var _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("9405");
-
-
-/**
- * @mixin
- */
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  inheritAttrs: false,
-  inject: ["$validator"],
-  props: {
-    /**
-     * Label for form item
-     */
-    label: {
-      type: String,
-      required: true
-    },
-
-    /**
-     * Name attribute
-     */
-    name: {
-      type: String,
-      required: true
-    },
-
-    /**
-     * id attribute
-     */
-    id: String
-  },
-  components: {
-    FormHelpIcon: _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    FormHelp: _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
-  computed: {
-    fieldId: function fieldId() {
-      return this.id ? this.id : this.name;
-    },
-    fieldValidation: function fieldValidation() {
-      return this.optional ? {
-        rules: {
-          required: false
-        }
-      } : this.validation || "required";
-    },
-    fieldValidity: function fieldValidity() {
-      return this.fields[this.name] == undefined ? false : this.checkFieldValidity(this.fields[this.name]);
-    },
-    showHelp: function showHelp() {
-      return this.errors.has(this.name);
-    },
-    currentIcon: function currentIcon() {
-      if (this.errors.has(this.name)) {
-        return "ErrorIcon";
-      } else if (this.fields[this.name] != undefined && this.checkFieldValidity(this.fields[this.name])) {
-        return "ValidIcon";
-      } else {
-        return "";
-      }
-    }
-  },
-  methods: {
-    /**
-     * Checks the validaty for the field
-     * @param {field}
-     */
-    checkFieldValidity: function checkFieldValidity(field) {
-      return field.dirty && field.valid && field.validated ? true : false;
-    },
-
-    /**
-     * Listens for `set-focus` event and when called,
-     * sets focus on appropriate
-     * @return {Event} [description]
-     */
-    focusListener: function focusListener() {
-      var _this = this;
-
-      this.$bus.$on("set-focus", function (name) {
-        if (_this.$refs[name]) {
-          setTimeout(function () {
-            console.log("Setting Focus on ".concat(name));
-
-            _this.$refs[name].focus();
-          }, 300);
-        }
-      });
-    },
-    focus: function focus() {
-      this.$refs[name].focus();
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "6747":
 /***/ (function(module, exports) {
 
@@ -2852,17 +2163,6 @@ module.exports = function (it) {
   return IObject(defined(it));
 };
 
-
-/***/ }),
-
-/***/ "6863":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("53e1");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -3259,25 +2559,14 @@ module.exports = upperFirst;
 
 /***/ }),
 
-/***/ "813a":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_media_screen_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("2d71");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_media_screen_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_media_screen_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_media_screen_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "817b":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/components/FormField.vue + 4 modules
-var FormField = __webpack_require__("c1ee");
+// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
+var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormZip.vue?vue&type=script&lang=js&
 
@@ -3290,10 +2579,9 @@ var FormField = __webpack_require__("c1ee");
  */
 
 /* harmony default export */ var FormZipvue_type_script_lang_js_ = ({
-  name: "form-zip",
-  extends: FormField["default"],
+  extends: BaseInput["default"],
   props: {
-    name: {
+    id: {
       default: "zip"
     },
     label: {
@@ -3318,15 +2606,11 @@ var FormField = __webpack_require__("c1ee");
 });
 // CONCATENATED MODULE: ./src/components/FormZip.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_FormZipvue_type_script_lang_js_ = (FormZipvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormZip.vue?vue&type=style&index=0&media=screen&lang=css&
-var FormZipvue_type_style_index_0_media_screen_lang_css_ = __webpack_require__("813a");
-
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
 // CONCATENATED MODULE: ./src/components/FormZip.vue
 var render, staticRenderFns
-
 
 
 
@@ -3346,115 +2630,6 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 component.options.__file = "FormZip.vue"
 /* harmony default export */ var FormZip = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "82c0":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TransitionDynamicField.vue?vue&type=template&id=85685a0e&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"dynamic-field"},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_vm._t("default")],2)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/TransitionDynamicField.vue?vue&type=template&id=85685a0e&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TransitionDynamicField.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/**
- * The transition component available to wrap form fields that will appear or disappear based on user selection
- * This provides a smooth experience as for this dynamic experience
- *
- * ```html
- * <transition-dynamic-field>
- *   <form-select
- *     v-if="selectedDegreeLevel"
- *     name="program"
- *     label="Select a Program"
- *     v-model="submit.program"
- *     :options="programsForSelectedDegreeLevel"
- *   />
- * </transition-dynamic-field>
- * ```
- */
-/* harmony default export */ var TransitionDynamicFieldvue_type_script_lang_js_ = ({
-  name: "transition-dynamic-field",
-  methods: {
-    beforeEnter: function beforeEnter(el) {
-      el.style.height = "0px";
-    },
-    enter: function enter(el) {
-      this.$nextTick(function () {
-        el.style.height = el.scrollHeight + "px";
-      });
-    },
-
-    /**
-     * Set height back to auto after transition complate.
-     * This allows the height of the inner form-field item to grow naturally in cases such as help text/form error messages.
-     * Without this, it's height will be maxed by what it was initially on enter.
-     */
-    afterEnter: function afterEnter(el) {
-      el.style.height = "auto";
-    },
-    beforeLeave: function beforeLeave(el) {
-      el.style.height = el.scrollHeight + "px";
-    },
-    leave: function leave(el) {
-      el.style.height = "0";
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/TransitionDynamicField.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_TransitionDynamicFieldvue_type_script_lang_js_ = (TransitionDynamicFieldvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/TransitionDynamicField.vue?vue&type=style&index=0&lang=scss&
-var TransitionDynamicFieldvue_type_style_index_0_lang_scss_ = __webpack_require__("f72a");
-
-// EXTERNAL MODULE: ./src/components/TransitionDynamicField.vue?vue&type=style&index=1&id=85685a0e&scoped=true&lang=css&
-var TransitionDynamicFieldvue_type_style_index_1_id_85685a0e_scoped_true_lang_css_ = __webpack_require__("0a08");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/TransitionDynamicField.vue
-
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_TransitionDynamicFieldvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  "85685a0e",
-  null
-  
-)
-
-component.options.__file = "TransitionDynamicField.vue"
-/* harmony default export */ var TransitionDynamicField = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -3596,7 +2771,7 @@ exports = module.exports = __webpack_require__("2350")(false);
 
 
 // module
-exports.push([module.i, "\n.form-item select{cursor:pointer\n}\n.form-item label{display:block\n}", ""]);
+exports.push([module.i, "\n.form-item select{cursor:pointer\n}\n.form-item label{display:block\n}\n.dynamic-field-enter-active,.dynamic-field-leave-active{transition:all .25s ease-out;overflow:hidden\n}", ""]);
 
 // exports
 
@@ -4157,43 +3332,6 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 /***/ }),
 
-/***/ "ade3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _defineProperty; });
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-/***/ }),
-
-/***/ "ae5c":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("fb6e");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("8be0d922", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "af35":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4262,21 +3400,6 @@ var update = add("b6ad5676", content, true, {"sourceMap":false,"shadowMode":fals
 
 /***/ }),
 
-/***/ "b10b":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\nselect{cursor:pointer\n}\nlabel{display:block\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "b19f":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4290,9 +3413,17 @@ var staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/FormSubmitButton.vue?vue&type=template&id=2a25718b&scoped=true&
 
-// EXTERNAL MODULE: ./src/assets/images/checked.svg
-var checked = __webpack_require__("0226");
+// CONCATENATED MODULE: ./src/assets/images/checked.svg
 
+      /* harmony default export */ var checked = ({
+        functional: true,
+        render: 
+      function render(_h, _vm) {
+        var _c=_vm._c;return _c('svg',{class:[_vm.data.class, _vm.data.staticClass],style:([_vm.data.style, _vm.data.staticStyle]),attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 26 26"}},[_c('path',{attrs:{"d":"M.3 14c-.2-.2-.3-.5-.3-.7s.1-.5.3-.7l1.4-1.4c.4-.4 1-.4 1.4 0l.1.1 5.5 5.9c.2.2.5.2.7 0L22.8 3.3h.1c.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4l-16 16.6c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.5 14.3.3 14z"}})])
+      }
+    
+      });
+    
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSubmitButton.vue?vue&type=script&lang=js&
 //
 //
@@ -4343,7 +3474,7 @@ var checked = __webpack_require__("0226");
     textColor: String
   },
   components: {
-    SuccessIcon: checked["a" /* default */]
+    SuccessIcon: checked
   },
   computed: {
     getSpinnerClass: function getSpinnerClass() {
@@ -4415,21 +3546,6 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 component.options.__file = "FormSubmitButton.vue"
 /* harmony default export */ var FormSubmitButton = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "b1e4":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("3af7");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("226db8d9", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -4535,27 +3651,23 @@ component.options.__file = "FormNotification.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=37b73b14&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=3d1bdc7e&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=37b73b14&
+// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=3d1bdc7e&
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js + 1 modules
 var objectSpread = __webpack_require__("be94");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
-var es6_number_constructor = __webpack_require__("c5f6");
-
 // EXTERNAL MODULE: ./src/mixins/BaseMixin.js
 var BaseMixin = __webpack_require__("f37c");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=script&lang=js&
-
 
 
 //
@@ -4595,24 +3707,7 @@ var BaseMixin = __webpack_require__("f37c");
 
 /* harmony default export */ var BaseInputvue_type_script_lang_js_ = ({
   mixins: [BaseMixin["a" /* default */]],
-  inheritAttrs: false,
-  inject: {
-    $validator: "$validator"
-  },
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    label: String,
-    value: [String, Number],
-    validationName: {
-      type: String
-    },
-    validation: {
-      type: String,
-      default: "required"
-    },
     type: {
       type: String,
       default: "text"
@@ -4763,8 +3858,24 @@ module.exports = function (it) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _objectSpread; });
-/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ade3");
 
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -4778,193 +3889,12 @@ function _objectSpread(target) {
     }
 
     ownKeys.forEach(function (key) {
-      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]);
+      _defineProperty(target, key, source[key]);
     });
   }
 
   return target;
 }
-
-/***/ }),
-
-/***/ "c1ee":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormField.vue?vue&type=template&id=dc2b5c98&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.name},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.fieldValidation),expression:"fieldValidation"},{name:"model",rawName:"v-model.trim",value:(_vm.model),expression:"model",modifiers:{"trim":true}}],ref:_vm.name,staticClass:"input",attrs:{"name":_vm.name,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern,"id":_vm.fieldId,"type":_vm.type,"data-vv-as":_vm.label,"data-vv-name":_vm.name,"data-vv-delay":300,"role":_vm.fieldRole,"aria-describedby":_vm.fieldId + '-help'},domProps:{"value":(_vm.model)},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();},"input":function($event){if($event.target.composing){ return; }_vm.model=$event.target.value.trim()},"blur":function($event){_vm.$forceUpdate()}}},'input',_vm.$attrs,false),_vm.$listeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.name), valid: _vm.fieldValidity },attrs:{"id":_vm.fieldId + '-help-icon',"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"visible":_vm.showHelp,"id":_vm.fieldId + '-help',"helpText":_vm.errors.first(_vm.name)}})],1)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/FormField.vue?vue&type=template&id=dc2b5c98&
-
-// EXTERNAL MODULE: ./src/mixins/FormItemMixin.js
-var FormItemMixin = __webpack_require__("6528");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormField.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/**
- * The base component for all inputs
- *
- * ```html
- * <form-field id="text" v-model="submit.formField" label="Form Field Example"/>
- * ```
- * @mixin
- */
-
-/* harmony default export */ var FormFieldvue_type_script_lang_js_ = ({
-  name: "form-field",
-  mixins: [FormItemMixin["a" /* default */]],
-  props: {
-    /**
-     * What the form-field is binding to
-     * @model
-     */
-    value: {
-      type: String,
-      required: true
-    },
-
-    /**
-     * Role attribute (Could be used for accessibility)
-     */
-    role: String,
-
-    /**
-     * Input type for the form input
-     */
-    type: {
-      type: String,
-      default: "text"
-    },
-
-    /**
-     * Validation to use
-     */
-    validation: {
-      type: [String, Object]
-    },
-
-    /**
-     * Whether or not the field is optional
-     */
-    optional: {
-      type: Boolean,
-      default: false
-    },
-    autocomplete: {
-      type: String
-    },
-    pattern: {
-      type: String
-    }
-  },
-  data: function data() {
-    return {
-      fieldRole: this.role ? this.role : false
-    };
-  },
-  computed: {
-    model: {
-      get: function get() {
-        return this.value;
-      },
-      set: function set(val) {
-        this.$nextTick(function () {
-          this.$emit("input", val);
-        });
-      }
-    }
-  },
-  created: function created() {
-    this.focusListener();
-  }
-});
-// CONCATENATED MODULE: ./src/components/FormField.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_FormFieldvue_type_script_lang_js_ = (FormFieldvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormField.vue?vue&type=style&index=0&lang=scss&
-var FormFieldvue_type_style_index_0_lang_scss_ = __webpack_require__("6863");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/FormField.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_FormFieldvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "FormField.vue"
-/* harmony default export */ var FormField = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "c227":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("5efd");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("a91a8dfc", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -4974,8 +3904,8 @@ var update = add("a91a8dfc", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/components/FormField.vue + 4 modules
-var FormField = __webpack_require__("c1ee");
+// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
+var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormFirstName.vue?vue&type=script&lang=js&
 
@@ -4987,17 +3917,16 @@ var FormField = __webpack_require__("c1ee");
  */
 
 /* harmony default export */ var FormFirstNamevue_type_script_lang_js_ = ({
-  name: "form-first-name",
-  extends: FormField["default"],
+  extends: BaseInput["default"],
   props: {
-    name: {
+    id: {
       default: "firstName"
     },
     label: {
       default: "First Name"
     },
     autocomplete: {
-      default: "given-name"
+      default: "family-name"
     }
   }
 });
@@ -5438,8 +4367,8 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/components/FormField.vue + 4 modules
-var FormField = __webpack_require__("c1ee");
+// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
+var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormPhone.vue?vue&type=script&lang=js&
 
@@ -5452,10 +4381,9 @@ var FormField = __webpack_require__("c1ee");
  */
 
 /* harmony default export */ var FormPhonevue_type_script_lang_js_ = ({
-  name: "form-phone",
-  extends: FormField["default"],
+  extends: BaseInput["default"],
   props: {
-    name: {
+    id: {
       default: "phone"
     },
 
@@ -5556,116 +4484,6 @@ addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
 
-
-/***/ }),
-
-/***/ "cb52":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormFieldTransition.vue?vue&type=template&id=40d6e0cc&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"form-field-transition"},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_vm._t("default")],2)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/FormFieldTransition.vue?vue&type=template&id=40d6e0cc&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormFieldTransition.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/**
- * The transition component available to wrap form fields that will appear or disappear based on user selection
- * This provides a smooth experience as for this dynamic experience
- *
- * ```html
- * <form-field-transition>
- *   <form-select
- *     v-if="selectedDegreeLevel"
- *     name="program"
- *     label="Select a Program"
- *     v-model="submit.program"
- *     :options="programsForSelectedDegreeLevel"
- *   />
- * </form-field-transition>
- * ```
- */
-/* harmony default export */ var FormFieldTransitionvue_type_script_lang_js_ = ({
-  inheritAttrs: false,
-  name: 'FormFieldTransition',
-  methods: {
-    beforeEnter: function beforeEnter(el) {
-      el.style.height = "0px";
-    },
-    enter: function enter(el) {
-      this.$nextTick(function () {
-        el.style.height = el.scrollHeight + "px";
-      });
-    },
-
-    /**
-     * Set height back to auto after transition complate.
-     * This allows the height of the inner form-field item to grow naturally in cases such as help text/form error messages.
-     * Without this, it's height will be maxed by what it was initially on enter.
-     */
-    afterEnter: function afterEnter(el) {
-      el.style.height = "auto";
-    },
-    beforeLeave: function beforeLeave(el) {
-      el.style.height = el.scrollHeight + "px";
-    },
-    leave: function leave(el) {
-      el.style.height = "0";
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/FormFieldTransition.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_FormFieldTransitionvue_type_script_lang_js_ = (FormFieldTransitionvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormFieldTransition.vue?vue&type=style&index=0&lang=scss&
-var FormFieldTransitionvue_type_style_index_0_lang_scss_ = __webpack_require__("5314");
-
-// EXTERNAL MODULE: ./src/components/FormFieldTransition.vue?vue&type=style&index=1&id=40d6e0cc&scoped=true&lang=css&
-var FormFieldTransitionvue_type_style_index_1_id_40d6e0cc_scoped_true_lang_css_ = __webpack_require__("f5d1");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/FormFieldTransition.vue
-
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_FormFieldTransitionvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  "40d6e0cc",
-  null
-  
-)
-
-component.options.__file = "FormFieldTransition.vue"
-/* harmony default export */ var FormFieldTransition = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -5929,24 +4747,21 @@ module.exports = createCaseFirst;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSelect.vue?vue&type=template&id=2343cf02&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e38da41a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSelect.vue?vue&type=template&id=63761298&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"dynamic-field"},on:{"before-enter":_vm.beforeEnter,"enter":_vm.enter,"after-enter":_vm.afterEnter,"before-leave":_vm.beforeLeave,"leave":_vm.leave}},[_c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('select',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.selectValidation),expression:"selectValidation"}],ref:_vm.id,class:_vm.selectClasses,attrs:{"id":_vm.id,"name":_vm.selectName,"data-vv-name":_vm.id,"data-vv-as":_vm.selectValidationName,"aria-describedby":_vm.helpTextId},domProps:{"value":_vm.value},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();}}},'select',_vm.$attrs,false),_vm.selectListeners),[_c('option',{key:"initial",attrs:{"value":""},domProps:{"textContent":_vm._s(_vm.defaultText)}}),_vm._l((_vm.options),function(option,index){return _c('option',{key:index,attrs:{"id":option.id},domProps:{"selected":option.id === _vm.value,"value":option.id}},[_vm._v(_vm._s(option.name)+"\n        ")])})],2)]),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseSelect.vue?vue&type=template&id=2343cf02&
+// CONCATENATED MODULE: ./src/components/BaseSelect.vue?vue&type=template&id=63761298&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
 var es6_array_find_index = __webpack_require__("20d6");
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js + 1 modules
 var objectSpread = __webpack_require__("be94");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
-var es6_number_constructor = __webpack_require__("c5f6");
 
 // EXTERNAL MODULE: ./src/mixins/BaseMixin.js
 var BaseMixin = __webpack_require__("f37c");
@@ -5967,12 +4782,13 @@ var BaseMixin = __webpack_require__("f37c");
       el.style.height = el.scrollHeight + "px";
     },
     leave: function leave(el) {
-      el.style.height = "0";
+      this.$nextTick(function () {
+        el.style.height = "0";
+      });
     }
   }
 });
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSelect.vue?vue&type=script&lang=js&
-
 
 
 
@@ -6032,24 +4848,7 @@ var BaseMixin = __webpack_require__("f37c");
 
 /* harmony default export */ var BaseSelectvue_type_script_lang_js_ = ({
   mixins: [BaseMixin["a" /* default */], DynamicFieldTransitionMixin],
-  inheritAttrs: false,
-  inject: {
-    $validator: "$validator"
-  },
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    value: [String, Number],
-    label: String,
-    validationName: {
-      type: String
-    },
-    validation: {
-      type: String,
-      default: "required"
-    },
     defaultText: {
       type: String,
       default: "Select"
@@ -6125,10 +4924,14 @@ var BaseMixin = __webpack_require__("f37c");
 // EXTERNAL MODULE: ./src/components/BaseSelect.vue?vue&type=style&index=0&lang=scss&
 var BaseSelectvue_type_style_index_0_lang_scss_ = __webpack_require__("0307");
 
+// EXTERNAL MODULE: ./src/components/BaseSelect.vue?vue&type=style&index=1&id=63761298&scoped=true&lang=css&
+var BaseSelectvue_type_style_index_1_id_63761298_scoped_true_lang_css_ = __webpack_require__("e515");
+
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
 // CONCATENATED MODULE: ./src/components/BaseSelect.vue
+
 
 
 
@@ -6143,7 +4946,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  null,
+  "63761298",
   null
   
 )
@@ -6153,29 +4956,14 @@ component.options.__file = "BaseSelect.vue"
 
 /***/ }),
 
-/***/ "d302":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n*[data-v-40d6e0cc]{will-change:height,transform;transform:translateZ(0);backface-visibility:hidden;perspective:1000px\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "d349":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/components/FormField.vue + 4 modules
-var FormField = __webpack_require__("c1ee");
+// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
+var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormEmail.vue?vue&type=script&lang=js&
 
@@ -6188,10 +4976,9 @@ var FormField = __webpack_require__("c1ee");
  */
 
 /* harmony default export */ var FormEmailvue_type_script_lang_js_ = ({
-  name: "form-email",
-  extends: FormField["default"],
+  extends: BaseInput["default"],
   props: {
-    name: {
+    id: {
       default: "email"
     },
     label: {
@@ -6432,11 +5219,7 @@ module.exports = function (done, value) {
 var map = {
 	"./BaseInput.vue": "b3b3",
 	"./BaseSelect.vue": "d291",
-	"./EmailInput.vue": "16b1",
-	"./FirstNameInput.vue": "fe29",
 	"./FormEmail.vue": "d349",
-	"./FormField.vue": "c1ee",
-	"./FormFieldTransition.vue": "cb52",
 	"./FormFirstName.vue": "c2c9",
 	"./FormHelp.vue": "cc8c",
 	"./FormHelpIcon.vue": "9405",
@@ -6451,10 +5234,7 @@ var map = {
 	"./FormZip.vue": "817b",
 	"./StepFormControls.vue": "d4ea",
 	"./StepFormProgress.vue": "4341",
-	"./TransitionAccordion.vue": "9c0a",
-	"./TransitionDynamicField.vue": "82c0",
-	"./VButtonSpinner.vue": "4650",
-	"./ZipInput.vue": "f275"
+	"./TransitionAccordion.vue": "9c0a"
 };
 
 
@@ -6565,18 +5345,44 @@ exports.push([module.i, ".form-item{margin:.5em auto;position:relative}.form-ite
 
 /***/ }),
 
-/***/ "e777":
+/***/ "e511":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("d302");
+var content = __webpack_require__("e828");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("499e").default
-var update = add("938da1ba", content, true, {"sourceMap":false,"shadowMode":false});
+var update = add("c3322704", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
+/***/ "e515":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_1_id_63761298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e511");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_1_id_63761298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_1_id_63761298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseSelect_vue_vue_type_style_index_1_id_63761298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "e828":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-63761298]{will-change:height,transform;transform:translateZ(0);backface-visibility:hidden;perspective:1000px\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -6675,126 +5481,83 @@ module.exports = words;
 
 /***/ }),
 
-/***/ "f275":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
-var BaseInput = __webpack_require__("b3b3");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ZipInput.vue?vue&type=script&lang=js&
-
-/* harmony default export */ var ZipInputvue_type_script_lang_js_ = ({
-  extends: BaseInput["default"],
-  props: {
-    id: {
-      default: "zip"
-    },
-    label: {
-      default: "Zip"
-    },
-    role: {
-      default: "textbox"
-    },
-    type: {
-      default: "number"
-    },
-    autocomplete: {
-      default: "postal-code"
-    },
-    pattern: {
-      default: "[0-9]*"
-    },
-    validation: {
-      default: "required|validZip"
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/ZipInput.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_ZipInputvue_type_script_lang_js_ = (ZipInputvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/ZipInput.vue
-var render, staticRenderFns
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_ZipInputvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "ZipInput.vue"
-/* harmony default export */ var ZipInput = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
 /***/ "f37c":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _Users_droyer_Learning_House_NEW_FORMS_vlh_forms_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ade3");
+/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("c5f6");
+/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cc8c");
 /* harmony import */ var _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("9405");
 
-
-var _components$component;
 
 /**
  * @mixin
  */
 
 
-/* harmony default export */ __webpack_exports__["a"] = (_components$component = {
-  // inheritAttrs: false,
-  // inject: ["$validator"],
+/* harmony default export */ __webpack_exports__["a"] = ({
+  inheritAttrs: false,
+  inject: ["$validator"],
   components: {
     FormHelp: _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FormHelpIcon: _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }
-}, Object(_Users_droyer_Learning_House_NEW_FORMS_vlh_forms_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_components$component, "components", {
-  FormHelpIcon: _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-  FormHelp: _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-}), Object(_Users_droyer_Learning_House_NEW_FORMS_vlh_forms_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_components$component, "computed", {
-  helpIconId: function helpIconId() {
-    return "".concat(this.id, "-help-icon");
   },
-  helpTextId: function helpTextId() {
-    return "".concat(this.id, "_help");
+  props: {
+    /**
+     * Label for form item
+     */
+    label: {
+      type: String,
+      required: true
+    },
+
+    /**
+     * ID attribute
+     */
+    id: {
+      type: String,
+      required: true
+    },
+    value: [String, Number],
+    validationName: {
+      type: String
+    },
+    validation: {
+      type: String,
+      default: "required"
+    }
   },
-  fieldValidity: function fieldValidity() {
-    return this.fields[this.id] == undefined ? false : this.checkFieldValidity(this.fields[this.id]);
+  computed: {
+    helpIconId: function helpIconId() {
+      return "".concat(this.id, "-help-icon");
+    },
+    helpTextId: function helpTextId() {
+      return "".concat(this.id, "_help");
+    },
+    fieldValidity: function fieldValidity() {
+      return this.fields[this.id] == undefined ? false : this.checkFieldValidity(this.fields[this.id]);
+    },
+    currentIcon: function currentIcon() {
+      if (this.errors.has(this.id)) {
+        return "ErrorIcon";
+      } else if (this.fields[this.id] != undefined && this.checkFieldValidity(this.fields[this.id])) {
+        return "ValidIcon";
+      } else {
+        return "";
+      }
+    }
   },
-  currentIcon: function currentIcon() {
-    if (this.errors.has(this.id)) {
-      return "ErrorIcon";
-    } else if (this.fields[this.id] != undefined && this.checkFieldValidity(this.fields[this.id])) {
-      return "ValidIcon";
-    } else {
-      return "";
+  methods: {
+    /**
+     * Checks the validaty for the field
+     * @param {field}
+     */
+    checkFieldValidity: function checkFieldValidity(field) {
+      return field.dirty && field.valid && field.validated ? true : false;
     }
   }
-}), Object(_Users_droyer_Learning_House_NEW_FORMS_vlh_forms_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_components$component, "methods", {
-  /**
-   * Checks the validaty for the field
-   * @param {field}
-   */
-  checkFieldValidity: function checkFieldValidity(field) {
-    return field.dirty && field.valid && field.validated ? true : false;
-  }
-}), _components$component);
+});
 
 /***/ }),
 
@@ -6893,17 +5656,6 @@ module.exports = unicodeWords;
 
 /***/ }),
 
-/***/ "f5d1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_1_id_40d6e0cc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e777");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_1_id_40d6e0cc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_1_id_40d6e0cc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormFieldTransition_vue_vue_type_style_index_1_id_40d6e0cc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "f5f1":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6916,17 +5668,6 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("499e").default
 var update = add("2a331c83", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
-/***/ "f72a":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("b1e4");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransitionDynamicField_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -6970,21 +5711,6 @@ var lib = __webpack_require__("34e9");
 
 /***/ }),
 
-/***/ "fb6e":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.form-field-transition-enter-active,.form-field-transition-leave-active{transition:all .25s ease-out;overflow:hidden\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "fcba":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7002,61 +5728,6 @@ exports.push([module.i, "\n.form-field-transition-enter-active,.form-field-trans
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
-
-/***/ }),
-
-/***/ "fe29":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./src/components/BaseInput.vue + 4 modules
-var BaseInput = __webpack_require__("b3b3");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FirstNameInput.vue?vue&type=script&lang=js&
-
-/* harmony default export */ var FirstNameInputvue_type_script_lang_js_ = ({
-  extends: BaseInput["default"],
-  props: {
-    id: {
-      default: "firstName"
-    },
-    label: {
-      type: String,
-      default: "First Name"
-    },
-    autocomplete: {
-      default: "family-name"
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/FirstNameInput.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_FirstNameInputvue_type_script_lang_js_ = (FirstNameInputvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/components/FirstNameInput.vue
-var render, staticRenderFns
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  components_FirstNameInputvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "FirstNameInput.vue"
-/* harmony default export */ var FirstNameInput = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 

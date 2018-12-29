@@ -6,7 +6,7 @@
     class="example basic flex-rw"
     @submit.prevent="handleFormSubmission"
   >
-    <BaseSelect
+    <form-select
       id="program1"
       :options="programs"
       label="Select a Program 1"
@@ -21,8 +21,8 @@
     <button @click.prevent="emitQualifier('987654321');">
       Emit Mock Campus Value
     </button>
-    <!--
-      <BaseSelect
+    <!--z
+      <form-select
         id="program2"
         :options="programs"
         label="Select a Program 2"
@@ -35,9 +35,9 @@
     -->
     <FirstNameInput v-model="submit.firstName" />
 
-    <EmailInput v-model="submit.email" validation="required|email" />
+    <form-email v-model="submit.email" validation="required|email" />
 
-    <form-phone v-model="submit.phone" validation="required"></form-phone>
+    <form-phone v-model="submit.phone" validation="required"/>
     <!-- <form-email v-model="submit.email" validation="required|email"></form-email> -->
     <!-- <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip> -->
     <form-submit :disableOnErrors="true" text="Get New"></form-submit>

@@ -1,5 +1,5 @@
 <script>
-import FormField from "./FormField.vue";
+import BaseInput from "./BaseInput";
 
 /**
  * The form component for emails
@@ -9,10 +9,9 @@ import FormField from "./FormField.vue";
  * ```
  */
 export default {
-  name: "form-phone",
-  extends: FormField,
+  extends: BaseInput,
   props: {
-    name: {
+    id: {
       default: "phone"
     },
     /**
