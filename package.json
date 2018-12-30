@@ -23,7 +23,9 @@
     "docs:deploy": "sh deploy-docs.sh",
     "docs:helper": "node scripts/vdocs.run.js",
     "postbuild": "yarn build:helper",
-    "release": "git push --follow-tags"
+    "release": "git push --follow-tags",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"    
   },
   "dependencies": {
     "vue": "^2.5.17"
