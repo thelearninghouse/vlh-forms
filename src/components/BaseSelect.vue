@@ -115,8 +115,8 @@ export default {
         if (this.$refs["program"]) {
           this.qualifierUpdate(programIndex, newIdValue);
         }
-        this.$root.submit.program = newIdValue;
       }
+      this.$root.submit.program = newIdValue;
     },
 
     qualifierUpdate(programIndex, newIdValue) {
