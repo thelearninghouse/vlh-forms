@@ -102,7 +102,6 @@ export default {
 
   created() {
     this.$bus.$on("qualifier-updated", newIdValue => {
-      console.log("From BaseSelect - on:qualifier-updated ran");
       this.handleUpdatedQualifier(newIdValue);
     });
   },
@@ -111,7 +110,6 @@ export default {
     handleUpdatedQualifier(newIdValue) {
       let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
       if (programIndex > -1) {
-        console.log("element: ", this.$refs[this.id]);
         if (this.$refs["program"]) {
           this.qualifierUpdate(programIndex, newIdValue);
         }
