@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.11"></a>
+## [0.8.11](https://github.com/thelearninghouse/vlh-forms/compare/v0.8.10...v0.8.11) (2018-12-31)
+
+
+### Bug Fixes
+
+* Fixes build scripts ([15b04bd](https://github.com/thelearninghouse/vlh-forms/commit/15b04bd))
+* Fixes prebuild script by removing it ([5e627a4](https://github.com/thelearninghouse/vlh-forms/commit/5e627a4))
+
+
+
 <a name="0.8.10"></a>
 ## [0.8.10](https://github.com/thelearninghouse/vlh-forms/compare/v0.8.9...v0.8.10) (2018-12-31)
 
