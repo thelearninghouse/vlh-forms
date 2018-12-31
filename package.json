@@ -25,7 +25,7 @@
     "postbuild": "yarn build:helper",
     "prerelease": "yarn build",
     "release": "standard-version && git push --follow-tags",
-    "postrelease": "yarn docs:helper && yarn docs:build && yarn docs:deploy"
+    "docs": "yarn docs:helper && yarn docs:build && yarn docs:deploy"
   },
   "dependencies": {
     "vue": "^2.5.17"
