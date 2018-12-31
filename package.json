@@ -23,7 +23,6 @@
     "docs:deploy": "sh deploy-docs.sh",
     "docs:helper": "node scripts/vdocs.run.js",
     "postbuild": "yarn build:helper",
-    "prerelease": "yarn build && git add -A && git commit -m \"New Build \"",
     "release": "standard-version && git push --follow-tags",
     "docs": "yarn docs:helper && yarn docs:build && yarn docs:deploy"
   },
