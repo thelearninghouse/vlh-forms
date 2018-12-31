@@ -60,11 +60,11 @@ export default {
   computed: {
     isDisabled() {
       if (this.disableOnErrors === false) {
-        return false
+        return false;
       } else if (this.$root.errors.any() === true) {
         return true;
       } else {
-        return false
+        return false;
       }
     }
   },

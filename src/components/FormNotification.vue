@@ -9,14 +9,14 @@
 
 <script>
 export default {
-  name: 'form-notification',
+  name: "form-notification",
   props: {
     showNotification: {
       type: Boolean,
       default: false
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -25,12 +25,13 @@ export default {
   top: 50%;
   background: white;
   z-index: 9999999999;
-  padding: .75em 1em 1.5em;
+  padding: 0.75em 1em 1.5em;
   left: 50%;
   max-width: 750px;
   min-width: 250px;
   transform: translate(-50%, -50%);
-  box-shadow: 2px 2px 2px rgba(0,0,0,.2), 0px 1px 2px 1px rgba(0,0,0,.1), 0 0 4px #bebebe;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), 0px 1px 2px 1px rgba(0, 0, 0, 0.1),
+    0 0 4px #bebebe;
   border-radius: 4px;
   font-size: 1.75em;
   line-height: 1.3;

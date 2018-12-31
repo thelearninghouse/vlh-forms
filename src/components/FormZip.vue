@@ -42,17 +42,13 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-
- input[type=number] {
-	-moz-appearance: textfield;
-
-  &::-webkit-inner-spin-button, 
-  &::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  }  
+<style scoped>
+input[type="number"] {
+  -moz-appearance: textfield;
 }
-
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 </style>
