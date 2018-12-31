@@ -33,8 +33,16 @@
 </template>
 
 <script>
-import BaseMixin from '@/mixins/BaseMixin'
+import BaseMixin from "./../mixins/BaseMixin";
 
+/**
+ * The base component for all inputs
+ *
+ * ```html
+ * <base-input id="text" v-model="submit.formField" label="Form Field Example"/>
+ * ```
+ * @mixin
+ */
 export default {
   mixins: [BaseMixin],
   props: {
@@ -62,32 +70,32 @@ export default {
   },
 
   computed: {
-    inputName () {
-      return this.$attrs.name || this.id
+    inputName() {
+      return this.$attrs.name || this.id;
     },
 
-    inputClasses () {
+    inputClasses() {
       return {
         input: true,
         valid: this.fieldValidity,
-        invalid: this.errors.has(this.id),
-      }
+        invalid: this.errors.has(this.id)
+      };
     },
 
-    inputListeners () {
+    inputListeners() {
       return {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
     },
 
-    inputValidation () {
+    inputValidation() {
       return this.optional
         ? { rules: { required: false } }
         : this.validation || "required";
     },
 
-    inputValidationName () {
+    inputValidationName() {
       return this.validationName || this.label;
     }
   }

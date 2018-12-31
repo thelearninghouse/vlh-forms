@@ -51,9 +51,18 @@
 </template>
 
 <script>
-import BaseMixin from "@/mixins/BaseMixin";
-import DynamicFieldTransitionMixin from "@/mixins/DynamicFieldTransitionMixin";
+import BaseMixin from "./../mixins/BaseMixin";
+import DynamicFieldTransitionMixin from "./../mixins/DynamicFieldTransitionMixin";
 
+/**
+ * The select menu element used for displaying a list of options
+ * such as degree levels or programs
+ *
+ * ```html
+ * <base-select id="program" label="Select a Program" v-model="submit.program" :options="programs"/>
+ * ```
+ * @mixin
+ */
 export default {
   mixins: [BaseMixin, DynamicFieldTransitionMixin],
 

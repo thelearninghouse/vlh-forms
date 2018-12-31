@@ -18,7 +18,7 @@ export default {
       default: "First Name"
     },
     autocomplete: {
-      default: "family-name"
+      default: "given-name"
     }
   }
 };

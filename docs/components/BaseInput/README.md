@@ -1,23 +1,35 @@
 
 # BaseInput
+The base component for all inputs
 
+```html
+<base-input id="text" v-model="submit.formField" label="Form Field Example"/>
+```
 
 ## Props
 
 
+- `label` ***String***
+
+  Label for form item
+
 - `id` ***String***
+
+  ID attribute
+
+- `v-model` ***String|number***
+
+  What the form-field is binding to
+
+- `validationName` ***String***
 
   
 
-- `value` ***String|number***
+- `validation` ***String***
 
   
 
 - `type` ***String***
-
-  
-
-- `label` ***String***
 
   
 
@@ -34,14 +46,6 @@
   
 
 - `pattern` ***String***
-
-  
-
-- `validation` ***String***
-
-  
-
-- `validationName` ***String***
 
   
 

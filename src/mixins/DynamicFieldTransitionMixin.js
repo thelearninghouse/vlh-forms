@@ -1,3 +1,6 @@
+/**
+ * @mixin
+ */
 export default {
   methods: {
     beforeEnter: function(el) {
@@ -15,7 +18,7 @@ export default {
     leave: function(el) {
       this.$nextTick(() => {
         el.style.height = "0";
-      })
+      });
     }
   }
 };

@@ -4,64 +4,23 @@ The select menu element used for displaying a list of options
 such as degree levels or programs
 
 ```html
-<form-select name="program" label="Select a Program" v-model="submit.program" :options="programs"/>
+<base-select id="program" label="Select a Program" v-model="submit.program" :options="programs"/>
 ```
 
 ## Props
 
 
-- `label` ***String***
-
-  Label for form item
-
-- `name` ***String***
-
-  Name attribute
-
-- `id` ***String***
-
-  id attribute
-
-- `value` ***Undefined***
+- `defaultText` ***String***
 
   
 
 - `options` ***Array***
 
-  Array of options for select menu
-
-- `defaultText` ***String***
-
-  Default text for select menu
-
-- `validation` ***String|object***
-
-  
-
-- `validationName` ***String***
-
-  A custom name used when referencing a form field in error messages.
-The field's label is used by default but this will be used instead if set
-
-- `optional` ***Boolean***
-
-  
-
-- `focusOnEnter` ***Boolean***
-
-  
-
-- `transition` ***String***
-
   
 
 
 
 
-## Events
-- `focus`
-
-  This isn't correct      
 
 
 

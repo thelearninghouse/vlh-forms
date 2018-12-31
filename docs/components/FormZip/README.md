@@ -1,5 +1,5 @@
 
-# form-zip
+# FormZip
 The zip component
 
 ```html
@@ -9,25 +9,21 @@ The zip component
 ## Props
 
 
-- `v-model` ***String***
+- `id` ***String***
 
-  What the form-field is binding to
+  
+
+- `label` ***String***
+
+  
 
 - `role` ***String***
 
-  Role attribute (Could be used for accessibility)
+  
 
 - `type` ***String***
 
-  Input type for the form input
-
-- `validation` ***String***
-
-  Validation to use
-
-- `optional` ***Boolean***
-
-  Whether or not the field is optional
+  
 
 - `autocomplete` ***String***
 
@@ -37,11 +33,7 @@ The zip component
 
   
 
-- `name` ***String***
-
-  
-
-- `label` ***String***
+- `validation` ***String***
 
   
 

@@ -1,8 +1,8 @@
 /**
  * @mixin
  */
-import FormHelp from "@/components/FormHelp.vue";
-import FormHelpIcon from "@/components/FormHelpIcon.vue";
+import FormHelp from "./../components/FormHelp.vue";
+import FormHelpIcon from "./../components/FormHelpIcon.vue";
 
 export default {
   inheritAttrs: false,
@@ -29,6 +29,10 @@ export default {
       required: false
     },
 
+    /**
+     * What the form-field is binding to
+     * @model
+     */
     value: [String, Number],
 
     validationName: {

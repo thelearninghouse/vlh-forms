@@ -49,6 +49,7 @@ module.exports = {
       alias: {
         '@root': path.resolve(__dirname, "../../"),
         '@src': path.resolve(__dirname, "../../src"),
+        '@mixins': path.resolve(__dirname, "../../src/mixins"),
         '@utils': path.resolve(__dirname, "../../utils"),
         '@images': './../images'
       }
