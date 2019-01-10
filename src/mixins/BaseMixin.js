@@ -30,15 +30,26 @@ export default {
     },
 
     /**
-     * What the form-field is binding to
+     * What the form-field is binding to.
+     * Use this like so: `v-model="submit.yourField"`
      * @model
      */
     value: [String, Number],
 
+    /**
+     * Used in form help messages.
+     * Form help normally uses the label but setting this can overwrite that setting.
+     * This is helpful when the label is longer. `:validation-name="license question"
+     */
     validationName: {
       type: String
     },
 
+    /**
+     * The validation used for the field. Default is just required,
+     * but could be something diffenent such as required and must be a number.
+     * `:validation="required|num"
+     */
     validation: {
       type: String,
       default: "required"

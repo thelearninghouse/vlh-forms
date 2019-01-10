@@ -1,5 +1,5 @@
 <script>
-import BaseInput from "./BaseInput";
+import BaseInput from "./BaseInput.vue";
 
 /**
  * The form component for emails

@@ -7,18 +7,19 @@
       @keydown.enter.stop.prevent="$emit('previous-step');"
       v-text="previousBtnText"
     >
+      <!-- @dblclick.stop.prevent="handleDblClick" -->
+    
       Previous
     </button>
     <button
       class="next-button"
       v-if="currentFormStep < totalFormSteps"
-      @click.stop.prevent="nextStep($event);"
-      @mousedown.stop.prevent="nextStep($event);"
-      @keydown.enter.stop.prevent="nextStep($event);"
+      @click.stop.prevent="nextStep($event)"
+      @keydown.enter.stop.prevent="nextStep($event)"
       v-text="nextBtnText"
     ></button>
     <form-submit
-      v-if="usingBuiltInFormSubmit"
+      v-if="showFormSubmit"
       color="#222"
       text-color="white"
       :text="submitBtnText"
@@ -74,6 +75,13 @@ export default {
      */
     submitBtnText: {
       type: String
+    },
+
+    data() {
+      return {
+        clickCount: 0,
+        clickTimer: null
+      };
     }
   },
   computed: {
@@ -90,12 +98,19 @@ export default {
     totalFormSteps() {
       return this.$root.totalSteps;
     },
+
+    /**
+     * Uses root `currentStep` property to know where we are in the in the step-form
+     */
+    lastFormStep() {
+      return this.$root.lastStep;
+    },
     /**
      * Determines if the includes `form-submit` component should be used.
      */
-    usingBuiltInFormSubmit() {
-      const lastStep = this.activeStep == this.steps ? true : false;
-      if (lastStep && this.submitBtnText) {
+    showFormSubmit() {
+      // const lastStep = this.activeStep == this.steps ? true : false;
+      if (this.lastFormStep && this.submitBtnText) {
         return true;
       } else {
         return false;
@@ -104,6 +119,27 @@ export default {
   },
 
   methods: {
+    handleDblClick(event) {
+      console.log("FROM DBLCLICK");
+      console.log(event);
+    },
+    handleClick(e) {
+      // e.preventDefault();
+      console.log(e);
+
+      this.clickCount++;
+
+      if (this.clickCount === 1) {
+        this.clickTimer = setTimeout(() => {
+          this.clickCount = 0;
+          this.$emit("single-click");
+        }, this.delay);
+      } else if (this.clickCount === 2) {
+        clearTimeout(this.clickTimer);
+        this.clickCount = 0;
+        this.$emit("double-click");
+      }
+    },
     previousStep($event) {},
 
     /** Emits `next-step` to parent for StepForms's

@@ -72,6 +72,9 @@ export default {
       default: "Select"
     },
 
+    /**
+     * The array of options to choose from
+     */
     options: {
       type: Array,
       required: true

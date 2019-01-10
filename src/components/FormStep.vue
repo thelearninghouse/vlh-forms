@@ -31,7 +31,7 @@ export default {
     firstField() {
       return Object.keys(this.fields)[0];
     },
-    
+
     lastField() {
       let fieldsInStep = Object.keys(this.fields);
       return fieldsInStep[fieldsInStep.length - 1];
@@ -42,11 +42,11 @@ export default {
     },
 
     currentFormStep() {
-      return this.$root.currentStep
+      return this.$root.currentStep;
     },
 
     isActive() {
-      return this.$root.currentStep == this.stepId
+      return this.$root.currentStep == this.stepId;
     }
   },
 
