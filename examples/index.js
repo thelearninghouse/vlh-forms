@@ -10,7 +10,8 @@ import VlhForms from "../src/lib";
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const ValidationConfig = {
-  classes: true
+  classes: true,
+  events: 'change|blur'
 };
 Vue.use(VeeValidate, ValidationConfig);
 Vue.use(VlhForms);
@@ -52,6 +53,9 @@ Vue.mixin({
   },
 
   computed: {
+    lastStep() {
+      return this.currentStep === this.totalSteps
+    },    
     selectedDegreeLevelObject() {
       return this.getDegreeLevelObject();
     },

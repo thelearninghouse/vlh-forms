@@ -7,10 +7,12 @@
     @submit.prevent="handleFormSubmission"
   >
     <form-select
-      id="program1"
+      id="program"
       :options="programs"
-      label="Select a Program 1"
+      label="Select a Program "
       v-model="submit.program"
+      @focus="onFocus('program')"
+      @change="onChange('program')"
     />
     <button
       @click.prevent="emitQualifier('7cf6c854-ec67-42d7-81eb-4556bc539800');"
@@ -21,25 +23,14 @@
     <button @click.prevent="emitQualifier('987654321');">
       Emit Mock Campus Value
     </button>
-    <!--z
-      <form-select
-        id="program2"
-        :options="programs"
-        label="Select a Program 2"
-        v-model="submit.program"
-      />
-    -->
 
-    <!--
-      <BaseInput id="firstName1" v-model="submit.firstName" label="First Name" />
-    -->
-    <FirstNameInput v-model="submit.firstName" />
+    <form-first-name v-model="submit.firstName" />
 
     <form-email v-model="submit.email" validation="required|email" />
 
     <form-phone v-model="submit.phone" validation="required"/>
-    <!-- <form-email v-model="submit.email" validation="required|email"></form-email> -->
-    <!-- <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip> -->
+    <form-email v-model="submit.email" validation="required|email"></form-email>
+    <form-zip placeholder="Your Zip" v-model="submit.zip"></form-zip>
     <form-submit :disableOnErrors="true" text="Get New"></form-submit>
     <form-legal-text
       school="Alvernia University"
@@ -59,6 +50,14 @@ export default {
     });
   },
   methods: {
+    onFocus(formField) {
+      console.log('focus: ', formField)
+    },
+
+    onChange(formField) {
+      console.log('change: ', formField)
+    },
+
     emitQualifier(newValue) {
       // alert("hi");
       console.log(this.$bus);

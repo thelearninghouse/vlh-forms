@@ -3,6 +3,11 @@ module.exports = {
   css: {
     extract: false
   },
+  configureWebpack: {
+    output: {
+      libraryExport: "default"
+    }
+  },
   chainWebpack: config => {
     const svgRule = config.module.rule("svg");
     svgRule.uses.clear();

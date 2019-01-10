@@ -6,14 +6,9 @@
   >
     <div class="stepsWrapper">
       <!-- <transition name="slide-fade" mode="out-in" appear> -->
-      <transition
-        name="slide-fade"
-        mode="out-in"
-        appear
-        @after-enter="afterEnter"
-      >
+    <transition name="slide-fade" mode="out-in" appear>
         <form-step v-if="$root.currentStep == 1" :key="1" >
-          <form-select
+          <!-- <form-select
             id="degreeLevel"
             label="Select Degree Level"
             v-model="selectedDegreeLevel"
@@ -26,7 +21,17 @@
               label="Select a Program"
               v-model="submit.program"
               :options="programsForSelectedDegreeLevel"
-            />
+            /> -->
+          <form-select
+            id="program"
+            :options="programs"
+            label="Select a Program 1"
+            v-model="submit.program"
+          />
+          <form-email
+            v-model="submit.email"
+            validation="required|email"
+          /> 
         </form-step>
 
         <form-step v-if="$root.currentStep == 2" :key="2">
@@ -47,10 +52,10 @@
 
 <script>
 export default {
-  mounted() {},
+  mounted () { },
 
   methods: {
-    afterEnter(el) {
+    afterEnter (el) {
       console.log("el: ", el);
       // this.$refs.firstField.setFocus();
 
