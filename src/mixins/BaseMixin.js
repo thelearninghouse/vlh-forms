@@ -92,6 +92,17 @@ export default {
      */
     checkFieldValidity(field) {
       return field.dirty && field.valid && field.validated ? true : false;
+    },
+
+    /**
+     * Handles converting any keyboard events for ENTER key and treats it as if the TAB key was pressed
+     * @param {event}
+     */
+    enterToTab(event) {
+      const form = event.target.form;
+      const index = Array.prototype.indexOf.call(form, event.target);
+      form.elements[index + 1].focus();
+      event.preventDefault();
     }
   }
 };

@@ -17,7 +17,7 @@
         :aria-describedby="helpTextId"
         :autocomplete="autocomplete"
         :pattern="pattern"
-        @keydown.enter.prevent
+        @keydown.enter="enterToTab"
       />
       <form-help-icon
         :id="helpIconId"
