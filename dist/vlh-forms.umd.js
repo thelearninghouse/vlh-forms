@@ -1947,6 +1947,29 @@ exports.push([module.i, "\n.form-notification{position:fixed;top:50%;background:
 
 /***/ }),
 
+/***/ "57e7":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $export = __webpack_require__("5ca1");
+var $indexOf = __webpack_require__("c366")(false);
+var $native = [].indexOf;
+var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
+
+$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__("2f21")($native)), 'Array', {
+  // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
+  indexOf: function indexOf(searchElement /* , fromIndex = 0 */) {
+    return NEGATIVE_ZERO
+      // convert -0 to +0
+      ? $native.apply(this, arguments) || 0
+      : $indexOf(this, searchElement, arguments[1]);
+  }
+});
+
+
+/***/ }),
+
 /***/ "585a":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3664,12 +3687,12 @@ component.options.__file = "FormNotification.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=91c7d142&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();}}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=5bff3424&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-item"},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.enterToTab($event)}}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=91c7d142&
+// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=5bff3424&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js + 1 modules
 var objectSpread = __webpack_require__("be94");
@@ -5119,23 +5142,18 @@ module.exports = function (it) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormControls.vue?vue&type=template&id=afb0cb52&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormControls"},[(_vm.currentFormStep > 1)?_c('button',{staticClass:"previous-button",domProps:{"textContent":_vm._s(_vm.previousBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');}}},[_vm._v("\n  \n    Previous\n  ")]):_vm._e(),(_vm.currentFormStep < _vm.totalFormSteps)?_c('button',{staticClass:"next-button",domProps:{"textContent":_vm._s(_vm.nextBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.nextStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.nextStep($event)}}}):_vm._e(),(_vm.showFormSubmit)?_c('form-submit',{attrs:{"color":"#222","text-color":"white","text":_vm.submitBtnText}}):_vm._e(),_vm._t("default")],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormControls.vue?vue&type=template&id=af36a9b0&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"stepFormControls"},[(_vm.currentFormStep > 1)?_c('button',{staticClass:"previous-button",domProps:{"textContent":_vm._s(_vm.previousBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.$emit('previous-step');}}}):_vm._e(),(_vm.currentFormStep < _vm.totalFormSteps)?_c('button',{staticClass:"next-button",domProps:{"textContent":_vm._s(_vm.nextBtnText)},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();_vm.nextStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();_vm.nextStep($event)}}}):_vm._e(),(_vm.showFormSubmit)?_c('form-submit',{attrs:{"text":_vm.submitBtnText}}):_vm._e(),_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/StepFormControls.vue?vue&type=template&id=afb0cb52&
+// CONCATENATED MODULE: ./src/components/StepFormControls.vue?vue&type=template&id=af36a9b0&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/StepFormControls.vue?vue&type=script&lang=js&
 
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5570,10 +5588,13 @@ module.exports = words;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("c5f6");
-/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cc8c");
-/* harmony import */ var _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("9405");
+/* harmony import */ var core_js_modules_es6_array_index_of__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("57e7");
+/* harmony import */ var core_js_modules_es6_array_index_of__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_index_of__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("c5f6");
+/* harmony import */ var core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_number_constructor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("cc8c");
+/* harmony import */ var _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("9405");
+
 
 
 /**
@@ -5585,8 +5606,8 @@ module.exports = words;
   inheritAttrs: false,
   inject: ["$validator"],
   components: {
-    FormHelp: _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FormHelpIcon: _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    FormHelp: _components_FormHelp_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    FormHelpIcon: _components_FormHelpIcon_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   props: {
     /**
@@ -5658,6 +5679,17 @@ module.exports = words;
      */
     checkFieldValidity: function checkFieldValidity(field) {
       return field.dirty && field.valid && field.validated ? true : false;
+    },
+
+    /**
+     * Handles converting any keyboard events for ENTER key and treats it as if the TAB key was pressed
+     * @param {event}
+     */
+    enterToTab: function enterToTab(event) {
+      var form = event.target.form;
+      var index = Array.prototype.indexOf.call(form, event.target);
+      form.elements[index + 1].focus();
+      event.preventDefault();
     }
   }
 });
