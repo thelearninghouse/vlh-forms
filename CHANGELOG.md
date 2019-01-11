@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.8.12...v0.9.0) (2019-01-11)
+
+
+### Bug Fixes
+
+* **styles:** Removes style attributes and fixes hard-to-override issue ([c8f4a97](https://github.com/thelearninghouse/vlh-forms/commit/c8f4a97))
+* Added new build files ([1e9b5cf](https://github.com/thelearninghouse/vlh-forms/commit/1e9b5cf))
+
+
+### Features
+
+* **keyboardEvents:** Adds handling for enter key so it's treating like tabbing ([58bee5a](https://github.com/thelearninghouse/vlh-forms/commit/58bee5a))
+
+
+
 <a name="0.8.12"></a>
 ## [0.8.12](https://github.com/thelearninghouse/vlh-forms/compare/v0.8.11...v0.8.12) (2019-01-10)
 
