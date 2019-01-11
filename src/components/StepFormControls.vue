@@ -7,9 +7,6 @@
       @keydown.enter.stop.prevent="$emit('previous-step');"
       v-text="previousBtnText"
     >
-      <!-- @dblclick.stop.prevent="handleDblClick" -->
-    
-      Previous
     </button>
     <button
       class="next-button"
@@ -20,8 +17,6 @@
     ></button>
     <form-submit
       v-if="showFormSubmit"
-      color="#222"
-      text-color="white"
       :text="submitBtnText"
     />
     <slot />
