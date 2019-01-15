@@ -10,6 +10,7 @@
       id="program"
       :options="programs"
       label="Select a Program "
+      :default-text="submit.program ? '' : 'Select (TEST)'"
       v-model="submit.program"
       @focus="onFocus('program')"
       @change="onChange('program')"

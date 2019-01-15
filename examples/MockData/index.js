@@ -21,6 +21,7 @@ export const MockData = {
       name: "No"
     }
   ],
+  useFloatingLabels: true,
   helpTextColor: "dark",
   showMore: true,
   selectedDegreeLevel: "",

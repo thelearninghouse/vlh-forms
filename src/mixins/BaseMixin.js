@@ -56,6 +56,10 @@ export default {
     }
   },
 
+  data: () => ({
+    hasFocus: false
+  }),
+
   computed: {
     helpIconId() {
       return `${this.id}-help-icon`;
@@ -69,6 +73,15 @@ export default {
       return this.fields[this.id] == undefined
         ? false
         : this.checkFieldValidity(this.fields[this.id]);
+    },
+
+    formItemClasses() {
+      return {
+        "form-item": true,
+        "form-item-active": this.hasFocus,
+        "form-item-filled": this.value,
+        "using-floating-labels": this.$root.useFloatingLabels
+      };
     },
 
     currentIcon() {
@@ -103,6 +116,18 @@ export default {
       const index = Array.prototype.indexOf.call(form, event.target);
       form.elements[index + 1].focus();
       event.preventDefault();
+    },
+
+    handleFocus(event) {
+      console.log("handleFocus event");
+      this.hasFocus = true;
+      this.$emit("focus", event);
+    },
+
+    handleBlur(event) {
+      console.log("handleBlur event");
+      this.hasFocus = false;
+      this.$emit("blur", event);
     }
   }
 };

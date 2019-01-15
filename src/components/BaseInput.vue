@@ -1,5 +1,5 @@
-<template>
-  <div class="form-item">
+<template>  
+  <div :class="formItemClasses">
     <label :for="id" v-text="label"></label>
     <div class="form-field-wrapper">
       <input
@@ -99,7 +99,9 @@ export default {
     inputListeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit("input", event.target.value)
+        input: event => this.$emit("input", event.target.value),
+        focus: event => this.handleFocus(event),
+        blur: event => this.handleBlur(event)
       };
     },
 
