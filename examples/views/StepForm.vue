@@ -6,22 +6,9 @@
   >
     <div class="stepsWrapper">
       <!-- <transition name="slide-fade" mode="out-in" appear> -->
-    <transition name="slide-fade" mode="out-in" appear>
+    <transition name="slide-fade" mode="out-in" appear @after-enter="afterEnter">
         <form-step v-if="$root.currentStep == 1" :key="1" >
-          <!-- <form-select
-            id="degreeLevel"
-            label="Select Degree Level"
-            v-model="selectedDegreeLevel"
-            :options="levels"
-          />
 
-            <form-select
-              v-if="selectedDegreeLevel"
-              id="program"
-              label="Select a Program"
-              v-model="submit.program"
-              :options="programsForSelectedDegreeLevel"
-            /> -->
           <form-select
             id="program"
             :options="programs"
@@ -56,7 +43,9 @@ export default {
 
   methods: {
     afterEnter (el) {
-      console.log("el: ", el);
+      console.log('After Enter');
+      alert('Done!')
+      
       // this.$refs.firstField.setFocus();
 
       // this.$nextTick(() => {
