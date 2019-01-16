@@ -10,8 +10,8 @@ import VlhForms from "../src/lib";
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const ValidationConfig = {
-  classes: true,
-  events: 'change|blur'
+  classes: true
+  // events: 'change|blur'
 };
 Vue.use(VeeValidate, ValidationConfig);
 Vue.use(VlhForms);
@@ -118,7 +118,16 @@ Vue.mixin({
         FirstFormError.focus();
       });
     },
-
+    // stepFormTransitionHandler() {
+    //   if (this.$root.currentStep = 1) {
+    //     return;
+    //   }
+    //   this.$nextTick(function() {
+    //     const TlhForm = document.getElementById('tlh-form');
+    //     const FirstField = TlhForm.querySelector('input, select');
+    //     FirstField.focus()
+    //   });
+    // },
     clearFormOnSubmission() {
       for (let key in this.submit) {
         this.submit[key] = "";
@@ -197,20 +206,11 @@ Vue.mixin({
       this.$bus.$emit("set-focus", "firstName");
     },
 
-    setFocusFN() {
-      this.$bus.$emit("set-focus", "firstName");
-      // this.$refs.formFirstName.$refs.firstName.focus()
-    },
-
-    setFocusLN() {
-      this.$bus.$emit("set-focus", "lastName");
-      // this.$refs.formLastName.$refs.lastName.focus()
-    },
     validateStep() {
       this.$validator.validateAll().then(result => {
-        console.log("Missing fields or errors!");
         if (result) {
           this.$root.currentStep = this.$root.currentStep + 1;
+          this.$root.stepDirection = 'positive'
         } else {
           this.setFocusOnFirstFormError();
         }
@@ -218,16 +218,29 @@ Vue.mixin({
     },
 
     handleNextStep() {
-      console.log("stopped");
       this.validateStep();
-      // let wasCurrentStep = this.$root.currentStep
-      // this.$bus.$emit('next-clicked', { pastStep: wasCurrentStep, newStep: this.$root.currentStep + 1})
-      // this.$root.currentStep = this.$root.currentStep + 1
     },
 
     handlePreviousStep() {
       this.$root.currentStep = this.$root.currentStep - 1;
-      this.$bus.$emit("previous-here");
+      this.$root.stepDirection = 'negative'
+    },
+
+    handleFormStepTransition (el) {
+      if (this.$root.currentStep > 1) this.setFocusOnFirstField()
+      // if (this.$root.currentStep === 1 && this.$root.stepDirection === 'negative') this.setFocusOnNextButton()
+    },
+
+    setFocusOnNextButton() {
+      // TODO
+      console.log('SET FOCUS ON NEXT BUTTON HERE')
+    },
+
+    setFocusOnFirstField () {
+      this.$nextTick(() => {
+        const FirstField = document.getElementById('tlh-form').querySelector('input, select');
+        FirstField.focus()
+      });
     },
 
     registerZipValidator() {
