@@ -54,8 +54,8 @@ Vue.mixin({
 
   computed: {
     lastStep() {
-      return this.currentStep === this.totalSteps
-    },    
+      return this.currentStep === this.totalSteps;
+    },
     selectedDegreeLevelObject() {
       return this.getDegreeLevelObject();
     },
@@ -210,7 +210,7 @@ Vue.mixin({
       this.$validator.validateAll().then(result => {
         if (result) {
           this.$root.currentStep = this.$root.currentStep + 1;
-          this.$root.stepDirection = 'positive'
+          this.$root.stepDirection = "positive";
         } else {
           this.setFocusOnFirstFormError();
         }
@@ -218,28 +218,31 @@ Vue.mixin({
     },
 
     handleNextStep() {
+      console.log("handleNextStep RAN@!");
       this.validateStep();
     },
 
     handlePreviousStep() {
       this.$root.currentStep = this.$root.currentStep - 1;
-      this.$root.stepDirection = 'negative'
+      this.$root.stepDirection = "negative";
     },
 
-    handleFormStepTransition (el) {
-      if (this.$root.currentStep > 1) this.setFocusOnFirstField()
+    handleFormStepTransition(el) {
+      if (this.$root.currentStep > 1) this.setFocusOnFirstField();
       // if (this.$root.currentStep === 1 && this.$root.stepDirection === 'negative') this.setFocusOnNextButton()
     },
 
     setFocusOnNextButton() {
       // TODO
-      console.log('SET FOCUS ON NEXT BUTTON HERE')
+      console.log("SET FOCUS ON NEXT BUTTON HERE");
     },
 
-    setFocusOnFirstField () {
+    setFocusOnFirstField() {
       this.$nextTick(() => {
-        const FirstField = document.getElementById('tlh-form').querySelector('input, select');
-        FirstField.focus()
+        const FirstField = document
+          .getElementById("tlh-form")
+          .querySelector("input, select");
+        FirstField.focus();
       });
     },
 

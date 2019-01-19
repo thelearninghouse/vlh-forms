@@ -118,24 +118,8 @@ export default {
       console.log("FROM DBLCLICK");
       console.log(event);
     },
-    handleClick(e) {
-      // e.preventDefault();
-      console.log(e);
 
-      this.clickCount++;
-
-      if (this.clickCount === 1) {
-        this.clickTimer = setTimeout(() => {
-          this.clickCount = 0;
-          this.$emit("single-click");
-        }, this.delay);
-      } else if (this.clickCount === 2) {
-        clearTimeout(this.clickTimer);
-        this.clickCount = 0;
-        this.$emit("double-click");
-      }
-    },
-    previousStep($event) {},
+    // previousStep($event) {},
 
     /** Emits `next-step` to parent for StepForms's
      * @event next-step
