@@ -3,8 +3,13 @@
     // padding: .25em .5em;
     display: flex;
     overflow: hidden;
-    margin: 0 5px 5px 5px;
-    padding: 4px 8px;
+
+    // I don't think I want this margin but not 100% sure
+    // margin: 0 5px 5px 5px;
+    
+    // padding: 4px 8px;
+    padding: 6px 12px;
+    
     // font-size: .85em;
     cursor: pointer;
     user-select: none;

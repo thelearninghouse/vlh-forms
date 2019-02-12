@@ -22,8 +22,10 @@
           /> -->
           <form-first-name v-model="submit.firstName" />
           <form-last-name v-model="submit.lastName" />    
-                
-          <next-step-button @next-step="handleNextStep"/>
+          
+          <form-buttons-wrapper>
+            <next-step-button @next-step="handleNextStep"/>
+          </form-buttons-wrapper>                
         </form-step>
 
         <form-step v-if="$root.currentStep == 2" :key="2">
@@ -31,9 +33,8 @@
           <form-phone v-model="submit.phone" validation="required"/>
           <form-zip v-model="submit.zip" />
 
-
           <form-buttons-wrapper>
-            <previous-step-button @previous-step="handlePreviousStep"/>
+            <previous-step-button  />
             <form-submit />    
           </form-buttons-wrapper>
 
@@ -60,7 +61,7 @@
 
 <script>
 export default {
-  mounted() {
+  mounted () {
     console.log("MOUNTED: ", this);
   },
 

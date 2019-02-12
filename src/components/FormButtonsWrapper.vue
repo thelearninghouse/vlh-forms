@@ -30,8 +30,10 @@ export default {
 
 <style scoped lang="scss">
 .form-buttons-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
   &.split-buttons {
-    display: flex;
     justify-content: space-between;
   }
 }

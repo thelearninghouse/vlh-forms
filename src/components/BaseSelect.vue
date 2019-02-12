@@ -145,6 +145,8 @@ export default {
 .form-item {
   select {
     cursor: pointer;
+    word-wrap: break-word; /* old name */
+    overflow-wrap: break-word;
   }
   label {
     display: block;

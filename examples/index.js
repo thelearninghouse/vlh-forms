@@ -1,11 +1,10 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import VeeValidate from "vee-validate";
 import axios from "axios";
-import { MockData } from "./MockData/index.js";
-
+import VeeValidate from "vee-validate";
+import Vue from "vue";
 import VlhForms from "../src/lib";
+import App from "./App.vue";
+import { MockData } from "./MockData/index.js";
+import router from "./router";
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 

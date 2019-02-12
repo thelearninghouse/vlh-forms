@@ -1,14 +1,18 @@
 <template>
-    <button
-      class="next-button form-button"
-      v-on="$listeners"
-      @click.stop.prevent="$emit('next-step')"
-      @keydown.enter.stop.prevent="$emit('next-step')"
-      v-text="nextBtnText"
-    ></button>
+  <button
+    class="next-button form-button"
+    v-on="$listeners"
+    @click.stop.prevent="nextStep"
+    @keydown.enter.stop.prevent="nextStep"
+  >
+    <span class="next-button-text" v-html="nextBtnText"></span>
+    <RightArrow class="next-button-icon"/>
+  </button>
 </template>
 
 <script>
+import RightArrow from "@/assets/images/right-arrow.svg";
+
 export default {
   props: {
     /**
@@ -23,36 +27,48 @@ export default {
       default: true
     }
   },
+
+  components: { RightArrow },
+
   computed: {
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    currentFormStep() {
+    currentFormStep () {
       return this.$root.currentStep;
     },
 
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    totalFormSteps() {
+    totalFormSteps () {
       return this.$root.totalSteps;
     },
 
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    lastFormStep() {
+    lastFormStep () {
       return this.$root.lastStep;
     }
   },
 
   methods: {
-    nextStep() {
+    nextStep () {
       this.$emit("next-step");
+      // this.$root.handleNextStep();
     }
   }
 };
 </script>
 
 <style scoped>
+.next-button-icon {
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.5em;
+  margin-left: 0.4em;
+  position: relative;
+  right: -1px;
+}
 </style>
