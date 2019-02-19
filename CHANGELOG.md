@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.11.1...v0.12.0) (2019-02-19)
+
+
+### Features
+
+* Adds arrows to step-form buttons and floating labels ([781654a](https://github.com/thelearninghouse/vlh-forms/commit/781654a))
+
+
+
 <a name="0.11.1"></a>
 ## [0.11.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.11.0...v0.11.1) (2019-02-12)
 
