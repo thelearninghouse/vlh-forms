@@ -2,6 +2,8 @@
 
 Plugin for Learning House Forms using Vue.js
 
+**[Release Notes](https://github.com/thelearninghouse/vlh-forms/blob/master/CHANGELOG.md)**
+
 **[Documentation](https://thelearninghouse.github.io/vlh-forms)**
 
 This is a Vue.js component library for the Learning House Marketing Forms.
