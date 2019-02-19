@@ -34,8 +34,8 @@
           <form-zip v-model="submit.zip" />
 
           <form-buttons-wrapper>
-            <previous-step-button  />
-            <form-submit />    
+            <previous-step-button />
+            <form-submit  />    
           </form-buttons-wrapper>
 
           <form-legal-text/>
