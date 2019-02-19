@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.11.1"></a>
+## [0.11.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.11.0...v0.11.1) (2019-02-12)
+
+
+
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.10.0...v0.10.1) (2019-01-19)
+
+
+
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.9.0...v0.10.0) (2019-01-19)
+
+
+### Features
+
+* **focus:** Adds focuing on first field of step when clicking Next ([9a15652](https://github.com/thelearninghouse/vlh-forms/commit/9a15652))
+* **step form buttons:** Adds step form buttons for better transitions ([aaa45b3](https://github.com/thelearninghouse/vlh-forms/commit/aaa45b3))
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.8.12...v0.9.0) (2019-01-11)
 

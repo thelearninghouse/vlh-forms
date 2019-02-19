@@ -7,7 +7,7 @@
     @before-leave="beforeLeave"
     @leave="leave"
   >
-  <div :class="formItemClasses">
+    <div :class="formItemClasses">
       <label :for="id" v-text="label"></label>
       <div class="form-field-wrapper">
         <select
@@ -24,30 +24,20 @@
           :aria-describedby="helpTextId"
           @keydown.enter.prevent
         >
-          <option
-            key="initial"
-            value=""
-            v-text="defaultText"
-          ></option>
+          <option class="select-default-option" key="initial" value v-text="defaultText"></option>
           <option
             v-for="(option, index) in options"
             :selected="option.id === value"
             :value="option.id"
             :key="index"
             :id="option.id"
-          >{{ option.name }}
-          </option>
+          >{{ option.name }}</option>
         </select>
       </div>
 
-      <form-help
-        :id="helpTextId"
-        :visible="errors.has(id)"
-        :helpText="errors.first(id)"
-      />
+      <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)"/>
     </div>
   </transition>
-
 </template>
 
 <script>
@@ -97,7 +87,9 @@ export default {
     selectListeners() {
       return {
         ...this.$listeners,
-        change: event => this.$emit("input", event.target.value)
+        change: event => this.$emit("input", event.target.value),
+        focus: event => this.handleFocus(event),
+        blur: event => this.handleBlur(event)
       };
     },
 
@@ -145,6 +137,8 @@ export default {
 .form-item {
   select {
     cursor: pointer;
+    word-wrap: break-word; /* old name */
+    overflow-wrap: break-word;
   }
   label {
     display: block;
@@ -158,11 +152,26 @@ export default {
 }
 </style>
 
-<style scoped>
+<style scoped lang="scss">
 * {
   will-change: height, transform;
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+.using-floating-labels.form-item {
+  select {
+    opacity: 0.5;
+    color: transparent !important;
+  }
+  &-active,
+  &-filled {
+    select {
+      opacity: 1;
+      color: initial !important;
+      transition: all 0.15s ease-in 0.1s;
+    }
+  }
 }
 </style>

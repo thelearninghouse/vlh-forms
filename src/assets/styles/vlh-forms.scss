@@ -1,5 +1,6 @@
 @import "form-item.scss";
 @import "floating-labels.scss";
+@import "form-controls.scss";
 
 .flex-rw {
   display: flex;
@@ -15,14 +16,18 @@
   }
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
   opacity: 0;
   transform: translateX(10px);
 }
@@ -108,6 +113,7 @@
 select.form-field:focus {
   outline: 5px solid rgba(59, 153, 252, 0.65);
 }
+
 /* Vertical slide tranistion for form errors */
 .vertical-slide-enter-active,
 .vertical-slide-leave-active {

@@ -34,9 +34,9 @@ export default {
   transform: translateY(-50%);
 }
 
-.valid {
-  & + .form-help-icon {
-    // display: none;
-  }
-}
+// .valid {
+//   & + .form-help-icon {
+//     // display: none;
+//   }
+// }
 </style>

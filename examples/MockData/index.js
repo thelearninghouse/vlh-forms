@@ -31,8 +31,8 @@ export const MockData = {
   levels: levels,
   testModel: "some text",
   currentStep: 1,
-  twoTotalSteps: 2,
   totalSteps: 2,
+  stepDirection: 'positive',
   isSubmitting: false,
   isSubmitted: false,
   submit: {
