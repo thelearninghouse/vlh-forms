@@ -43,7 +43,7 @@
 export default {
   name: "degree-filtering",
   methods: {
-    handleFocus () {
+    handleFocus() {
       console.log("SELECTED!!!");
     }
   }

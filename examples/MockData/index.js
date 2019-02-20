@@ -21,7 +21,7 @@ export const MockData = {
       name: "No"
     }
   ],
-  useFloatingLabels: true,
+  useFloatingLabels: false,
   helpTextColor: "dark",
   showMore: true,
   selectedDegreeLevel: "",
@@ -32,7 +32,7 @@ export const MockData = {
   testModel: "some text",
   currentStep: 1,
   totalSteps: 2,
-  stepDirection: 'positive',
+  stepDirection: "positive",
   isSubmitting: false,
   isSubmitted: false,
   submit: {

@@ -35,7 +35,7 @@
 
           <form-buttons-wrapper>
             <previous-step-button />
-            <form-submit  />    
+            <form-submit />    
           </form-buttons-wrapper>
 
           <form-legal-text/>

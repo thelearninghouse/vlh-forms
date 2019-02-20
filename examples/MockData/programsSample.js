@@ -22,7 +22,8 @@ var programs = [
     },
     tags: {
       data: []
-    }
+    },
+    tagNames: ["Tag 1"]
   },
   {
     id: "401d9841-db47-46f9-8c89-1dc1e1acc9f1",
@@ -46,7 +47,8 @@ var programs = [
     },
     tags: {
       data: []
-    }
+    },
+    tagNames: ["Tag 2"]
   },
   {
     id: "678baf4c-d757-437c-b820-a61800e717c7",
@@ -70,7 +72,8 @@ var programs = [
     },
     tags: {
       data: []
-    }
+    },
+    tagNames: ["Tag 1"]
   },
   {
     id: "7cf6c854-ec67-42d7-81eb-4556bc539800",
@@ -94,7 +97,8 @@ var programs = [
     },
     tags: {
       data: []
-    }
+    },
+    tagNames: ["Tag 2"]
   },
   {
     id: "ca691ea1-b301-4a9a-9bdf-8f9ff86d0870",
@@ -118,7 +122,8 @@ var programs = [
     },
     tags: {
       data: []
-    }
+    },
+    tagNames: ["Tag 1"]
   }
 ];
 

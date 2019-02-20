@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="example">
-    <form-select-optgroups
+    <form-select-optgroup
       id="program"
       :option-groups="programsGroups"
       label="Select a Program"

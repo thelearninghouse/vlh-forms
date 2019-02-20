@@ -6,6 +6,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/basic">Basic</router-link>
         <router-link to="/degree-filtering">Degree Filtering</router-link>
+        <router-link to="/optgroup">Optgroups</router-link>
         <router-link to="/optional-field">Optional Form Field</router-link>
         <router-link to="/step-form">Step Form</router-link>
         <router-link to="/step-form-progress">Step Form - Progress</router-link>

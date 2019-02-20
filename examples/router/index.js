@@ -4,6 +4,7 @@ import DegreeFiltering from "../views/DegreeFiltering.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Basic from "../views/Basic.vue";
 import StepForm from "../views/StepForm.vue";
+import Optgroups from "../views/Optgroups.vue";
 import OptionalField from "../views/OptionalField.vue";
 import CustomSelectText from "../views/CustomSelectText.vue";
 import StepFormProgress from "../views/StepFormProgress.vue";
@@ -22,6 +23,11 @@ export default new VueRouter({
       path: "/basic",
       name: "Basic",
       component: Basic
+    },
+    {
+      path: "/optgroup",
+      name: "Optgroups",
+      component: Optgroups
     },
     {
       path: "/step-form",
