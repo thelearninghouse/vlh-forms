@@ -66,8 +66,7 @@ export default {
      * The array of options to choose from
      */
     options: {
-      type: Array,
-      required: true
+      type: Array
     }
   },
 
