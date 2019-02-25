@@ -119,13 +119,11 @@ export default {
     },
 
     handleFocus(event) {
-      console.log("handleFocus event");
       this.hasFocus = true;
       this.$emit("focus", event);
     },
 
     handleBlur(event) {
-      console.log("handleBlur event");
       this.hasFocus = false;
       this.$emit("blur", event);
     }
