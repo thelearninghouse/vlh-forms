@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.13.0"></a>
+# [0.13.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.12.0...v0.13.0) (2019-02-25)
+
+
+### Bug Fixes
+
+* Fixes component not found error ([b4ab4cf](https://github.com/thelearninghouse/vlh-forms/commit/b4ab4cf))
+
+
+### Features
+
+* **optgroup:** Adds optgroup ability ([26a873c](https://github.com/thelearninghouse/vlh-forms/commit/26a873c))
+
+
+
 <a name="0.12.0"></a>
 # [0.12.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.11.1...v0.12.0) (2019-02-19)
 
