@@ -6129,12 +6129,10 @@ module.exports = words;
       event.preventDefault();
     },
     handleFocus: function handleFocus(event) {
-      console.log("handleFocus event");
       this.hasFocus = true;
       this.$emit("focus", event);
     },
     handleBlur: function handleBlur(event) {
-      console.log("handleBlur event");
       this.hasFocus = false;
       this.$emit("blur", event);
     }
