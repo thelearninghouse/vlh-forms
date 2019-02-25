@@ -5,8 +5,8 @@
     @click.stop.prevent="previousStep"
     @keydown.enter.stop.prevent="previousStep"
   >
-    <LeftArrow class="previous-button-icon" :style="leftArrowStyles"/>
-    <span class="previous-button-text" v-html="text"></span>
+    <LeftArrow class="previous-button-icon" />
+    <span class="previous-button-text" v-html="previousBtnText"></span>
   </button>
 </template>
 
@@ -17,9 +17,13 @@ export default {
     /**
      * The text for the previous button
      */
-    text: {
+    previousBtnText: {
       type: String,
       default: "previous"
+    },
+
+    icon: {
+      type: String
     },
 
     iconColor: {
@@ -35,8 +39,6 @@ export default {
     leftArrowStyles() {
       return {
         fill: this.iconColor
-        // valid: this.fieldValidity,
-        // invalid: this.errors.has(this.id)
       };
     },
     /**

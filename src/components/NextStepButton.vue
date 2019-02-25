@@ -25,12 +25,26 @@ export default {
     icon: {
       type: Boolean,
       default: true
+    },
+
+    iconColor: {
+      type: String
     }
   },
 
   components: { RightArrow },
 
   computed: {
+    // styleObject: {
+    //   fill: 'red',
+    //   fontSize: '13px'
+    // }
+    rightArrowStyles() {
+      return {
+        fill: this.iconColor
+      };
+    },
+
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
