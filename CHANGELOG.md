@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.13.3"></a>
+## [0.13.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.13.2...v0.13.3) (2019-02-25)
+
+
+### Bug Fixes
+
+* Removes logging to console on events ([8026f29](https://github.com/thelearninghouse/vlh-forms/commit/8026f29))
+
+
+
 <a name="0.13.2"></a>
 ## [0.13.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.13.1...v0.13.2) (2019-02-25)
 
