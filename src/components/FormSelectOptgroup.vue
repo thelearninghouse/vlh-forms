@@ -48,7 +48,7 @@ import BaseSelect from "./BaseSelect.vue";
 
 export default {
   extends: BaseSelect,
-  name: "FormSelectOptgroups",
+  // name: "FormSelectOptgroups",
   props: {
     optionGroups: Array
   }
