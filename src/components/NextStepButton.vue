@@ -5,7 +5,7 @@
     @click.stop.prevent="nextStep"
     @keydown.enter.stop.prevent="nextStep"
   >
-    <span class="next-button-text" v-html="nextBtnText"></span>
+    <span class="next-button-text" v-html="text"></span>
     <RightArrow class="next-button-icon"/>
   </button>
 </template>
@@ -18,7 +18,7 @@ export default {
     /**
      * The text for the next button
      */
-    nextBtnText: {
+    text: {
       type: String,
       default: "Next"
     },
@@ -34,27 +34,27 @@ export default {
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    currentFormStep () {
+    currentFormStep() {
       return this.$root.currentStep;
     },
 
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    totalFormSteps () {
+    totalFormSteps() {
       return this.$root.totalSteps;
     },
 
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
-    lastFormStep () {
+    lastFormStep() {
       return this.$root.lastStep;
     }
   },
 
   methods: {
-    nextStep () {
+    nextStep() {
       this.$emit("next-step");
       // this.$root.handleNextStep();
     }
