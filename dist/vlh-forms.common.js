@@ -351,21 +351,6 @@ module.exports = function (TYPE, $create) {
 
 /***/ }),
 
-/***/ "0ca7":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.previous-button-icon[data-v-e50ca696]{width:.8em;height:.8em;margin-right:.5em;margin-right:.4em;position:relative;left:-1px\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "0d58":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1315,17 +1300,6 @@ exports.push([module.i, "\n.stepFormProgress{display:flex;justify-content:space-
 
 /***/ }),
 
-/***/ "3ce3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_33417950_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("47c5");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_33417950_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_33417950_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_33417950_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "41a0":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1344,21 +1318,6 @@ module.exports = function (Constructor, NAME, next) {
   setToStringTag(Constructor, NAME + ' Iterator');
 };
 
-
-/***/ }),
-
-/***/ "4245":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("0ca7");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("34916196", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -1482,6 +1441,21 @@ component.options.__file = "StepFormProgress.vue"
 
 /***/ }),
 
+/***/ "4363":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.next-button-icon[data-v-1e8ca1f5]{width:.8em;height:.8em;margin-left:.5em;margin-left:.4em;position:relative;right:-1px\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "456d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1597,21 +1571,6 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 component.options.__file = "FormButtonsWrapper.vue"
 /* harmony default export */ var FormButtonsWrapper = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "47c5":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("fef1");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("cc56f58a", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2038,17 +1997,6 @@ var store = global[SHARED] || (global[SHARED] = {});
 
 /***/ }),
 
-/***/ "5612":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e50ca696_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("4245");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e50ca696_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e50ca696_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e50ca696_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "57e7":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2210,6 +2158,21 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
 
+
+/***/ }),
+
+/***/ "6334":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("7c70");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("02dfc64e", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2557,6 +2520,21 @@ module.exports = function (exec) {
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormStep_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormStep_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormStep_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "7c70":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.previous-button-icon[data-v-7ee3b5ca]{width:.8em;height:.8em;margin-right:.5em;margin-right:.4em;position:relative;left:-1px\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -3056,6 +3034,17 @@ exports.push([module.i, "\n.form-item select{cursor:pointer;word-wrap:break-word
 
 /***/ }),
 
+/***/ "9332":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_7ee3b5ca_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6334");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_7ee3b5ca_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_7ee3b5ca_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_7ee3b5ca_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "9405":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3202,12 +3191,12 @@ var update = add("f2e0afda", content, true, {"sourceMap":false,"shadowMode":fals
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NextStepButton.vue?vue&type=template&id=33417950&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"next-button form-button",on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.nextStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.nextStep($event)}}},_vm.$listeners),[_c('span',{staticClass:"next-button-text",domProps:{"innerHTML":_vm._s(_vm.nextBtnText)}}),_c('RightArrow',{staticClass:"next-button-icon"})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NextStepButton.vue?vue&type=template&id=1e8ca1f5&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"next-button form-button",on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.nextStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.nextStep($event)}}},_vm.$listeners),[_c('span',{staticClass:"next-button-text",domProps:{"innerHTML":_vm._s(_vm.text)}}),_c('RightArrow',{staticClass:"next-button-icon"})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/NextStepButton.vue?vue&type=template&id=33417950&scoped=true&
+// CONCATENATED MODULE: ./src/components/NextStepButton.vue?vue&type=template&id=1e8ca1f5&scoped=true&
 
 // CONCATENATED MODULE: ./src/assets/images/right-arrow.svg
 
@@ -3239,19 +3228,32 @@ var staticRenderFns = []
     /**
      * The text for the next button
      */
-    nextBtnText: {
+    text: {
       type: String,
       default: "Next"
     },
     icon: {
       type: Boolean,
       default: true
+    },
+    iconColor: {
+      type: String
     }
   },
   components: {
     RightArrow: right_arrow
   },
   computed: {
+    // styleObject: {
+    //   fill: 'red',
+    //   fontSize: '13px'
+    // }
+    rightArrowStyles: function rightArrowStyles() {
+      return {
+        fill: this.iconColor
+      };
+    },
+
     /**
      * Uses root `currentStep` property to know where we are in the in the step-form
      */
@@ -3281,8 +3283,8 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/components/NextStepButton.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_NextStepButtonvue_type_script_lang_js_ = (NextStepButtonvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/NextStepButton.vue?vue&type=style&index=0&id=33417950&scoped=true&lang=css&
-var NextStepButtonvue_type_style_index_0_id_33417950_scoped_true_lang_css_ = __webpack_require__("3ce3");
+// EXTERNAL MODULE: ./src/components/NextStepButton.vue?vue&type=style&index=0&id=1e8ca1f5&scoped=true&lang=css&
+var NextStepButtonvue_type_style_index_0_id_1e8ca1f5_scoped_true_lang_css_ = __webpack_require__("e078");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -3302,7 +3304,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "33417950",
+  "1e8ca1f5",
   null
   
 )
@@ -3510,6 +3512,21 @@ __webpack_require__("214f")('replace', 2, function (defined, REPLACE, $replace) 
   }, $replace];
 });
 
+
+/***/ }),
+
+/***/ "a781":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("4363");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("d0985f42", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -3758,12 +3775,12 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PreviousStepButton.vue?vue&type=template&id=e50ca696&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"previous-button form-button",on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)}}},_vm.$listeners),[_c('LeftArrow',{staticClass:"previous-button-icon",style:(_vm.leftArrowStyles)}),_c('span',{staticClass:"previous-button-text",domProps:{"innerHTML":_vm._s(_vm.previousBtnText)}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PreviousStepButton.vue?vue&type=template&id=7ee3b5ca&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"previous-button form-button",on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)}}},_vm.$listeners),[_c('LeftArrow',{staticClass:"previous-button-icon"}),_c('span',{staticClass:"previous-button-text",domProps:{"innerHTML":_vm._s(_vm.previousBtnText)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=template&id=e50ca696&scoped=true&
+// CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=template&id=7ee3b5ca&scoped=true&
 
 // CONCATENATED MODULE: ./src/assets/images/left-arrow.svg
 
@@ -3799,6 +3816,9 @@ var staticRenderFns = []
       type: String,
       default: "previous"
     },
+    icon: {
+      type: String
+    },
     iconColor: {
       type: String
     }
@@ -3813,9 +3833,7 @@ var staticRenderFns = []
     // }
     leftArrowStyles: function leftArrowStyles() {
       return {
-        fill: this.iconColor // valid: this.fieldValidity,
-        // invalid: this.errors.has(this.id)
-
+        fill: this.iconColor
       };
     },
 
@@ -3849,8 +3867,8 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_PreviousStepButtonvue_type_script_lang_js_ = (PreviousStepButtonvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/PreviousStepButton.vue?vue&type=style&index=0&id=e50ca696&scoped=true&lang=css&
-var PreviousStepButtonvue_type_style_index_0_id_e50ca696_scoped_true_lang_css_ = __webpack_require__("5612");
+// EXTERNAL MODULE: ./src/components/PreviousStepButton.vue?vue&type=style&index=0&id=7ee3b5ca&scoped=true&lang=css&
+var PreviousStepButtonvue_type_style_index_0_id_7ee3b5ca_scoped_true_lang_css_ = __webpack_require__("9332");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -3870,7 +3888,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "e50ca696",
+  "7ee3b5ca",
   null
   
 )
@@ -5842,6 +5860,17 @@ module.exports = basePropertyOf;
 
 /***/ }),
 
+/***/ "e078":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_1e8ca1f5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a781");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_1e8ca1f5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_1e8ca1f5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NextStepButton_vue_vue_type_style_index_0_id_1e8ca1f5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "e11e":
 /***/ (function(module, exports) {
 
@@ -6280,21 +6309,6 @@ var lib = __webpack_require__("34e9");
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
-
-
-/***/ }),
-
-/***/ "fef1":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.next-button-icon[data-v-33417950]{width:.8em;height:.8em;margin-left:.5em;margin-left:.4em;position:relative;right:-1px\n}", ""]);
-
-// exports
 
 
 /***/ }),

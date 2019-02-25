@@ -33,7 +33,7 @@
           <form-zip v-model="submit.zip" />
 
           <form-buttons-wrapper>
-            <previous-step-button text="Go Back"/>
+            <previous-step-button text="Go Back" />
             <form-submit text="Submit Text"/>    
           </form-buttons-wrapper>
 
