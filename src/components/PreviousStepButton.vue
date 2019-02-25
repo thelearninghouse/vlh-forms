@@ -6,7 +6,7 @@
     @keydown.enter.stop.prevent="previousStep"
   >
     <LeftArrow class="previous-button-icon" />
-    <span class="previous-button-text" v-html="previousBtnText"></span>
+    <span class="previous-button-text" v-html="text"></span>
   </button>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     /**
      * The text for the previous button
      */
-    previousBtnText: {
+    text: {
       type: String,
       default: "previous"
     },
