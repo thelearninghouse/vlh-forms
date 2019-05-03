@@ -38,6 +38,20 @@ export default {
     validation: {
       default: "required|validZip"
     }
+  },
+
+  computed: {
+    handleInternational() {
+      return this.$root.usCitizen ? false : true;
+    }
+  },
+
+  watch: {
+    handleInternational(isInternational) {
+      const zipElement = this.$refs[this.id];
+      if (isInternational) zipElement.style.display = "none";
+      else zipElement.style.display = "block";
+    }
   }
 };
 </script>

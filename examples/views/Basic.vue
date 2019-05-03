@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 <template>
   <form id="tlh-form" class="requestinfo" @submit.prevent="handleFormSubmission">
     <pre>{{usCitizen}}</pre>
@@ -14,10 +14,7 @@
     <form-last-name v-model="submit.lastName"/>
 
     <form-email v-model="submit.email"/>
-    <form-phone
-      :validation="!usCitizen ? 'required' : 'required|validPhone'"
-      v-model="submit.phone"
-    />
+    <form-phone v-model="submit.phone" />
 
     <form-select
       id="country"
@@ -26,9 +23,7 @@
       :options="countries"
     />
 
-    <transition name="slide-fade" mode="out-in" appear>
-      <form-zip v-if="usCitizen" v-model="submit.zip"/>
-    </transition>
+    <form-zip v-model="submit.zip"/>
     
     <form-submit text="Request Info"/>
     <form-legal-text/>

@@ -106,9 +106,8 @@ export default {
     },
 
     inputValidation() {
-      return this.optional
-        ? { rules: { required: false } }
-        : this.validation || "required";
+      if (this.optional) return { rules: { required: false } };
+      else return this.validation || "required";
     },
 
     inputValidationName() {

@@ -39,9 +39,7 @@ export const MockData = {
 
   submit: {
     countryTest: "United States of America",
-    // value:"7cf6c854-ec67-42d7-81eb-4556bc539800"
-
-    program: "7cf6c854-ec67-42d7-81eb-4556bc539800",
+    program: "",
     firstName: "",
     lastName: "",
     field1: "",
