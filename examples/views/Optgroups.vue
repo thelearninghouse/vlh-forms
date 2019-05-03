@@ -37,6 +37,15 @@ export default {
     }
   },
   methods: {
+    createCustomProgramList() {
+      const customProgramList = this.$root.programs.map(program => {
+        if (program.tagNames.includes("Adult Education")) {
+          program.degree_level = "Adult Education";
+        }
+        return program;
+      });
+      return customProgramList;
+    },
     createProgramsGroupsArray(programsArray) {
       console.log("RAN FROM createProgramsGroupsArray");
 
