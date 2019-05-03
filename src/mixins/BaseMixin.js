@@ -81,6 +81,7 @@ export default {
         "form-item-active": this.hasFocus,
         "form-item-filled": this.value,
         "using-floating-labels": this.$root.useFloatingLabels
+        // "hide-for-nonUs": !this.$root.usCitizen
       };
     },
 

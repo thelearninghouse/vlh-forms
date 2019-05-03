@@ -1,4 +1,5 @@
 import { programs, levels } from "./programsSample.js";
+import countries from "./countries.json";
 
 export const MockData = {
   showQualifier: false,
@@ -35,8 +36,12 @@ export const MockData = {
   stepDirection: "positive",
   isSubmitting: false,
   isSubmitted: false,
+
   submit: {
-    program: "",
+    countryTest: "United States of America",
+    // value:"7cf6c854-ec67-42d7-81eb-4556bc539800"
+
+    program: "7cf6c854-ec67-42d7-81eb-4556bc539800",
     firstName: "",
     lastName: "",
     field1: "",
@@ -46,7 +51,8 @@ export const MockData = {
     phone: "",
     city: null
   },
-  programs: programs,
+  programs,
+  countries,
   xverifyEmailURL: "http://xverifyEmailURL/",
   domain: "",
   newLegalStyles: {
