@@ -10,6 +10,7 @@
     @submit.prevent="handleFormSubmission"
   >
     <div class="stepsWrapper">
+      <step-form-progress />
       <transition name="slide-fade" mode="out-in" appear @after-enter="handleFormStepTransition">
         <form-step v-if="$root.currentStep == 1" :key="1" >
 

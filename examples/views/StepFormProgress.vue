@@ -1,17 +1,9 @@
 <template lang="html">
   <form id="tlh-form" class="example" @submit.prevent="handleFormSubmission">
     <div class="stepsWrapper">
+      <step-form-progress />
       <step-form-progress
         customProgress
-        :steps="totalSteps"
-        :active-step="$root.currentStep"
-      >
-      </step-form-progress>
-
-      <step-form-progress
-        customProgress
-        :steps="totalSteps"
-        :active-step="$root.currentStep"
       >
         <div slot="step1"><span>Step 1: Choose A Degree</span></div>
         <div slot="step2"><span>Step 2: Your Name</span></div>
@@ -65,31 +57,31 @@
 
 <script>
 export default {
-  mounted () {
-    this.$nextTick(function () {
+  mounted() {
+    this.$nextTick(function() {
       this.addClass();
     });
   },
   methods: {
-    addClass () {
+    addClass() {
       let Form = document.getElementById("tlh-form");
       if (Form && this.helpTextColor) {
         Form.classList.add(this.helpTextColor);
       }
     },
 
-    setFocusWithJS () {
+    setFocusWithJS() {
       var FormItemDiv = document.querySelector(".form-item");
       var El = FormItemDiv.querySelector("input, select, checkbox, textarea");
       El.focus();
     },
 
-    transitionCompleted (el) {
+    transitionCompleted(el) {
       console.log("After Enter", el);
       this.setFocusWithJS();
     },
 
-    transitionAfterAppear (el) {
+    transitionAfterAppear(el) {
       console.log("After Appear", el);
     }
   }
