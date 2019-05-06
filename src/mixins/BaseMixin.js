@@ -76,11 +76,13 @@ export default {
     },
 
     formItemClasses() {
+      // const formItemId = `form-item-${this.id}`;
       return {
         "form-item": true,
         "form-item-active": this.hasFocus,
         "form-item-filled": this.value,
         "using-floating-labels": this.$root.useFloatingLabels
+        // `form-item-${this.id}`
         // "hide-for-nonUs": !this.$root.usCitizen
       };
     },

@@ -1,5 +1,5 @@
 <template>  
-  <div :class="formItemClasses">
+  <div :class="[formItemClasses, `form-item-${id}`]">
     <label :for="id" v-text="label"></label>
     <div class="form-field-wrapper">
       <input
@@ -106,9 +106,8 @@ export default {
     },
 
     inputValidation() {
-      return this.optional
-        ? { rules: { required: false } }
-        : this.validation || "required";
+      if (this.optional) return { rules: { required: false } };
+      else return this.validation || "required";
     },
 
     inputValidationName() {
