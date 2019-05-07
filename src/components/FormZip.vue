@@ -63,6 +63,12 @@ export default {
   computed: {
     handleInternational() {
       return this.$root.usCitizen ? false : true;
+    },
+
+    inputValidation() {
+      if (this.optional || this.handleInternational)
+        return { rules: { required: false } };
+      else return this.validation;
     }
   },
 
