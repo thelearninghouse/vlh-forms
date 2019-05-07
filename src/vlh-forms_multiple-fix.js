@@ -20,11 +20,11 @@ if (matchMedia) {
 // media query change
 function WidthChange(mq) {
   if (!mq.matches) {
-    console.log("move form to MOBILE location");
+    // console.log("move form to MOBILE location");
     removeForm(tlhForm);
     insertForm(tlhForm, mobileFormParent);
   } else {
-    console.log("move form to DESKTOP location");
+    // console.log("move form to DESKTOP location");
     removeForm(tlhForm);
     insertForm(tlhForm, desktopFormParent);
   }

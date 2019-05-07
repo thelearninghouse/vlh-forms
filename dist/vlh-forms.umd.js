@@ -798,12 +798,12 @@ function normalizeComponent (
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=3b3ae4d0&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"step"},[_vm._t("default")],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormStep.vue?vue&type=template&id=dd27868c&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"step"},[_c('h1',[_vm._v("hi")]),_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=3b3ae4d0&
+// CONCATENATED MODULE: ./src/components/FormStep.vue?vue&type=template&id=dd27868c&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -822,6 +822,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
 
 
 
+//
 //
 //
 //
@@ -1247,6 +1248,21 @@ if (GlobalVue) {
 
 /* harmony default export */ __webpack_exports__["a"] = (VlhForms);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("c8ba")))
+
+/***/ }),
+
+/***/ "3504":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\ninput[type=number][data-v-d32dcfe8]{-moz-appearance:textfield\n}\ninput[type=number][data-v-d32dcfe8]::-webkit-inner-spin-button,input[type=number][data-v-d32dcfe8]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0\n}\n.form-item-zip[data-v-d32dcfe8]{overflow:hidden;transition:height .35s ease-in-out;height:auto\n}\n.form-item-zip .is-hidden[data-v-d32dcfe8]{display:none;height:0\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -1975,21 +1991,6 @@ component.options.__file = "FormSelect.vue"
 
 /***/ }),
 
-/***/ "5050":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("6811");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("06d87d62", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "52a7":
 /***/ (function(module, exports) {
 
@@ -2236,21 +2237,6 @@ var update = add("0f0d1db5", content, true, {"sourceMap":false,"shadowMode":fals
 var isArray = Array.isArray;
 
 module.exports = isArray;
-
-
-/***/ }),
-
-/***/ "6811":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\ninput[type=number][data-v-307c020d]{-moz-appearance:textfield\n}\ninput[type=number][data-v-307c020d]::-webkit-inner-spin-button,input[type=number][data-v-307c020d]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0\n}", ""]);
-
-// exports
 
 
 /***/ }),
@@ -2756,6 +2742,25 @@ var BaseInput = __webpack_require__("b3b3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormZip.vue?vue&type=script&lang=js&
 
+
+var hideElement = function hideElement(el) {
+  var height = el.scrollHeight + "px"; // console.log("hideElement: height", height);
+
+  el.style.height = "0";
+  el.style.display = "none";
+};
+
+var showElement = function showElement(el) {
+  el.style.display = "block";
+  var height = el.scrollHeight + "px"; // console.log("showElement: height", height);
+
+  el.style.height = el.scrollHeight + "px"; // Get it's height
+
+  el.style.display = "block";
+  setTimeout(function () {
+    el.style.height = "auto";
+  }, 350);
+};
 /**
  * The zip component
  *
@@ -2763,6 +2768,7 @@ var BaseInput = __webpack_require__("b3b3");
  * <form-zip v-model="submit.zip"/>
  * ```
  */
+
 
 /* harmony default export */ var FormZipvue_type_script_lang_js_ = ({
   extends: BaseInput["default"],
@@ -2788,12 +2794,22 @@ var BaseInput = __webpack_require__("b3b3");
     validation: {
       default: "required|validZip"
     }
+  },
+  computed: {
+    handleInternational: function handleInternational() {
+      return this.$root.usCitizen ? false : true;
+    }
+  },
+  watch: {
+    handleInternational: function handleInternational(isInternational) {
+      if (isInternational) hideElement(this.$el);else showElement(this.$el);
+    }
   }
 });
 // CONCATENATED MODULE: ./src/components/FormZip.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_FormZipvue_type_script_lang_js_ = (FormZipvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormZip.vue?vue&type=style&index=0&id=307c020d&scoped=true&lang=css&
-var FormZipvue_type_style_index_0_id_307c020d_scoped_true_lang_css_ = __webpack_require__("ab17");
+// EXTERNAL MODULE: ./src/components/FormZip.vue?vue&type=style&index=0&id=d32dcfe8&scoped=true&lang=scss&
+var FormZipvue_type_style_index_0_id_d32dcfe8_scoped_true_lang_scss_ = __webpack_require__("eced");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -2813,7 +2829,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "307c020d",
+  "d32dcfe8",
   null
   
 )
@@ -3672,17 +3688,6 @@ module.exports = hasUnicode;
 
 /***/ }),
 
-/***/ "ab17":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_307c020d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5050");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_307c020d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_307c020d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_307c020d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "ac67":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4161,12 +4166,12 @@ module.exports = createCompounder;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=29702fc3&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.formItemClasses},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.enterToTab($event)}}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseInput.vue?vue&type=template&id=4acd5a82&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.formItemClasses, ("form-item-" + _vm.id)]},[_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}}),_c('div',{staticClass:"form-field-wrapper"},[_c('input',_vm._g(_vm._b({directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,class:_vm.inputClasses,attrs:{"id":_vm.id,"type":_vm.type,"name":_vm.inputName,"data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName,"aria-describedby":_vm.helpTextId,"autocomplete":_vm.autocomplete,"pattern":_vm.pattern},domProps:{"value":_vm.value},on:{"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.enterToTab($event)}}},'input',_vm.$attrs,false),_vm.inputListeners)),_c('form-help-icon',{class:{ invalid: _vm.errors.has(_vm.id), valid: _vm.fieldValidity },attrs:{"id":_vm.helpIconId,"icon":_vm.currentIcon}})],1),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=29702fc3&
+// CONCATENATED MODULE: ./src/components/BaseInput.vue?vue&type=template&id=4acd5a82&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js + 1 modules
 var objectSpread = __webpack_require__("be94");
@@ -4288,11 +4293,11 @@ var BaseMixin = __webpack_require__("f37c");
       });
     },
     inputValidation: function inputValidation() {
-      return this.optional ? {
+      if (this.optional) return {
         rules: {
           required: false
         }
-      } : this.validation || "required";
+      };else return this.validation || "required";
     },
     inputValidationName: function inputValidationName() {
       return this.validationName || this.label;
@@ -4957,6 +4962,18 @@ var BaseInput = __webpack_require__("b3b3");
     },
     autocomplete: {
       default: "tel"
+    }
+  },
+  computed: {
+    handleInternational: function handleInternational() {
+      return this.$root.usCitizen ? false : true;
+    },
+    inputValidation: function inputValidation() {
+      if (this.optional) return {
+        rules: {
+          required: false
+        }
+      };else if (this.handleInternational) return "required";else return this.validation;
     }
   }
 });
@@ -5794,6 +5811,7 @@ var map = {
 	"./BaseInput.vue": "b3b3",
 	"./BaseSelect.vue": "d291",
 	"./FormButtonsWrapper.vue": "469a",
+	"./FormCountrySelect.vue": "d94a",
 	"./FormEmail.vue": "d349",
 	"./FormFirstName.vue": "c2c9",
 	"./FormHelp.vue": "cc8c",
@@ -5845,6 +5863,83 @@ module.exports = function (it) {
   return it;
 };
 
+
+/***/ }),
+
+/***/ "d94a":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./src/components/BaseSelect.vue + 5 modules
+var BaseSelect = __webpack_require__("d291");
+
+// EXTERNAL MODULE: ./src/data/countries.json
+var countries = __webpack_require__("ff16");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormCountrySelect.vue?vue&type=script&lang=js&
+
+
+/* harmony default export */ var FormCountrySelectvue_type_script_lang_js_ = ({
+  extends: BaseSelect["default"],
+  props: {
+    id: {
+      default: "country"
+    },
+    label: {
+      type: String,
+      default: "Select Your Country"
+    },
+    options: {
+      type: Array,
+      default: function _default() {
+        return countries;
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/FormCountrySelect.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_FormCountrySelectvue_type_script_lang_js_ = (FormCountrySelectvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/FormCountrySelect.vue
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_FormCountrySelectvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "FormCountrySelect.vue"
+/* harmony default export */ var FormCountrySelect = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "db46":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("3504");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("2aec28b7", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -6017,6 +6112,17 @@ module.exports = words;
 
 /***/ }),
 
+/***/ "eced":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_d32dcfe8_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("db46");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_d32dcfe8_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_d32dcfe8_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormZip_vue_vue_type_style_index_0_id_d32dcfe8_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "f37c":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6101,11 +6207,14 @@ module.exports = words;
       return this.fields[this.id] == undefined ? false : this.checkFieldValidity(this.fields[this.id]);
     },
     formItemClasses: function formItemClasses() {
+      // const formItemId = `form-item-${this.id}`;
       return {
         "form-item": true,
         "form-item-active": this.hasFocus,
         "form-item-filled": this.value,
-        "using-floating-labels": this.$root.useFloatingLabels
+        "using-floating-labels": this.$root.useFloatingLabels // `form-item-${this.id}`
+        // "hide-for-nonUs": !this.$root.usCitizen
+
       };
     },
     currentIcon: function currentIcon() {
@@ -6317,6 +6426,13 @@ var lib = __webpack_require__("34e9");
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
+
+/***/ }),
+
+/***/ "ff16":
+/***/ (function(module) {
+
+module.exports = [{"name":"Afghanistan","id":"Afghanistan"},{"name":"Åland Islands","id":"Åland Islands"},{"name":"Albania","id":"Albania"},{"name":"Algeria","id":"Algeria"},{"name":"American Samoa","id":"American Samoa"},{"name":"Andorra","id":"Andorra"},{"name":"Angola","id":"Angola"},{"name":"Anguilla","id":"Anguilla"},{"name":"Antarctica","id":"Antarctica"},{"name":"Antigua and Barbuda","id":"Antigua and Barbuda"},{"name":"Argentina","id":"Argentina"},{"name":"Armenia","id":"Armenia"},{"name":"Aruba","id":"Aruba"},{"name":"Australia","id":"Australia"},{"name":"Austria","id":"Austria"},{"name":"Azerbaijan","id":"Azerbaijan"},{"name":"Bahamas","id":"Bahamas"},{"name":"Bahrain","id":"Bahrain"},{"name":"Bangladesh","id":"Bangladesh"},{"name":"Barbados","id":"Barbados"},{"name":"Belarus","id":"Belarus"},{"name":"Belgium","id":"Belgium"},{"name":"Belize","id":"Belize"},{"name":"Benin","id":"Benin"},{"name":"Bermuda","id":"Bermuda"},{"name":"Bhutan","id":"Bhutan"},{"name":"Bolivia (Plurinational State of)","id":"Bolivia (Plurinational State of)"},{"name":"Bonaire, Sint Eustatius and Saba","id":"Bonaire, Sint Eustatius and Saba"},{"name":"Bosnia and Herzegovina","id":"Bosnia and Herzegovina"},{"name":"Botswana","id":"Botswana"},{"name":"Bouvet Island","id":"Bouvet Island"},{"name":"Brazil","id":"Brazil"},{"name":"British Indian Ocean Territory","id":"British Indian Ocean Territory"},{"name":"United States Minor Outlying Islands","id":"United States Minor Outlying Islands"},{"name":"Virgin Islands (British)","id":"Virgin Islands (British)"},{"name":"Virgin Islands (U.S.)","id":"Virgin Islands (U.S.)"},{"name":"Brunei Darussalam","id":"Brunei Darussalam"},{"name":"Bulgaria","id":"Bulgaria"},{"name":"Burkina Faso","id":"Burkina Faso"},{"name":"Burundi","id":"Burundi"},{"name":"Cambodia","id":"Cambodia"},{"name":"Cameroon","id":"Cameroon"},{"name":"Canada","id":"Canada"},{"name":"Cabo Verde","id":"Cabo Verde"},{"name":"Cayman Islands","id":"Cayman Islands"},{"name":"Central African Republic","id":"Central African Republic"},{"name":"Chad","id":"Chad"},{"name":"Chile","id":"Chile"},{"name":"China","id":"China"},{"name":"Christmas Island","id":"Christmas Island"},{"name":"Cocos (Keeling) Islands","id":"Cocos (Keeling) Islands"},{"name":"Colombia","id":"Colombia"},{"name":"Comoros","id":"Comoros"},{"name":"Congo","id":"Congo"},{"name":"Congo (Democratic Republic of the)","id":"Congo (Democratic Republic of the)"},{"name":"Cook Islands","id":"Cook Islands"},{"name":"Costa Rica","id":"Costa Rica"},{"name":"Croatia","id":"Croatia"},{"name":"Cuba","id":"Cuba"},{"name":"Curaçao","id":"Curaçao"},{"name":"Cyprus","id":"Cyprus"},{"name":"Czech Republic","id":"Czech Republic"},{"name":"Denmark","id":"Denmark"},{"name":"Djibouti","id":"Djibouti"},{"name":"Dominica","id":"Dominica"},{"name":"Dominican Republic","id":"Dominican Republic"},{"name":"Ecuador","id":"Ecuador"},{"name":"Egypt","id":"Egypt"},{"name":"El Salvador","id":"El Salvador"},{"name":"Equatorial Guinea","id":"Equatorial Guinea"},{"name":"Eritrea","id":"Eritrea"},{"name":"Estonia","id":"Estonia"},{"name":"Ethiopia","id":"Ethiopia"},{"name":"Falkland Islands (Malvinas)","id":"Falkland Islands (Malvinas)"},{"name":"Faroe Islands","id":"Faroe Islands"},{"name":"Fiji","id":"Fiji"},{"name":"Finland","id":"Finland"},{"name":"France","id":"France"},{"name":"French Guiana","id":"French Guiana"},{"name":"French Polynesia","id":"French Polynesia"},{"name":"French Southern Territories","id":"French Southern Territories"},{"name":"Gabon","id":"Gabon"},{"name":"Gambia","id":"Gambia"},{"name":"Georgia","id":"Georgia"},{"name":"Germany","id":"Germany"},{"name":"Ghana","id":"Ghana"},{"name":"Gibraltar","id":"Gibraltar"},{"name":"Greece","id":"Greece"},{"name":"Greenland","id":"Greenland"},{"name":"Grenada","id":"Grenada"},{"name":"Guadeloupe","id":"Guadeloupe"},{"name":"Guam","id":"Guam"},{"name":"Guatemala","id":"Guatemala"},{"name":"Guernsey","id":"Guernsey"},{"name":"Guinea","id":"Guinea"},{"name":"Guinea-Bissau","id":"Guinea-Bissau"},{"name":"Guyana","id":"Guyana"},{"name":"Haiti","id":"Haiti"},{"name":"Heard Island and McDonald Islands","id":"Heard Island and McDonald Islands"},{"name":"Holy See","id":"Holy See"},{"name":"Honduras","id":"Honduras"},{"name":"Hong Kong","id":"Hong Kong"},{"name":"Hungary","id":"Hungary"},{"name":"Iceland","id":"Iceland"},{"name":"India","id":"India"},{"name":"Indonesia","id":"Indonesia"},{"name":"Côte d'Ivoire","id":"Côte d'Ivoire"},{"name":"Iran (Islamic Republic of)","id":"Iran (Islamic Republic of)"},{"name":"Iraq","id":"Iraq"},{"name":"Ireland","id":"Ireland"},{"name":"Isle of Man","id":"Isle of Man"},{"name":"Israel","id":"Israel"},{"name":"Italy","id":"Italy"},{"name":"Jamaica","id":"Jamaica"},{"name":"Japan","id":"Japan"},{"name":"Jersey","id":"Jersey"},{"name":"Jordan","id":"Jordan"},{"name":"Kazakhstan","id":"Kazakhstan"},{"name":"Kenya","id":"Kenya"},{"name":"Kiribati","id":"Kiribati"},{"name":"Kuwait","id":"Kuwait"},{"name":"Kyrgyzstan","id":"Kyrgyzstan"},{"name":"Lao People's Democratic Republic","id":"Lao People's Democratic Republic"},{"name":"Latvia","id":"Latvia"},{"name":"Lebanon","id":"Lebanon"},{"name":"Lesotho","id":"Lesotho"},{"name":"Liberia","id":"Liberia"},{"name":"Libya","id":"Libya"},{"name":"Liechtenstein","id":"Liechtenstein"},{"name":"Lithuania","id":"Lithuania"},{"name":"Luxembourg","id":"Luxembourg"},{"name":"Macao","id":"Macao"},{"name":"Macedonia (the former Yugoslav Republic of)","id":"Macedonia (the former Yugoslav Republic of)"},{"name":"Madagascar","id":"Madagascar"},{"name":"Malawi","id":"Malawi"},{"name":"Malaysia","id":"Malaysia"},{"name":"Maldives","id":"Maldives"},{"name":"Mali","id":"Mali"},{"name":"Malta","id":"Malta"},{"name":"Marshall Islands","id":"Marshall Islands"},{"name":"Martinique","id":"Martinique"},{"name":"Mauritania","id":"Mauritania"},{"name":"Mauritius","id":"Mauritius"},{"name":"Mayotte","id":"Mayotte"},{"name":"Mexico","id":"Mexico"},{"name":"Micronesia (Federated States of)","id":"Micronesia (Federated States of)"},{"name":"Moldova (Republic of)","id":"Moldova (Republic of)"},{"name":"Monaco","id":"Monaco"},{"name":"Mongolia","id":"Mongolia"},{"name":"Montenegro","id":"Montenegro"},{"name":"Montserrat","id":"Montserrat"},{"name":"Morocco","id":"Morocco"},{"name":"Mozambique","id":"Mozambique"},{"name":"Myanmar","id":"Myanmar"},{"name":"Namibia","id":"Namibia"},{"name":"Nauru","id":"Nauru"},{"name":"Nepal","id":"Nepal"},{"name":"Netherlands","id":"Netherlands"},{"name":"New Caledonia","id":"New Caledonia"},{"name":"New Zealand","id":"New Zealand"},{"name":"Nicaragua","id":"Nicaragua"},{"name":"Niger","id":"Niger"},{"name":"Nigeria","id":"Nigeria"},{"name":"Niue","id":"Niue"},{"name":"Norfolk Island","id":"Norfolk Island"},{"name":"Korea (Democratic People's Republic of)","id":"Korea (Democratic People's Republic of)"},{"name":"Northern Mariana Islands","id":"Northern Mariana Islands"},{"name":"Norway","id":"Norway"},{"name":"Oman","id":"Oman"},{"name":"Pakistan","id":"Pakistan"},{"name":"Palau","id":"Palau"},{"name":"Palestine, State of","id":"Palestine, State of"},{"name":"Panama","id":"Panama"},{"name":"Papua New Guinea","id":"Papua New Guinea"},{"name":"Paraguay","id":"Paraguay"},{"name":"Peru","id":"Peru"},{"name":"Philippines","id":"Philippines"},{"name":"Pitcairn","id":"Pitcairn"},{"name":"Poland","id":"Poland"},{"name":"Portugal","id":"Portugal"},{"name":"Puerto Rico","id":"Puerto Rico"},{"name":"Qatar","id":"Qatar"},{"name":"Republic of Kosovo","id":"Republic of Kosovo"},{"name":"Réunion","id":"Réunion"},{"name":"Romania","id":"Romania"},{"name":"Russian Federation","id":"Russian Federation"},{"name":"Rwanda","id":"Rwanda"},{"name":"Saint Barthélemy","id":"Saint Barthélemy"},{"name":"Saint Helena, Ascension and Tristan da Cunha","id":"Saint Helena, Ascension and Tristan da Cunha"},{"name":"Saint Kitts and Nevis","id":"Saint Kitts and Nevis"},{"name":"Saint Lucia","id":"Saint Lucia"},{"name":"Saint Martin (French part)","id":"Saint Martin (French part)"},{"name":"Saint Pierre and Miquelon","id":"Saint Pierre and Miquelon"},{"name":"Saint Vincent and the Grenadines","id":"Saint Vincent and the Grenadines"},{"name":"Samoa","id":"Samoa"},{"name":"San Marino","id":"San Marino"},{"name":"Sao Tome and Principe","id":"Sao Tome and Principe"},{"name":"Saudi Arabia","id":"Saudi Arabia"},{"name":"Senegal","id":"Senegal"},{"name":"Serbia","id":"Serbia"},{"name":"Seychelles","id":"Seychelles"},{"name":"Sierra Leone","id":"Sierra Leone"},{"name":"Singapore","id":"Singapore"},{"name":"Sint Maarten (Dutch part)","id":"Sint Maarten (Dutch part)"},{"name":"Slovakia","id":"Slovakia"},{"name":"Slovenia","id":"Slovenia"},{"name":"Solomon Islands","id":"Solomon Islands"},{"name":"Somalia","id":"Somalia"},{"name":"South Africa","id":"South Africa"},{"name":"South Georgia and the South Sandwich Islands","id":"South Georgia and the South Sandwich Islands"},{"name":"Korea (Republic of)","id":"Korea (Republic of)"},{"name":"South Sudan","id":"South Sudan"},{"name":"Spain","id":"Spain"},{"name":"Sri Lanka","id":"Sri Lanka"},{"name":"Sudan","id":"Sudan"},{"name":"Suriname","id":"Suriname"},{"name":"Svalbard and Jan Mayen","id":"Svalbard and Jan Mayen"},{"name":"Swaziland","id":"Swaziland"},{"name":"Sweden","id":"Sweden"},{"name":"Switzerland","id":"Switzerland"},{"name":"Syrian Arab Republic","id":"Syrian Arab Republic"},{"name":"Taiwan","id":"Taiwan"},{"name":"Tajikistan","id":"Tajikistan"},{"name":"Tanzania, United Republic of","id":"Tanzania, United Republic of"},{"name":"Thailand","id":"Thailand"},{"name":"Timor-Leste","id":"Timor-Leste"},{"name":"Togo","id":"Togo"},{"name":"Tokelau","id":"Tokelau"},{"name":"Tonga","id":"Tonga"},{"name":"Trinidad and Tobago","id":"Trinidad and Tobago"},{"name":"Tunisia","id":"Tunisia"},{"name":"Turkey","id":"Turkey"},{"name":"Turkmenistan","id":"Turkmenistan"},{"name":"Turks and Caicos Islands","id":"Turks and Caicos Islands"},{"name":"Tuvalu","id":"Tuvalu"},{"name":"Uganda","id":"Uganda"},{"name":"Ukraine","id":"Ukraine"},{"name":"United Arab Emirates","id":"United Arab Emirates"},{"name":"United Kingdom of Great Britain and Northern Ireland","id":"United Kingdom of Great Britain and Northern Ireland"},{"name":"United States of America","id":"United States of America"},{"name":"Uruguay","id":"Uruguay"},{"name":"Uzbekistan","id":"Uzbekistan"},{"name":"Vanuatu","id":"Vanuatu"},{"name":"Venezuela (Bolivarian Republic of)","id":"Venezuela (Bolivarian Republic of)"},{"name":"Viet Nam","id":"Viet Nam"},{"name":"Wallis and Futuna","id":"Wallis and Futuna"},{"name":"Western Sahara","id":"Western Sahara"},{"name":"Yemen","id":"Yemen"},{"name":"Zambia","id":"Zambia"},{"name":"Zimbabwe","id":"Zimbabwe"}];
 
 /***/ }),
 

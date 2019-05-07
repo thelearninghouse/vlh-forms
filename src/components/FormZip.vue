@@ -3,7 +3,7 @@ import BaseInput from "./BaseInput.vue";
 
 const hideElement = el => {
   const height = el.scrollHeight + "px";
-  console.log("hideElement: height", height);
+  // console.log("hideElement: height", height);
   el.style.height = "0";
   el.style.display = "none";
 };
@@ -11,7 +11,7 @@ const hideElement = el => {
 const showElement = el => {
   el.style.display = "block";
   const height = el.scrollHeight + "px";
-  console.log("showElement: height", height);
+  // console.log("showElement: height", height);
 
   el.style.height = el.scrollHeight + "px"; // Get it's height
   el.style.display = "block";

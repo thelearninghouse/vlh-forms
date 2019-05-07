@@ -14,17 +14,12 @@
     <form-last-name v-model="submit.lastName"/>
 
     <form-email v-model="submit.email"/>
-    <form-phone v-model="submit.phone" />
+    <form-phone v-model="submit.phone"/>
 
-    <form-select
-      id="country"
-      label="Select a Country"
-      v-model="submit.countryTest"
-      :options="countries"
-    />
+    <form-country-select v-model="submit.countryTest" />
 
     <form-zip v-model="submit.zip"/>
-    
+
     <form-submit text="Request Info"/>
     <form-legal-text/>
   </form>
