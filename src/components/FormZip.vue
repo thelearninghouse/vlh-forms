@@ -1,26 +1,6 @@
 <script>
 import BaseInput from "./BaseInput.vue";
 
-const hideElement = el => {
-  const height = el.scrollHeight + "px";
-  // console.log("hideElement: height", height);
-  el.style.height = "0";
-  el.style.display = "none";
-};
-
-const showElement = el => {
-  el.style.display = "block";
-  const height = el.scrollHeight + "px";
-  // console.log("showElement: height", height);
-
-  el.style.height = el.scrollHeight + "px"; // Get it's height
-  el.style.display = "block";
-
-  setTimeout(() => {
-    el.style.height = "auto";
-  }, 350);
-};
-
 /**
  * The zip component
  *
@@ -72,10 +52,29 @@ export default {
     }
   },
 
+  methods: {
+    hideElement(el, rootEl) {
+      el.style.height = "0";
+      el.style.display = "none";
+      rootEl.classList.add("hide-for-international");
+    },
+
+    showElement(el, rootEl) {
+      rootEl.classList.remove("hide-for-international");
+      el.style.display = "block";
+      el.style.height = el.scrollHeight + "px";
+      el.style.display = "block";
+
+      setTimeout(() => {
+        el.style.height = "auto";
+      }, 350);
+    }
+  },
+
   watch: {
     handleInternational(isInternational) {
-      if (isInternational) hideElement(this.$el);
-      else showElement(this.$el);
+      if (isInternational) this.hideElement(this.$el, this.$root.$el);
+      else this.showElement(this.$el, this.$root.$el);
     }
   }
 };
@@ -95,7 +94,8 @@ input[type="number"]::-webkit-outer-spin-button {
   overflow: hidden;
   transition: height 350ms ease-in-out;
   height: auto;
-  .is-hidden {
+
+  .hide-for-international & {
     display: none;
     height: 0;
   }
