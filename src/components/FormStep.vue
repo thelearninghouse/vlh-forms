@@ -1,6 +1,5 @@
 <template>
   <div class="step">
-    <h1>hi</h1>
     <slot />
   </div>
 </template>
