@@ -53,9 +53,7 @@ Vue.mixin({
 
   computed: {
     usCitizen() {
-      return this.submit.countryTest === "United States of America"
-        ? true
-        : false;
+      return this.submit.country === "United States of America" ? true : false;
     },
 
     lastStep() {

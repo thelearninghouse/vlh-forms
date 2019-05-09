@@ -38,7 +38,7 @@ export const MockData = {
   isSubmitted: false,
 
   submit: {
-    countryTest: "United States of America",
+    country: "United States of America",
     program: "",
     firstName: "",
     lastName: "",
