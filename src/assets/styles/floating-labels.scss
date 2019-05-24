@@ -1,46 +1,47 @@
 $primary-color: inherit;
 $animation-duration: 0.325s;
 
+
 @mixin label-active() {
-    font-size: 0.75rem;
-    font-weight: 600;
-    transform: translateY(-14px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transform: translateY(-14px);
 }
 
 label {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .using-floating-labels {
-    &.form-item {
-        display: block;
-        margin-bottom: 16px;
-        margin-top: 1.25em;
-        &-active {
-            .form-field-wrapper {
-                &::after {
-                    border-bottom: 2px solid $primary-color;
-                    transform: scaleX(150);
-                }
-            }
-
-            label {
-                color: $primary-color;
-                @include label-active();
-            }
+  &.form-item {
+    display: block;
+    margin-bottom: 16px;
+    margin-top: 1.25em;
+    &-active {
+      .form-field-wrapper {
+        &::after {
+          border-bottom: 2px solid $primary-color;
+          transform: scaleX(150);
         }
+      }
 
-        &-filled {
-            label {
-                @include label-active();
-            }
-        }
+      label {
+        color: $primary-color;
+        @include label-active();
+      }
     }
+
+    &-filled {
+      label {
+        @include label-active();
+      }
+    }
+  }
 }
 
-.using-floating-labels.form-item label {
+.using-floating-labels.form-item {
+  label {
     display: block;
-    // font-size: 1.2rem;
     font-weight: normal;
     left: 0;
     margin: 0;
@@ -50,47 +51,51 @@ label {
     transition: all $animation-duration;
     width: 100%;
     margin-top: 14px !important;
+  }
+
+  &.form-item-active label,
+  &.form-item-filled label {
+    font-weight: 600;
+  }
 }
 
-
 .using-floating-labels.form-item {
-    // background: #eee;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+  // background: #eee;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 
-    &::after {
-        border-bottom: 2px solid $primary-color;
-        bottom: 0;
-        content: "";
-        display: block;
-        left: 0;
-        margin: 0 auto;
-        position: absolute;
-        right: 0;
-        transform: scaleX(0);
-        transition: all $animation-duration;
-        width: 1%;
-    }
+  &::after {
+    border-bottom: 2px solid $primary-color;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transform: scaleX(0);
+    transition: all $animation-duration;
+    width: 1%;
+  }
 }
 
 .form-item.using-floating-labels {
-    .form-field-wrapper {
-        margin-top: 24px !important;
-        .input, .select {
-            appearance: none;
-            background: transparent;
-            border: 0;
-            border-bottom: 1px solid #999;
-            color: #333;
-            display: block;
-            // font-size: 1.2rem;
-            outline: 0;
-            padding: 0 12px !important;
-            width: 100%;
-            min-height: 38px;
-        }
+  .form-field-wrapper {
+    margin-top: 24px !important;
+    .input,
+    .select {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #999;
+      color: #333;
+      display: block;
+      outline: 0;
+      padding: 0 12px !important;
+      width: 100%;
+      min-height: 38px;
     }
-
+  }
 }

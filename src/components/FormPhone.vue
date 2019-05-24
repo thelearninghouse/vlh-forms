@@ -29,6 +29,25 @@ export default {
     autocomplete: {
       default: "tel"
     }
+  },
+  computed: {
+    handleInternational() {
+      return this.$root.usCitizen ? false : true;
+    },
+
+    inputValidation() {
+      if (this.optional) return { rules: { required: false } };
+      else if (this.handleInternational) return "required";
+      else return this.validation;
+    }
   }
 };
 </script>
+
+<style scoped lang="scss">
+.form-item.form-item-phone {
+  // width: 60%;
+  // margin: 0.5em 0 0.5em 2%;
+  flex: 1 1 58%;
+}
+</style>

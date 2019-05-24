@@ -16,7 +16,8 @@
   }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -27,7 +28,7 @@
 .fade-leave-to
 
 /* .fade-leave-active below version 2.1.8 */
-  {
+ {
   opacity: 0;
   transform: translateX(10px);
 }
@@ -42,7 +43,6 @@
 //   opacity: 0;
 //   transform: translateY(20px);
 // }
-
 
 .slide-enter-active,
 .slide-leave-active {
@@ -192,4 +192,17 @@ form {
 .expand-leave-active {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+}
+
+#tlh-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .form-item {
+    width: 100%;
+  }
+  .form-submit {
+    width: 100%;
+  }
 }

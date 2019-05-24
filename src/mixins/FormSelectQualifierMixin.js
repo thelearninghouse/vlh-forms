@@ -1,7 +1,7 @@
 export default {
   created() {
     this.$bus.$on("qualifier-updated", newIdValue => {
-      console.log("on:qualifier-updated ran");
+      // console.log("on:qualifier-updated ran");
       this.updateSelectedProgramId(newIdValue);
     });
     this.focusListener();
