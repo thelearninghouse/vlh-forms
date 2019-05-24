@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.14.1"></a>
+## [0.14.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.14.0...v0.14.1) (2019-05-24)
+
+
+### Bug Fixes
+
+* new build ([a9bb08b](https://github.com/thelearninghouse/vlh-forms/commit/a9bb08b))
+
+
+
 <a name="0.14.0"></a>
 # [0.14.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.13.3...v0.14.0) (2019-05-24)
 
