@@ -54,7 +54,7 @@ export default {
 
   methods: {
     hideElement(el, rootEl) {
-      el.style.height = "0";
+      // el.style.height = "0";
       el.style.display = "none";
       rootEl.classList.add("hide-for-international");
     },
@@ -67,7 +67,7 @@ export default {
 
       setTimeout(() => {
         el.style.height = "auto";
-      }, 350);
+      }, 0);
     }
   },
 
@@ -91,13 +91,15 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .form-item-zip {
-  overflow: hidden;
-  transition: height 350ms ease-in-out;
+  // overflow: hidden;
+  // transition: height 350ms ease-in-out;
   height: auto;
+  margin: 0.5em 0 0.5em 2%;
+  flex: 0 1 30%;
 
   .hide-for-international & {
     display: none;
-    height: 0;
+    // height: 0;
   }
 }
 
