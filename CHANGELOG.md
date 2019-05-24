@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.14.0"></a>
+# [0.14.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.13.3...v0.14.0) (2019-05-24)
+
+
+### Bug Fixes
+
+* adds correct styling for fields with country field ([7ed5615](https://github.com/thelearninghouse/vlh-forms/commit/7ed5615))
+* adds missing countries data ([5068300](https://github.com/thelearninghouse/vlh-forms/commit/5068300))
+* fixes issue of hidden fields reappearing ([07ebbb2](https://github.com/thelearninghouse/vlh-forms/commit/07ebbb2))
+* fixes zip validation not updating when hidden ([9e70991](https://github.com/thelearninghouse/vlh-forms/commit/9e70991))
+* removes unwanted text ([810b1aa](https://github.com/thelearninghouse/vlh-forms/commit/810b1aa))
+
+
+### Features
+
+* adds transition for zip internationalHandler ([4f65033](https://github.com/thelearninghouse/vlh-forms/commit/4f65033))
+* adds working example of handling zip for int ([a7e5626](https://github.com/thelearninghouse/vlh-forms/commit/a7e5626))
+* bumps floating-labels font-weight ([0077896](https://github.com/thelearninghouse/vlh-forms/commit/0077896))
+
+
+
 <a name="0.13.3"></a>
 ## [0.13.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.13.2...v0.13.3) (2019-02-25)
 
