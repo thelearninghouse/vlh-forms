@@ -77,6 +77,11 @@ export default {
 </script>
 
 <style scoped>
+/* NOTE: SHOULD WE ADD THIS??? */
+.next-button {
+  margin-left: auto;
+}
+
 .next-button-icon {
   width: 0.8em;
   height: 0.8em;
