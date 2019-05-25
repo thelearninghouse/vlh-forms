@@ -95,7 +95,8 @@ input[type="number"]::-webkit-outer-spin-button {
   // transition: height 350ms ease-in-out;
   height: auto;
   margin: 0.5em 0 0.5em 2%;
-  flex: 0 1 30%;
+  // flex: 0 1 30%;
+  flex: 0 1 40%;
 
   .hide-for-international & {
     display: none;
