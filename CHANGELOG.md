@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.1"></a>
+## [0.15.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.0...v0.15.1) (2019-05-25)
+
+
+### Bug Fixes
+
+* fixes a couple step-form styling issues ([09fc79a](https://github.com/thelearninghouse/vlh-forms/commit/09fc79a))
+* increaes width for zip field ([85ebd90](https://github.com/thelearninghouse/vlh-forms/commit/85ebd90))
+
+
+
 <a name="0.15.0"></a>
 # [0.15.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.14.1...v0.15.0) (2019-05-25)
 
