@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.14.1...v0.15.0) (2019-05-25)
+
+
+### Bug Fixes
+
+* sets correct closing tag ([81753f5](https://github.com/thelearninghouse/vlh-forms/commit/81753f5))
+
+
+### Features
+
+* adds specific field class to form-item divs ([2b9b6b7](https://github.com/thelearninghouse/vlh-forms/commit/2b9b6b7))
+
+
+
 <a name="0.14.1"></a>
 ## [0.14.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.14.0...v0.14.1) (2019-05-24)
 
