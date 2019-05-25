@@ -7,7 +7,8 @@
     @before-leave="beforeLeave"
     @leave="leave"
   >
-    <div :class="formItemClasses">
+  
+  <div :class="[formItemClasses, `form-item-${id}`]">
       <label :for="id" v-text="label"></label>
       <div class="form-field-wrapper">
         <select
