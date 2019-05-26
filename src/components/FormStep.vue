@@ -62,7 +62,6 @@ export default {
 .step {
   position: relative;
   min-height: 100px;
-
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

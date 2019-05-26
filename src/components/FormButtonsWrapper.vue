@@ -33,6 +33,10 @@ export default {
   display: flex;
   flex-flow: row wrap;
   align-items: baseline;
+
+  // Setting width: 100% allows buttons inside to be pushed to one side using `margin: auto;`
+  width: 100%;
+
   &.split-buttons {
     justify-content: space-between;
   }
