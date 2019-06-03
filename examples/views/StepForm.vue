@@ -15,9 +15,9 @@
             label="Select a Program"
             v-model="submit.program"
           />
-          <form-first-name v-model="submit.firstName" />
+          <!-- <form-first-name v-model="submit.firstName" />
           <form-last-name v-model="submit.lastName" />    
-          <form-email v-model="submit.email" validation="required|email"/>
+          <form-email v-model="submit.email" validation="required|email"/> -->
           
           <form-buttons-wrapper>
             <next-step-button text="Continue" @next-step="handleNextStep"/>
@@ -67,7 +67,7 @@ export default {
 <style lang="scss">
 button.submit {
   background-color: gray;
-  min-width: 300px;
+  // min-width: 300px;
   &:disabled {
     cursor: not-allowed;
   }
