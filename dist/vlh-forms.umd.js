@@ -1149,17 +1149,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "2e45":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e4ad433a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("adce");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e4ad433a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e4ad433a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_e4ad433a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "2f21":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1537,12 +1526,12 @@ module.exports = function (bitmap, value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormButtonsWrapper.vue?vue&type=template&id=febcf876&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormButtonsWrapper.vue?vue&type=template&id=292a9548&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.buttonsWrapperClasses},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormButtonsWrapper.vue?vue&type=template&id=febcf876&scoped=true&
+// CONCATENATED MODULE: ./src/components/FormButtonsWrapper.vue?vue&type=template&id=292a9548&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormButtonsWrapper.vue?vue&type=script&lang=js&
 //
@@ -1574,8 +1563,8 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/components/FormButtonsWrapper.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_FormButtonsWrappervue_type_script_lang_js_ = (FormButtonsWrappervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/FormButtonsWrapper.vue?vue&type=style&index=0&id=febcf876&scoped=true&lang=scss&
-var FormButtonsWrappervue_type_style_index_0_id_febcf876_scoped_true_lang_scss_ = __webpack_require__("8b7d");
+// EXTERNAL MODULE: ./src/components/FormButtonsWrapper.vue?vue&type=style&index=0&id=292a9548&scoped=true&lang=scss&
+var FormButtonsWrappervue_type_style_index_0_id_292a9548_scoped_true_lang_scss_ = __webpack_require__("88ab");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -1595,7 +1584,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "febcf876",
+  "292a9548",
   null
   
 )
@@ -1983,6 +1972,21 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 component.options.__file = "FormSelect.vue"
 /* harmony default export */ var FormSelect = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "5261":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("94e6");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("59415566", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2554,6 +2558,21 @@ module.exports = function (exec) {
 
 /***/ }),
 
+/***/ "7c47":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("bdf5");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("47340904", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "7e26":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2914,6 +2933,17 @@ module.exports = {};
 
 /***/ }),
 
+/***/ "854c":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_29153653_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5261");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_29153653_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_29153653_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreviousStepButton_vue_vue_type_style_index_0_id_29153653_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "86cc":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2934,6 +2964,17 @@ exports.f = __webpack_require__("9e1e") ? Object.defineProperty : function defin
   return O;
 };
 
+
+/***/ }),
+
+/***/ "88ab":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_292a9548_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("7c47");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_292a9548_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_292a9548_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_292a9548_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -2963,32 +3004,6 @@ exports.f = __webpack_require__("9e1e") ? Object.defineProperty : function defin
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuIwAALiMBeKU/dgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD6SURBVHic7dC7TcVQFAXRuaICt2C5CXIaIiKFjIyaCBBNWG7BKZmJQALx551PMKuAvaUBSZIkSZIkSZIkSZIkSZIkvTEix5dlOT+O4zLy4ztjjLt1XR/D9qOGX8zzfAXcRv984nrbtpvIg7PIcYB93x+maXoCLqK/3gmPBwkBoSRiSjxICgipEdPiQWJASImYGg+SA0JoxPR4UBAQQiKWxIOigHDSiGXxoDAgnCRiaTwoDgj/ilgeDxoEhD9FbBEPmgSEX0VsEw8aBYQfRWwVD5oFhC8jtosHDQPChxFbxoOmAeE14gDuu8aTJEmSJEmSJEmSJEmSJEV5BkTmjVpOoxLCAAAAAElFTkSuQmCC"
-
-/***/ }),
-
-/***/ "8ae9":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.form-buttons-wrapper[data-v-febcf876]{display:flex;flex-flow:row wrap;align-items:baseline\n}\n.form-buttons-wrapper.split-buttons[data-v-febcf876]{justify-content:space-between\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "8b7d":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_febcf876_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9520");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_febcf876_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_febcf876_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormButtonsWrapper_vue_vue_type_style_index_0_id_febcf876_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -3163,18 +3178,18 @@ component.options.__file = "FormHelpIcon.vue"
 
 /***/ }),
 
-/***/ "9520":
+/***/ "94e6":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
 
-// load the styles
-var content = __webpack_require__("8ae9");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("726a9003", content, true, {"sourceMap":false,"shadowMode":false});
+
+// module
+exports.push([module.i, "\n.previous-button[data-v-29153653]{flex:0 1 35%;max-width:140px\n}\n.previous-button-icon[data-v-29153653]{width:.8em;height:.8em;margin-right:.5em;margin-right:.4em;position:relative;left:-1px\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -3482,21 +3497,6 @@ module.exports = function (key) {
 
 /***/ }),
 
-/***/ "9db0":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.previous-button-icon[data-v-e4ad433a]{width:.8em;height:.8em;margin-right:.5em;margin-right:.4em;position:relative;left:-1px\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "9def":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3796,33 +3796,18 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 /***/ }),
 
-/***/ "adce":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("9db0");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("a6f7fd80", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "aebc":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PreviousStepButton.vue?vue&type=template&id=e4ad433a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PreviousStepButton.vue?vue&type=template&id=29153653&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"previous-button form-button",on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)},"keydown":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.stopPropagation();$event.preventDefault();return _vm.previousStep($event)}}},_vm.$listeners),[_c('LeftArrow',{staticClass:"previous-button-icon"}),_c('span',{staticClass:"previous-button-text",domProps:{"innerHTML":_vm._s(_vm.text)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=template&id=e4ad433a&scoped=true&
+// CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=template&id=29153653&scoped=true&
 
 // CONCATENATED MODULE: ./src/assets/images/left-arrow.svg
 
@@ -3909,8 +3894,8 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/components/PreviousStepButton.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_PreviousStepButtonvue_type_script_lang_js_ = (PreviousStepButtonvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/PreviousStepButton.vue?vue&type=style&index=0&id=e4ad433a&scoped=true&lang=css&
-var PreviousStepButtonvue_type_style_index_0_id_e4ad433a_scoped_true_lang_css_ = __webpack_require__("2e45");
+// EXTERNAL MODULE: ./src/components/PreviousStepButton.vue?vue&type=style&index=0&id=29153653&lang=scss&scoped=true&
+var PreviousStepButtonvue_type_style_index_0_id_29153653_lang_scss_scoped_true_ = __webpack_require__("854c");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -3930,7 +3915,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "e4ad433a",
+  "29153653",
   null
   
 )
@@ -4412,6 +4397,21 @@ module.exports = camelCase;
 
 /***/ }),
 
+/***/ "bdf5":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.form-buttons-wrapper[data-v-292a9548]{flex:1 1 100%;display:flex;flex-flow:row wrap;align-items:flex-start\n}\n.form-buttons-wrapper.split-buttons[data-v-292a9548]{justify-content:space-between\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "be13":
 /***/ (function(module, exports) {
 
@@ -4802,12 +4802,12 @@ module.exports = !__webpack_require__("9e1e") && !__webpack_require__("79e5")(fu
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSubmit.vue?vue&type=template&id=3a0bdaab&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSubmit.vue?vue&type=template&id=4509b5a6&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"form-submit"},[_c('form-submit-button',{staticClass:"submit",attrs:{"animation":_vm.animation,"type":"submit","color":_vm.color,"text-color":_vm.textColor,"is-loading":_vm.formSubmissionActive,"disabled":_vm.isDisabled || _vm.formSubmissionActive,"status":_vm.status}},[_c('span',{domProps:{"textContent":_vm._s(_vm.text)}})])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormSubmit.vue?vue&type=template&id=3a0bdaab&
+// CONCATENATED MODULE: ./src/components/FormSubmit.vue?vue&type=template&id=4509b5a6&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSubmit.vue?vue&type=script&lang=js&
 //
@@ -6023,7 +6023,7 @@ exports = module.exports = __webpack_require__("2350")(false);
 
 
 // module
-exports.push([module.i, "\n.submit{cursor:pointer;padding:.5em 1em;font-size:inherit;display:flex;align-items:center;transition:all .25s ease-out\n}\n.submit:disabled{cursor:not-allowed\n}", ""]);
+exports.push([module.i, "\n.form-submit{flex:0 1 55%\n}\n.submit{cursor:pointer;padding:.5em 1em;font-size:inherit;display:flex;align-items:center;transition:all .25s ease-out\n}\n.submit:disabled{cursor:not-allowed\n}", ""]);
 
 // exports
 

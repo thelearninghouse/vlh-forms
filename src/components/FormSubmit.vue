@@ -79,6 +79,10 @@ export default {
 </script>
 
 <style lang="scss">
+.form-submit {
+  flex: 0 1 55%;
+}
+
 .submit {
   cursor: pointer;
   padding: 0.5em 1em;
@@ -86,6 +90,7 @@ export default {
   display: flex;
   align-items: center;
   transition: all 0.25s ease-out;
+
   &:disabled {
     cursor: not-allowed;
   }
