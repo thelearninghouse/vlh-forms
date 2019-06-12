@@ -15,10 +15,15 @@
 
     <form-email v-model="submit.email"/>
 
-    <form-country-select v-model="submit.country" />
-
     <form-phone v-model="submit.phone"/>
-    <form-zip v-model="submit.zip"/>
+
+    <FormCheckbox id="checkbox" v-model="$root.isUsResident" label="I am a United States Resident"/>
+    <!-- <FormCheckbox id="checkbox" v-model="$root.isUsResident" label="US Resident"/> -->
+
+    <transition mode="out-in" name="slide-fade">
+      <form-zip v-if="$root.isUsResident" v-model="submit.zip"/>
+      <form-country-select v-else v-model="submit.country"/>
+    </transition>
 
     <form-submit text="Request Info"/>
     <form-legal-text/>
@@ -73,3 +78,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.form-submit {
+  margin-top: 1.75em;
+}
+</style>

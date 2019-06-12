@@ -41,25 +41,32 @@ export default {
   },
 
   computed: {
-    handleInternational() {
+    handleInternational () {
       return this.$root.usCitizen ? false : true;
     },
 
-    inputValidation() {
+    inputValidation () {
       if (this.optional || this.handleInternational)
         return { rules: { required: false } };
       else return this.validation;
     }
   },
 
+  watch: {
+    handleInternational (isInternational) {
+      if (isInternational) this.hideElement(this.$el, this.$root.$el);
+      else this.showElement(this.$el, this.$root.$el);
+    }
+  },
+
   methods: {
-    hideElement(el, rootEl) {
+    hideElement (el, rootEl) {
       // el.style.height = "0";
       el.style.display = "none";
       rootEl.classList.add("hide-for-international");
     },
 
-    showElement(el, rootEl) {
+    showElement (el, rootEl) {
       rootEl.classList.remove("hide-for-international");
       el.style.display = "block";
       el.style.height = el.scrollHeight + "px";
@@ -68,13 +75,6 @@ export default {
       setTimeout(() => {
         el.style.height = "auto";
       }, 0);
-    }
-  },
-
-  watch: {
-    handleInternational(isInternational) {
-      if (isInternational) this.hideElement(this.$el, this.$root.$el);
-      else this.showElement(this.$el, this.$root.$el);
     }
   }
 };
@@ -96,7 +96,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
   margin: 0.5em 0 0.5em 2%;
   // flex: 0 1 30%;
-  flex: 0 1 40%;
+  flex: 0 1 58%;
 
   .hide-for-international & {
     display: none;

@@ -14,6 +14,7 @@
 import RightArrow from "@/assets/images/right-arrow.svg";
 
 export default {
+  components: { RightArrow },
   props: {
     /**
      * The text for the next button
@@ -31,8 +32,6 @@ export default {
       type: String
     }
   },
-
-  components: { RightArrow },
 
   computed: {
     // styleObject: {

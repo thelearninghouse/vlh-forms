@@ -5,27 +5,27 @@
       <input
         :id="id"
         :ref="id"
+        v-validate="inputValidation"
         :value="value"
         :type="type"
         v-bind="$attrs"
         :name="inputName"
         :class="inputClasses"
-        v-on="inputListeners"
         :data-vv-name="id"
         :data-vv-as="inputValidationName"
-        v-validate="inputValidation"
         :aria-describedby="helpTextId"
         :autocomplete="autocomplete"
         :pattern="pattern"
+        v-on="inputListeners"
         @keydown.enter="enterToTab"
       >
-      <form-help-icon
+      <FormHelpIcon
         :id="helpIconId"
         :class="{ invalid: errors.has(id), valid: fieldValidity }"
         :icon="currentIcon"
       />
     </div>
-    <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)"/>
+    <FormHelp :id="helpTextId" :visible="errors.has(id)" :help-text="errors.first(id)"/>
   </div>
 </template>
 

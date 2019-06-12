@@ -3,32 +3,30 @@
     <div class="header">
       <h1>Examples</h1>
       <nav class="navigation">
-        <router-link to="/">Home</router-link>
-        <router-link to="/basic">Basic</router-link>
-        <router-link to="/degree-filtering">Degree Filtering</router-link>
-        <router-link to="/optgroup">Optgroups</router-link>
-        <router-link to="/optional-field">Optional Form Field</router-link>
-        <router-link to="/step-form">Step Form</router-link>
-        <router-link to="/step-form-progress">Step Form - Progress</router-link>
-        <router-link to="/custom-select-text">Custom Select Text</router-link>
-        <router-link to="/submission">Submission Test</router-link>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/basic">Basic</RouterLink>
+        <RouterLink to="/degree-filtering">Degree Filtering</RouterLink>
+        <RouterLink to="/optgroup">Optgroups</RouterLink>
+        <RouterLink to="/optional-field">Optional Form Field</RouterLink>
+        <RouterLink to="/step-form">Step Form</RouterLink>
+        <RouterLink to="/step-form-progress">Step Form - Progress</RouterLink>
+        <RouterLink to="/custom-select-text">Custom Select Text</RouterLink>
+        <RouterLink to="/submission">Submission Test</RouterLink>
       </nav>
     </div>
+
+    <!-- <FormCheckbox id="checkbox" v-model="checkboxValue" label="I am a United States Resident"/> -->
 
     <div class="holder" style="text-align: center;">
       <div class="result">{{ submit.program }}</div>
     </div>
-    <transition name="slide-fade" mode="out-in" appear>
-      <h2 key="chooseExample" v-if="$route.path == '/'" class="currentExample">
-        Choose an Example
-      </h2>
-      <h2 v-else :key="$route.fullPath" class="currentExample">
-        {{ $route.name }} Example
-      </h2>
-    </transition>
-    <transition mode="out-in" name="slide-fade" appear>
+    <Transition name="slide-fade" mode="out-in" appear>
+      <h2 key="chooseExample" v-if="$route.path == '/'" class="currentExample">Choose an Example</h2>
+      <h2 v-else :key="$route.fullPath" class="currentExample">{{ $route.name }} Example</h2>
+    </Transition>
+    <Transition mode="out-in" name="slide-fade" appear>
       <router-view :key="$route.fullPath"></router-view>
-    </transition>
+    </Transition>
   </div>
 </template>
 

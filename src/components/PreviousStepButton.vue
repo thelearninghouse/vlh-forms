@@ -5,7 +5,7 @@
     @click.stop.prevent="previousStep"
     @keydown.enter.stop.prevent="previousStep"
   >
-    <LeftArrow class="previous-button-icon" />
+    <LeftArrow class="previous-button-icon"/>
     <span class="previous-button-text" v-html="text"></span>
   </button>
 </template>
@@ -13,6 +13,7 @@
 <script>
 import LeftArrow from "@/assets/images/left-arrow.svg";
 export default {
+  components: { LeftArrow },
   props: {
     /**
      * The text for the previous button
@@ -30,7 +31,6 @@ export default {
       type: String
     }
   },
-  components: { LeftArrow },
   computed: {
     // styleObject: {
     //   fill: 'red',

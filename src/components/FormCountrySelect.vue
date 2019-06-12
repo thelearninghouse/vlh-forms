@@ -23,3 +23,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.form-item-country {
+  margin: 0.5em 0 0.5em 2%;
+  flex: 0 1 58%;
+}
+</style>

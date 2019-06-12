@@ -23,6 +23,9 @@ export const MockData = {
     }
   ],
   useFloatingLabels: false,
+
+  isUsResident: true,
+
   helpTextColor: "dark",
   showMore: true,
   selectedDegreeLevel: "",

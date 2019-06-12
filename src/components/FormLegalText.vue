@@ -18,7 +18,7 @@
  * ```
  */
 export default {
-  name: "form-legal-text",
+  name: "FormLegalText",
   props: {
     school: {
       type: String,
@@ -41,13 +41,8 @@ export default {
       default: false
     }
   },
-  computed: {
-    schoolName() {
-      return this.$root.schoolDisplayName || this.school;
-    }
-  },
 
-  data() {
+  data () {
     return {
       defaultStyles: {
         color: this.textColor,
@@ -57,11 +52,16 @@ export default {
       legalStyles: this.disableStyles
         ? {}
         : {
-            color: this.textColor,
-            fontSize: this.fontSize,
-            padding: this.padding
-          }
+          color: this.textColor,
+          fontSize: this.fontSize,
+          padding: this.padding
+        }
     };
+  },
+  computed: {
+    schoolName () {
+      return this.$root.schoolDisplayName || this.school;
+    }
   }
 };
 </script>
