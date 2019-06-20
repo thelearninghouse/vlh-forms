@@ -17,11 +17,15 @@
 
     <form-phone v-model="submit.phone"/>
 
-    <FormCheckbox id="checkbox" v-model="$root.isUsResident" label="I am a United States Resident"/>
-    <!-- <FormCheckbox id="checkbox" v-model="$root.isUsResident" label="US Resident"/> -->
+    <FormCheckbox
+      id="checkbox"
+      v-model="$root.usResidentChecked"
+      label="I am a United States Resident"
+    />
+    <!-- <FormCheckbox id="checkbox" v-model="$root.usResidentChecked" label="US Resident"/> -->
 
     <transition mode="out-in" name="slide-fade">
-      <form-zip v-if="$root.isUsResident" v-model="submit.zip"/>
+      <form-zip v-if="$root.usResidentChecked" v-model="submit.zip"/>
       <form-country-select v-else v-model="submit.country"/>
     </transition>
 

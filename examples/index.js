@@ -3,7 +3,9 @@ import VeeValidate from "vee-validate";
 import Vue from "vue";
 import VlhForms from "../src/lib";
 import App from "./App.vue";
-import { MockData } from "./MockData/index.js";
+import {
+  MockData
+} from "./MockData/index.js";
 import router from "./router";
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -23,7 +25,7 @@ Vue.mixin({
     };
   },
   watch: {
-    selectedDegreeLevel: function(val) {
+    selectedDegreeLevel: function (val) {
       this.submit.program = "";
     },
 
@@ -39,7 +41,19 @@ Vue.mixin({
         this.$bus.$emit("qualifier-updated", this.qualifierProgram.onlineId);
       }
     },
-    "submit.program": function(newValue, oldValue) {
+
+    usResidentChecked(isChecked) {
+      if (isChecked) this.submit.country = "United States of America"
+      else this.submit.country = "";
+    },
+
+    "submit.country": function (newValue) {
+      if (newValue === "United States of America") {
+        this.usResidentChecked = true;
+      }
+    },
+
+    "submit.program": function (newValue, oldValue) {
       if (
         newValue === this.qualifierProgram.onlineId ||
         newValue === this.qualifierProgram.campusId
@@ -66,7 +80,7 @@ Vue.mixin({
     programList() {
       var _this = this;
 
-      var programs = this.programs.map(function(program) {
+      var programs = this.programs.map(function (program) {
         if (program.display_name === null) {
           program.display_name = program.name;
         }
@@ -75,7 +89,7 @@ Vue.mixin({
       // return programs.sort(function (a, b) {
       //   return a < b ? -1 : 1;
       // });
-      return programs.sort(function(a, b) {
+      return programs.sort(function (a, b) {
         var nameA = a.display_name.toUpperCase(); // ignore upper and lowercase
         var nameB = b.display_name.toUpperCase(); // ignore upper and lowercase
         if (nameA < nameB) {
@@ -89,7 +103,7 @@ Vue.mixin({
       });
     },
 
-    programsForSelectedDegreeLevel: function() {
+    programsForSelectedDegreeLeve() {
       return this.getProgramsForDegreeLevel();
     },
     programOptions() {
@@ -113,7 +127,7 @@ Vue.mixin({
     },
 
     setFocusOnFirstFormError() {
-      this.$nextTick(function() {
+      this.$nextTick(function () {
         var TlhForm = document.getElementById("tlh-form");
         var FirstFormError = TlhForm.querySelector(
           "input.invalid, select.invalid"
@@ -179,7 +193,7 @@ Vue.mixin({
     checkForDisplayNames() {
       var vm = this;
       if (vm.programs) {
-        vm.programs.map(function(program) {
+        vm.programs.map(function (program) {
           if (program.display_name !== null) {
             program.name = program.display_name;
           }
@@ -254,7 +268,7 @@ Vue.mixin({
       var isZip = value => {
         return axios
           .get(`https://api.zippopotam.us/us/${value}`)
-          .then(function(response) {
+          .then(function (response) {
             let info = response.data.places[0];
             vm.submit.city = info["place name"];
             vm.submit.state = info["state"];
@@ -262,7 +276,7 @@ Vue.mixin({
               valid: true
             };
           })
-          .catch(function(error) {
+          .catch(function (error) {
             return {
               valid: false,
               data: {
@@ -278,10 +292,10 @@ Vue.mixin({
         }
       });
     },
-    getDegreeLevelObject: function() {
+    getDegreeLevelObject: function () {
       var vm = this;
       if (vm.selectedDegreeLevel) {
-        return vm.levels.find(function(level) {
+        return vm.levels.find(function (level) {
           return level.id == vm.selectedDegreeLevel;
         });
       } else {
@@ -289,10 +303,10 @@ Vue.mixin({
       }
     },
 
-    getProgramsForDegreeLevel: function() {
+    getProgramsForDegreeLevel: function () {
       var vm = this;
       if (vm.selectedDegreeLevelObject) {
-        return vm.programs.filter(function(program) {
+        return vm.programs.filter(function (program) {
           return vm.selectedDegreeLevelObject.degreeLevels.includes(
             program.degree_level
           );

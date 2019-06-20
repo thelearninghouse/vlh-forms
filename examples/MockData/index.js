@@ -24,6 +24,8 @@ export const MockData = {
   ],
   useFloatingLabels: false,
 
+  usResidentChecked: true,
+
   isUsResident: true,
 
   helpTextColor: "dark",

@@ -31,11 +31,11 @@ export default {
     }
   },
   computed: {
-    handleInternational() {
-      return this.$root.usCitizen ? false : true;
+    handleInternational () {
+      return this.$root.usResidentChecked ? false : true;
     },
 
-    inputValidation() {
+    inputValidation () {
       if (this.optional) return { rules: { required: false } };
       else if (this.handleInternational) return "required";
       else return this.validation;
