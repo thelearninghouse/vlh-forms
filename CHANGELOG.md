@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.3"></a>
+## [0.15.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.2...v0.15.3) (2019-06-29)
+
+
+### Bug Fixes
+
+* resolves CSS being applied to wrong component ([425ac39](https://github.com/thelearninghouse/vlh-forms/commit/425ac39))
+* resolves form-submit styles ([ccae30b](https://github.com/thelearninghouse/vlh-forms/commit/ccae30b))
+
+
+
 <a name="0.15.2"></a>
 ## [0.15.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.1...v0.15.2) (2019-06-04)
 
