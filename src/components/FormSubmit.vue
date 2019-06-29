@@ -85,18 +85,17 @@ export default {
   .step-form & {
     flex: 0 1 55%;
   }
-}
+  .submit {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    transition: all 0.25s ease-out;
 
-.submit {
-  cursor: pointer;
-  padding: 0.5em 1em;
-  font-size: inherit;
-  display: flex;
-  align-items: center;
-  transition: all 0.25s ease-out;
-
-  &:disabled {
-    cursor: not-allowed;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }
 </style>
