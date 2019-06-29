@@ -1,7 +1,7 @@
 <template>
   <form
     id="tlh-form"
-    class="example basic"
+    class="example step-form"
     @submit.prevent="handleFormSubmission"
   >
     <div class="stepsWrapper">

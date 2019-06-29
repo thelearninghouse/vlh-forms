@@ -1,5 +1,5 @@
 <template lang="html">
-  <form id="tlh-form" class="example" @submit.prevent="handleFormSubmission">
+  <form id="tlh-form" class="example step-form" @submit.prevent="handleFormSubmission">
     <div class="stepsWrapper">
       <step-form-progress />
       <step-form-progress
