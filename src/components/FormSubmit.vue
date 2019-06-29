@@ -80,7 +80,11 @@ export default {
 
 <style lang="scss">
 .form-submit {
-  flex: 0 1 55%;
+  flex: 1 1 100%;
+
+  .step-form & {
+    flex: 0 1 55%;
+  }
 }
 
 .submit {
