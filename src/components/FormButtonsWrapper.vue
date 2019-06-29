@@ -30,13 +30,10 @@ export default {
 
 <style scoped lang="scss">
 .form-buttons-wrapper {
+  flex: 1 1 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: baseline;
-
-  // Setting width: 100% allows buttons inside to be pushed to one side using `margin: auto;`
-  width: 100%;
-
+  align-items: flex-start;
   &.split-buttons {
     justify-content: space-between;
   }

@@ -72,14 +72,19 @@ export default {
 };
 </script>
 
-<style scoped>
-.previous-button-icon {
-  width: 0.8em;
-  height: 0.8em;
-  margin-right: 0.5em;
+<style lang="scss" scoped>
+.previous-button {
+  flex: 0 1 35%;
+  max-width: 140px;
 
-  margin-right: 0.4em;
-  position: relative;
-  left: -1px;
+  &-icon {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.5em;
+
+    margin-right: 0.4em;
+    position: relative;
+    left: -1px;
+  }
 }
 </style>
