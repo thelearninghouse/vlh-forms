@@ -20,6 +20,7 @@
     <form-phone v-model="submit.phone"/>
     <form-zip v-model="submit.zip"/>
 
+    <form-checkbox id="checkbox1" label="Checkbox 1" v-model="submit.checkboxValue"/>
     <form-submit text="Request Info"/>
     <form-legal-text/>
   </form>

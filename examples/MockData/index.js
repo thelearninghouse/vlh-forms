@@ -38,6 +38,7 @@ export const MockData = {
   isSubmitted: false,
 
   submit: {
+    checkboxValue: false,
     country: "United States of America",
     program: "",
     firstName: "",
