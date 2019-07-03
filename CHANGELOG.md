@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.3...v0.16.0) (2019-07-03)
+
+
+### Features
+
+* adds form-checkbox ([5aea39c](https://github.com/thelearninghouse/vlh-forms/commit/5aea39c))
+
+
+
 <a name="0.15.3"></a>
 ## [0.15.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.2...v0.15.3) (2019-06-29)
 
