@@ -1120,6 +1120,17 @@ $exports.store = store;
 
 /***/ }),
 
+/***/ "2b64":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCheckbox_vue_vue_type_style_index_0_id_7ca59fff_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("742b");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCheckbox_vue_vue_type_style_index_0_id_7ca59fff_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCheckbox_vue_vue_type_style_index_0_id_7ca59fff_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCheckbox_vue_vue_type_style_index_0_id_7ca59fff_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "2d00":
 /***/ (function(module, exports) {
 
@@ -2158,6 +2169,21 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "5fdf":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.form-item-checkbox[data-v-7ca59fff]{display:flex;align-items:center;flex:0 1 40%;justify-content:space-between;margin-left:0\n}\n.form-item-checkbox label[data-v-7ca59fff]{pointer-events:auto;cursor:pointer;display:block;flex:0 1 80%;margin-left:2%\n}\n.form-item-checkbox input[data-v-7ca59fff]{cursor:pointer;flex:0 1 15%;zoom:.55\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "613b":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2394,6 +2420,21 @@ exports.push([module.i, "\n.legal-text{color:inherit\n}\n.dark-color-theme .lega
 
 // exports
 
+
+/***/ }),
+
+/***/ "742b":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("5fdf");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("664251c9", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2921,6 +2962,104 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 module.exports = {};
 
+
+/***/ }),
+
+/***/ "8534":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e044d84a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormCheckbox.vue?vue&type=template&id=7ca59fff&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.formItemClasses, ("form-item-" + _vm.id), 'form-item-checkbox']},[_c('input',{attrs:{"id":_vm.id,"type":"checkbox","name":_vm.id},domProps:{"checked":_vm.checked},on:{"change":function($event){_vm.$emit('change', $event.target.checked)}}}),_c('label',{attrs:{"for":_vm.id},domProps:{"textContent":_vm._s(_vm.label)}})])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/FormCheckbox.vue?vue&type=template&id=7ca59fff&scoped=true&
+
+// EXTERNAL MODULE: ./src/mixins/BaseMixin.js
+var BaseMixin = __webpack_require__("f37c");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormCheckbox.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var FormCheckboxvue_type_script_lang_js_ = ({
+  mixins: [BaseMixin["a" /* default */]],
+  model: {
+    prop: "checked",
+    event: "change"
+  },
+  props: {
+    label: {
+      type: String,
+      default: ""
+    },
+    checked: {
+      type: Boolean
+    },
+    id: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    isChecked: function isChecked() {
+      return this.checked;
+    }
+  },
+  methods: {
+    onChange: function onChange() {
+      console.log("TCL: onChange -> onChange");
+      return this.$emit("change", !this.checked);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/FormCheckbox.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_FormCheckboxvue_type_script_lang_js_ = (FormCheckboxvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/FormCheckbox.vue?vue&type=style&index=0&id=7ca59fff&lang=scss&scoped=true&
+var FormCheckboxvue_type_style_index_0_id_7ca59fff_lang_scss_scoped_true_ = __webpack_require__("2b64");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/FormCheckbox.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_FormCheckboxvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "7ca59fff",
+  null
+  
+)
+
+component.options.__file = "FormCheckbox.vue"
+/* harmony default export */ var FormCheckbox = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -5857,6 +5996,7 @@ var map = {
 	"./BaseInput.vue": "b3b3",
 	"./BaseSelect.vue": "d291",
 	"./FormButtonsWrapper.vue": "469a",
+	"./FormCheckbox.vue": "8534",
 	"./FormCountrySelect.vue": "d94a",
 	"./FormEmail.vue": "d349",
 	"./FormFirstName.vue": "c2c9",
