@@ -1,3 +1,5 @@
+// USED FOR EXAMPLES
+
 import { programs, levels } from "./programsSample.js";
 import countries from "./countries.json";
 
@@ -5,8 +7,8 @@ export const MockData = {
   showQualifier: false,
   qualifierAnswer: "",
   qualifierProgram: {
-    campusId: "111",
-    onlineId: "7cf6c854-ec67-42d7-81eb-4556bc539800"
+    campusId: "1111-2222-3333",
+    onlineId: "678baf4c-d757-437c-b820-a61800e717c7"
   },
   // qualifierProgram: {
   //   campusId: "258665c9-56ae-4b30-a95b-e451e4cf7bfc",

@@ -16,7 +16,7 @@
     </div>
 
     <div class="holder" style="text-align: center;">
-      <div class="result">{{ submit.program }}</div>
+      <div class="result">{{ $root.submit.program }}</div>
     </div>
     <transition name="slide-fade" mode="out-in" appear>
       <h2 key="chooseExample" v-if="$route.path == '/'" class="currentExample">

@@ -10,6 +10,15 @@
       :options="programs"
     />
 
+  <form-select
+    id="qualifier"
+    v-if="$root.showQualifier"
+    label="Do you currently hold an active RN license?"
+    validation-name="License Question"
+    v-model="$root.qualifierAnswer"
+    :options="$root.qualifierOptions"
+  />
+
     <form-first-name v-model="submit.firstName"/>
     <form-last-name v-model="submit.lastName"/>
 
