@@ -7,8 +7,7 @@
     @before-leave="beforeLeave"
     @leave="leave"
   >
-  
-  <div :class="[formItemClasses, `form-item-${id}`]">
+    <div :class="[formItemClasses, `form-item-${id}`]">
       <label :for="id" v-text="label"></label>
       <div class="form-field-wrapper">
         <select
@@ -36,7 +35,7 @@
         </select>
       </div>
 
-      <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)"/>
+      <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)" />
     </div>
   </transition>
 </template>
@@ -112,18 +111,19 @@ export default {
 
   methods: {
     handleUpdatedQualifier(newIdValue) {
-      let programIndex = this.options.findIndex(this.findQualifierProgramIndex);
-      if (programIndex > -1) {
-        if (this.$refs["program"]) {
-          this.qualifierUpdate(programIndex, newIdValue);
-        }
-      }
-      this.$root.submit.program = newIdValue;
-    },
+      if (this.$refs["program"]) {
+        const programIndex = this.$root.programs.findIndex(
+          this.findQualifierProgramIndex
+        );
 
-    qualifierUpdate(programIndex, newIdValue) {
-      this.$set(this.options[programIndex], "id", newIdValue);
-      this.$emit("input", newIdValue);
+        this.$set(this.$root.programs[programIndex], "id", newIdValue);
+        this.$emit("input", newIdValue);
+      }
+
+      /**
+       * I believe below might be needed to handle `single-program` templates
+       */
+      this.$root.submit.program = newIdValue;
     },
 
     findQualifierProgramIndex(option) {
