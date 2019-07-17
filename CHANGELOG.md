@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.3"></a>
+## [0.16.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.0...v0.16.3) (2019-07-17)
+
+
+### Bug Fixes
+
+* fixes qualifier not working for OptGroups ([07034cf](https://github.com/thelearninghouse/vlh-forms/commit/07034cf))
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.15.3...v0.16.0) (2019-07-03)
 
