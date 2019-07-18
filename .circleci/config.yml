@@ -10,37 +10,32 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.15
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+      - run: echo 'build Job!'
 
-      - run: yarn install
+      # - run:
+      #     name: Trigger the Build Job
+      #     command: |
+      #       printf "Triggering an $PROJECT build on the $CIRCLE_BRANCH branch\n\n"
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: yarn build
-
-      - run: echo 'WORKED!'
+      #       BUILD_INFO=$(curl -X POST -H -d \
+      #           "{}" \
+      #           "https://circleci.com/api/v1.1/project/github/thelearninghouse/tlh-forms/tree/master?circle-token=$TLHFORMS_API_TOKEN")
 
 
+      #       printf "\n\nBuild triggered\n\n"
+      #       printf "Follow the progress of the build on \nhttps://circleci.com/gh/thelearninghouse/$tlh-forms/tree/master"
+
+  newrelease:
+    docker:
+      - image: circleci/node:10.15
+    steps:
+      - checkout
+
+      - run: echo 'newrelease Job!'
+      
       - run:
           name: Trigger the Build Job
           command: |
@@ -52,4 +47,17 @@ jobs:
 
 
             printf "\n\nBuild triggered\n\n"
-            printf "Follow the progress of the build on \nhttps://circleci.com/gh/thelearninghouse/$tlh-forms/tree/master"      
+            printf "Follow the progress of the build on \nhttps://circleci.com/gh/thelearninghouse/$tlh-forms/tree/master"
+
+
+workflows:
+  version: 2
+  untagged-build:
+    jobs:
+      - build
+  tagged-build:
+    jobs:
+      - newrelease:
+          filters:
+            tags:
+              only: /^v.*/
