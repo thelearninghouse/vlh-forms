@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.16.6",
+  "version": "0.16.7",
   "license": "MIT",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
@@ -29,7 +29,7 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "yarn build && git add dist && git commit -m 'chore: new build'",
+      "postbump": "npm run build && git add dist && git commit -m 'chore: new build'",
       "posttag": "git push --follow-tags"
     }
   },
