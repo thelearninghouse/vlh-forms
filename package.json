@@ -1,6 +1,7 @@
 {
   "name": "vlh-forms",
-  "version": "0.16.5",
+  "version": "0.16.6",
+  "license": "MIT",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
