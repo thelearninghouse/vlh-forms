@@ -1,9 +1,3 @@
-# STEPS
-
-# git checkout 
-
-# It'd be nice if it'd only run when tags exist
-
 
 version: 2
 jobs:
@@ -15,40 +9,19 @@ jobs:
 
       - run: echo 'build Job!'
 
-      # - run:
-      #     name: Trigger the Build Job
-      #     command: |
-      #       printf "Triggering an $PROJECT build on the $CIRCLE_BRANCH branch\n\n"
-
-      #       BUILD_INFO=$(curl -X POST -H -d \
-      #           "{}" \
-      #           "https://circleci.com/api/v1.1/project/github/thelearninghouse/tlh-forms/tree/master?circle-token=$TLHFORMS_API_TOKEN")
-
-
-      #       printf "\n\nBuild triggered\n\n"
-      #       printf "Follow the progress of the build on \nhttps://circleci.com/gh/thelearninghouse/$tlh-forms/tree/master"
-
   newrelease:
     docker:
       - image: circleci/node:10.15
     steps:
       - checkout
-
-      - run: echo 'newrelease Job!'
-      
       - run:
           name: Trigger the Build Job
           command: |
-            printf "Triggering an $PROJECT build on the $CIRCLE_BRANCH branch\n\n"
-
             BUILD_INFO=$(curl -X POST -H -d \
                 "{}" \
                 "https://circleci.com/api/v1.1/project/github/thelearninghouse/tlh-forms/tree/master?circle-token=$TLHFORMS_API_TOKEN")
 
-
             printf "\n\nBuild triggered\n\n"
-            printf "Follow the progress of the build on \nhttps://circleci.com/gh/thelearninghouse/$tlh-forms/tree/master"
-
 
 workflows:
   version: 2
