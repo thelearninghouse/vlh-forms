@@ -2,7 +2,7 @@
 
 # git checkout 
 
-
+# It'd be nice if it'd only run when tags exist
 
 
 version: 2
