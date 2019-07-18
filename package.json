@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.16.3",
+  "version": "0.16.4",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
     "url": "thelearninghouse/vlh-forms",
@@ -63,16 +63,6 @@
     "vue-template-compiler": "^2.5.17",
     "vuepress": "^1.0.0-alpha.30",
     "vuepress-plugin-component-docgen": "^0.0.2"
-  },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   },
   "main": "dist/vlh-forms.umd.js",
   "unpkg": "dist/vlh-forms.umd.min.js",
