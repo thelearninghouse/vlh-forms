@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.16.7",
+  "version": "0.16.8",
   "license": "MIT",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
@@ -23,14 +23,12 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "sh deploy-docs.sh",
     "docs:helper": "node scripts/vdocs.run.js",
-    "postbuild": "yarn build:helper",
-    "release": "standard-version",
+    "release": "standard-version && git push --follow-tags",
     "docs": "yarn docs:helper && yarn docs:build && yarn docs:deploy"
   },
   "standard-version": {
     "scripts": {
-      "postbump": "npm run build && git add dist && git commit -m 'chore: new build'",
-      "posttag": "git push --follow-tags"
+      "postbump": "npm run build && git add -A && git commit -m 'chore: new build'"
     }
   },
   "dependencies": {
