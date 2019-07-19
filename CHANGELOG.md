@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.11"></a>
+## [0.16.11](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.10...v0.16.11) (2019-07-19)
+
+
+
 <a name="0.16.10"></a>
 ## [0.16.10](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.9...v0.16.10) (2019-07-18)
 
