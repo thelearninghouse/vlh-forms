@@ -1,13 +1,13 @@
 <template>
   <!-- <div class="form-item form-item-checkbox"> -->
-    <div :class="[formItemClasses, `form-item-${id}`, 'form-item-checkbox']">
+  <div :class="[formItemClasses, `form-item-${id}`, 'form-item-checkbox']">
     <input
       :id="id"
       :checked="checked"
       type="checkbox"
       :name="id"
       @change="$emit('change', $event.target.checked)"
-    >
+    />
     <label :for="id" v-text="label"></label>
 
     <!-- <span class="checkmark"></span> -->

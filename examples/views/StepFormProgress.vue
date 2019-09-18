@@ -1,10 +1,12 @@
 <template lang="html">
-  <form id="tlh-form" class="example step-form" @submit.prevent="handleFormSubmission">
+  <form
+    id="tlh-form"
+    class="example step-form"
+    @submit.prevent="handleFormSubmission"
+  >
     <div class="stepsWrapper">
       <step-form-progress />
-      <step-form-progress
-        customProgress
-      >
+      <step-form-progress customProgress>
         <div slot="step1"><span>Step 1: Choose A Degree</span></div>
         <div slot="step2"><span>Step 2: Your Name</span></div>
         <div slot="step3"><span>Step 3: Contact Info</span></div>
@@ -12,22 +14,20 @@
 
       <transition name="slide-fade" mode="out-in" appear>
         <form-step v-if="$root.currentStep == 1" :key="1">
-          
           <form-select
             id="degreeLevel"
             v-model="selectedDegreeLevel"
             label="Select Degree Level"
             :options="levels"
           />
-            <form-select
-                id="program"
-                v-model="submit.program"
-                v-show="selectedDegreeLevel"
-                :label="selectedDegreeLevel + ' Programs'"
-                defaultText="Select a Program"
-                :options="programsForSelectedDegreeLevel"
-            />
-        
+          <form-select
+            id="program"
+            v-model="submit.program"
+            v-show="selectedDegreeLevel"
+            :label="selectedDegreeLevel + ' Programs'"
+            defaultText="Select a Program"
+            :options="programsForSelectedDegreeLevel"
+          />
         </form-step>
 
         <form-step v-if="$root.currentStep == 2" :key="2">
