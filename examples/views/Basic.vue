@@ -1,45 +1,47 @@
 <template>
-  <form
-    id="tlh-form"
-    class="requestinfo"
-    @submit.prevent="handleFormSubmission"
-  >
-    <pre>{{ usCitizen }}</pre>
+  <div>
+    <form
+      id="tlh-form"
+      class="requestinfo"
+      @submit.prevent="handleFormSubmission"
+    >
+      <button @click="$delayedAlert(3000)">Test Promise</button>
+      <pre>{{ usCitizen }}</pre>
+      <form-select
+        id="program"
+        label="Select a Program"
+        v-model="submit.program"
+        :options="programs"
+      />
 
-    <form-select
-      id="program"
-      label="Select a Program"
-      v-model="submit.program"
-      :options="programs"
-    />
+      <form-select
+        id="qualifier"
+        v-if="$root.showQualifier"
+        label="Do you currently hold an active RN license?"
+        validation-name="License Question"
+        v-model="$root.qualifierAnswer"
+        :options="$root.qualifierOptions"
+      />
 
-    <form-select
-      id="qualifier"
-      v-if="$root.showQualifier"
-      label="Do you currently hold an active RN license?"
-      validation-name="License Question"
-      v-model="$root.qualifierAnswer"
-      :options="$root.qualifierOptions"
-    />
+      <form-first-name v-model="submit.firstName" />
+      <form-last-name v-model="submit.lastName" />
 
-    <form-first-name v-model="submit.firstName" />
-    <form-last-name v-model="submit.lastName" />
+      <form-email v-model="submit.email" />
 
-    <form-email v-model="submit.email" />
+      <form-country-select v-model="submit.country" />
 
-    <form-country-select v-model="submit.country" />
+      <form-phone v-model="submit.phone" />
+      <form-zip v-model="submit.zip" />
 
-    <form-phone v-model="submit.phone" />
-    <form-zip v-model="submit.zip" />
-
-    <form-checkbox
-      id="checkbox1"
-      label="Checkbox 1"
-      v-model="submit.checkboxValue"
-    />
-    <form-submit text="Request Info" />
-    <form-legal-text />
-  </form>
+      <form-checkbox
+        id="checkbox1"
+        label="Checkbox 1"
+        v-model="submit.checkboxValue"
+      />
+      <form-submit text="Request Info" />
+      <form-legal-text />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -52,6 +54,18 @@ export default {
     });
   },
   methods: {
+    testDelay(ms) {
+      // return this.delayMethod(ms).then(alert("WORKS FROM METHOD"));
+      this.delayMethod(ms).then(() => {
+        alert("delay method");
+      });
+    },
+
+    delayMethod(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
+      });
+    },
     onFocus(formField) {
       console.log("focus: ", formField);
     },

@@ -15,6 +15,19 @@ const VlhForms = {
 
       Vue.component(componentName, componentConfig.default || componentConfig);
     });
+
+    Vue.prototype.$delay = function(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
+      });
+    };
+
+    Vue.prototype.$delayedAlert = function(ms) {
+      this.$delay(ms).then(() => {
+        alert("delayedAlert");
+      });
+      // return this.$delay(ms).then(alert("DELAY FINISHED"));
+    };
     // Add to Vue properties by exposing a getter for $bus
     var EventBus = new Vue();
     Object.defineProperties(Vue.prototype, {
