@@ -6,9 +6,13 @@
   >
     <div class="stepsWrapper">
       <step-form-progress />
-      <transition name="slide-fade" mode="out-in" appear @after-enter="handleFormStepTransition">
-        <form-step v-if="$root.currentStep == 1" :key="1" >
-
+      <transition
+        name="slide-fade"
+        mode="out-in"
+        appear
+        @after-enter="handleFormStepTransition"
+      >
+        <form-step v-if="$root.currentStep == 1" :key="1">
           <form-select
             id="program"
             :options="programs"
@@ -18,30 +22,28 @@
           <!-- <form-first-name v-model="submit.firstName" />
           <form-last-name v-model="submit.lastName" />    
           <form-email v-model="submit.email" validation="required|email"/> -->
-          
+
           <form-buttons-wrapper>
-            <next-step-button text="Continue" @next-step="handleNextStep"/>
-          </form-buttons-wrapper>                
+            <next-step-button text="Continue" @next-step="handleNextStep" />
+          </form-buttons-wrapper>
         </form-step>
-        
-        <form-step v-if="$root.currentStep == 2" :key="2" >
+
+        <form-step v-if="$root.currentStep == 2" :key="2">
           <form-country-select v-model="submit.country" />
-        
-          <form-phone v-model="submit.phone" validation="required"/>
+
+          <form-phone v-model="submit.phone" validation="required" />
           <form-zip v-model="submit.zip" />
-  
+
           <form-buttons-wrapper>
             <previous-step-button text="Go Back" />
-            <form-submit text="Submit Text"/>    
+            <form-submit text="Submit Text" />
           </form-buttons-wrapper>
 
-          <form-legal-text/>
+          <form-legal-text />
         </form-step>
-
       </transition>
     </div>
   </form>
-
 </template>
 
 <script>
