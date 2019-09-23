@@ -37,14 +37,8 @@
   .help {
     font-size: 0.9em;
 
-    &.invalid {
-    }
-  }
-  // TEMPORARY
-  label {
-    text-transform: capitalize;
-  }
 
+  }
   .input,
   .select {
     position: relative;
