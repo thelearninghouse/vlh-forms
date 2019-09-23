@@ -153,6 +153,11 @@ export default {
     &::-ms-expand {
       display: none;
     }
+
+    // NOTE: POSSIBLE FIX FOR WORD WRAPPING FOR LONG TEXT
+    // white-space: normal;
+    // line-height: 1.2;
+    // height: 100%;
   }
   label {
     display: block;
