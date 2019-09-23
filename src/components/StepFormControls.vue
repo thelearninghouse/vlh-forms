@@ -3,11 +3,10 @@
     <button
       class="previous-button"
       v-if="currentFormStep > 1"
-      @click.stop.prevent="$emit('previous-step');"
-      @keydown.enter.stop.prevent="$emit('previous-step');"
+      @click.stop.prevent="$emit('previous-step')"
+      @keydown.enter.stop.prevent="$emit('previous-step')"
       v-text="previousBtnText"
-    >
-    </button>
+    ></button>
     <button
       class="next-button"
       v-if="currentFormStep < totalFormSteps"
@@ -15,10 +14,7 @@
       @keydown.enter.stop.prevent="nextStep($event)"
       v-text="nextBtnText"
     ></button>
-    <form-submit
-      v-if="showFormSubmit"
-      :text="submitBtnText"
-    />
+    <form-submit v-if="showFormSubmit" :text="submitBtnText" />
     <slot />
   </div>
 </template>
