@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.14-next.3"></a>
+## [0.16.14-next.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.14-next.2...v0.16.14-next.3) (2019-09-23)
+
+
+### Bug Fixes
+
+* **styles:** fixes possible mobile zoom issue ([a966aac](https://github.com/thelearninghouse/vlh-forms/commit/a966aac))
+
+
+
 <a name="0.16.14-next.2"></a>
 ## [0.16.14-next.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.14-next.1...v0.16.14-next.2) (2019-09-23)
 
