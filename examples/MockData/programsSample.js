@@ -56,7 +56,7 @@ var programs = [
     name: "Bachelor of Arts in Health Care Administration (Online)",
     display_name: "B.A. in Health Care Administration",
     degree_level: "Bachelor",
-    modality: "Fully Online",
+    modality: "On Campus",
     status: "Active",
     marketing_active: true,
     elc: true,

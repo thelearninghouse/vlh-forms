@@ -18,14 +18,18 @@
         :autocomplete="autocomplete"
         :pattern="pattern"
         @keydown.enter="enterToTab"
-      >
+      />
       <form-help-icon
         :id="helpIconId"
         :class="{ invalid: errors.has(id), valid: fieldValidity }"
         :icon="currentIcon"
       />
     </div>
-    <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)"/>
+    <form-help
+      :id="helpTextId"
+      :visible="errors.has(id)"
+      :helpText="errors.first(id)"
+    />
   </div>
 </template>
 
