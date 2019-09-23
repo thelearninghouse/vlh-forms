@@ -24,18 +24,28 @@
           :aria-describedby="helpTextId"
           @keydown.enter.prevent
         >
-          <option class="select-default-option" key="initial" value v-text="defaultText"></option>
+          <option
+            class="select-default-option"
+            key="initial"
+            value
+            v-text="defaultText"
+          ></option>
           <option
             v-for="(option, index) in options"
             :selected="option.id === value"
             :value="option.id"
             :key="index"
             :id="option.id"
-          >{{ option.name }}</option>
+            >{{ option.name }}</option
+          >
         </select>
       </div>
 
-      <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)" />
+      <form-help
+        :id="helpTextId"
+        :visible="errors.has(id)"
+        :helpText="errors.first(id)"
+      />
     </div>
   </transition>
 </template>
@@ -139,6 +149,10 @@ export default {
     cursor: pointer;
     word-wrap: break-word; /* old name */
     overflow-wrap: break-word;
+
+    &::-ms-expand {
+      display: none;
+    }
   }
   label {
     display: block;
