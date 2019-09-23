@@ -1662,7 +1662,7 @@ var VlhForms = {
 
     Vue.prototype.$delayedAlert = function (ms) {
       this.$delay(ms).then(function () {
-        alert("Delayed Alert W/Promise");
+        alert("Delayed Alert W/Promise - Updated");
       });
     };
 
