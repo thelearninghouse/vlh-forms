@@ -24,21 +24,34 @@
           :aria-describedby="helpTextId"
           @keydown.enter.prevent
         >
-          <option class="select-default-option" key="initial" value v-text="defaultText"></option>
-          <optgroup v-for="group in optionGroups" :label="group.label" :key="group.label">
+          <option
+            class="select-default-option"
+            key="initial"
+            value
+            v-text="defaultText"
+          ></option>
+          <optgroup
+            v-for="group in groups"
+            :label="group.label"
+            :key="group.label"
+          >
             <option
               v-for="(option, index) in group.programs"
               :selected="option.id === value"
               :value="option.id"
               :key="index"
               :id="option.id"
-            >{{ option.name }}
-            </option>                  
+              >{{ option.name }}
+            </option>
           </optgroup>
         </select>
       </div>
 
-      <form-help :id="helpTextId" :visible="errors.has(id)" :helpText="errors.first(id)"/>
+      <form-help
+        :id="helpTextId"
+        :visible="errors.has(id)"
+        :helpText="errors.first(id)"
+      />
     </div>
   </transition>
 </template>
@@ -51,6 +64,12 @@ export default {
   // name: "FormSelectOptgroups",
   props: {
     optionGroups: Array
+  },
+
+  computed: {
+    groups() {
+      return this.optionGroups.filter(group => group.programs.length);
+    }
   }
 };
 </script>
