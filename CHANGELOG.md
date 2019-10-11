@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.17.0"></a>
+# [0.17.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.17...v0.17.0) (2019-10-11)
+
+
+### Features
+
+* **FormSelectOptgroup:** checks for empty groups ([5f2514d](https://github.com/thelearninghouse/vlh-forms/commit/5f2514d))
+
+
+
 <a name="0.16.17"></a>
 ## [0.16.17](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.16...v0.16.17) (2019-09-23)
 
