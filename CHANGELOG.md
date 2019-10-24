@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.17.1"></a>
+## [0.17.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.17.0...v0.17.1) (2019-10-24)
+
+
+### Bug Fixes
+
+* **optgroups:** switchs to `options` prop ([6080a73](https://github.com/thelearninghouse/vlh-forms/commit/6080a73))
+
+
+
 <a name="0.17.0"></a>
 # [0.17.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.16.17...v0.17.0) (2019-10-11)
 
