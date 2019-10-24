@@ -36,7 +36,7 @@
             :key="group.label"
           >
             <option
-              v-for="(option, index) in group.programs"
+              v-for="(option, index) in group.options"
               :selected="option.id === value"
               :value="option.id"
               :key="index"
@@ -61,14 +61,13 @@ import BaseSelect from "./BaseSelect.vue";
 
 export default {
   extends: BaseSelect,
-  // name: "FormSelectOptgroups",
   props: {
     optionGroups: Array
   },
 
   computed: {
     groups() {
-      return this.optionGroups.filter(group => group.programs.length);
+      return this.optionGroups.filter(group => group.options.length);
     }
   }
 };
