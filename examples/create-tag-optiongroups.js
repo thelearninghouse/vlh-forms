@@ -143,5 +143,9 @@ function createProgramsGroupsArray() {
       programs: programsForTag
     });
   });
+  programsGroups.push({
+    labeL: "No Progarms Tag",
+    programs: []
+  });
   return programsGroups;
 }

@@ -1677,17 +1677,25 @@ var VlhForms = {
     });
 
     Vue.prototype.$delay = function (ms) {
-      return new Promise(function (resolve, reject) {
+      return new Promise(function (resolve) {
         setTimeout(resolve, ms);
       });
     };
 
+    Vue.prototype.$campusPrograms = function () {
+      if (!this.$root.programs) return [];else {
+        var programs = this.$root.programs.filter(function (program) {
+          return program.modality === "On Campus";
+        });
+        return programs.sort(this.compareProgramNames);
+      }
+    };
+
     Vue.prototype.$delayedAlert = function (ms) {
       this.$delay(ms).then(function () {
-        alert("delayedAlert");
-      }); // return this.$delay(ms).then(alert("DELAY FINISHED"));
-    }; // Add to Vue properties by exposing a getter for $bus
-
+        alert("Delayed Alert W/Promise - Updated2");
+      });
+    };
 
     var EventBus = new Vue();
     Object.defineProperties(Vue.prototype, {
@@ -2928,6 +2936,37 @@ var store = global[SHARED] || (global[SHARED] = {});
 
 /***/ }),
 
+/***/ "55dd":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $export = __webpack_require__("5ca1");
+var aFunction = __webpack_require__("d8e8");
+var toObject = __webpack_require__("4bf8");
+var fails = __webpack_require__("79e5");
+var $sort = [].sort;
+var test = [1, 2, 3];
+
+$export($export.P + $export.F * (fails(function () {
+  // IE8-
+  test.sort(undefined);
+}) || !fails(function () {
+  // V8 bug
+  test.sort(null);
+  // Old WebKit
+}) || !__webpack_require__("2f21")($sort)), 'Array', {
+  // 22.1.3.25 Array.prototype.sort(comparefn)
+  sort: function sort(comparefn) {
+    return comparefn === undefined
+      ? $sort.call(toObject(this))
+      : $sort.call(toObject(this), aFunction(comparefn));
+  }
+});
+
+
+/***/ }),
+
 /***/ "57e7":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3727,6 +3766,20 @@ var staticRenderFns = []
 var BaseSelect = __webpack_require__("d291");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormSelectOptgroup.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3788,9 +3841,15 @@ var BaseSelect = __webpack_require__("d291");
 
 /* harmony default export */ var FormSelectOptgroupvue_type_script_lang_js_ = ({
   extends: BaseSelect["default"],
-  // name: "FormSelectOptgroups",
   props: {
     optionGroups: Array
+  },
+  computed: {
+    groups: function groups() {
+      return this.optionGroups.filter(function (group) {
+        return group.options.length;
+      });
+    }
   }
 });
 // CONCATENATED MODULE: ./src/components/FormSelectOptgroup.vue?vue&type=script&lang=js&

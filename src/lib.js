@@ -19,18 +19,27 @@ const VlhForms = {
     });
 
     Vue.prototype.$delay = function(ms) {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         setTimeout(resolve, ms);
       });
     };
 
+    Vue.prototype.$campusPrograms = function() {
+      if (!this.$root.programs) return [];
+      else {
+        let programs = this.$root.programs.filter(
+          program => program.modality === "On Campus"
+        );
+        return programs.sort(this.compareProgramNames);
+      }
+    };
+
     Vue.prototype.$delayedAlert = function(ms) {
       this.$delay(ms).then(() => {
-        alert("delayedAlert");
+        alert("Delayed Alert W/Promise - Updated2");
       });
-      // return this.$delay(ms).then(alert("DELAY FINISHED"));
     };
-    // Add to Vue properties by exposing a getter for $bus
+
     var EventBus = new Vue();
     Object.defineProperties(Vue.prototype, {
       $bus: {

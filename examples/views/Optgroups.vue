@@ -67,6 +67,11 @@ export default {
           programs: programsForTag
         });
       });
+
+      programsGroups.push({
+        label: "Tag 3 - Empty Test",
+        programs: []
+      });
       return programsGroups;
     }
   }
