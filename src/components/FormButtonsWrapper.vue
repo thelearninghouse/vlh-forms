@@ -1,7 +1,7 @@
 <template>
-    <div :class="buttonsWrapperClasses">
-        <slot/>
-    </div>
+  <div :class="buttonsWrapperClasses">
+    <slot />
+  </div>
 </template>
 
 <script>

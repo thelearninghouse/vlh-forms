@@ -6,7 +6,7 @@
     @keydown.enter.stop.prevent="nextStep"
   >
     <span class="next-button-text" v-html="text"></span>
-    <RightArrow class="next-button-icon"/>
+    <RightArrow class="next-button-icon" />
   </button>
 </template>
 

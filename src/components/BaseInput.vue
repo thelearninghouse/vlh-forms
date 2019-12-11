@@ -3,7 +3,7 @@
     <label :for="id" v-text="label"></label>
     <div class="form-field-wrapper">
       <input
-        :id="id"
+        :id="inputId"
         :ref="id"
         :value="value"
         :type="type"
@@ -86,6 +86,10 @@ export default {
   computed: {
     inputName() {
       return this.$attrs.name || this.id;
+    },
+
+    inputId() {
+      return this.$id(this.id);
     },
 
     inputClasses() {

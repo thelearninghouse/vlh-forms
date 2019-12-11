@@ -7,13 +7,12 @@
       :class="{
         currentStep: currentFormStep == index + 1,
         completedStep: currentFormStep > index + 1,
-        'default-style': customProgress !== true}"
+        'default-style': customProgress !== true
+      }"
     >
-
       <slot :name="'step' + (index + 1)">
         <span v-text="'Step ' + (index + 1)"></span>
       </slot>
-
     </div>
   </div>
 </template>
