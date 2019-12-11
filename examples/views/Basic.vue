@@ -5,11 +5,6 @@
       class="requestinfo"
       @submit.prevent="handleFormSubmission"
     >
-      <label :for="$id('field1')">Field 1</label>
-      <input :id="$id('field1')" type="text" />
-
-      <label :for="$id('field2')">Field 2</label>
-      <input :id="$id('field2')" type="text" />
       <!-- <button @click="$delayedAlert(3000)">Test Promise</button> -->
       <pre>{{ usCitizen }}</pre>
       <form-select
