@@ -11,7 +11,7 @@
       <label :for="id" v-text="label"></label>
       <div class="form-field-wrapper">
         <select
-          :id="id"
+          :id="selectId"
           :ref="id"
           :value="value"
           v-bind="$attrs"
@@ -83,6 +83,10 @@ export default {
   computed: {
     selectName() {
       return this.$attrs.name || this.id;
+    },
+
+    selectId() {
+      return this.$id(this.id);
     },
 
     selectClasses() {
