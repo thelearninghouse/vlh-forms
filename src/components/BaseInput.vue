@@ -1,6 +1,6 @@
 <template>
   <div :class="[formItemClasses, `form-item-${id}`]">
-    <label :for="id" v-text="label"></label>
+    <label :for="inputId" v-text="label"></label>
     <div class="form-field-wrapper">
       <input
         :id="inputId"
