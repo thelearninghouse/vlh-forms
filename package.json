@@ -33,7 +33,8 @@
     }
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-unique-id": "^2.0.0"
   },
   "devDependencies": {
     "@droyer/vdocs": "^0.0.5",

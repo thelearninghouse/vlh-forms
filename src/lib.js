@@ -1,9 +1,11 @@
+import Vue from "vue";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 import "./assets/styles/vlh-forms.scss";
 
 const VlhFormComponents = require.context("./components", true, /.vue$/);
-
+import UniqueId from "vue-unique-id";
+Vue.use(UniqueId);
 const VlhForms = {
   install: function(Vue, options) {
     VlhFormComponents.keys().forEach(fileName => {
