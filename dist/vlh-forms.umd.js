@@ -3472,6 +3472,52 @@ exports.push([module.i, ".legal-text{color:inherit}.dark-color-theme .legal-text
 
 /***/ }),
 
+/***/ "7333":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var DESCRIPTORS = __webpack_require__("9e1e");
+var getKeys = __webpack_require__("0d58");
+var gOPS = __webpack_require__("2621");
+var pIE = __webpack_require__("52a7");
+var toObject = __webpack_require__("4bf8");
+var IObject = __webpack_require__("626a");
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__("79e5")(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) { B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || isEnum.call(S, key)) T[key] = S[key];
+    }
+  } return T;
+} : $assign;
+
+
+/***/ }),
+
 /***/ "7559":
 /***/ (function(module, exports) {
 
@@ -4933,6 +4979,13 @@ module.exports = navigator && navigator.userAgent || '';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f751");
+/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es6_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("58b2");
+/* harmony import */ var core_js_modules_es6_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
 /**
  * vue-unique-id v2.0.0
  * (c) 2019 Bertrand Guay-Paquet
@@ -4947,9 +5000,8 @@ var methods = {
    * @param {string} id id to scope
    */
   $id: function $id(id) {
-    if ( id === void 0 ) id = '';
-
-    return ((this.uid) + "-" + id);
+    if (id === void 0) id = '';
+    return this.uid + "-" + id;
   },
 
   /**
@@ -4961,8 +5013,8 @@ var methods = {
    * @param {string} id id to scope
    */
   $idRef: function $idRef(id) {
-    return ("#" + (this.$id(id)));
-  },
+    return "#" + this.$id(id);
+  }
 };
 
 function install(Vue) {
@@ -4973,16 +5025,18 @@ function install(Vue) {
       uidCounter += 1;
       var uid = "uid-" + uidCounter;
       Object.defineProperties(this, {
-        uid: { get: function get() { return uid; } },
+        uid: {
+          get: function get() {
+            return uid;
+          }
+        }
       });
-    },
+    }
   });
-
   Object.assign(Vue.prototype, methods);
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (install);
-
 
 /***/ }),
 
@@ -8279,6 +8333,17 @@ module.exports = function (it, Constructor, name, forbiddenField) {
     });
   }
 })(document);
+
+
+/***/ }),
+
+/***/ "f751":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__("5ca1");
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__("7333") });
 
 
 /***/ }),
