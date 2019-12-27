@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.18.1-next.0"></a>
+## [0.18.1-next.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.0...v0.18.1-next.0) (2019-12-27)
+
+
+### Bug Fixes
+
+* **ie:** fixes ie11 error ([2a60b17](https://github.com/thelearninghouse/vlh-forms/commit/2a60b17))
+
+
+
 <a name="0.18.0"></a>
 # [0.18.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.0-next.0...v0.18.0) (2019-12-19)
 
