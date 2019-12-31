@@ -1,6 +1,6 @@
 {
   "name": "vlh-forms",
-  "version": "0.18.1-next.0",
+  "version": "0.18.1",
   "license": "MIT",
   "description": "Forms Plugin for Learning House's new form system",
   "repository": {
