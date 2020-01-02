@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.18.2"></a>
+## [0.18.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.1...v0.18.2) (2020-01-02)
+
+
+### Bug Fixes
+
+* **select:** fixes white-space issue ([660bd42](https://github.com/thelearninghouse/vlh-forms/commit/660bd42))
+
+
+
 <a name="0.18.1"></a>
 ## [0.18.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.1-next.0...v0.18.1) (2019-12-31)
 
