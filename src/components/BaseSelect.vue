@@ -159,7 +159,7 @@ export default {
     }
 
     // NOTE: POSSIBLE FIX FOR WORD WRAPPING FOR LONG TEXT
-    // white-space: normal;
+    white-space: normal;
     // line-height: 1.2;
     // height: 100%;
   }
