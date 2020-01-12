@@ -58,6 +58,10 @@ button {
 }
 
 #tlh-form {
+
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   .form-submit {
     &-spinner {
       border-top-color: white;

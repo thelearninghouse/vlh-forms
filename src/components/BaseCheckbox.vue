@@ -1,16 +1,14 @@
 <template>
-  <!-- <div class="form-item form-item-checkbox"> -->
   <div :class="[formItemClasses, `form-item-${id}`, 'form-item-checkbox']">
     <input
-      :id="id"
+      :id="inputId"
+      :ref="id"
       :checked="checked"
       type="checkbox"
       :name="id"
       @change="$emit('change', $event.target.checked)"
     />
-    <label :for="id" v-text="label"></label>
-
-    <!-- <span class="checkmark"></span> -->
+    <label :for="inputId" v-html="labelContent"></label>
   </div>
 </template>
 
@@ -36,13 +34,24 @@ export default {
     }
   },
   computed: {
+    labelContent() {
+      return this.label;
+    },
+
+    // inputName() {
+    //   return this.$attrs.name || this.id;
+    // },
+
+    inputId() {
+      return this.$id(this.id);
+    },
+
     isChecked() {
       return this.checked;
     }
   },
   methods: {
     onChange() {
-      console.log("TCL: onChange -> onChange");
       return this.$emit("change", !this.checked);
     }
   }
@@ -51,22 +60,5 @@ export default {
 
 <style lang="scss" scoped>
 .form-item-checkbox {
-  display: flex;
-  align-items: center;
-  // flex: 0 1 40%;
-  justify-content: space-between;
-  margin-left: 0;
-  label {
-    pointer-events: auto;
-    cursor: pointer;
-    display: block;
-    flex: 0 1 80%;
-    margin-left: 2%;
-  }
-  input {
-    cursor: pointer;
-    flex: 0 1 15%;
-    zoom: 0.55;
-  }
 }
 </style>

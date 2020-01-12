@@ -33,10 +33,4 @@ export default {
   z-index: 999;
   transform: translateY(-50%);
 }
-
-// .valid {
-//   & + .form-help-icon {
-//     // display: none;
-//   }
-// }
 </style>

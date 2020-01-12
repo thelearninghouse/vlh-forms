@@ -36,8 +36,6 @@
 
   .help {
     font-size: 0.9em;
-
-
   }
   .input,
   .select {
@@ -55,17 +53,58 @@
   }
 
   select {
-    padding: .6em .8em .25em .8em;
-    min-height: 45px;    
+    padding: 0.6em 0.8em 0.25em 0.8em;
+    min-height: 45px;
     padding-right: 40px !important;
-    background-image: url("../images/select-arrow.png");
+    background-image: url('../images/select-arrow.png');
     -webkit-appearance: none;
     background-size: 40px;
     background-position: 99.5%;
     background-repeat: no-repeat;
+  }
 
-    &.invalid {
-      // background-image: none;
+  &-checkbox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 0;
+
+    label {
+      pointer-events: auto;
+      cursor: pointer;
+      display: block;
+      flex: 0 1 92%;
+      margin-left: 2%;
+      font-size: 15px;
+
+      .label-title {
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+    }
+
+    input {
+      cursor: pointer;
+      flex: 0 1 15%;
+      // zoom: 0.45;
+
+      // NEW
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      min-height: 0px;
+      -webkit-appearance: none;
+      padding: 0;
+      margin-top: 5px !important;
+
+      &[type='checkbox']:checked {
+        background-size: 0.875rem 0.875rem;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-image: url('~@/assets/images/checked.png');
+      }
     }
   }
 }

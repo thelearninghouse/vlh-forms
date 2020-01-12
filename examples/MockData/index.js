@@ -30,7 +30,7 @@ export const MockData = {
   selectedDegreeLevel: "",
   formItemsTransition: "vertical-slide",
   programSelectionTranstion: "vertical-slide",
-  schoolDisplayName: "School University Name Here",
+  schoolDisplayName: "University of West Somewhere",
   levels: levels,
   testModel: "some text",
   currentStep: 1,
@@ -40,6 +40,8 @@ export const MockData = {
   isSubmitted: false,
 
   submit: {
+    checkbox1: false,
+    checkbox2: false,
     checkboxValue: false,
     country: "United States of America",
     program: "",

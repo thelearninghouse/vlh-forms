@@ -6,7 +6,6 @@
       @submit.prevent="handleFormSubmission"
     >
       <!-- <button @click="$delayedAlert(3000)">Test Promise</button> -->
-      <pre>{{ usCitizen }}</pre>
       <form-select
         id="program"
         label="Select a Program"
@@ -33,12 +32,9 @@
       <form-phone v-model="submit.phone" />
       <form-zip v-model="submit.zip" />
 
-      <form-checkbox
-        id="checkbox1"
-        label="Checkbox 1"
-        v-model="submit.checkboxValue"
-      />
-      <form-submit text="Request Info" />
+      <form-appointment-checkbox v-model="submit.checkbox1" />
+      <form-sms-checkbox v-model="submit.checkboxValue" />
+      <form-submit />
       <form-legal-text />
     </form>
   </div>
