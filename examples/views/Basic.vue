@@ -33,7 +33,7 @@
       <form-zip v-model="submit.zip" />
 
       <form-appointment-checkbox v-model="submit.checkbox1" />
-      <form-sms-checkbox v-model="submit.checkboxValue" />
+      <form-sms-checkbox help-code="999" v-model="submit.checkboxValue" />
       <form-submit />
       <form-legal-text />
     </form>

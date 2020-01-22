@@ -6,8 +6,9 @@ import "./assets/styles/vlh-forms.scss";
 const VlhFormComponents = require.context("./components", true, /.vue$/);
 import UniqueId from "vue-unique-id";
 Vue.use(UniqueId);
+
 const VlhForms = {
-  install: function(Vue, options) {
+  install: function(Vue) {
     VlhFormComponents.keys().forEach(fileName => {
       const componentConfig = VlhFormComponents(fileName);
 
@@ -54,6 +55,7 @@ const VlhForms = {
 let GlobalVue = null;
 if (typeof window !== "undefined") {
   GlobalVue = window.Vue;
+  window.loadAdditionalForm = loadAdditionalForm;
 } else if (typeof global !== "undefined") {
   GlobalVue = global.Vue;
 }
@@ -65,4 +67,18 @@ if (GlobalVue) {
   }
 }
 
+function loadAdditionalForm(newFormId, newFormTemplate) {
+  var tlhFormScript = document.getElementById("tlh-form-script");
+  var tlhFormSrc = tlhFormScript.getAttribute("src");
+  var newScript = document.createElement("script");
+
+  if (newFormTemplate !== undefined) {
+    var newFormSrc = tlhFormSrc.replace(window.formTemplate, newFormTemplate);
+    newScript.src = newFormSrc + "&formid=" + newFormId;
+  } else {
+    newScript.src = tlhFormSrc + "&formid=" + newFormId;
+  }
+
+  document.body.appendChild(newScript);
+}
 export default VlhForms;
