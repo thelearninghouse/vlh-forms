@@ -15,7 +15,7 @@ export default {
     },
     label: {
       default: `
-       <span class="label-title">Yes! I'd like to schedule an appointment with a admissions counselor.</span>If this option is not selected, an admission specialist will still contact you at a time of their choosing.`
+       <span class="label-title">Schedule An Appointment</span>Yes! I'd like to schedule an appointment with a admissions counselor. If this option is not selected, an admission specialist will still contact you at a time of their choosing.`
     }
   }
 };
