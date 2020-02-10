@@ -32,7 +32,7 @@
       <form-phone v-model="submit.phone" />
       <form-zip v-model="submit.zip" />
 
-      <form-appointment-checkbox v-model="appointmentCheckbox" />
+      <form-appointment-checkbox v-model="$root.appointmentCheckbox" />
       <form-sms-checkbox help-code="999" v-model="submit.okToText" />
       <form-submit />
       <form-legal-text />
