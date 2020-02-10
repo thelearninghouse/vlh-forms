@@ -17,6 +17,16 @@ export default {
       default: `
        <span class="label-title">Schedule An Appointment</span>Yes! I'd like to schedule an appointment with a admissions counselor. If this option is not selected, an admission specialist will still contact you at a time of their choosing.`
     }
+  },
+
+  watch: {
+    checked(val) {
+      if (val === true) {
+        this.$root.submit.webSchedulerStatus = "New";
+      } else {
+        this.$root.submit.webSchedulerStatus = "null";
+      }
+    }
   }
 };
 </script>
