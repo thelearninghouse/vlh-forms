@@ -38,10 +38,6 @@ export default {
       return this.label;
     },
 
-    // inputName() {
-    //   return this.$attrs.name || this.id;
-    // },
-
     inputId() {
       return this.$id(this.id);
     },
@@ -49,16 +45,6 @@ export default {
     isChecked() {
       return this.checked;
     }
-  },
-  methods: {
-    onChange() {
-      return this.$emit("change", !this.checked);
-    }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.form-item-checkbox {
-}
-</style>
