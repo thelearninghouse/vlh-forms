@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.19.0"></a>
+# [0.19.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.2...v0.19.0) (2020-02-10)
+
+
+### Bug Fixes
+
+* fixes new checkbox fields styles ([71bfa6f](https://github.com/thelearninghouse/vlh-forms/commit/71bfa6f))
+* sets `submit` value ([e867079](https://github.com/thelearninghouse/vlh-forms/commit/e867079))
+
+
+### Features
+
+* adds props to sms field ([92deffe](https://github.com/thelearninghouse/vlh-forms/commit/92deffe))
+* **checkboxes:** adds initial checkboxes refactor ([a3a9a54](https://github.com/thelearninghouse/vlh-forms/commit/a3a9a54))
+
+
+
 <a name="0.18.2"></a>
 ## [0.18.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.18.1...v0.18.2) (2020-01-02)
 
