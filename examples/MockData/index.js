@@ -38,9 +38,10 @@ export const MockData = {
   stepDirection: "positive",
   isSubmitting: false,
   isSubmitted: false,
-
+  appointmentCheckbox: false,
   submit: {
-    checkbox1: false,
+    okToText: false,
+    webSchedulerStatus: "null",
     checkbox2: false,
     checkboxValue: false,
     country: "United States of America",
