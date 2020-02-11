@@ -48,3 +48,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.form-item-checkbox {
+  input {
+    border: 1px solid grey;
+  }
+}
+</style>
