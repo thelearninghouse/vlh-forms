@@ -53,6 +53,18 @@ export default {
     validation: {
       type: String,
       default: "required"
+    },
+
+    /**
+     * Allows field to be optional.
+     *
+     * ```vue
+     * <form-zip v-model="submit.zip" optional />
+     * ```
+     */
+    optional: {
+      type: Boolean,
+      default: false
     }
   },
 

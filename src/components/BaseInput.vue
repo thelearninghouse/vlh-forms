@@ -55,18 +55,6 @@ export default {
       default: "text"
     },
 
-    /**
-     * Allows field to be optional.
-     *
-     * ```vue
-     * <form-zip v-model="submit.zip" optional />
-     * ```
-     */
-    optional: {
-      type: Boolean,
-      default: false
-    },
-
     autocomplete: {
       type: String
     },

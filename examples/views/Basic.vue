@@ -32,10 +32,27 @@
       <form-phone v-model="submit.phone" />
       <form-zip v-model="submit.zip" />
 
-      <form-appointment-checkbox v-model="$root.appointmentCheckbox" />
-      <form-sms-checkbox help-code="999" v-model="submit.okToText" />
+      <base-checkbox
+        label="I confirm I hold a Bachelor's degree."
+        id="confirmCheckbox"
+        v-model="$root.confirmCheckbox"
+        validationName="degree confirmation"
+      />
+
+      <!-- <form-appointment-checkbox
+        id="appointmentCheckbox"
+        optional
+        v-model="$root.appointmentCheckbox"
+      /> -->
+
+      <form-sms-checkbox
+        id="okToText"
+        help-code="999"
+        v-model="submit.okToText"
+      />
+
       <form-submit />
-      <form-legal-text />
+      <!-- <form-legal-text /> -->
     </form>
   </div>
 </template>

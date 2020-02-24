@@ -3,12 +3,19 @@
     <input
       :id="inputId"
       :ref="id"
+      :data-vv-as="inputValidationName"
+      v-validate="inputValidation"
       :checked="checked"
       type="checkbox"
       :name="id"
       @change="$emit('change', $event.target.checked)"
     />
     <label :for="inputId" v-html="labelContent"></label>
+    <form-help
+      :id="helpTextId"
+      :visible="errors.has(id)"
+      :helpText="errors.first(id)"
+    />
   </div>
 </template>
 
@@ -44,6 +51,15 @@ export default {
 
     isChecked() {
       return this.checked;
+    },
+
+    inputValidation() {
+      if (this.optional) return { rules: { required: false } };
+      else return this.validation || "required";
+    },
+
+    inputValidationName() {
+      return this.validationName || this.label;
     }
   }
 };
@@ -54,5 +70,12 @@ export default {
   input {
     border: 1px solid grey;
   }
+
+  a {
+    color: inherit;
+  }
+}
+.form-item-confirmCheckbox label {
+  margin-top: 3px;
 }
 </style>
