@@ -71,6 +71,14 @@
     flex-wrap: wrap;
     margin-left: 0;
 
+    // input {
+    //   border: 1px solid grey;
+    // }
+
+    a {
+      color: inherit;
+    }
+
     label {
       pointer-events: auto;
       cursor: pointer;

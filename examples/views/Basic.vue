@@ -39,13 +39,14 @@
         validationName="degree confirmation"
       />
 
-      <!-- <form-appointment-checkbox
+      <form-appointment-checkbox
         id="appointmentCheckbox"
         optional
         v-model="$root.appointmentCheckbox"
-      /> -->
+      />
 
       <form-sms-checkbox
+        optional
         id="okToText"
         help-code="999"
         v-model="submit.okToText"

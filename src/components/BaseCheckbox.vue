@@ -66,15 +66,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-item-checkbox {
-  input {
-    border: 1px solid grey;
-  }
-
-  a {
-    color: inherit;
-  }
-}
 .form-item-confirmCheckbox label {
   margin-top: 3px;
 }
