@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.19.4"></a>
+## [0.19.4](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.3...v0.19.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* **checkbox:** fixes being required ([3c2000a](https://github.com/thelearninghouse/vlh-forms/commit/3c2000a))
+
+
+
 <a name="0.19.3"></a>
 ## [0.19.3](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.2...v0.19.3) (2020-02-25)
 
