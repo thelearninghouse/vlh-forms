@@ -70,6 +70,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.form-item {
+  &-checkbox {
+    label {
+      flex: 1 1 0%;
+    }
+
+    input {
+      flex: 0 1 22px;
+    }
+  }
+}
 .form-item-confirmCheckbox label {
   margin-top: 3px;
 }

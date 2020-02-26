@@ -83,7 +83,7 @@
       pointer-events: auto;
       cursor: pointer;
       display: block;
-      flex: 0 1 92%;
+      // flex: 1 1 80%;
       margin-left: 2%;
       font-size: 15px;
 
@@ -97,7 +97,9 @@
 
     input {
       cursor: pointer;
-      flex: 0 1 15%;
+      // flex: 0 1 15%;
+      // flex: 0 1 22px;
+
       // zoom: 0.45;
 
       // NEW
