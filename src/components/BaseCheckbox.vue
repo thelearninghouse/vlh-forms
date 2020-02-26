@@ -38,6 +38,10 @@ export default {
     id: {
       type: String,
       required: true
+    },
+    validation: {
+      type: String,
+      default: ""
     }
   },
   computed: {
@@ -54,8 +58,8 @@ export default {
     },
 
     inputValidation() {
-      if (this.optional) return { rules: { required: false } };
-      else return this.validation || "required";
+      // if (this.optional) return { rules: { required: false } };
+      return this.validation || { rules: { required: false } };
     },
 
     inputValidationName() {
