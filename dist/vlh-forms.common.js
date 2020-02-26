@@ -1605,21 +1605,6 @@ module.exports = function (fn, args, that) {
 
 /***/ }),
 
-/***/ "32b8":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("55aa");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("adb3580a", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "32e9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2207,6 +2192,21 @@ exports.push([module.i, ".form-submit{flex:1 1 100%}.step-form .form-submit{flex
 
 // exports
 
+
+/***/ }),
+
+/***/ "4720":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("cbe0");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("4620f3ad", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -3012,21 +3012,6 @@ var store = global[SHARED] || (global[SHARED] = {});
   mode: __webpack_require__("2d00") ? 'pure' : 'global',
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
-
-
-/***/ }),
-
-/***/ "55aa":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".form-item-confirmCheckbox label[data-v-5f658f5f]{margin-top:3px}", ""]);
-
-// exports
 
 
 /***/ }),
@@ -5315,6 +5300,17 @@ module.exports = exporter;
 
 /***/ }),
 
+/***/ "aac9":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_e32026e2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("4720");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_e32026e2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_e32026e2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_e32026e2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "aaec":
 /***/ (function(module, exports) {
 
@@ -6845,6 +6841,21 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "cbe0":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".form-item-checkbox label[data-v-e32026e2]{flex:1 1 0%}.form-item-checkbox input[data-v-e32026e2]{flex:0 1 22px}.form-item-confirmCheckbox label[data-v-e32026e2]{margin-top:3px}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "cc8c":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6911,17 +6922,6 @@ var component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var FormHelp = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "cc96":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_5f658f5f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("32b8");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_5f658f5f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_5f658f5f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCheckbox_vue_vue_type_style_index_0_id_5f658f5f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -7480,7 +7480,7 @@ exports = module.exports = __webpack_require__("2350")(false);
 
 
 // module
-exports.push([module.i, ".form-item{margin:.5em auto;position:relative}.form-item input,.form-item label,.form-item select{position:relative;z-index:2}.form-item input,.form-item select{position:relative;min-height:45px;z-index:2;border:1px solid grey;padding:0 15px;width:100%;margin-top:0!important;margin-bottom:0!important;box-sizing:border-box}.form-item input:focus,.form-item select:focus{border-bottom:2px solid #373737}.form-item input.invalid,.form-item select.invalid{border:2px solid #ca0000}.form-item input.invalid:focus,.form-item select.invalid:focus{outline:none}.form-item .help{font-size:.9em}.form-item .input,.form-item .select{position:relative;font-size:16px}.form-item .help{overflow:hidden}.form-item .help-inner{overflow-wrap:break-word}.form-item select{padding:.6em .8em .25em .8em;min-height:45px;padding-right:40px!important;background-image:url(" + escape(__webpack_require__("8aca")) + ");-webkit-appearance:none;background-size:40px;background-position:99.5%;background-repeat:no-repeat}.form-item-checkbox{display:flex;align-items:flex-start;justify-content:space-between;flex-direction:row;flex-wrap:wrap;margin-left:0}.form-item-checkbox a{color:inherit}.form-item-checkbox label{pointer-events:auto;cursor:pointer;display:block;flex:0 1 92%;margin-left:2%;font-size:15px}.form-item-checkbox label .label-title{display:block;font-weight:700;text-transform:uppercase;margin-bottom:5px}.form-item-checkbox input{cursor:pointer;flex:0 1 15%;flex:0 0 22px;width:22px;height:22px;min-height:0;-webkit-appearance:none;padding:0;margin-top:5px!important}.form-item-checkbox input[type=checkbox]:checked{background-size:.875rem .875rem;background-position:50%;background-repeat:no-repeat;background-image:url(" + escape(__webpack_require__("4f4e")) + ")}label{pointer-events:none}.using-floating-labels.form-item{display:block;margin-bottom:16px;margin-top:1.25em}.using-floating-labels.form-item-active .form-field-wrapper:after{border-bottom:2px solid inherit;transform:scaleX(150)}.using-floating-labels.form-item-active label{color:inherit}.using-floating-labels.form-item-active label,.using-floating-labels.form-item-filled label{font-size:.75rem;font-weight:600;transform:translateY(-14px)}.using-floating-labels.form-item label{display:block;font-weight:400;left:0;margin:0;padding:14px 12px 0;position:absolute;top:0;transition:all .325s;width:100%;margin-top:14px!important}.using-floating-labels.form-item.form-item-active label,.using-floating-labels.form-item.form-item-filled label{font-weight:600}.using-floating-labels.form-item{border-radius:8px 8px 0 0;overflow:hidden;position:relative;width:100%}.using-floating-labels.form-item:after{border-bottom:2px solid inherit;bottom:0;content:\"\";display:block;left:0;margin:0 auto;position:absolute;right:0;transform:scaleX(0);transition:all .325s;width:1%}.form-item.using-floating-labels .form-field-wrapper{margin-top:24px!important}.form-item.using-floating-labels .form-field-wrapper .input,.form-item.using-floating-labels .form-field-wrapper .select{appearance:none;background:transparent;border:0;border-bottom:1px solid #999;color:#333;display:block;outline:0;padding:0 12px!important;width:100%;min-height:38px}.form-button{display:flex;overflow:hidden;padding:6px 12px;cursor:pointer;user-select:none;transition:all .15s linear;text-align:center;white-space:nowrap;text-decoration:none!important;text-transform:none;text-transform:capitalize;border:0 none;border-radius:2px;-webkit-appearance:none;-moz-appearance:none;appearance:none;justify-content:center;align-items:center}.form-controls.flex-split{flex-direction:row;flex-wrap:wrap}.flex-rw,.form-controls.flex-split{display:flex;justify-content:space-between}.flex-rw{flex-flow:row wrap}.flex-rw .form-item{flex:1 1 100%}.flex-rw .form-item.flex-half{flex:0 1 49%}.fade-enter-active,.fade-leave-active{transition:opacity .25s}.fade-enter,.fade-leave-to{opacity:0;transform:translateX(10px)}.slide-enter-active,.slide-leave-active{transition:all .5s ease}.slide-enter-active,.slide-leave-active{transform:translateX(50px)}.slide-enter,.slide-leave-active{opacity:0}.slide-fade-enter-active,.slide-fade-leave-active{transition:all .3s ease-in-out}.slide-fade-enter{transform:translateX(50px);opacity:0}.slide-fade-leave-to{transform:translateX(-50px);opacity:0}select.form-field:focus{outline:5px solid rgba(59,153,252,.65)}.vertical-slide-enter-active,.vertical-slide-leave-active{transition:all .3s ease-in-out}.vertical-slide-enter,.vertical-slide-leave-to{transform:translateY(-10px);opacity:0}form.default-color-theme .help{color:#ca0000!important}form.light-color-theme .help{color:#222!important}form.dark-color-theme .help{color:#f9f9f9!important}.form-warning{width:20px}.transition-step-enter-active,.transition-step-leave-active{transition:all .5s ease}.transition-step-enter-active,.transition-step-leave-active{transform:translateX(50px)}.transition-step-enter,.transition-step-leave-active{opacity:0}.transition-step-fade-enter-active,.transition-step-fade-leave-active{transition:all .3s ease-in-out}.transition-step-fade-enter{transform:translateX(50px);opacity:0}.transition-step-fade-leave-to{transform:translateX(-50px);opacity:0}.expand-enter-active,.expand-leave-active{transition:all .3s ease-in-out;overflow:hidden}#tlh-form{display:flex;flex-flow:row wrap;justify-content:space-between}#tlh-form .form-item,#tlh-form .form-submit{width:100%}", ""]);
+exports.push([module.i, ".form-item{margin:.5em auto;position:relative}.form-item input,.form-item label,.form-item select{position:relative;z-index:2}.form-item input,.form-item select{position:relative;min-height:45px;z-index:2;border:1px solid grey;padding:0 15px;width:100%;margin-top:0!important;margin-bottom:0!important;box-sizing:border-box}.form-item input:focus,.form-item select:focus{border-bottom:2px solid #373737}.form-item input.invalid,.form-item select.invalid{border:2px solid #ca0000}.form-item input.invalid:focus,.form-item select.invalid:focus{outline:none}.form-item .help{font-size:.9em}.form-item .input,.form-item .select{position:relative;font-size:16px}.form-item .help{overflow:hidden}.form-item .help-inner{overflow-wrap:break-word}.form-item select{padding:.6em .8em .25em .8em;min-height:45px;padding-right:40px!important;background-image:url(" + escape(__webpack_require__("8aca")) + ");-webkit-appearance:none;background-size:40px;background-position:99.5%;background-repeat:no-repeat}.form-item-checkbox{display:flex;align-items:flex-start;justify-content:space-between;flex-direction:row;flex-wrap:wrap;margin-left:0}.form-item-checkbox a{color:inherit}.form-item-checkbox label{pointer-events:auto;cursor:pointer;display:block;margin-left:2%;font-size:15px}.form-item-checkbox label .label-title{display:block;font-weight:700;text-transform:uppercase;margin-bottom:5px}.form-item-checkbox input{cursor:pointer;flex:0 0 22px;width:22px;height:22px;min-height:0;-webkit-appearance:none;padding:0;margin-top:5px!important}.form-item-checkbox input[type=checkbox]:checked{background-size:.875rem .875rem;background-position:50%;background-repeat:no-repeat;background-image:url(" + escape(__webpack_require__("4f4e")) + ")}label{pointer-events:none}.using-floating-labels.form-item{display:block;margin-bottom:16px;margin-top:1.25em}.using-floating-labels.form-item-active .form-field-wrapper:after{border-bottom:2px solid inherit;transform:scaleX(150)}.using-floating-labels.form-item-active label{color:inherit}.using-floating-labels.form-item-active label,.using-floating-labels.form-item-filled label{font-size:.75rem;font-weight:600;transform:translateY(-14px)}.using-floating-labels.form-item label{display:block;font-weight:400;left:0;margin:0;padding:14px 12px 0;position:absolute;top:0;transition:all .325s;width:100%;margin-top:14px!important}.using-floating-labels.form-item.form-item-active label,.using-floating-labels.form-item.form-item-filled label{font-weight:600}.using-floating-labels.form-item{border-radius:8px 8px 0 0;overflow:hidden;position:relative;width:100%}.using-floating-labels.form-item:after{border-bottom:2px solid inherit;bottom:0;content:\"\";display:block;left:0;margin:0 auto;position:absolute;right:0;transform:scaleX(0);transition:all .325s;width:1%}.form-item.using-floating-labels .form-field-wrapper{margin-top:24px!important}.form-item.using-floating-labels .form-field-wrapper .input,.form-item.using-floating-labels .form-field-wrapper .select{appearance:none;background:transparent;border:0;border-bottom:1px solid #999;color:#333;display:block;outline:0;padding:0 12px!important;width:100%;min-height:38px}.form-button{display:flex;overflow:hidden;padding:6px 12px;cursor:pointer;user-select:none;transition:all .15s linear;text-align:center;white-space:nowrap;text-decoration:none!important;text-transform:none;text-transform:capitalize;border:0 none;border-radius:2px;-webkit-appearance:none;-moz-appearance:none;appearance:none;justify-content:center;align-items:center}.form-controls.flex-split{flex-direction:row;flex-wrap:wrap}.flex-rw,.form-controls.flex-split{display:flex;justify-content:space-between}.flex-rw{flex-flow:row wrap}.flex-rw .form-item{flex:1 1 100%}.flex-rw .form-item.flex-half{flex:0 1 49%}.fade-enter-active,.fade-leave-active{transition:opacity .25s}.fade-enter,.fade-leave-to{opacity:0;transform:translateX(10px)}.slide-enter-active,.slide-leave-active{transition:all .5s ease}.slide-enter-active,.slide-leave-active{transform:translateX(50px)}.slide-enter,.slide-leave-active{opacity:0}.slide-fade-enter-active,.slide-fade-leave-active{transition:all .3s ease-in-out}.slide-fade-enter{transform:translateX(50px);opacity:0}.slide-fade-leave-to{transform:translateX(-50px);opacity:0}select.form-field:focus{outline:5px solid rgba(59,153,252,.65)}.vertical-slide-enter-active,.vertical-slide-leave-active{transition:all .3s ease-in-out}.vertical-slide-enter,.vertical-slide-leave-to{transform:translateY(-10px);opacity:0}form.default-color-theme .help{color:#ca0000!important}form.light-color-theme .help{color:#222!important}form.dark-color-theme .help{color:#f9f9f9!important}.form-warning{width:20px}.transition-step-enter-active,.transition-step-leave-active{transition:all .5s ease}.transition-step-enter-active,.transition-step-leave-active{transform:translateX(50px)}.transition-step-enter,.transition-step-leave-active{opacity:0}.transition-step-fade-enter-active,.transition-step-fade-leave-active{transition:all .3s ease-in-out}.transition-step-fade-enter{transform:translateX(50px);opacity:0}.transition-step-fade-leave-to{transform:translateX(-50px);opacity:0}.expand-enter-active,.expand-leave-active{transition:all .3s ease-in-out;overflow:hidden}#tlh-form{display:flex;flex-flow:row wrap;justify-content:space-between}#tlh-form .form-item,#tlh-form .form-submit{width:100%}", ""]);
 
 // exports
 
@@ -8131,12 +8131,12 @@ module.exports = function (O, D) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b521a59c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseCheckbox.vue?vue&type=template&id=5f658f5f&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b521a59c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseCheckbox.vue?vue&type=template&id=e32026e2&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.formItemClasses, ("form-item-" + _vm.id), 'form-item-checkbox']},[_c('input',{directives:[{name:"validate",rawName:"v-validate",value:(_vm.inputValidation),expression:"inputValidation"}],ref:_vm.id,attrs:{"id":_vm.inputId,"data-vv-as":_vm.inputValidationName,"type":"checkbox","name":_vm.id},domProps:{"checked":_vm.checked},on:{"change":function($event){return _vm.$emit('change', $event.target.checked)}}}),_c('label',{attrs:{"for":_vm.inputId},domProps:{"innerHTML":_vm._s(_vm.labelContent)}}),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BaseCheckbox.vue?vue&type=template&id=5f658f5f&scoped=true&
+// CONCATENATED MODULE: ./src/components/BaseCheckbox.vue?vue&type=template&id=e32026e2&scoped=true&
 
 // EXTERNAL MODULE: ./src/mixins/BaseMixin.js
 var BaseMixin = __webpack_require__("f37c");
@@ -8212,8 +8212,8 @@ var BaseMixin = __webpack_require__("f37c");
 });
 // CONCATENATED MODULE: ./src/components/BaseCheckbox.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_BaseCheckboxvue_type_script_lang_js_ = (BaseCheckboxvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/BaseCheckbox.vue?vue&type=style&index=0&id=5f658f5f&lang=scss&scoped=true&
-var BaseCheckboxvue_type_style_index_0_id_5f658f5f_lang_scss_scoped_true_ = __webpack_require__("cc96");
+// EXTERNAL MODULE: ./src/components/BaseCheckbox.vue?vue&type=style&index=0&id=e32026e2&lang=scss&scoped=true&
+var BaseCheckboxvue_type_style_index_0_id_e32026e2_lang_scss_scoped_true_ = __webpack_require__("aac9");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -8233,7 +8233,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "5f658f5f",
+  "e32026e2",
   null
   
 )
