@@ -33,6 +33,7 @@
       <form-zip v-model="submit.zip" />
 
       <base-checkbox
+        validation="required"
         label="I confirm I hold a Bachelor's degree."
         id="confirmCheckbox"
         v-model="$root.confirmCheckbox"
@@ -41,12 +42,10 @@
 
       <form-appointment-checkbox
         id="appointmentCheckbox"
-        optional
         v-model="$root.appointmentCheckbox"
       />
 
       <form-sms-checkbox
-        optional
         id="okToText"
         help-code="999"
         v-model="submit.okToText"
