@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     testChange($event) {
-      console.log("testChange -> event", event);
+      console.log("testChange -> event", $event);
     },
 
     testDelay(ms) {
