@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.19.6"></a>
+## [0.19.6](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.5...v0.19.6) (2020-04-02)
+
+
+### Bug Fixes
+
+* **step-forms:** fixes step-form width ([2ca21c5](https://github.com/thelearninghouse/vlh-forms/commit/2ca21c5))
+
+
+
 <a name="0.19.5"></a>
 ## [0.19.5](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.4...v0.19.5) (2020-02-26)
 
