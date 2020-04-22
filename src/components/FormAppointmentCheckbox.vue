@@ -24,7 +24,7 @@ export default {
       if (val === true) {
         this.$root.submit.webSchedulerStatus = "New";
       } else {
-        this.$root.submit.webSchedulerStatus = "null";
+        this.$root.submit.webSchedulerStatus = "";
       }
     }
   }
