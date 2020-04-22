@@ -11,6 +11,7 @@
         label="Select a Program"
         v-model="submit.program"
         :options="programs"
+        @change="testChange"
       />
 
       <form-select
@@ -67,6 +68,10 @@ export default {
     });
   },
   methods: {
+    testChange($event) {
+      console.log("testChange -> event", $event);
+    },
+
     testDelay(ms) {
       // return this.delayMethod(ms).then(alert("WORKS FROM METHOD"));
       this.delayMethod(ms).then(() => {
