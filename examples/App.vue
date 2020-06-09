@@ -50,24 +50,27 @@ export default {
     registerZipValidator() {
       var vm = this;
       var isZip = value => {
-        return axios
-          .get(`https://api.zippopotam.us/us/${value}`)
-          .then(function(response) {
-            let info = response.data.places[0];
-            vm.submit.city = info["place name"];
-            vm.submit.state = info["state"];
-            return {
-              valid: true
-            };
-          })
-          .catch(function(error) {
-            return {
-              valid: false,
-              data: {
-                message: `${value} is not valid zip.`
-              }
-            };
-          });
+        return (
+          axios
+            .get(`https://api.zippopotam.us/us/${value}`)
+            .then(function(response) {
+              let info = response.data.places[0];
+              vm.submit.city = info["place name"];
+              vm.submit.state = info["state"];
+              return {
+                valid: true
+              };
+            })
+            // eslint-disable-next-line no-unused-vars
+            .catch(function(error) {
+              return {
+                valid: false,
+                data: {
+                  message: `${value} is not valid zip.`
+                }
+              };
+            })
+        );
       };
       this.$validator.extend("validZip", {
         validate: isZip,
