@@ -8,11 +8,13 @@ $animation-duration: 0.325s;
   transform: translateY(-14px);
 }
 
-label {
-  pointer-events: none;
-}
+
 
 .using-floating-labels {
+  label {
+    pointer-events: none;
+  }
+
   &.form-item {
     display: block;
     margin-bottom: 16px;
