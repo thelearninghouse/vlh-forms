@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.0"></a>
+# [0.20.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.9...v0.20.0) (2020-06-09)
+
+
+### Bug Fixes
+
+* **labels:** fixes labels being unclickable ([e278599](https://github.com/thelearninghouse/vlh-forms/commit/e278599))
+
+
+### Features
+
+* **components:** adds new `VRadioGroup` component ([27a3620](https://github.com/thelearninghouse/vlh-forms/commit/27a3620))
+
+
+
 <a name="0.19.9"></a>
 ## [0.19.9](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.8...v0.19.9) (2020-05-08)
 
