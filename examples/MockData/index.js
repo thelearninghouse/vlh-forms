@@ -4,6 +4,7 @@ import { programs, levels } from "./programsSample.js";
 import countries from "./countries.json";
 
 export const MockData = {
+  selectedModality: "",
   showQualifier: false,
   qualifierAnswer: "",
   qualifierProgram: {

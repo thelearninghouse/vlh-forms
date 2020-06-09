@@ -4,6 +4,7 @@ import Vue from "vue";
 import VlhForms from "../src/lib";
 import App from "./App.vue";
 import { MockData } from "./MockData/index.js";
+import selectedTagGroup from "./MockData/selectedTagGroup.json";
 import router from "./router";
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -52,6 +53,21 @@ Vue.mixin({
   },
 
   computed: {
+    selectedTagGroup() {
+      const transformedGroup = selectedTagGroup.map(program => {
+        if (program.modality === "On Ground") program.name = "On-Site";
+        else program.name = program.modality;
+        return program;
+      });
+
+      transformedGroup.sort((a, b) => {
+        if (b.name > a.name) return 1;
+        if (b.name < a.name) return -1;
+        return 0;
+      });
+
+      return transformedGroup;
+    },
     usCitizen() {
       return this.submit.country === "United States of America" ? true : false;
     },

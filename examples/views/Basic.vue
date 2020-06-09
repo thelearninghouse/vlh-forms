@@ -6,6 +6,11 @@
       @submit.prevent="handleFormSubmission"
     >
       <!-- <button @click="$delayedAlert(3000)">Test Promise</button> -->
+      <v-radio-group
+        v-model="$root.selectedModality"
+        :options="selectedTagGroup"
+      />
+
       <form-select
         id="program"
         label="Select a Program"
@@ -80,6 +85,7 @@ export default {
     },
 
     delayMethod(ms) {
+      // eslint-disable-next-line no-unused-vars
       return new Promise((resolve, reject) => {
         setTimeout(resolve, ms);
       });

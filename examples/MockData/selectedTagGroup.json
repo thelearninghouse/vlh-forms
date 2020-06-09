@@ -1,0 +1,104 @@
+[
+  {
+    "id": "f9b73e34-5eca-4dba-8b41-9fa212aba219",
+    "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+    "client_program_id": 5738,
+    "name": "MACOMM-G",
+    "display_name": null,
+    "degree_level": "Master",
+    "modality": "On Ground",
+    "status": "Active",
+    "marketing_active": true,
+    "elc": false,
+    "created": "2020-05-17 23:12:39",
+    "modified": "2020-06-08 16:37:38",
+    "tags": {
+      "data": [
+        {
+          "id": "3cc6b9af-eb54-4e76-b84d-e862420cb87f",
+          "name": "JHU AAP - MACOMM",
+          "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+          "created": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "modified": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      ]
+    },
+    "tagNames": ["JHU AAP - MACOMM"]
+  },
+  {
+    "id": "cd131b4a-a03f-acea-ead6-6bf58e81bfba",
+    "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+    "client_program_id": 5739,
+    "name": "MACOMM-NS",
+    "display_name": null,
+    "degree_level": "Master",
+    "modality": "Hybrid",
+    "status": "Active",
+    "marketing_active": true,
+    "elc": false,
+    "created": "2020-05-17 23:12:39",
+    "modified": "2020-06-08 16:37:39",
+    "tags": {
+      "data": [
+        {
+          "id": "3cc6b9af-eb54-4e76-b84d-e862420cb87f",
+          "name": "JHU AAP - MACOMM",
+          "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+          "created": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "modified": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      ]
+    },
+    "tagNames": ["JHU AAP - MACOMM"]
+  },
+  {
+    "id": "14723192-a6ee-4b17-a6a3-033731b9db86",
+    "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+    "client_program_id": 5737,
+    "name": "MACOMM-O",
+    "display_name": null,
+    "degree_level": "Master",
+    "modality": "Online",
+    "status": "Active",
+    "marketing_active": true,
+    "elc": false,
+    "created": "2020-05-17 23:07:40",
+    "modified": "2020-06-08 16:37:38",
+    "tags": {
+      "data": [
+        {
+          "id": "3cc6b9af-eb54-4e76-b84d-e862420cb87f",
+          "name": "JHU AAP - MACOMM",
+          "account_id": "a715ff97-6c4c-869f-2af9-166db78e407e",
+          "created": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "modified": {
+            "date": "2020-06-08 18:38:15.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      ]
+    },
+    "tagNames": ["JHU AAP - MACOMM"]
+  }
+]
