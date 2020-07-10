@@ -8081,7 +8081,7 @@ var BaseCheckbox = __webpack_require__("f0a8");
       default: "appointment"
     },
     label: {
-      default: "\n       <span class=\"label-title\">Schedule An Appointment</span>Yes! I'd like to schedule an appointment with a admissions counselor. If this option is not selected, an admission specialist will still contact you at a time of their choosing."
+      default: "\n       <span class=\"label-title\">Schedule An Appointment</span>Yes! I'd like to schedule an appointment with the admissions team. If this option is not selected, an admission specialist will still contact you at a time of their choosing."
     }
   },
   watch: {
