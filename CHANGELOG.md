@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.1"></a>
+## [0.20.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.20.0...v0.20.1) (2020-07-10)
+
+
+### Bug Fixes
+
+* fixes WAS checkbox label ([989c634](https://github.com/thelearninghouse/vlh-forms/commit/989c634))
+
+
+
 <a name="0.20.0"></a>
 # [0.20.0](https://github.com/thelearninghouse/vlh-forms/compare/v0.19.9...v0.20.0) (2020-06-09)
 
