@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.2"></a>
+## [0.20.2](https://github.com/thelearninghouse/vlh-forms/compare/v0.20.1...v0.20.2) (2020-08-25)
+
+
+### Bug Fixes
+
+* adds new component for JHU ([d9ed3e7](https://github.com/thelearninghouse/vlh-forms/commit/d9ed3e7))
+
+
+
 <a name="0.20.1"></a>
 ## [0.20.1](https://github.com/thelearninghouse/vlh-forms/compare/v0.20.0...v0.20.1) (2020-07-10)
 
