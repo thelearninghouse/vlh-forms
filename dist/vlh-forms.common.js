@@ -354,6 +354,17 @@ module.exports = function (S, index, unicode) {
 
 /***/ }),
 
+/***/ "03ec":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalityGroup_vue_vue_type_style_index_0_id_77801e90_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9231");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalityGroup_vue_vue_type_style_index_0_id_77801e90_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalityGroup_vue_vue_type_style_index_0_id_77801e90_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalityGroup_vue_vue_type_style_index_0_id_77801e90_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "07b6":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3268,6 +3279,195 @@ module.exports = function (R, S) {
 
 /***/ }),
 
+/***/ "60a3":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b521a59c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ModalityGroup.vue?vue&type=template&id=77801e90&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"v-radio-group"},[_c('fieldset',[_c('legend',[_vm._v("How/Where would you like to take classes?")]),_vm._l((_vm.options),function(option){return [_c('label',{key:option.name,staticClass:"radio"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.radioButtonValue),expression:"radioButtonValue"},{name:"validate",rawName:"v-validate",value:('required'),expression:"'required'"}],attrs:{"type":"radio","data-vv-name":_vm.id,"data-vv-as":_vm.inputValidationName},domProps:{"value":option.id,"checked":_vm._q(_vm.radioButtonValue,option.id)},on:{"change":[function($event){_vm.radioButtonValue=option.id},function($event){return _vm.$emit('input', $event.target.value)}]}}),_c('span',[_vm._v(_vm._s(option.name))])])]}),_c('form-help',{attrs:{"id":_vm.helpTextId,"visible":_vm.errors.has(_vm.id),"helpText":_vm.errors.first(_vm.id)}})],2)])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/ModalityGroup.vue?vue&type=template&id=77801e90&scoped=true&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.define-property.js
+var es6_object_define_property = __webpack_require__("1c01");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.define-properties.js
+var es6_object_define_properties = __webpack_require__("58b2");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.get-own-property-descriptors.js
+var es7_object_get_own_property_descriptors = __webpack_require__("8e6e");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.for-each.js
+var es6_array_for_each = __webpack_require__("f3e2");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.filter.js
+var es6_array_filter = __webpack_require__("d25f");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
+var es6_array_iterator = __webpack_require__("cadf");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.keys.js
+var es6_object_keys = __webpack_require__("456d");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
+var defineProperty = __webpack_require__("bd86");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
+var es6_number_constructor = __webpack_require__("c5f6");
+
+// EXTERNAL MODULE: ./src/mixins/BaseMixin.js
+var BaseMixin = __webpack_require__("f37c");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ModalityGroup.vue?vue&type=script&lang=js&
+
+
+
+
+
+
+
+
+
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(defineProperty["a" /* default */])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var ModalityGroupvue_type_script_lang_js_ = ({
+  mixins: [BaseMixin["a" /* default */]],
+  props: {
+    value: {
+      type: [String, Number],
+      required: true
+    },
+    options: {
+      type: Array,
+      required: true
+    }
+  },
+  computed: {
+    radioButtonValue: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(newValue) {
+        console.log("e", newValue); // Communicate the change to parent component so that selectedValue can be updated
+
+        this.$emit("change", newValue);
+      }
+    },
+    inputName: function inputName() {
+      return this.$attrs.name || this.id;
+    },
+    inputId: function inputId() {
+      return this.$id(this.id);
+    },
+    inputClasses: function inputClasses() {
+      return {
+        input: true,
+        valid: this.fieldValidity,
+        invalid: this.errors.has(this.id)
+      };
+    },
+    inputListeners: function inputListeners() {
+      var _this = this;
+
+      return _objectSpread({}, this.$listeners, {
+        input: function input(event) {
+          return _this.$emit("input", event.target.value);
+        },
+        focus: function focus(event) {
+          return _this.handleFocus(event);
+        },
+        blur: function blur(event) {
+          return _this.handleBlur(event);
+        }
+      });
+    },
+    inputValidation: function inputValidation() {
+      if (this.optional) return {
+        rules: {
+          required: false
+        }
+      };else return this.validation || "required";
+    },
+    inputValidationName: function inputValidationName() {
+      return this.validationName || this.label;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/ModalityGroup.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_ModalityGroupvue_type_script_lang_js_ = (ModalityGroupvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/ModalityGroup.vue?vue&type=style&index=0&id=77801e90&lang=scss&scoped=true&
+var ModalityGroupvue_type_style_index_0_id_77801e90_lang_scss_scoped_true_ = __webpack_require__("03ec");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/components/ModalityGroup.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  components_ModalityGroupvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "77801e90",
+  null
+  
+)
+
+/* harmony default export */ var ModalityGroup = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "613b":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4478,6 +4678,21 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 /***/ }),
 
+/***/ "9231":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("9da8");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("96452fc6", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "9405":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4901,6 +5116,21 @@ module.exports = function (exec) {
     return { e: true, v: e };
   }
 };
+
+
+/***/ }),
+
+/***/ "9da8":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-radio-group fieldset[data-v-77801e90]{border:none;display:flex}", ""]);
+
+// exports
 
 
 /***/ }),
@@ -7805,6 +8035,7 @@ var map = {
 	"./FormSubmit.vue": "c828",
 	"./FormSubmitButton.vue": "b19f",
 	"./FormZip.vue": "817b",
+	"./ModalityGroup.vue": "60a3",
 	"./NextStepButton.vue": "9ac8",
 	"./PreviousStepButton.vue": "aebc",
 	"./StepFormControls.vue": "d4ea",

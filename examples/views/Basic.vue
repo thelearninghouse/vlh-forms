@@ -5,13 +5,41 @@
       class="requestinfo"
       @submit.prevent="handleFormSubmission"
     >
+      <!-- <h4>Activities</h4>
+      <label
+        class="radio is-inline"
+        v-for="activity in activities"
+        :key="activity"
+      >
+        <input
+          type="radio"
+          :value="activity"
+          class="radio-input"
+          v-validate="'required'"
+          name="activity"
+        />
+        <span class="radio-label">{{ activity }}</span>
+      </label>
+      <div class="">
+        {{ errors.first("activity") }}
+      </div> -->
       <!-- <button @click="$delayedAlert(3000)">Test Promise</button> -->
-      <v-radio-group
+      <modality-group
         v-model="$root.selectedModality"
+        id="jhu-modality"
+        validation-name=" Class Type"
         :options="selectedTagGroup"
       />
+      <!-- <v-radio-group
+        v-model="$root.selectedModality"
+        id="radio-id"
+        validation-name="Class Type"
+        :options="selectedTagGroup"
+      /> -->
+      <!--  -->
+      <!-- validation="'required'" -->
 
-      <form-select
+      <!-- <form-select
         id="program"
         label="Select a Program"
         v-model="submit.program"
@@ -26,17 +54,17 @@
         validation-name="License Question"
         v-model="$root.qualifierAnswer"
         :options="$root.qualifierOptions"
-      />
+      /> -->
 
       <form-first-name v-model="submit.firstName" />
       <form-last-name v-model="submit.lastName" />
 
-      <form-email v-model="submit.email" />
+      <!-- <form-email v-model="submit.email" /> -->
 
-      <form-country-select v-model="submit.country" />
+      <!-- <form-country-select v-model="submit.country" />
 
       <form-phone v-model="submit.phone" />
-      <form-zip v-model="submit.zip" />
+      <form-zip v-model="submit.zip" /> -->
 
       <base-checkbox
         validation="required"
@@ -46,7 +74,7 @@
         validationName="degree confirmation"
       />
 
-      <form-appointment-checkbox
+      <!-- <form-appointment-checkbox
         id="appointmentCheckbox"
         v-model="$root.appointmentCheckbox"
       />
@@ -55,16 +83,23 @@
         id="okToText"
         help-code="999"
         v-model="submit.okToText"
-      />
+      /> -->
 
       <form-submit />
       <!-- <form-legal-text /> -->
     </form>
+    <hr />
+    <h3>Selected Modality</h3>
+    <pre>{{ $root.selectedModality }}</pre>
   </div>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    activities: ["Eat", "Code", "Sleep"]
+  }),
+
   created() {},
   mounted() {
     console.log(this.$refs);
